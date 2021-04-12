@@ -1,0 +1,33 @@
+[id="completing-initial-setup_{context}"]
+= Completing initial setup
+
+This section contains information about how to complete initial setup on a {productname} 8 system.
+
+[IMPORTANT]
+====
+If you selected the *Server with GUI* base environment during installation, the *Initial Setup* window opens the first time you reboot your system after the installation process is complete.
+====
+
+The information displayed in the *Initial Setup* window might vary depending on what was configured during installation. At a minimum, the *License information* option is displayed.
+
+
+[discrete]
+== Prerequisite
+
+* You have completed the graphical installation according to the recommended workflow described on xref:standard-install:con_installation-workflow.adoc[Installation workflow].
+
+[discrete]
+== Procedure
+
+. From the *Initial Setup* window, select *License Information*.
++
+The *License Agreement* window opens and displays the licensing terms for {rel8}.
+
+. Review the license agreement and select the *I accept the license agreement* checkbox.
++
+[NOTE]
+====
+You must accept the license agreement. Exiting *Initial Setup* without completing this step causes a system restart. When the restart process is complete, you are prompted to accept the license agreement again.
+====
+
+. Click *Done* to apply the settings and return to the *Initial Setup* window.

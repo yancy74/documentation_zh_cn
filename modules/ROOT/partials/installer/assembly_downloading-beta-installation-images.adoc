@@ -1,0 +1,31 @@
+[id='downloading-beta-installation-images_{context}']
+
+= Downloading the installation ISO image
+
+Before you start installing {rel8}, you must download an installation ISO image. Images are available from the {ProductName} website at link:++https://www.centos.org/download/++[]. The following basic types of media are available:
+
+DVD1 ISO::
+This image contains the installer as well as a set of all packages that can be installed during an interactive installation. Also sometimes referred to as the "Binary DVD" or "Binary ISO image". This is the recommended download for most users.
+
+Boot ISO::
+Contains only the installer, but not any installable packages. This image will allow you to start the installation, but you must xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[prepare a package source] and enter its URL in the xref:standard-install:assembly_graphical-installation.adoc#configuring-installation-source_configuring-software-settings[Package Selection screen], using a xref:standard-install:assembly_custom-boot-options.adoc#installation-source-boot-options_custom-boot-options[boot option], or using a xref:advanced-install:assembly_kickstart-commands-and-options-reference.adoc#repo_kickstart-commands-for-system-configuration[Kickstart command] in order to finish the installation.
+
+Optionally, you can use a checksum utility such as [application]*sha256sum* to verify the integrity of the image file after the download finishes. All downloads are provided with their checksums for reference:
+
+[literal,subs="+quotes,attributes,verbatim,macros"]
+....
+$ sha256sum {ProductName}-8-x86_64-dvd.iso
+`85a...46c  {ProductName}-8-x86_64-dvd.iso`
+....
+
+Similar tools are available for link:++http://www.labtestproject.com/files/win/sha256sum/sha256sum.exe++[Microsoft Windows] and link:++https://itunes.apple.com/us/app/hashtab/id517065482++[Mac OS X]. You can also use the `rd.live.check` option on the boot command line; see xref:standard-install:assembly_booting-installer.adoc#editing-boot-options_booting-the-installer[Editing boot options] for details.
+
+After you have downloaded an ISO image file from the Customer Portal, you can:
+
+* Burn it to a CD or DVD as described in xref:standard-install:assembly_preparing-for-your-installation.adoc#making-an-installation-cd-or-dvd_preparing-for-your-installation[Creating a bootable DVD or CD].
+
+* Use it to create a bootable USB drive; see xref:standard-install:assembly_preparing-for-your-installation.adoc#create-bootable-usb-linux_preparing-for-your-installation[Creating a bootable USB device on Linux], xref:standard-install:assembly_preparing-for-your-installation.adoc#creating-a-bootable-usb-windows_preparing-for-your-installation[Creating a bootable USB device on Windows], and xref:standard-install:assembly_preparing-for-your-installation.adoc#creating-a-bootable-usb-mac_preparing-for-your-installation[Creating a bootable USB device on Mac OS X].
+
+* Place it on a local hard drive or a network location to use as an installation source. For specific instructions, see xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[Preparing an installation source].
+
+* Use it to prepare a _Preboot Execution Environment_ (PXE) server, which allows you to boot the installation system over a network. See xref:advanced-install:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE] for instructions.

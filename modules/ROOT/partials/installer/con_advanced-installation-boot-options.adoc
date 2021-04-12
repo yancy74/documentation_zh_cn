@@ -1,0 +1,31 @@
+[id="advanced-installation-boot-options_{context}"]
+= Advanced installation boot options
+
+This section contains information about advanced installation boot options.
+
+inst.kexec::
+The `inst.kexec` option allows the installation program to use the `kexec` system call at the end of the installation, instead of performing a reboot. The `inst.kexec` option loads the new system immediately, and bypasses the hardware initialization normally performed by the BIOS or firmware.
++
+[IMPORTANT]
+======
+This option is deprecated and available as a Technology Preview only.
+
+When `kexec` is used, device registers which would normally be cleared during a full system reboot, might stay filled with data, which could potentially create issues for some device drivers.
+======
+
+inst.multilib::
+Use the `inst.multilib` boot option to configure the system for multilib packages, that is, to allow installing 32-bit packages on a 64-bit AMD64 or Intel 64 system. Normally, on an AMD64 or Intel 64 system, only packages for this architecture (marked as x86_64) and packages for all architectures (marked as noarch) are installed. When you use the `inst.multilib` boot option, packages for 32-bit AMD or Intel systems (marked as i686) are automatically installed.
++
+This applies only to packages directly specified in the `%packages` section. If a package is installed as a dependency, only the exact specified dependency is installed. For example, if you are installing the `bash` package which depends on the `glibc` package, the former is installed in multiple variants, while the latter is installed only in variants that the bash package requires.
+
+selinux=0::
+By default, the `selinux=0` boot option operates in permissive mode in the installation program, and in enforcing mode in the installed system. The `selinux=0` boot option disables the use of SELinux in the installation program and the installed system.
++
+[NOTE]
+====
+The `selinux=0` and `inst.selinux=0` options are not the same. The `selinux=0` option disables the use of SELinux in the installation program and the installed system. The `inst.selinux=0` option disables SELinux only in the installation program. By default, SELinux operates in permissive mode in the installation program, so disabling SELinux has little effect.
+====
+
+inst.nonibftiscsiboot=::
+
+Use the `inst.nonibftiscsiboot=` boot option to place the boot loader on iSCSI devices that were not configured in the iSCSI Boot Firmware Table (iBFT).

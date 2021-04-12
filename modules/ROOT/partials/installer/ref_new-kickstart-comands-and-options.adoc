@@ -1,0 +1,11 @@
+[id="new-kickstart-comands-and-options_{context}"]
+= New Kickstart comands and options
+
+The following commands and options have been added in {rel8}.
+
+.{ProductName} 8.0
+
+* [command]`authselect`
+* [command]`module`
+
+// see also https://bugzilla.redhat.com/show_bug.cgi?id=1642765

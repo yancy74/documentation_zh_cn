@@ -1,0 +1,42 @@
+:parent-context-of-security-policy: {context}
+
+[id='security-policy_{context}']
+= Configuring security policy
+
+:context: security-policy
+
+// The following block is rendered only if the `internal` variable is set.
+// The table shows various metadata useful when editing this file.
+ifdef::internal[]
+[cols="1,4"]
+|===
+| Included in |
+LIST OF ASSEMBLIES
+| User story |
+USER STORY
+| Jira |
+JIRA LINK
+| BZ |
+BUGZILLA LINK
+| SMEs |
+SME NAMES
+| SME Ack |
+YES/NO
+| Peer Ack |
+YES/NO
+|===
+endif::[]
+
+This section contains information about the {productname} {productnumber} security policy add-on and how to configure it for use on your system.
+
+include::ROOT:partial$installer/con_about-security-policy.adoc[leveloffset=+1]
+include::ROOT:partial$installer/proc_configuring-security-policy.adoc[leveloffset=+1]
+
+
+
+[id='related-information-{context}']
+== Related information
+* [literal]`scap-security-guide(8)` - The manual page for the [literal]`scap-security-guide` project contains information about SCAP security profiles, including examples on how to utilize the provided benchmarks using the OpenSCAP utility.
+* {productname} security compliance information is available in the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/index[_Security hardening in RHEL 8_] document.
+
+:context: {parent-context-of-security-policy}

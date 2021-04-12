@@ -1,0 +1,28 @@
+[id="check-disk-and-memory-requirements_{context}"]
+= Disk and memory requirements
+
+If several operating systems are installed, it is important that you verify that the allocated disk space is separate from the disk space required by {productname}.
+
+
+[NOTE]
+====
+* For AMD64, Intel 64, and 64-bit ARM, at least two partitions (`/` and `swap`) must be dedicated to {productname}.
+* For IBM Power Systems servers, at least three partitions (`/`, `swap`, and a `PReP` boot partition) must be dedicated to {productname}.
+====
+You must have a minimum of 10 GiB of available disk space. See xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[Recommended partitioning scheme] for more information.
+
+To install {productname}, you must have a minimum of 10 GiB of space in either unpartitioned disk space or in partitions that can be deleted. See xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[Recommended partitioning scheme] for more information.
+
+.Minimum RAM requirements
+[options="header"]
+|===
+| Installation type  | Recommended minimum RAM
+| Local media installation (USB, DVD) | 768 MiB
+| NFS network installation  | 768 MiB
+| HTTP, HTTPS or FTP network installation  | 1.5 GiB
+|===
+
+[NOTE]
+====
+It is possible to complete the installation with less memory than the recommended minimum requirements. The exact requirements depend on your environment and installation path. It is recommended that you test various configurations to determine the minimum required RAM for your environment. Installing {productname} using a Kickstart file has the same recommended minimum RAM requirements as a standard installation. However, additional RAM may be required if your Kickstart file includes commands that require additional memory, or write data to the RAM disk. See the xref:advanced-install:index.adoc[Performing an advanced installation] document for more information.
+====

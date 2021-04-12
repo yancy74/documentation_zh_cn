@@ -1,0 +1,21 @@
+[id="automated-installation-workflow_{context}"]
+= Automated installation workflow
+
+// Was: How to perform a Kickstart installation
+// PROC but strongly laced with CON elements since this is intended as first introduction and only a general idea how the workflow is
+
+// from https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-howto
+
+Kickstart installations can be performed using a local DVD, a local hard drive, or a NFS, FTP, HTTP, or HTTPS server. This section provides a high level overview of Kickstart usage.
+
+ . Create a Kickstart file. You can write it by hand, copy a Kickstart file saved after a manual installation, or use an online generator tool to create the file, and edit it afterward. See xref:assembly_creating-kickstart-files.adoc[Creating Kickstart files].
+
+ . Make the Kickstart file available to the installation program on removable media, a hard drive or a network location using an HTTP(S), FTP, or NFS server. See xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc[Making Kickstart files available to the installation program].
+
+ . Create the boot medium which will be used to begin the installation. See xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media] and xref:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE].
+
+ . Make the installation source available to the installation program. See xref:assembly_creating-installation-sources-for-kickstart-installations.adoc[Creating installation sources for Kickstart installations].
+
+ . Start the installation using the boot medium and the Kickstart file. See xref:assembly_starting-kickstart-installations.adoc[Starting Kickstart installations].
+
+If the Kickstart file contains all mandatory commands and sections, the installation finishes automatically. If one or more of these mandatory parts are missing, or if an error occurs, the installation requires manual intervention to finish.

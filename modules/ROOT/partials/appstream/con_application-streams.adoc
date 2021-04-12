@@ -1,0 +1,8 @@
+[id="application-streams_{context}"]
+= Application Streams
+
+{rel8} introduces the concept of Application Streams - versions of user space components. Multiple versions of these components are now delivered and updated more frequently than the core operating system packages. This provides greater flexibility to customize {ProductName} without impacting the underlying stability of the platform or specific deployments.
+
+Components made available as Application Streams can be packaged as modules or RPM packages and are delivered through the AppStream repository in {rel8}. Each AppStream component has a given life cycle.
+
+NOTE: Not all modules are Application Streams. Dependencies of other modules are not considered AppStream components.

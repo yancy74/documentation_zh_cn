@@ -1,0 +1,29 @@
+include::ROOT:partial$attributes.adoc[]
+include::partial$local-attributes.adoc[]
+:parent-context-of-removing-rhel-8-content: {context}
+
+[id="removing-rhel-8-content_{context}"]
+= Removing content
+
+:context: removing-rhel-8-content
+
+// ustory: As a system administrator, I want to remove content I have installed on my system so that it is no longer present.
+
+The following sections describe how to remove content in {rel8}:
+
+* xref:assembly_removing-rhel-8-content.adoc#removing-installed-packages_{context}[Removing installed packages] describes removing a package.
+* xref:assembly_removing-rhel-8-content.adoc#removing-installed-modules_{context}[Removing installed modules] describes removing content installed from a module stream.
+* xref:assembly_removing-rhel-8-content.adoc#resetting-module-streams_{context}[Resetting module streams] describes resetting module streams to initial state.
+* xref:assembly_removing-rhel-8-content.adoc#commands-for-removing-content_{context}[Commands for removing content] summarizes the commands for removing content.
+
+
+include::ROOT:partial$appstream/proc_removing-installed-packages.adoc[leveloffset=+1]
+
+include::ROOT:partial$appstream/proc_removing-installed-modules.adoc[leveloffset=+1]
+
+include::ROOT:partial$appstream/proc_resetting-module-streams.adoc[leveloffset=+1]
+
+include::ROOT:partial$appstream/ref_commands-for-removing-content.adoc[leveloffset=+1]
+
+
+:context: {parent-context-of-removing-rhel-8-content}

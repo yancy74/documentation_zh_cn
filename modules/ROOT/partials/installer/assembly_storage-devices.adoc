@@ -1,0 +1,39 @@
+:parent-context-of-storage-devices: {context}
+
+[id='storage-devices_{context}']
+= Configuring storage devices
+
+:context: storage-devices
+
+// The following block is rendered only if the `internal` variable is set.
+// The table shows various metadata useful when editing this file.
+ifdef::internal[]
+[cols="1,4"]
+|===
+| Included in |
+LIST OF ASSEMBLIES
+| User story |
+USER STORY
+| Jira |
+JIRA LINK
+| BZ |
+BUGZILLA LINK
+| SMEs |
+SME NAMES
+| SME Ack |
+YES/NO
+| Peer Ack |
+YES/NO
+|===
+endif::[]
+
+You can install {productname} on a large variety of storage devices. You can configure basic, locally accessible, storage devices in the *Installation Destination* window. Basic storage devices directly connected to the local system, such as hard disk drives and solid-state drives, are displayed in the *Local Standard Disks* section of the window.
+
+include::ROOT:partial$installer/ref_storage-devices-selection.adoc[leveloffset=+1]
+include::ROOT:partial$installer/proc_configuring-storage-options.adoc[leveloffset=+1]
+include::ROOT:partial$installer/proc_configuring-advanced-storage-options.adoc[leveloffset=+1]
+include::ROOT:partial$installer/proc_starting-an-iscsi-session.adoc[leveloffset=+2]
+include::ROOT:partial$installer/proc_configuring-fcoe-parameters.adoc[leveloffset=+2]
+include::ROOT:partial$installer/assembly_installing-to-a-nvdimm-device.adoc[leveloffset=+1]
+
+:context: {parent-context-of-storage-devices}
