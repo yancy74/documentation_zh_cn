@@ -3,11 +3,11 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-kickstart-installation-basics: {context}
 
 [id="kickstart-installation-basics_{context}"]
-= Kickstart installation basics
+= Kickstart 安装基础知识
 
 :context: kickstart-installation-basics
 
-The following provides basic information about Kickstart and how to use it to automate installing {ProductName}.
+下面提供有关 Kickstart 的基本信息以及如何使用它来自动安装 {ProductName}。
 
 
 include::ROOT:partial$installer/con_what-are-kickstart-installations.adoc[leveloffset=+1]

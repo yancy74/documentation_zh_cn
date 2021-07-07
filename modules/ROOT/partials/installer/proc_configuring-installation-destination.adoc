@@ -1,112 +1,112 @@
 [id="configuring-system-settings_{context}"]
-= Configuring installation destination
+= 配置安装目的地
 
-Use the *Installation Destination* window to configure the storage options, for example, the disks that you want to use as the installation target for your {ProductName} installation. You must select at least one disk.
+使用 *安装目的地* 窗口配置存储选项，例如，要用作 {ProductName} 安装目标的磁盘。必须至少选择一个磁盘。
 
 [WARNING]
 ====
-Back up your data if you plan to use a disk that already contains data. For example, if you want to shrink an existing Microsoft Windows partition and install {ProductName} as a second system, or if you are upgrading a previous release of {ProductName}. Manipulating partitions always carries a risk. For example, if the process is interrupted or fails for any reason data on the disk can be lost.
+如果计划使用已包含数据的磁盘，请备份数据。例如，如果要缩小现有的 Microsoft Windows 分区并将 {ProductName} 安装为第二个系统，或者要升级 {ProductName} 的早期版本。操纵分区总是有风险的。例如，如果进程因任何原因中断或失败，磁盘上的数据可能会丢失。
 ====
 
 [IMPORTANT]
 ====
-.Special cases
+.特殊情况
 
-* Some BIOS types do not support booting from a RAID card. In these instances, the `/boot` partition must be created on a partition outside of the RAID array, such as on a separate hard drive. It is necessary to use an internal hard drive for partition creation with problematic RAID cards. A `/boot` partition is also necessary for software RAID setups.
-If you choose to partition your system automatically, you should manually edit your `/boot` partition.
+* 某些 BIOS 类型不支持从 RAID 卡引导。在这些情况下，必须在 RAID 阵列外部的分区上创建 `/boot` 分区，例如在单独的硬盘驱动器上。对于有问题的 RAID 卡，有必要使用内部硬盘驱动器创建分区。软件 RAID 设置还需要一个 `/boot` 分区。
+如果选择自动分区系统，则应手动编辑 `/boot` 分区。
 
-* To configure the {productname} boot loader to _chain load_ from a different boot loader, you must specify the boot drive manually by clicking the *Full disk summary and bootloader* link from the *Installation Destination* window.
+* 要将 {productname} 引导加载程序配置为从其他引导加载程序链式加载，必须通过单击 *安装目的地* 窗口中的 *完整磁盘摘要以及引导加载程序* 链接来手动指定引导驱动器。
 
-* When you install {productname} on a system with both multipath and non-multipath storage devices, the automatic partitioning layout in the installation program creates volume groups that contain a mix of multipath and non-multipath devices. This defeats the purpose of multipath storage. It is recommended that you select either multipath or non-multipath devices on the *Installation Destination* window. Alternatively, proceed to manual partitioning.
+* 在同时具有多路径和非多路径存储设备的系统上安装 {productname} 时，安装程序中的自动分区布局将创建包含多路径和非多路径设备的卷组。这就破坏了多路径存储的目的。建议您在 *安装目的地* 窗口中选择多路径或非多路径设备。或者，继续进行手动分区。
 
 ====
 
 
-.Prerequisite
+.前提
 
-The *Installation Summary* window is open.
+*安装信息摘要* 窗口已打开。
 
 [discrete]
-= Procedure
+= 步骤
 
-. From the *Installation Summary* window, click *Installation Destination*. The *Installation Destination* window opens.
+. 在 *安装信息摘要* 窗口中，单击 *安装目的地*。将打开 *安装目的地* 窗口。
 
-.. From the *Local Standard Disks* section, select the storage device that you require; a white check mark indicates your selection. Disks without a white check mark are not used during the installation process; they are ignored if you choose automatic partitioning, and they are not available in manual partitioning.
+.. 从 *本地标准磁盘* 部分，选择所需的存储设备；白色复选标记表示您的选择。安装过程中不使用没有白色复选标记的磁盘；如果选择自动分区，它们将被忽略，并且在手动分区中不可用。
 +
 [NOTE]
 ====
-All locally available storage devices (SATA, IDE and SCSI hard drives, USB flash and external disks) are displayed under *Local Standard Disks*. Any storage devices connected after the installation program has started are not detected. If you use a removable drive to install {ProductName}, your system is unusable if you remove the device.
+所有本地可用存储设备（SATA、IDE 和 SCSI 硬盘、USB 闪存和外部磁盘）都显示在本地标准磁盘下。未检测到安装程序启动后连接的任何存储设备。如果您将 {ProductName} 安装到可移动驱动器，则如果移除该设备，则系统将不可用。
 ====
 
-.. Optional: Click the *Refresh* link in the lower right-hand side of the window if you want to configure additional local storage devices to connect new hard drives. The *Rescan Disks* dialog box opens.
+.. 可选：如果要配置其他本地存储设备以连接新的硬盘驱动器，请单击窗口右下方的 *刷新* 链接。将打开 *重新扫描磁盘* 对话框。
 +
 [NOTE]
 ====
-All storage changes that you make during the installation are lost when you click *Rescan Disks*.
+当您单击 *重新扫描磁盘* 时，在安装过程中所做的所有存储更改都将丢失。
 ====
 +
-... Click *Rescan Disks* and wait until the scanning process completes.
+... 单击 *重新扫描磁盘*，然后等待扫描过程完成。
 
-... Click *OK* to return to the *Installation Destination* window. All detected disks including any new ones are displayed under the *Local Standard Disks* section.
+... 单击 *确定* 返回到 *安装目的地* 窗口。所有检测到的磁盘（包括任何新磁盘）都显示在 *本地标准磁盘* 部分下。
 
-. Optional: To add a specialized storage device, click *Add a disk...*.
+. 可选：要添加专用存储设备，请单击 *添加磁盘....*。
 +
-The *Storage Device Selection* window opens and lists all storage devices that the installation program has access to. For information about how to add a specialized disk, see xref:standard-install:assembly_graphical-installation.adoc#configuring-advanced-storage-options_storage-devices[Using advanced storage options].
+将打开 *存储设备选择* 窗口，并列出安装程序有权访问的所有存储设备。有关如何添加专用磁盘的信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-advanced-storage-options_storage-devices[使用高级存储选项]。
 
-. Optional: Under *Storage Configuration*, select the *Automatic* radio button.
+. 可选：在存储配置下，选择 *自动* 单选按钮。
 +
 [IMPORTANT]
 ====
-Automatic partitioning is the *recommended* method of partitioning your storage. You can also configure custom partitioning, for more details see xref:standard-install:assembly_graphical-installation.adoc#manual-partitioning_graphical-installation[Configuring manual partitioning]
+自动分区是推荐的存储分区方法。您还可以配置自定义分区，有关更多详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#manual-partitioning_graphical-installation[配置手动分区]。
 ====
 
-. Optional: To reclaim space from an existing partitioning layout, select the *I would like to make additional space available* check box. For example, if a disk you want to use already contains a different operating system and you want to make this system's partitions smaller to allow more room for {ProductName}.
+. 可选：要从现有分区布局中回收空间，请选中 *我想让额外空间可用* 复选框。例如，如果您要使用的磁盘已经包含其他操作系统，并且您希望使该系统的分区更小以为 {ProductName} 留出更多空间。
 
-. Optional: Select *Encrypt my data* to encrypt all partitions except the ones needed to boot the system (such as `/boot`) using _Linux Unified Key Setup_ (LUKS). Encrypting your hard drive is recommended.
+. 可选：选择 *加密我的数据* 以使用 Linux 统一密钥设置（LUKS）加密所有分区，但引导系统的分区（例如 `/boot`）除外。建议对硬盘驱动器进行加密。
 //TODO: link to some LUKS docs when available for details
 
-.. If you selected *Encrypt my data* the *Disk Encryption Passphrase* dialog box opens.
+.. 如果选择了 *加密我的数据*，将打开 *磁盘加密口令* 对话框。
 
-... Type your passphrase in the *Passphrase* and *Confirm* fields.
+... 在 *口令* 和 *确认* 字段中输入密码。
 //TODO: add a link to security doc talking about password strength and recommendations
 
-... Click *Save Passphrase* to complete disk encryption.
+... 单击 *保存密码* 以完成磁盘加密。
 +
 [WARNING]
 ====
-If you lose the LUKS passphrase, any encrypted partitions and their data is completely inaccessible. There is no way to recover a lost passphrase. However, if you perform a Kickstart installation, you can save encryption passphrases and create backup encryption passphrases during the installation. See the xref:advanced-install:index.adoc[Performing an advanced installation] document for information.
+如果丢失了 LUKS 口令，则任何加密分区及其数据都是完全不可访问的。无法恢复丢失的口令。但是，如果执行 Kickstart 安装，则可以在安装过程中保存加密口令并创建备份加密口令。有关信息，请参阅xref:advanced-install:index.adoc[高级安装]文档。
 ====
 
-. Optional: Click the *Full disk summary and bootloader* link in the lower left-hand side of the window to select which storage device contains the boot loader. For more information, see  xref:standard-install:assembly_graphical-installation.adoc#boot-loader-installation_configuring-system-settings[Configuring boot loader].
+. 可选：单击窗口左下方的 *完整磁盘摘要以及引导程序* 链接，选择包含引导加载程序的存储设备。有关更多信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#boot-loader-installation_configuring-system-settings[配置引导加载程序]。
 +
 [NOTE]
 ====
-In most cases it is sufficient to leave the boot loader in the default location. Some configurations, for example, systems that require chain loading from another boot loader require the boot drive to be specified manually.
+在大多数情况下，将引导加载程序保留在默认位置就足够了。某些配置，例如，需要从另一个引导加载程序进行链式加载的系统需要手动指定引导驱动器。
 ====
 
 
-. Click *Done*.
+. 单击 *完成*。
 
-.. If you selected *automatic partitioning* and *I would like to make additional space available*, or if there is not enough free space on your selected hard drives to install {ProductName}, the *Reclaim Disk Space* dialog box opens when you click *Done*, and lists all configured disk devices and all partitions on those devices. The dialog box displays information about how much space the system needs for a minimal installation and how much space you have reclaimed.
+.. 如果您选择了 *自动分区* 和 *我想让额外空间可用*，或者如果所选硬盘驱动器上没有足够的可用空间来安装 {ProductName}，则单击 *完成*时，将打开 *回收磁盘空间* 对话框，并列出所有已配置的磁盘设备，以及这些设备上的所有分区。该对话框显示有关最小安装所需系统空间以及已回收空间的信息。
 +
 [WARNING]
 ====
-If you *delete* a partition, all data on that partition is lost. If you want to preserve your data, use the *Shrink* option, not the *Delete* option.
+如果 *删除* 分区，则该分区上的所有数据都会丢失。如果要保留数据，请使用 *缩小* 选项，而不是 *删除* 选项。
 ====
 
-.. Review the displayed list of available storage devices. The *Reclaimable Space* column shows how much space can be reclaimed from each entry.
+.. 查看显示的可用存储设备列表。*可回收空间* 列显示每个条目可以回收的空间。
 
-.. To reclaim space, select a disk or partition, and click either the *Delete* button to delete that partition, or all partitions on a selected disk, or click *Shrink* to use free space on a partition while preserving the existing data.
+.. 要回收空间，请选择一个磁盘或分区，然后单击 *删除* 按钮删除该分区或所选磁盘上的所有分区，或者单击 *缩小* 以使用分区上的空闲空间，同时保留现有数据。
 +
 [NOTE]
 ====
-Alternatively, you can click *Delete all*, this deletes all existing partitions on all disks and makes this space available to {ProductName}. Existing data on all disks is lost.
+或者，您可以单击 *全部删除*，这将删除所有磁盘上的所有现有分区，并使此空间可供 {ProductName} 使用。所有现有磁盘上的数据都已丢失。
 ====
 
-.. Click *Reclaim space* to apply the changes and return to xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[The Installation Summary window].
+.. 单击 *回收空间* 应用更改并返回xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[安装信息摘要窗口]。
 
 
 [IMPORTANT]
 ====
-No disk changes are made until you click *Begin Installation* on the *Installation Summary* window. The *Reclaim Space* dialog only marks partitions for resizing or deletion; no  action is performed.
+在单击 *安装信息摘要* 窗口中的 *开始安装* 之前，不会对磁盘进行任何更改。*回收空间* 对话框仅标记要调整大小或删除的分区，不会执行任何操作。
 ====

@@ -1,17 +1,17 @@
 [id="resetting-module-streams_{context}"]
-= Resetting module streams
+= 重置模块流
 
-Resetting a module is an action that returns all of its streams to their initial state - neither enabled nor disabled. If the module has a default stream, that stream becomes active as a result of resetting the module.
+重置模块是将其所有流返回到其初始状态的操作 —— 既不启用也不禁用。如果模块有一个默认流，则该流将由于重置模块而变为激活流。
 
 
-.Procedure
+.步骤
 
-* Reset the module state:
+* 重置模块状态：
 +
 [subs="quotes"]
 ----
 # yum module reset __module-name__
 ----
 +
-All streams of the module are returned to the initial state. No installed content is removed.
+模块的所有流都返回到初始状态。未删除安装的内容。
 

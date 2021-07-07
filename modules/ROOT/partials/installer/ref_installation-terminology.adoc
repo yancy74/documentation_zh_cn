@@ -1,7 +1,6 @@
 [id="installation-terminology_{context}"]
-= Installation terminology
+= 安装术语
 
-This section describes {productname} installation terminology. Different terminology can be used for the same concepts, depending on its upstream or downstream origin.
+本部分介绍 {productname} 安装术语。相同的概念使用的术语可能不同，具体取决于上游或下游。
 
-*Anaconda*: The operating system installer used in Fedora, {productname}, and their derivatives. Anaconda is a set of Python modules and scripts with additional files like Gtk widgets (written in C), systemd units, and dracut libraries. Together, they form a tool that allows users to set parameters of the resulting (target) system.
-In this document, the term *installation program* refers to the installation aspect of *Anaconda*.
+*Anaconda*：用于 {productname} 的操作系统安装程序。Anaconda 是一组 Python 模块和脚本，以及其他文件，如 GTK 小部件（用 C 编写）、systemd 单元和 dracut 库。它们共同构成一个工具，允许用户设置最终（目标）系统的参数。在本文档中，术语 *安装程序* 指的是 *Anaconda* 的安装方面。

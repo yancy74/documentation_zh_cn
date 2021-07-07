@@ -1,74 +1,74 @@
 [id="editing-boot-options_{context}"]
-= Editing boot options
+= 编辑引导选项
 
 // TODO convert to assembly and modules
 
-This section contains information about the different ways that you can edit boot options from the boot menu. The boot menu opens after you boot the installation media.
+本部分包含使用不同方法从引导菜单编辑引导选项的相关信息。启动安装介质后，将打开引导菜单。
 
 [discrete]
-== Editing the boot: prompt in BIOS
+== 编辑 BIOS 中的 boot: 提示符
 
-When using the `boot:` prompt, the first option must always specify the installation program image file that you want to load. In most cases, you can specify the image using the keyword. You can specify additional options according to your requirements.
+使用 `boot:` 提示符时，第一个选项必须始终指定要加载的安装程序映像文件。在大多数情况下，可以使用关键字指定映像。您可以根据需要指定其他选项。
 
-.Prerequisites
+.前提
 
-* You have created bootable installation media (USB, CD or DVD).
-* You have booted the installation from the media, and the installation boot menu is open.
+* 您已经创建了可引导安装介质（USB、CD 或 DVD）。
+* 您已经从介质启动了安装，并且安装引导菜单已打开。
 
-.Procedure
+.步骤
 
-. With the boot menu open, press the *Esc* key on your keyboard.
+. 打开引导菜单后，按键盘上的 *Esc* 键。
 
-. The `boot:` prompt is now accessible.
+. 现在可以访问 `boot:` 提示符。
 
-. Press the *Tab* key on your keyboard to display the help commands.
+. 按键盘上的 *Tab* 键以显示帮助命令。
 
-. Press the *Enter* key on your keyboard to start the installation with your options. To return from the `boot:` prompt to the boot menu, restart the system and boot from the installation media again.
+. 按键盘上的 *Enter* 键，开始使用您的选项进行安装。要从 `boot:` 提示符返回引导菜单，重新启动系统，然后再次从安装介质引导。
 
 [NOTE]
 ====
-The `boot:` prompt also accepts `dracut` kernel options. A list of options is available in the `dracut.cmdline(7)` man page.
+`boot:` 提示符也接受 `dracut` 内核选项。`dracut.cmdline(7)` 手册页中提供了选项列表。
 ====
 
 
 [discrete]
-== Editing the > prompt
+== 编辑 > 提示符
 
-You can use the `>` prompt to edit predefined boot options. For example, select *Test this media and install {ProductName}{nbsp}{ProductNumber}* from the boot menu to display a full set of options.
+您可以使用 `>` 提示符编辑预定义的引导选项。例如，从引导菜单中选择 *Test this media and install {ProductName}{nbsp}{ProductNumber}* 以显示完整的选项集。
 
 [NOTE]
 ====
-This procedure is for BIOS-based AMD64 and Intel 64 systems.
+此过程适用于基于 BIOS 的 AMD64 和 Intel 64 系统。
 ====
 
-.Prerequisites
+.前提
 
-* You have created bootable installation media (USB, CD or DVD).
-* You have booted the installation from the media, and the installation boot menu is open.
+* 您已经创建了可引导安装介质（USB、CD 或 DVD）。
+* 您已经从介质启动了安装，并且安装引导菜单已打开。
 
-.Procedure
+.步骤
 
-. From the boot menu, select an option and press the *Tab* key on your keyboard. The `>` prompt is accessible and displays the available options.
+. 从引导菜单中，选择一个选项，然后按键盘上的 *Tab* 键。`>` 提示符出现并显示可用选项。
 
-. Append the options that you require to the `>` prompt.
+. 将所需的选项附加到 `>` 提示符。
 
-. Press the *Enter* key on your keyboard to start the installation.
+. 按键盘上的 *Enter* 键开始安装。
 
-. Press the *Esc* key on your keyboard to cancel editing and return to the boot menu.
+. 按键盘上的 *Esc* 键取消编辑并返回引导菜单。
 
 
 [discrete]
-== Editing the GRUB2 menu
+== 编辑 GRUB2 菜单
 
-The GRUB2 menu is available on UEFI-based AMD64, Intel 64, and 64-bit ARM systems.
+GRUB2 菜单在基于 UEFI 的 AMD64、Intel 64 和 64 位 ARM 系统上可用。
 
-.Prerequisites
+.前提
 
-* You have created bootable installation media (USB, CD or DVD).
-* You have booted the installation from the media, and the installation boot menu is open.
+* 您已经创建了可引导安装介质（USB、CD 或 DVD）。
+* 您已经从介质启动了安装，并且安装引导菜单已打开。
 
-.Procedure
+.步骤
 
-. From the boot menu window, select an option and press the *e* key on your keyboard.
+. 在引导菜单窗口中，选择一个选项并按键盘上的 *e* 键。
 
-. When you finish editing, press *F10* or *Ctrl+X* on your keyboard to start the installation using the specified options.
+. 完成编辑后，按键盘上的 *F10* 或 *Ctrl+X* 以使用指定的选项开始安装。

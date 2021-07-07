@@ -1,18 +1,18 @@
 [id='beginning-installation_{context}']
-= Beginning installation
+= 开始安装
 
-When the installation process has started, it is not possible to return to the *Installation Summary* window and change any settings. To change settings, you must wait for the installation process to finish, reboot your system, log in, and change your settings on the installed system.
+安装过程开始后，将无法返回 *安装信息摘要* 窗口并更改任何设置。要更改设置，您必须等待安装过程完成，重新启动系统，登录并更改已安装系统上的设置。
 
-.Prerequisites
-* You have completed all configuration steps in xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[The Installation Summary window].
-* The *Installation Summary* window is open.
+.前提
+* 您已完成xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[安装信息摘要]中的所有配置步骤。
+* 打开 *安装信息摘要* 窗口。
 
-.Procedure
-. From the *Installation Summary* window, click *Begin Installation*. The *Configuration* window opens and the installation process starts.
+.步骤
+. 在 *安装信息摘要* 窗口中，单击 *开始* 安装”。将打开 *配置* 窗口，并开始进行安装。
 +
-Two user setting options, *Root Password* (mandatory) and *User Creation* (optional) are available.
+有两个用户设置选项，*Root 密码*（必填）和 *用户创建*（可选）。
 
 [IMPORTANT]
 ====
-Before you finish the installation and reboot, either remove the media (CD, DVD, or a USB drive) used to start the installation, or verify that your system tries to boot from the hard drive before attempting removable media. Otherwise, your system starts the installation program again, instead of the installed system.
+在完成安装和重新启动之前，请取出用于启动安装的介质（CD、DVD 或 USB 驱动器），或者在尝试可移动介质之前验证系统是否尝试从硬盘启动。否则，您的系统将重新启动安装程序，而不是已安装的系统。
 ====

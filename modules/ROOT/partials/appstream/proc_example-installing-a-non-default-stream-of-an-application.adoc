@@ -1,15 +1,15 @@
 [id="example-installing-a-non-default-stream-of-an-application_{context}"]
-= Example: Installing a non-default stream of an application
+= 示例：安装应用程序的非默认流
 
 // User Story: As a sysadmin, I need to know what is available through the AppStream so I can determine what RPMs, SCLs, and modules to download and install.
 
-This example shows how to install an application from a non-default stream (version).
+本示例演示如何从非默认流（版本）安装应用程序。
  
-More specifically, this example shows how to install the [application]*PostgreSQL* server (package [package]*postgresql-server*) in version *9.6*, while the default stream provides version *10*.
+更具体地说，本示例显示了如何在 9.6 版本中安装 [application]*PostgreSQL* 服务器（软件包 [package]*postgresql-server*），而默认流为 10 版本。
 
-.Procedure
+.步骤
 
-. List modules that provide the [package]*postgresql-server* package to see what streams are available:
+. 列出提供 [package]*postgresql-server* 软件包的模块，以查看可用的流：
 +
 [subs="quotes",options="nowrap,role=white-space-pre"]
 ----
@@ -21,9 +21,9 @@ postgresql  9.6     client, default [d]  PostgreSQL server and client module
 Hint: [d]efault, [e]nabled, [x]disabled, [i]nstalled
 ----
 +
-The output shows that the *postgresql* module is available with streams *10* and *9.6*. The default stream is *10*.
+输出显示 *postgresql* 模块可用于的流为 *10* 和 *9.6*。默认流为 *10*。
 
-. Install the packages provided by the *postgresql* module in stream *9.6*:
+. 在 *9.6* 流中安装 *postgresql* 模块提供的包：
 +
 [subs="quotes"]
 ----
@@ -53,9 +53,9 @@ Is this ok [y/N]: **y**
 Complete!
 ----
 +
-Because the installation profile was not specified, the default profile *server* was used.
+由于未指定安装配置文件，因此使用了默认配置文件 *server*。
 
-. Verify the installed version of [application]*PostgreSQL*:
+. 验证已安装的 [application]*PostgreSQL* 版本：
 +
 ----
 $ postgres --version

@@ -1,67 +1,68 @@
 [id="network-boot-options_{context}"]
-= Network boot options
+= 网络引导选项
 
-This section contains information about commonly used network boot options.
+本部分包含有关常用网络引导选项的信息。
 
 [NOTE]
 ====
-Initial network initialization is handled by `dracut`. For a complete list, see the `dracut.cmdline(7)` man page.
+初始网络初始化由 `dracut` 处理。有关完整列表，请参阅  `dracut.cmdline(7)` 手册页。
 ====
+
 
 ip=::
-Use the `ip=` boot option to configure one or more network interfaces. To configure multiple interfaces, you can use the `ip` option multiple times, once for each interface; to do so, you must use the `rd.neednet=1` option, and you must specify a primary boot interface using the `bootdev` option. Alternatively, you can use the `ip` option once, and then use Kickstart to set up further interfaces. This option accepts several different formats. The following tables contain information about the most common options.
+使用 `ip=` 引导选项配置一个或多个网络接口。要配置多个接口，可以多次使用 `ip` 选项，每个接口一次；要执行此操作，必须使用 `rd.neednet=1` 选项，并且必须使用 `bootdev` 选项指定主引导接口。或者，您可以使用一次 `ip` 选项，然后使用 Kickstart 设置更多接口。此选项接受几种不同的格式。下表包含有关最常见选项的信息。
 +
 [NOTE]
 ====
-In the following tables:
+在下表中：
 
-* The `ip` parameter specifies the client IP address. You can specify IPv6 addresses in square brackets, for example, [2001:DB8::1].
-* The `gateway` parameter is the default gateway. IPv6 addresses are also accepted.
-* The `netmask` parameter is the netmask to be used. This can be either a full netmask (for example, 255.255.255.0) or a prefix (for example, 64).
-* The `hostname` parameter is the host name of the client system. This parameter is optional.
+* `ip` 参数指定客户端IP地址。您可以在方括号中指定 IPv6 地址，例如 [2001:DB8::1]。
+* `gateway` 参数是默认网关。也接受IPv6地址。
+* `netmask` 参数是要使用的网络掩码。它可以是完整的网络掩码（例如255.255.255.0）或前缀（例如 64）。
+* `hostname` 参数是客户端系统的主机名。此参数是可选的。
 ====
 +
-.Network interface configuration boot option formats
+.网络接口配置引导选项格式
 [options="header"]
 |===
-| Configuration method  | Boot option format
-| Automatic configuration of any interface   | `ip=method`
-| Automatic configuration of a specific interface   | `ip=interface:method`
-| Static configuration  | `ip=ip::gateway:netmask:hostname:interface:none`
-| Automatic configuration of a specific interface with an override | `ip=ip::gateway:netmask:hostname:interface:method:mtu`
+| 配置方法  | 引导选项格式
+| 自动配置任何接口   | `ip=method`
+| 自动配置特定接口   | `ip=interface:method`
+| 静态配置  | `ip=ip::gateway:netmask:hostname:interface:none`
+| 使用覆盖自动配置特定接口 | `ip=ip::gateway:netmask:hostname:interface:method:mtu`
 |===
 +
 [NOTE]
 ====
-The method `automatic configuration of a specific interface with an override` brings up the interface using the specified method of automatic configuration, such as `dhcp`, but overrides the automatically-obtained IP address, gateway, netmask, host name or other specified parameters. All parameters are optional, so specify only the parameters that you want to override.
+使用覆盖自动配置特定接口的 method 使用自动配置的特定 method（例如dhcp）调出接口，但是覆盖自动获取的 IP 地址、网关、网络掩码、主机名或其他指定参数。所有参数都是可选的，因此仅指定要覆盖的参数。
 ====
 +
-The `method` parameter can be any of the following:
+`method` 参数可以是以下任意一个：
 +
-.Automatic interface configuration methods
+.自动接口配置方法
 [options="header"]
 |===
-| Automatic configuration method  | Value
+| 自动配置 method  | 值
 | DHCP    | `dhcp`
 | IPv6 DHCP    | `dhcp6`
-| IPv6 automatic configuration  | `auto6`
-| iSCSI Boot Firmware Table (iBFT)  | `ibft`
+| IPv6 自动配置  | `auto6`
+| iSCSI 引导固件表 (iBFT)  | `ibft`
 |===
 +
 [NOTE]
 ====
-* If you use a boot option that requires network access, such as `inst.ks=http://host:/path`, without specifying the ip option, the installation program uses `ip=dhcp`.
-* To connect to an iSCSI target automatically, you must activate a network device for accessing the target. The recommended way to activate a network is to use the `ip=ibft` boot option.
+* 如果您使用需要网络访问权限的引导选项（例如 `inst.ks=http://host:/path`），而未指定 ip 选项，则安装程序将使用 `ip=dhcp`。
+* 要自动连接到 iSCSI 目标，必须激活网络设备才能访问该目标。建议的激活网络的方法是使用 `ip=ibft` 引导选项。
 ====
 
 nameserver=::
-The `nameserver=` option specifies the address of the name server. You can use this option multiple times.
+`nameserver=` 选项指定名称服务器的地址。您可以多次使用此选项。
 
 bootdev=::
-The `bootdev=` option specifies the boot interface. This option is mandatory if you use more than one `ip` option.
+`bootdev=` 选项指定引导接口。如果您使用多个 ip 选项，则此选项是必需的。
 
 ifname=::
-The `ifname=` options assigns an interface name to a network device with a given MAC address. You can use this option multiple times. The syntax is `ifname=interface:MAC`. For example:
+`ifname=` 选项将接口名称分配给具有给定 MAC 地址的网络设备。您可以多次使用此选项。语法为 `ifname=interface:MAC`。例如：
 +
 [subs="macros"]
 ----
@@ -70,17 +71,12 @@ ifname=eth0:01:23:45:67:89:ab
 +
 [NOTE]
 ====
-The `ifname=` option is the only supported way to set custom network interface names during installation.
+`ifname=` 选项是在安装过程中设置自定义网络接口名称的唯一受支持的方法。
 ====
 
 inst.dhcpclass=::
-The `inst.dhcpclass=` option specifies the DHCP vendor class identifier. The `dhcpd` service sees this value as `vendor-class-identifier`. The default value is `anaconda-$(uname -srm)`.
+`inst.dhcpclass=` 选项指定 DHCP 供应商类别标识符。`dhcpd` 服务将该值视为供应商类别标识符。默认值为 `anaconda-$(uname -srm)`。
 
 inst.waitfornet=::
-Using the `inst.waitfornet=SECONDS` boot option causes the installation system to wait for network connectivity before installation. The value given in the `SECONDS` argument specifies the maximum amount of time to wait for network connectivity before timing out and continuing the installation process even if network connectivity is not present.
+使用 `inst.waitfornet=SECONDS` 引导选项会使安装系统在安装前等待网络连接。`SECONDS` 参数中给出的值指定在超时并继续安装过程(即使网络连接不存在)之前等待网络连接的最长时间。
 
-
-[discrete]
-== Additional resources
-
-* For more information about networking, see the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/index/[_Configuring and managing networking in RHEL 8_] document.

@@ -1,32 +1,32 @@
 [id="starting-a-kickstart-installation-manually_{context}"]
-= Starting a Kickstart installation manually
+= 手动启动 Kickstart 安装
 
-This section explains how to start a Kickstart installation manually, which means some user interaction is required (adding boot options at the `boot:` prompt). Use the boot option [option]`inst.ks=__location__` when booting the installation system, replacing location with the location of your Kickstart file. The exact way to specify the boot option depends on your system's architecture.
+本部分介绍如何手动启动 Kickstart 安装，这意味着需要一些用户交互(在 `boot:` 提示符下添加引导选项)。在引导安装系统时使用引导选项 [option]`inst.ks=__location__` ，将 location 替换为 Kickstart 文件的位置。指定引导选项的确切方式取决于系统的架构。
 // TODO XREF !!!!.
 
 
-.Prerequisites
+.前提
 
-* You have a Kickstart file ready in a location accessible from the system to be installated
+* 您已在要安装的系统中可访问的位置准备好 Kickstart 文件。
 
 
-.Procedure
+.步骤
 
-. Boot the system using a local media (a CD, DVD, or a USB flash drive).
+. 使用本地介质(CD、DVD 或 USB 闪存驱动器)引导系统。
 +
 // For architecture-specific instructions, see TODO XREFS !!!!
 
-. At the boot prompt, specify the required boot options.
+. 在 boot 提示符下，指定所需的引导选项。
 +
 ====
-.. If the Kickstart file or a required repository is in a network location, you may need to configure the network using the [option]`ip=` option. The installer tries to configure all network devices using the DHCP protocol by default without this option.
-.. Add the [option]`inst.ks=` boot option and the location of the Kickstart file.
-.. In order to access a software source from which necessary packages will be installed, you may need to add the [option]`inst.repo=` option. If you do not specify this option, you must specify the installation source in the Kickstart file.
+.. 如果 Kickstart 文件或所需的仓库位于网络位置，则可能需要使用 [option]`ip=` 选项配置网络。默认情况下，安装程序在不使用此选项的情况下尝试使用 DHCP 协议配置所有网络设备。
+.. 添加 [option]`inst.ks=` 引导选项和 Kickstart 文件的位置。
+.. 为了访问安装所需必要软件包的软件源，您可能需要添加 [option]`inst.repo=` 选项。如果不指定此选项，则必须在 Kickstart 文件中指定安装源。
 ====
 
-. Start the installation by confirming your added boot options.
+. 通过确认添加的引导选项启动安装。
 +
-The installation begins now, using the options specified in the Kickstart file. If the Kickstart file is valid and contains all required commands, the installation is completely automated from this point forward.
+安装现在开始，使用 Kickstart 文件中指定的选项。如果 Kickstart 文件有效并且包含所有必需的命令，则安装从此完全自动化。
 
 ////
 .Additional resources

@@ -1,25 +1,25 @@
 [id="searching-for-package_{context}"]
-= Searching for a package
+= 搜索包
 
 // User Story: As a sysadmin, I need to know what is available through the AppStream so I can determine what RPMs, SCLs, and modules to download and install.
 
 
-This section describes steps needed for finding a package providing a particular application or other content.
+本部分介绍查找提供特定应用程序或其他内容的包所需的步骤。
 
-.Prerequisites
+.前提
 
-* Name of the desired application or content must be known
+* 必须知道所需应用程序或内容的名称
 
-.Procedure
+.步骤
 
-. Search for a package with a text string, such as application name:
+. 搜索包含文本字符串的包，如应用程序名称：
 +
 [subs="quotes"]
 ----
 $ yum search _"text string"_
 ----
 
-. View details about a package:
+. 查看关于包的详细信息：
 +
 [subs="quotes"]
 ----

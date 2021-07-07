@@ -1,19 +1,19 @@
 [id="module-profiles_{context}"]
-= Module profiles
+= 模块配置文件
 
-A _profile_ is a list of recommended packages to be installed together for a particular use case such as for a server, client, development, minimal install, or other. These package lists can contain packages outside the module stream, usually from the BaseOS repository or the dependencies of the stream.
+配置文件是针对特定用例(如服务器、客户端、开发、最小安装或其他)一起安装的推荐软件包的列表。这些包列表可以包含模块流之外的包，通常来自 BaseOS 仓库或流的依赖项。
 
 // At the same time, profiles represent also a recommendation made by the application packagers and experts. <- Originally asked for by salmy the PM
 
-Installing packages by using a profile is a one-time action provided for the user’s convenience. It does not prevent installing or uninstalling any of the packages provided by the module. It is also possible to install packages by using multiple profiles of the same module stream without any further preparatory steps.
+使用配置文件安装包是为了方便用户而提供的一次性操作。它不会阻止安装或卸载模块提供的任何软件包。还可以通过使用同一模块流的多个配置文件来安装软件包，而无需任何其他操作。
 
-Each module stream can have any number of profiles, including none. For any given module stream, one of its profiles can be marked as _default_ and is then used for profile installation actions when no other profile is explicitly specified. However, existence of a default profile for a module stream is not required.
+每个模块流可以有任意数量的配置文件，包括无配置文件。对于任何给定的模块流，它的一个配置文件可以标记为默认，然后在没有显式指定其他配置文件时用于安装操作。但是，模块流不需要默认的配置文件。
 
-.*httpd* module profiles
+.*httpd* 模块配置文件
 ====
-The *httpd* module, which provides the [application]*Apache* web server, offers the following profiles for installation:
+提供 [application]*Apache* 服务器的 *httpd* 模块提供以下用于安装的配置文件：
 
-* `common` - a hardened production-ready deployment, the default profile
-* `devel` - the packages necessary for making modifications to `httpd`
-* `minimal` - the smallest set of packages that will provide a running webserver
+* `common` —— 强化的生产就绪部署，默认配置文件。
+* `devel` —— 修改 `httpd` 所需的包
+* `minimal` —— 将提供运行 Web 服务器的最小软件包集
 ====

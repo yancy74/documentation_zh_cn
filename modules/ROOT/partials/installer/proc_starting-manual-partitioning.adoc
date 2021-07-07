@@ -1,49 +1,49 @@
 [id="starting-manual-partitioning_{context}"]
-= Starting manual partitioning
+= 启动手动分区
 
-.Prerequisites
+.前提
 
-* The *Installation Summary* screen is currently displayed.
-* All disks are available to the installation program.
+* 当前显示 *安装信息摘要* 界面。
+* 所有磁盘都可用于安装程序。
 
-.Procedure
+.步骤
 
-. Select disks for installation:
+. 选择用于安装的磁盘：
 
-.. Click *Installation Destination* to open the *Installation Destination* window.
+.. 单击 *安装目的地* 以打开 *安装目的地* 窗口。
 
-.. Select the disks that you require for installation by clicking the corresponding icon. A selected disk has a check-mark displayed on it.
+.. 通过单击相应的图标选择安装所需的磁盘。选定的磁盘上带有选中标记。
 
-.. Under `Storage Configuration`, select the `Custom` radio-button.
+.. 在 `存储配置` 下，选择 `自定义` 单选按钮。
 
-.. Optional: To enable storage encryption with LUKS, select the `Encrypt my data` check box.
+.. 可选：要启用 LUK存储加密，请选中 `加密我的数据` 复选框。
 
-.. Click *Done*.
+.. 单击 *完成*。
 
 
-. If you selected to encrypt the storage, a dialog box for entering a disk encryption passphrase opens. Type in the LUKS passphrase:
+. 如果选择对存储进行加密，将打开一个用于输入磁盘加密口令的对话框。输入 LUKS 口令：
 
-.. Enter the passphrase in the two text fields. To switch keyboard layout, use the keyboard icon.
+.. 在两个文本字段中输入口令。要切换键盘布局，请使用键盘图标。
 +
-WARNING: In the dialog box for entering the passphrase, you cannot change the keyboard layout. Select the English keyboard layout to enter the passphrase in the installation program.
+WARNING: 在用于输入密码的对话框中，您无法更改键盘布局。选择英语键盘布局以在安装程序中输入密码。
 
-.. Click *Save Passphrase*. The *Manual Partitioning* window opens.
+.. 单击 *保存口令*。将打开 *手动分区* 窗口。
 
-. Deleted Mount points are listed in the left-hand pane. The mount points are organized by detected operating system installations. As a result, some file systems may be displayed multiple times if a partition is shared among several installations.
+. 已删除的挂载点列在左侧窗格中。挂载点由检测到的操作系统安装组织。因此，如果在多个安装之间共享一个分区，则某些文件系统可能会显示多次。
 
-.. Select the mount points in the left pane; the options that can be customized are displayed in the right pane.
+.. 在左窗格中选择挂载点；可自定义的选项显示在右窗格中。
 +
 [NOTE]
 ====
-* If your system contains existing file systems, ensure that enough space is available for the installation. To remove any partitions, select them in the list and click the *-* button.
+* 如果您的系统包含现有文件系统，请确保有足够的空间用于安装。要删除任何分区，请在列表中选择它们，然后单击 *-* 按钮。
 +
-The dialog has a check box that you can use to remove all other partitions used by the system to which the deleted partition belongs.
+该对话框有一个复选框，您可以使用该复选框删除被删除分区所属的系统使用的所有其他分区。
 
-* If there are no existing partitions and you want to create the recommended set of partitions as a starting point, select your preferred partitioning scheme from the left pane (default for {productname} is LVM) and click the [GUI]`Click here to create them automatically` link.
+* 如果没有现有分区，并且您要创建推荐的一组分区作为起点，请从左窗格中选择首选的分区方案（{productname} 默认是 LVM），然后单击 [GUI]`单击此处自动创建它们` 链接。
 +
-A `/boot` partition, a `/` (root) volume, and a `swap` volume proportionate to the size of the available storage are created and listed in the left pane. These are the recommended file systems for a typical installation, but you can add additional file systems and mount points.
+将创建与可用存储大小成比例的 `/boot`、`/` （root）卷和交换卷，并在左窗格中列出。这些是典型安装的推荐文件系统，但您可以添加其他文件系统和挂载点。
 ====
 
-.. Click *Done* to confirm any changes and return to the *Installation Summary* window.
+.. 单击 *完成* 以确认所有更改，并返回到 *安装摘信息要* 窗口。
 
-Continue with xref:assembly_graphical-installation.adoc#adding-a-mount-point_manual-partitioning[adding mount points], xref:assembly_graphical-installation.adoc#configuring-a-mount-point-file-system_manual-partitioning[configuring the individual mount points], and xref:assembly_graphical-installation.adoc#customizing-a-partition-or-volume_manual-partitioning[configuring the underlying partitions or volumes].
+继续xref:assembly_graphical-installation.adoc#adding-a-mount-point_manual-partitioning[添加挂载点]、xref:assembly_graphical-installation.adoc#configuring-a-mount-point-file-system_manual-partitioning[配置各个挂载点] 和 xref:assembly_graphical-installation.adoc#customizing-a-partition-or-volume_manual-partitioning[配置基础分区或卷]。

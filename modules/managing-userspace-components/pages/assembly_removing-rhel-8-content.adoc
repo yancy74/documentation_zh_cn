@@ -3,18 +3,18 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-removing-rhel-8-content: {context}
 
 [id="removing-rhel-8-content_{context}"]
-= Removing content
+= 删除内容
 
 :context: removing-rhel-8-content
 
 // ustory: As a system administrator, I want to remove content I have installed on my system so that it is no longer present.
 
-The following sections describe how to remove content in {rel8}:
+以下各部分介绍如何删除 {rel8} 中的内容：
 
-* xref:assembly_removing-rhel-8-content.adoc#removing-installed-packages_{context}[Removing installed packages] describes removing a package.
-* xref:assembly_removing-rhel-8-content.adoc#removing-installed-modules_{context}[Removing installed modules] describes removing content installed from a module stream.
-* xref:assembly_removing-rhel-8-content.adoc#resetting-module-streams_{context}[Resetting module streams] describes resetting module streams to initial state.
-* xref:assembly_removing-rhel-8-content.adoc#commands-for-removing-content_{context}[Commands for removing content] summarizes the commands for removing content.
+* xref:assembly_removing-rhel-8-content.adoc#removing-installed-packages_{context}[删除已安装的软件包] 描述如何删除软件包。
+* xref:assembly_removing-rhel-8-content.adoc#removing-installed-modules_{context}[删除已安装的模块] 描述从模块流中删除已安装的内容。
+* xref:assembly_removing-rhel-8-content.adoc#resetting-module-streams_{context}[重置模块流] 描述将模块流重置为初始状态。
+* xref:assembly_removing-rhel-8-content.adoc#commands-for-removing-content_{context}[删除内容的命令] 概述了用于删除内容的命令。
 
 
 include::ROOT:partial$appstream/proc_removing-installed-packages.adoc[leveloffset=+1]

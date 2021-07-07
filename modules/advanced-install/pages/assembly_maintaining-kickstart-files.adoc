@@ -3,12 +3,12 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-maintaining-kickstart-files: {context}
 
 [id="maintaining-kickstart-files_{context}"]
-= Maintaining Kickstart files
+= 维护 Kickstart 文件
 
 :context: maintaining-kickstart-files
 
 
-You can run automated checks on Kickstart files. Typically, you will want to verify that a new or problematic Kickstart file is valid.
+您可以对 Kickstart 文件运行自动检查。通常，您需要验证新的或有问题的 Kickstart 文件是否有效。
 
 ////
 You can run automated checks on Kickstart files. Typically, you will want to:

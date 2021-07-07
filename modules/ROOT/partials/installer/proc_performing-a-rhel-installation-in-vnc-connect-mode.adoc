@@ -21,43 +21,43 @@
 // Start the title with a verb, such as Creating or Create. See also
 // _Wording of headings_ in _The IBM Style Guide_.
 [id="performing-a-rhel-installation-in-vnc-connect-mode_{context}"]
-= Performing a remote installation in VNC Connect mode
+= 在 VNC 连接模式下执行远程安装
 
-Use this procedure to perform a remote {rel8} installation in VNC Connect mode. In Connect mode, the target system that is being installed with {ProductName} initiates a connect to the VNC viewer that is installed on another system. In this procedure, the system with the VNC viewer is called the *remote* system.
+使用以下步骤在 VNC 连接模式下执行远程 {rel8} 安装。在连接模式下，正在安装 {ProductName} 的目标系统会启动与在另一个系统上安装的 VNC 查看器的连接。在此步骤中，具有 VNC 查看器的系统称为远程系统。
 
 [NOTE]
 ====
-This procedure uses *TigerVNC* as the VNC viewer. Specific instructions for other viewers might differ, but the general principles apply.
+以下步骤使用 *TigerVNC* 作为 VNC 查看器。针对其他查看器的具体命令可能有所不同，但一般原则适用。
 ====
 
 [discrete]
-== Prerequisites
+== 前提
 
-* As root, you have installed a VNC viewer on a remote system, for example:
+* 以 root 身份在远程系统上安装了 VNC 查看器，例如：
 +
 ----
 # yum install tigervnc
 ----
 +
-* You have set up a network boot server to start the installation on the target system. For more information, see xref:advanced-install:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE].
+* 您已经设置了一个网络引导服务器，以便在目标系统上启动安装。有关详细信息，请参阅xref:advanced-install:assembly_preparing-for-a-network-install.adoc[使用 PXE 从网络准备安装]。
 
-* You have configured the target system to use the boot options for a VNC Connect installation. For more information, see *add link to updated boot options when they are ready*.
+* 您已将目标系统配置为使用 VNC 连接安装的引导选项。有关详细信息，参见 *在更新的启动选项准备就绪时向其添加链接*。
 
-* You have verified that the remote system with the VNC viewer is configured to accept an incoming connection on the required port. Verification is dependent on your network and system configuration. For more information, see the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/index[Security hardening in RHEL 8] and https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/index/[Securing networks in RHEL 8] documents.
+* 您已经验证具有 VNC 查看器的远程系统是否配置为接受所需端口上的传入连接。验证取决于您的网络和系统配置。
 
 
 [discrete]
-== Procedure
+== 步骤
 
-. Start the VNC viewer on the remote system in _listening mode_ by running the following command:
+. 通过运行以下命令以 _监听模式_ 启动远程系统上的 VNC 查看器：
 +
 ----
 $ vncviewer -listen PORT
 ----
 +
-. Replace PORT with the port number used for the connection.
+. 将 PORT 替换为用于连接的端口号。
 
-. The terminal displays a message indicating that it is waiting for an incoming connection from the target system.
+. 终端显示一条消息，表明其正在等待来自目标系统的传入连接。
 
 +
 ----
@@ -71,20 +71,20 @@ Thu Jun 27 11:30:57 2019
 ----
 +
 
-. Boot the target system from the network.
+. 从网络引导目标系统。
 
-. From the {ProductName} boot menu on the target system, press the `Tab` key on your keyboard to edit the boot options.
+. 在目标系统的 {ProductName} 引导菜单中，按键盘上的 `Tab` 键编辑引导选项。
 
-. Append the `inst.vnc inst.vncconnect=HOST:PORT` option to the end of the command line.
+. 将 `inst.vnc inst.vncconnect=HOST:PORT` 选项附加到命令行的末尾。
 
-. Replace _HOST_ with the IP address of the remote system that is running the listening VNC viewer, and _PORT_ with the port number that the VNC viewer is listening on.
+. 将 _HOST_ 替换为运行监听 VNC 查看器的远程系统的 IP 地址，将 _PORT_ 替换为 VNC 查看器正在监听的端口号。
 
-. Press *Enter* to start the installation. The system initializes the installation program and starts the necessary services. When the initialization process is finished, the installation program attempts to connect to the IP address and port provided.
+. 按 *Enter* 键开始安装。系统初始化安装程序并启动必要的服务。初始化过程完成后，安装程序会尝试连接到提供的 IP 地址和端口。
 
-. When the connection is successful, a new window opens with the VNC connection established, displaying the {rel8} installation menu. From this window, you can install {rel8} on the target system using the graphical user interface.
+. 连接成功后，将打开一个新窗口，其中已建立 VNC 连接，并显示 {rel8} 安装菜单。在此窗口中，您可以使用图形用户界面在目标系统上安装 {rel8}。 
 
 
 [discrete]
-== Additional resources
+== 其他资源
 
-* For more information on how to perform a {rel8} installation using the graphical user interface, see the xref:standard-install:assembly_graphical-installation.adoc[Installing using the Graphical User Interface] section in the _Performing a standard installation_ document.
+* 有关如何使用图形用户界面执行 {rel8} 安装的更多信息，请参阅 _标准安装_ 文档中的xref:standard-install:assembly_graphical-installation.adoc[使用图形用户界面安装]部分。

@@ -1,5 +1,5 @@
 [id="creating-a-kickstart-file-with-the-kickstart-configuration-tool_{context}"]
-= Creating a Kickstart file with the Kickstart configuration tool
+= 使用 Kickstart 配置工具创建 Kickstart 文件
 
 Users with a {rh} Customer Portal account can use the Kickstart Generator tool in the Customer Portal Labs to generate Kickstart files online. This tool will walk you through the basic configuration and enables you to download the resulting Kickstart file.
 

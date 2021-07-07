@@ -1,36 +1,36 @@
 [id="making-a-kickstart-file-available-on-a-local-volume_{context}"]
-= Making a Kickstart file available on a local volume
+= 使 Kickstart 文件在本地卷上可用
 
-This procedure describes how to store the Kickstart script file on a volume on the system to be installed. This method enables you to bypass the need for another system.
-
-
-.Prerequisites
-
-* You must have a drive that can be moved to the machine to be installed, such as a USB stick.
-* The drive must contain a partition that can be read by the installation program. The supported types are `ext2`, `ext3`, `ext4`, `xfs`, and `fat`.
-* The drive must be already connected to the system and its volumes mounted.
+以下步骤描述了如何将 Kickstart 脚本文件存储在要安装的系统的卷上。您使用该方法可以绕过对另一个系统的需求。
 
 
-.Procedure
+.前提
 
-. List volume information and note the UUID of the volume to which you want to copy the Kickstart file.
+* 您必须有一个可以移动到要安装的机器上的驱动器，如 U 盘。
+* 驱动器必须包含安装程序可以读取的分区。支持的类型有 `ext2`、 `ext3`、 `ext4`、 `xfs` 和 `fat`。
+* 驱动器必须已连接到系统并已挂载其卷。
+
+
+.步骤
+
+. 列出卷信息，并记下要将 Kickstart 文件复制到的卷的 UUID。
 +
 ----
 # lsblk -l -p -o name,rm,ro,hotplug,size,type,mountpoint,uuid
 ----
 
-. Navigate to the file system on the volume.
+. 导航到卷上的文件系统。
 
-. Copy the Kickstart file to this file system.
+. 将 Kickstart 文件复制到此文件系统。
 
-. Make a note of the string to use later with the [option]`inst.ks=` option. This string is in the form `hd:UUID=__volume-UUID__:__path/to/kickstart-file.cfg__`. Note that the path is relative to the file system root, not to the `/` root of file system hierarchy. Replace __volume-UUID__ with the UUID you noted earlier.
+. 记下该字符串，以便稍后与 [option]`inst.ks=` 选项一起使用。此字符串的形式为 `hd:UUID=__volume-UUID__:__path/to/kickstart-file.cfg__`。请注意，该路径是相对于文件系统 root 目录的，而不是相对于文件系统层次结构的 `/` root 目录的。使用前面记下的 UUID 替换 __volume-UUID__ 。
 
-. Unmount all drive volumes:
+. 卸载所有驱动器卷：
 +
 [subs="quotes"]
 ----
 # umount _/dev/xyz_ ...
 ----
 +
-Add all the volumes to the command, separated by spaces.
+将所有卷添加到命令中，用空格分隔。
 

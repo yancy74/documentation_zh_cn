@@ -1,24 +1,24 @@
 [id='configuring-kdump_{context}']
-= Configuring Kdump
+= 配置 Kdump
 
-[application]*Kdump* is a kernel crash-dumping mechanism. In the event of a system crash, *Kdump* captures the contents of the system memory at the moment of failure. This captured memory can be analyzed to find the cause of the crash. If [application]*Kdump* is enabled, it must have a small portion of the system's memory (RAM) reserved to itself. This reserved memory is not accessible to the main kernel.
+[application]*Kdump* 是一种内核崩溃转储机制。在系统崩溃的情况下，[application]*Kdump* 会在故障时刻捕获系统内存的内容。对捕获的内存进行分析以找出崩溃的原因。如果启用了 [application]*Kdump*，它必须为自己保留一小部分系统内存（RAM）。主内核无法访问此保留内存。
 
 [discrete]
-= Procedure
+= 步骤
 
-. From the *Installation Summary* window, click *Kdump*. The *Kdump* window opens.
+. 在*安装信息摘要* 窗口中，单击 *Kdump*。将打开 *Kdump* 窗口。
 
-. Select the *Enable kdump* check box.
+. 选中 *启用 kdump* 复选框。
 
-. Select either the *Automatic* or *Manual* memory reservation setting.
+. 选择 *自动 *或 *手动* 保留内存设置。
 
-.. If you select *Manual*, enter the amount of memory (in megabytes) that you want to reserve in the *Memory to be reserved* field using the *+* and *-* buttons. The *Usable System Memory* readout below the reservation input field shows how much memory is accessible to your main system after reserving the amount of RAM that you select.
+.. 如果选择 *手动*，请使用 *+* 和 *-* 按钮在 *要保留的内存* 字段中输入要保留的内存量(以 MB 为单位)。预留输入字段下方的可用系统内存显示在预留您选择的 RAM 后，您的主系统可以访问的内存量。
 
-. Click *Done* to apply the settings and return to xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[The Installation Summary window].
+. 单击 *完成* 以应用设置并返回到xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[安装信息摘要窗口]。
 
 [NOTE]
 ====
-The amount of memory that you reserve is determined by your system architecture (AMD64 and Intel{nbsp}64 have different requirements than IBM Power) as well as the total amount of system memory. In most cases, automatic reservation is satisfactory.
+保留的内存量由系统体架构以及系统内存总量决定。在大多数情况下，自动保留就足以令人满意。
 ====
 
 //*TO DO: If you insist on manual settings, see the *LINK* for guidelines. This document also contains more in-depth information about how [application]*Kdump* works, how to configure additional settings, and how to analyze a saved crash dump.*
@@ -27,7 +27,7 @@ The amount of memory that you reserve is determined by your system architecture 
 
 [IMPORTANT]
 ====
-Additional settings, such as the location where kernel crash dumps will be saved, can only be configured after the installation using either the [application]*system-config-kdump* graphical interface, or manually in the `/etc/kdump.conf` configuration file.
+其他设置，例如将保存内核崩溃转储的位置，只能在安装后使用 [application]*system-config-kdump* 图形界面或在 `/etc/kdump.conf` 配置文件中手动配置。
 ====
 
 //ToDO:QUESTION: HOW DOES THE CUSTOMER ACCESS system-config-kdump graphical interface??

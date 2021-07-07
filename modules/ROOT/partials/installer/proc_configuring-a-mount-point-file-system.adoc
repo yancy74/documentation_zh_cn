@@ -1,30 +1,30 @@
 [id='configuring-a-mount-point-file-system_{context}']
-= Configuring a mount point file system
+= 配置挂载点文件系统
 
-This procedure describes how to set the partitioning scheme for each mount point that was created manually. The available options are `Standard Partition`, `LVM`, and `LVM Thin Provisioning`.
+此以下步骤描述了如何为手动创建的每个安装点设置分区方案。可用选项包括 `标准分区`、 `LVM` 和 `LVM 精简配置`。
 
 [NOTE]
 ====
-* Btfrs support has been removed in {ProductName} {ProductNumber}.
-* The `/boot` partition is always located on a standard partition, regardless of the value selected.
+* {ProductName} {ProductNumber} 中已删除了对 Btrfs 的支持。
+* `/boot` 分区始终位于标准分区上，而不管选择的值如何。
 ====
 
-.Procedure
+.步骤
 
-. To change the devices that a single non-LVM mount point should be located on, select the required mount point from the left-hand pane.
+. 要更改单个非 LVM 挂载点应位于的设备，请从左侧窗格中选择所需的挂载点。
 
-. Under the *Device(s)* heading, click *Modify...*. The *Configure Mount Point* dialog opens.
+. 在 *设备* 标题下，单击 *修改...*，将打开 *配置挂载点* 对话框。
 
-. Select one or more devices and click *Select* to confirm your selection and return to the *Manual Partitioning* window.
+. 选择一个或多个设备，然后单击 *选择* 以确认您的选择并返回到 *手动分区* 窗口。
 
-. Click *Update Settings* to apply the changes.
+. 单击 *更新设置* 应用更改。
 +
 [NOTE]
 ====
-Click the *Rescan* button (circular arrow button) to refresh all local disks and partitions; this is only required after performing advanced partition configuration outside the installation program. Clicking the *Rescan Disks* button resets all configuration changes made in the installation program.
+单击 *重新扫描* 按钮（圆形箭头按钮）刷新所有本地磁盘和分区；只有在安装程序外部执行高级分区配置之后，才需要这样做。单击 *重新扫描磁盘* 按钮可重置安装程序中所做的所有配置更改。
 ====
 
-. In the lower left-hand side of the *Manual Partitioning* window, click the *storage device selected* link to open the *Selected Disks* dialog and review disk information.
+. 在 *手动分区* 窗口的左下角，单击 *选定的存储设备* 链接以打开 *选定的磁盘* 对话框，并查看磁盘信息。
 
 +
 // At the bottom of the screen, a link states how many storage devices have been selected in `Installation Destination` (see *sect-disk-partitioning-setup-x86*). Clicking on this link opens the `Selected Disks` dialog, where you review the information about the disks. See *sect-bootloader-x86* for more information.

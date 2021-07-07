@@ -4,10 +4,10 @@ include::partial$local-attributes.adoc[]
 
 [id="installer-troubleshooting_{context}"]
 [appendix]
-= Troubleshooting
+= 故障排除
 :context: installer-troubleshooting
 
-The following sections cover various troubleshooting information which may be helpful when diagnosing installation issues.
+以下部分介绍各种故障排除信息，这些信息在诊断安装问题时可能会有所帮助。
 
 include::advanced-install:page$con_consoles-logging-during-installation.adoc[leveloffset=+1]
 include::ROOT:partial$installer/con_saving-screenshots.adoc[leveloffset=+1]

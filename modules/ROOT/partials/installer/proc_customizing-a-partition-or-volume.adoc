@@ -1,69 +1,69 @@
 [id='customizing-a-partition-or-volume_{context}']
-= Customizing a partition or volume
+= 自定义分区或卷
 
-You can customize a partition or volume if you want to set specific settings.
+如果要设置特定设置，则可以自定义分区或卷。
 
 [IMPORTANT]
 ====
-If `/usr` or `/var` is partitioned separately from the rest of the root volume, the boot process becomes much more complex as these directories contain critical components. In some situations, such as when these directories are placed on an iSCSI drive or an FCoE location, the system is unable to boot, or hangs with a *Device is busy* error when powering off or rebooting.
+如果将 `/usr` 或 `/var` 与根卷的其余部分分开分区，则引导过程会变得很复杂，因为这些目录包含重要组件。在某些情况下，例如，当这些目录放置在 iSCSI 驱动器或 FCoE 位置时，系统无法启动，或者在断电或重新启动时挂起，同时出现 *设备繁忙* 错误。
 
-This limitation only applies to `/usr` or `/var`, not to directories below them. For example, a separate partition for `/var/www` works successfully.
+此限制仅适用于 `/usr` 或 `/var`，不适用于它们下面的目录。 例如，`/var/www` 的单独分区可以成功工作。
 ====
 
-.Procedure
+.步骤
 
-. From the left pane, select the mount point.
+. 从左窗格中，选择挂载点。
 +
 [[figu-disk-partitioning-customizing-x86]]
-.Customizing Partitions
-image::anaconda-diskpartitioning-ddmain-custom.png[Customizing partitions.]
+.自定义分区
+image::anaconda-diskpartitioning-ddmain-custom.png[自定义分区]
 
 
-. From the right-hand pane, you can customize the following options:
+. 从右侧窗格中，可以自定义以下选项：
 
-.. Enter the file system mount point into the *Mount Point* field. For example, if a file system is the root file system, enter `/`pass:attributes[{blank}]; enter `/boot` for the `/boot` file system, and so on. For a swap file system, do not set the mount point as setting the file system type to `swap` is sufficient.
+.. 在 *挂载点* 字段中输入文件系统挂载点。例如，如果文件系统是根文件系统，则输入 `/`pass:attributes[{blank}]；如果是 `/boot` 文件系统，输入 `/boot`，依此类推。对于交换文件系统，不要设置挂载点，因为将文件系统类型设置为 `swap` 就足够了。
 
-.. Enter the size of the file system in the *Desired Capacity* field.  You can use common size units such as KiB or GiB. The default is MiB if you do not set any other unit.
+.. 在 *期望容量* 字段中输入文件系统的大小。您可以使用常见的容量单位，例如 KiB 或 GiB。如果您未设置任何其他单位，则默认值为 MiB。
 
-.. Select the device type that you require from the drop-down *Device Type* menu: `Standard Partition`, `LVM`, or `LVM Thin Provisioning`.
+.. 从 *设备类型* 下拉菜单中选择所需的设备类型：`标准分区`、`LVM` 或 `LVM 精简资源调配`。
 +
 [WARNING]
 ====
-The installation program does not support overprovisioned LVM thin pools.
+安装程序不支持过度资源调配的 LVM 精简池。
 ====
 +
 [NOTE]
 ====
-`RAID` is available only if two or more disks are selected for partitioning. If you choose `RAID`, you can also set the `RAID Level`. Similarly, if you select `LVM`, you can specify the `Volume Group`.
+只有选择两个或更多磁盘进行分区时，`RAID` 才可用。如果选择 `RAID`，还可以设置 `RAID 级别`。类似地，如果选择 `LVM`，则可以指定卷组。
 ====
 
-.. Select the *Encrypt* check box to encrypt the partition or volume. You must set a password later in the installation program. The *LUKS Version* drop-down menu is displayed.
+.. 选中 *加密* 复选框可加密分区或卷。您必须稍后在安装程序中设置密码。此时将显示 *LUKS 版本* 下拉菜单。
 //TODO: Add link to info Mirek is working on.
 
-.. Select the LUKS version that you require from the drop-down menu.
+.. 从下拉菜单中选择所需的 Luks 版本。
 
-.. Select the appropriate file system type for this partition or volume from the *File system* drop-down menu.
+.. 从 *文件系统* 下拉菜单中为此分区或卷选择适当的文件系统类型。
 
-.. Select the *Reformat* check box to format an existing partition, or deselect the *Reformat* check box to retain your data. The newly-created partitions and volumes must be reformatted, and the check box cannot be deselected.
+.. 选中 *重新格式化* 复选框以格式化现有分区，或取消选中 *重新格式化* 复选框以保留数据。必须重新格式化新创建的分区和卷，并且不能取消选中该复选框。
 
-.. Type a label for the partition in the *Label* field. Use labels to easily recognize and address individual partitions.
+.. 在 *标签* 字段中键入分区的标签。使用标签可以方便地识别和寻址各个分区。
 
-.. Type a name in the *Name* field.
+.. 在 *名称* 字段中键入名称。
 +
 [NOTE]
 ====
-Note that standard partitions are named automatically when they are created and you cannot edit the names of standard partitions. For example, you cannot edit the `/boot` name `sda1`.
+请注意，标准分区在创建时会自动命名，您不能编辑标准分区的名称。例如，您不能编辑 `/boot` 名称 `sda1`。
 ====
 
-. Click *Update Settings* to apply your changes and if required, select another partition to customize. Changes are not applied until you click *Begin Installation* from the *Installation Summary* window.
+. 单击 *更新设置* 以应用更改，如果需要，请选择另一个分区进行自定义。在您从 *安装信息摘要* 窗口中单击 *开始安装* 之前，不会应用更改。
 +
 [NOTE]
 ====
-Click *Reset All* to discard your partition changes.
+单击 *全部重置* 以放弃分区更改。
 ====
 
-. Click *Done* when you have created and customized all file systems and mount points. If you choose to encrypt a file system, you are prompted to create a passphrase.
+. 创建并自定义所有文件系统和挂载点后，单击 *完成*。如果选择加密文件系统，则会提示您创建一个口令。
 +
-A *Summary of Changes* dialog box opens, displaying a summary of all storage actions for the installation program.
+将打开 *更改摘要* 对话框，其中显示安装程序的所有存储操作的摘要。
 
-. Click *Accept Changes* to apply the changes and return to the *Installation Summary* window.
+. 单击 *接受更改* 以应用更改并返回到 *安装信息摘要* 窗口。

@@ -1,22 +1,22 @@
 [id="selecting-a-stream-before-installation-of-packages_{context}"]
-= Selecting a stream before installation of packages
+= 在安装包之前选择流
 
-Default module streams ensure that users can install packages without caring about the modular features. When the user wants packages with version from a non-default stream, that stream must be enabled before packages provided by it can be installed.
+默认模块流确保用户可以安装包而不必关心模块化特性。当用户需要来自非默认流的版本的包时，必须先启用该流，然后才能安装它提供的包。
 
 
-.Prerequisites
+.前提
 
-* You must understand the xref:assembly_introduction-to-modules.adoc#module-streams_introduction-to-modules[concept of an _active module stream_].
+* 理解 xref:assembly_introduction-to-modules.adoc#module-streams_introduction-to-modules[激活模块流的概念]。
 
-.Procedure
+.步骤
 
-* Enable the module stream:
+* 启用模块流：
 +
 [subs="quotes"]
 ----
 # yum module enable __module-name__:__stream__
 ----
 +
-Replace _module-name_ and _stream_ with names of the module and stream.
+用模块和流的名称替换 _module-name_ 和 _stream_ 。
 +
-[command]`yum` asks for confirmation and the stream is enabled and active. If another stream of the module was previously active (default or enabled), it is no longer active.
+[command]`yum` 请求确认后，流启用并处于激活状态。如果模块的另一个流以前处于激活状态（默认或启用），则它不再处于激活状态。

@@ -1,7 +1,7 @@
 :parent-context-of-security-policy: {context}
 
 [id='security-policy_{context}']
-= Configuring security policy
+= 配置安全策略
 
 :context: security-policy
 
@@ -27,7 +27,7 @@ YES/NO
 |===
 endif::[]
 
-This section contains information about the {productname} {productnumber} security policy add-on and how to configure it for use on your system.
+本部分包含有关 {productname} {productnumber} 安全策略附加组件的信息，以及如何配置该组件以便在系统上使用。
 
 include::ROOT:partial$installer/con_about-security-policy.adoc[leveloffset=+1]
 include::ROOT:partial$installer/proc_configuring-security-policy.adoc[leveloffset=+1]
@@ -35,8 +35,8 @@ include::ROOT:partial$installer/proc_configuring-security-policy.adoc[leveloffse
 
 
 [id='related-information-{context}']
-== Related information
-* [literal]`scap-security-guide(8)` - The manual page for the [literal]`scap-security-guide` project contains information about SCAP security profiles, including examples on how to utilize the provided benchmarks using the OpenSCAP utility.
-* {productname} security compliance information is available in the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/index[_Security hardening in RHEL 8_] document.
+== 相关信息
+* [literal]`scap-security-guide(8)` —— [literal]`scap-security-guide` 项目包含有关 SCAP 安全配置文件的信息，包括有关如何使用 OpenSCAP 程序利用提供的基准的示例。
+
 
 :context: {parent-context-of-security-policy}

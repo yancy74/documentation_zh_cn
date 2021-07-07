@@ -1,34 +1,34 @@
 [id="configuring-network-and-host-name_{context}"]
-= Configuring network and host name
+= 配置网络和主机名
 
-Follow the steps in this procedure to configure your network and host name.
+按照以下步骤配置网络和主机名。
 
-.Procedure
+.步骤
 
-. From the *Installation Summary* window, click *Network and Host Name*.
+. 在 *安装信息摘要* 窗口中，单击 *网络和主机名*。
 
-. From the list in the left-hand pane, select an interface. The details are displayed in the right-hand pane.
+. 从左侧窗格的列表中，选择一个接口。 详细信息显示在右侧窗格中。
 
-. Toggle the btn:[ON/OFF] switch to enable or disable the selected interface.
+. 切换 btn:[打开/关闭] 开关以启用或禁用所选接口。
 +
 [NOTE]
 ====
-Locally accessible interfaces are automatically detected by the installation program and cannot be manually added or deleted.
+本地可访问的接口由安装程序自动检测，不能手动添加或删除。
 ====
 
-. Click *+* to add a virtual network interface, which can be either: Team, Bond, Bridge, or VLAN.
+. 单击 *+* 添加虚拟网络接口，该接口可以是：组合、绑定、桥接或 VLAN。
 
-. Click *-* to remove a virtual interface.
+. 单击 *-* 删除虚拟接口。
 
-. Click *Configure* to change settings such as IP addresses, DNS servers, or routing configuration for an existing interface (both virtual and physical).
+. 单击 *配置* 更改现有接口（包括虚拟接口和物理接口）的 IP 地址、DNS 服务器或路由配置等设置。
 
-. Type a host name for your system in the *Host Name* field.
+. 在 *主机名* 字段中输入系统的主机名。
 +
 [NOTE]
 ====
-* There are several types of network device naming standards used to identify network devices with persistent names, for example, `em1` and `wl3sp0`. For information about these standards, see the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/index/[_Configuring and managing networking in RHEL 8_] document.
+* 有几种类型的网络设备命名标准，用于标识具有永久名称的网络设备，例如 `em1` 和 `wl3sp0`。
 
-* The host name can be either a fully-qualified domain name (FQDN) in the format hostname.domainname, or a short host name with no domain name. Many networks have a Dynamic Host Configuration Protocol (DHCP) service that automatically supplies connected systems with a domain name. To allow the DHCP service to assign the domain name to this machine, specify only the short host name. The value `localhost.localdomain` means that no specific static host name for the target system is configured, and the actual host name of the installed system is configured during the processing of the network configuration, for example, by NetworkManager using DHCP or DNS.
+* 主机名可以是 hostname.domainname 格式的完全限定域名（FQDN），也可以是不带域名的短主机名。许多网络都有动态主机配置协议（DHCP）服务，可自动为连接的系统提供域名。若要允许 DHCP 服务将域名分配给此计算机，请仅指定短主机名。值 localhost.localdomain 表示没有为目标系统配置特定的静态主机名，而已安装系统的实际主机名是在网络配置处理过程中配置的，例如，由 NetworkManager 使用 DHCP 或 DNS 进行配置。
 ====
 
-. Click *Apply* to apply the host name to the environment.
+. 单击 *应用* 将主机名应用于环境。

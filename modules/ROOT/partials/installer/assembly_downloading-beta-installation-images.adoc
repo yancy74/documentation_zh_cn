@@ -1,16 +1,16 @@
 [id='downloading-beta-installation-images_{context}']
 
-= Downloading the installation ISO image
+= 下载安装 ISO 映像
 
-Before you start installing {rel8}, you must download an installation ISO image. Images are available from the {ProductName} website at link:++https://www.centos.org/download/++[]. The following basic types of media are available:
+在开始安装 {rel8} 之前，必须下载一个安装 ISO 映像。映像可从 {ProductName} 网站获取。网站提供以下基本类型的介质：
 
 DVD1 ISO::
-This image contains the installer as well as a set of all packages that can be installed during an interactive installation. Also sometimes referred to as the "Binary DVD" or "Binary ISO image". This is the recommended download for most users.
+该映像包含安装程序以及在交互式安装过程中可以安装的所有软件包的集合。有时也称为“二进制 DVD ”或“二进制 ISO 映像”。对于大多数用户，建议下载此文件。
 
 Boot ISO::
-Contains only the installer, but not any installable packages. This image will allow you to start the installation, but you must xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[prepare a package source] and enter its URL in the xref:standard-install:assembly_graphical-installation.adoc#configuring-installation-source_configuring-software-settings[Package Selection screen], using a xref:standard-install:assembly_custom-boot-options.adoc#installation-source-boot-options_custom-boot-options[boot option], or using a xref:advanced-install:assembly_kickstart-commands-and-options-reference.adoc#repo_kickstart-commands-for-system-configuration[Kickstart command] in order to finish the installation.
+只包含安装程序，而不包含任何可安装的软件包。此映像将允许您启动安装，但您必须xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[准备一个软件包源]并在xref:standard-install:assembly_graphical-installation.adoc#configuring-installation-source_configuring-software-settings[包选择界面]中输入其 URL，使用xref:standard-install:assembly_custom-boot-options.adoc#installation-source-boot-options_custom-boot-options[引导选项]或使用xref:advanced-install:assembly_kickstart-commands-and-options-reference.adoc#repo_kickstart-commands-for-system-configuration[ Kickstart 命令]才能完成安装。
 
-Optionally, you can use a checksum utility such as [application]*sha256sum* to verify the integrity of the image file after the download finishes. All downloads are provided with their checksums for reference:
+可选，您可以在下载完成后使用 checksum 程序（如 [application]*sha256sum*）来验证映像文件的完整性。所有下载均附带其校验和，以供参考：
 
 [literal,subs="+quotes,attributes,verbatim,macros"]
 ....
@@ -18,14 +18,14 @@ $ sha256sum {ProductName}-8-x86_64-dvd.iso
 `85a...46c  {ProductName}-8-x86_64-dvd.iso`
 ....
 
-Similar tools are available for link:++http://www.labtestproject.com/files/win/sha256sum/sha256sum.exe++[Microsoft Windows] and link:++https://itunes.apple.com/us/app/hashtab/id517065482++[Mac OS X]. You can also use the `rd.live.check` option on the boot command line; see xref:standard-install:assembly_booting-installer.adoc#editing-boot-options_booting-the-installer[Editing boot options] for details.
+类似的工具可用于 link:++http://www.labtestproject.com/files/win/sha256sum/sha256sum.exe++[Microsoft Windows] 和 link:++https://itunes.apple.com/us/app/hashtab/id517065482++[Mac OS X]。您也可以在引导命令行上使用 `rd.live.check` 选项。有关详细信息，请参见xref:standard-install:assembly_booting-installer.adoc#editing-boot-options_booting-the-installer[编辑引导选项]。
 
-After you have downloaded an ISO image file from the Customer Portal, you can:
+从官方网站下载 ISO 映像文件后，您可以：
 
-* Burn it to a CD or DVD as described in xref:standard-install:assembly_preparing-for-your-installation.adoc#making-an-installation-cd-or-dvd_preparing-for-your-installation[Creating a bootable DVD or CD].
+* 按照xref:standard-install:assembly_preparing-for-your-installation.adoc#making-an-installation-cd-or-dvd_preparing-for-your-installation[创建可引导 DVD 或 CD]中的说明将其刻录到 CD 或 DVD。
 
-* Use it to create a bootable USB drive; see xref:standard-install:assembly_preparing-for-your-installation.adoc#create-bootable-usb-linux_preparing-for-your-installation[Creating a bootable USB device on Linux], xref:standard-install:assembly_preparing-for-your-installation.adoc#creating-a-bootable-usb-windows_preparing-for-your-installation[Creating a bootable USB device on Windows], and xref:standard-install:assembly_preparing-for-your-installation.adoc#creating-a-bootable-usb-mac_preparing-for-your-installation[Creating a bootable USB device on Mac OS X].
+* 使用它创建一个可引导的 USB 驱动器；请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#create-bootable-usb-linux_preparing-for-your-installation[在 Linux 上创建可引导 USB 设备]、xref:standard-install:assembly_preparing-for-your-installation.adoc#creating-a-bootable-usb-windows_preparing-for-your-installation[在 Windows 上创建可引导 USB 设备]和xref:standard-install:assembly_preparing-for-your-installation.adoc#creating-a-bootable-usb-mac_preparing-for-your-installation[在 Mac OS X 上创建可引导 USB 设备]。
 
-* Place it on a local hard drive or a network location to use as an installation source. For specific instructions, see xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[Preparing an installation source].
+* 将其放在本地硬盘驱动器或网络位置上，以用作安装源。有关具体说明，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[准备安装源]。
 
-* Use it to prepare a _Preboot Execution Environment_ (PXE) server, which allows you to boot the installation system over a network. See xref:advanced-install:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE] for instructions.
+* 使用它来准备 _预引导执行环境_ （PXE）服务器，该服务器使您可以通过网络引导安装系统。有关说明，请参阅xref:advanced-install:assembly_preparing-for-a-network-install.adoc[使用 PXE 从网络准备安装]。

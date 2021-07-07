@@ -1,41 +1,41 @@
 [id="making-a-kickstart-file-available-on-a-local-volume-for-automatic-loading_{context}"]
-= Making a Kickstart file available on a local volume for automatic loading
+= 使本地卷上的 Kickstart 文件可用于自动加载
 
-A specially named Kickstart file can be present in the root of a specially named volume on the system to be installed. This lets you bypass the need for another system, and makes the installation program load the file automatically.
-
-
-.Prerequisites
-
-* You must have a drive that can be moved to the machine to be installed, such as a USB stick.
-* The drive must contain a partition that can be read by the installation program. The supported types are `ext2`, `ext3`, `ext4`, `xfs`, and `fat`.
-* The drive must be already connected to the system and its volumes mounted.
+在要安装的系统上，特殊命名的 Kickstart 文件可以位于特殊命名的卷的根目录中。这使您可以绕过对另一个系统的需要，并使安装程序自动加载该文件。
 
 
-.Procedure
+.前提
 
-. List volume information and note the UUID of the volume to which you want to copy the Kickstart file.
+* 您必须有一个可以移动到要安装的机器上的驱动器，如 U 盘。
+* 驱动器必须包含安装程序可以读取的分区。支持的类型有 `ext2`、 `ext3`、 `ext4`、 `xfs` 和 `fat`。
+* 驱动器必须已连接到系统并已挂载其卷。
+
+
+.步骤
+
+. 列出卷信息，并记下要将 Kickstart 文件复制到的卷的 UUID。
 +
 ----
 # lsblk -l -p
 ----
 
-. Navigate to the file system on the volume.
+. 导航到卷上的文件系统。
 
-. Copy the Kickstart file into the root of this file system.
+. 将 Kickstart 文件复制到此文件系统的根目录中。
 
-. Rename the Kickstart file to [filename]`ks.cfg`.
+. 将 Kickstart 文件重命名为 [filename]`ks.cfg`。
 
-. Rename the volume as `OEMDRV`:
+. 将卷重命名为 `OEMDRV`:
 +
 ====
-* For `ext2`, `ext3`, and `ext4` file systems:
+* 对于 `ext2`、 `ext3` 和 `ext4` 文件系统：
 +
 [subs="quotes"]
 ----
 # e2label _/dev/xyz_ OEMDRV
 ----
 
-* For the XFS file system:
+* 对于 XFS 文件系统：
 +
 [subs="quotes"]
 ----
@@ -43,14 +43,14 @@ A specially named Kickstart file can be present in the root of a specially named
 ----
 ====
 +
-Replace _/dev/xyz_ with the path to the volume's block device.
+用卷的块设备的路径替换 _/dev/xyz_ 。
 
-. Unmount all drive volumes:
+. 卸载所有驱动器卷：
 +
 [subs="quotes"]
 ----
 # umount _/dev/xyz_ ...
 ----
 +
-Add all the volumes to the command, separated by spaces.
+将所有卷添加到命令中，用空格分隔。
 

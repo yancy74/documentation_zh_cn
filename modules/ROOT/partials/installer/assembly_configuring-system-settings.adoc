@@ -5,8 +5,8 @@
 :parent-context-of-configuring-system-settings: {context}
 
 [id='configuring-system-settings_{context}']
-= Configuring system options
-This section contains information about configuring Installation Destination, KDUMP, Network and Host Name, Security Policy, and System Purpose.
+= 配置系统选项
+本部分包含有关配置安装目的地、KDUMP、网络和主机名、安全策略和系统用途的信息。
 
 :context: configuring-system-settings
 

@@ -1,15 +1,15 @@
 include::ROOT:partial$attributes.adoc[]
 
-= {ProductName} {ProductNumber} documentation
+= {ProductName} {ProductNumber} 文档
 
-* xref:standard-install:index.adoc[Performing a standard {ProductName} installation]
+* xref:standard-install:index.adoc[{ProductName} 标准安装]
 +
-Installing {ProductName} {ProductNumber} using the graphical user interface
+使用图形用户界面安装 {ProductName} {ProductNumber}
 
-* xref:advanced-install:index.adoc[Performing an advanced {ProductName} installation]
+* xref:advanced-install:index.adoc[{ProductName} 高级安装]
 +
-Installing {ProductName} {ProductNumber} using Kickstart
+使用 Kickstart 安装 {ProductName} {ProductNumber}
 
-* xref:managing-userspace-components:index.adoc[Installing, managing, and removing user space components]
+* xref:managing-userspace-components:index.adoc[安装、管理和删除用户空间组件]
 +
-Introduction to AppStream and BaseOS in {ProductName} {ProductNumber}
+介绍 {ProductName} {ProductNumber} 中 AppStream 和 BaseOS

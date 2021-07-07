@@ -1,20 +1,20 @@
 [id="configuring-a-tftp-server-for-bios-based-clients_{context}"]
-= Configuring a TFTP server for BIOS-based clients
+= 为基于 BIOS 的客户端配置 TFTP 服务器
 
-This procedure describes how to configure a TFTP server and DHCP server, and start the TFTP service on the PXE server for BIOS-based AMD and Intel 64-bit systems.
+以下步骤介绍如何为基于 BIOS 的 AMD 和 Intel 64 位系统配置 TFTP 服务器和 DHCP 服务器，并在 PXE 服务器上启动 TFTP 服务。
 
 
 [discrete]
-== Procedure
+== 步骤
 
-. As root, install the `tftp-server` package:
+. 以 root 身份安装 `tftp-server` 软件包：
 +
 [subs="macros"]
 ----
 # yum install tftp-server
 ----
 
-. Allow incoming connections to the `tftp service` in the firewall:
+. 允许防火墙中 `tftp service` 服务的传入连接：
 +
 [subs="macros"]
 ----
@@ -23,10 +23,10 @@ This procedure describes how to configure a TFTP server and DHCP server, and sta
 +
 [NOTE]
 ====
-This command enables temporary access until the next server reboot. To enable permanent access, add the `--permanent` option to the command.
+此命令在下次重新启动服务器之前启用临时访问。要启用永久访问，请将 `--permanent` 选项添加到命令中。
 ====
 
-. Configure your DHCP server to use the boot images packaged with *SYSLINUX*. A sample configuration in the `/etc/dhcp/dhcpd.conf` file might look like:
+. 配置您的 DHCP 服务器以使用 *SYSLINUX* 打包的引导映像。`/etc/dhcp/dhcpd.conf` 文件中的示例配置可能如下所示：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -54,7 +54,7 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 }
 ----
 
-. Access the `pxelinux.0` file from the `SYSLINUX` package in the DVD1 ISO image file:
+. 从 DVD1 ISO 映像文件中的 `SYSLINUX` 软件包访问 `pxelinux.0` 文件：
 +
 [subs="macros"]
 ----
@@ -71,14 +71,14 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 # umount /mount_point
 ----
 +
-. Extract the package:
+. 解压缩包：
 +
 [subs="macros"]
 ----
 # rpm2cpio syslinux-tftpboot-version-architecture.rpm | cpio -dimv
 ----
 
-. Create a `pxelinux/` directory within `tftpboot/` and copy the required files, for example: `pxelinux.0` `libcom.c32`, `ldlinux.c32`, `vesamenu.c32` into it:
+. 在 `tftpboot/` 内创建一个 `pxelinux/` 目录，并将需要的文件复制到其中，例如： `pxelinux.0` `libcom.c32`、 `ldlinux.c32`、 `vesamenu.c32` ：
 +
 [subs="macros"]
 ----
@@ -90,14 +90,14 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 # cp publicly_available_directory/tftpboot/pxelinux.0 /var/lib/tftpboot/pxelinux
 ----
 
-. Create the directory `pxelinux.cfg/` in the `pxelinux/` directory:
+. 在 `pxelinux/` 目录中创建目录 `pxelinux.cfg/` ：
 +
 [subs="macros"]
 ----
 # mkdir /var/lib/tftpboot/pxelinux/pxelinux.cfg
 ----
 
-. Add a default configuration file to the `pxelinux.cfg/` directory. A sample configuration file at `/var/lib/tftpboot/pxelinux/pxelinux.cfg/default` might look like:
+. 将默认配置文件添加到 `pxelinux.cfg/` 目录。 `/var/lib/tftpboot/pxelinux/pxelinux.cfg/default` 中的示例配置文件可能如下所示：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -127,12 +127,13 @@ label local
 +
 [NOTE]
 ====
- * The installation program cannot boot without its runtime image. Use the `inst.stage2` boot option to specify location of the image. Alternatively, you can use the `inst.repo=` option to specify the image as well as the installation source.
- * The installation source location used with `inst.repo` must contain a valid `.treeinfo` file.
- * When you select the {rel8} installation DVD as the installation source,  the `.treeinfo` file points to the BaseOS and the AppStream repositories. You can use a single `inst.repo` option to load both repositories.
+ * 如果没有其运行时映像，安装程序将无法启动。使用 `inst.stage2` 引导选项指定映像的位置。或者，您可以使用 `inst.repo=` 选项指定映像和安装源。
+ * 用于 `inst.repo` 的安装源位置必须包含有效的 `.treeinfo` 文件。
+ * 选择 {rel8} 安装 DVD 作为安装源时，`.treeinfo` 文件指向 BaseOS 和 AppStream 仓库。您可以使用单个 `inst.repo` 选项加载两个仓库。
+
 ====
 
-. Create a subdirectory to store the boot image files in the `/var/lib/tftpboot/` directory, and copy the boot image files to the directory. In this example, we use the directory `/var/lib/tftpboot/pxelinux/images/{ProductName}-{ProductNumber}/`:
+. 创建子目录以将引导镜像文件存储在 `/var/lib/tftpboot/` 目录中，并将引导镜像文件复制到该目录。在本例中，使用目录 `/var/lib/tftpboot/pxelinux/images/{ProductName}-{ProductNumber}/`：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -140,7 +141,7 @@ label local
 # cp /path_to_x86_64_images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/pxelinux/images/{ProductName}-{ProductNumber}/
 ----
 
-. Start and enable the `dhcpd` service:
+. 启动并启用 `dhcpd` 服务：
 +
 [subs="macros"]
 ----
@@ -148,7 +149,7 @@ label local
 # systemctl enable dhcpd
 ----
 
-. Start and enable the `xinetd` service that manages the `tftp` service:
+. 启动并启用管理 `tftp` 服务的 `xinetd` 服务：
 +
 [subs="macros"]
 ----
@@ -156,7 +157,7 @@ label local
 # systemctl enable xinetd
 ----
 +
-The PXE boot server is now ready to serve PXE clients. You can start the client (the system to which you are installing {productname}), select *PXE Boot* when prompted to specify a boot source, and start the network installation.
+PXE 引导服务器现在已准备好为 PXE 客户机提供服务。您可以启动客户机(要安装 {productname} 的系统)，在提示指定引导源时选择 PXE Boot，然后开始网络安装。
 
 
 //add in additional resources when boot client content ready and link can be added

@@ -1,19 +1,19 @@
 include::ROOT:partial$attributes.adoc[]
 include::partial$local-attributes.adoc[]
 [id="installation-workflow_{context}"]
-= Installation workflow
+= 安装工作流程
 
-This installation workflow contains the high-level steps for installing {productname} on AMD64, Intel 64, and 64-bit ARM architectures using the graphical user interface.
+此安装工作流程包含在AMD64、Intel 64 和 64位 ARM 架构上使用图形用户界面安装 {productname} 的高级步骤。
 
-.Procedure
+.步骤
 
-. Prepare for your installation by checking your system and hardware requirements, downloading an installation image file, and creating bootable installation media.
-. Boot the installation program and install {productname} using the graphical user interface.
-. Complete post-installation tasks such as initial setup and system registration.
+. 检查系统和硬件要求、下载安装映像文件并创建可引导的安装介质，为安装做好准备。
+. 启动安装程序并使用图形用户界面安装 {productname}。
+. 完成安装后的任务，例如初始设置和系统注册。
 
-.Additional resources
+.其他资源
 
-* For more information about preparing for your installation, see xref:standard-install:assembly_preparing-for-your-installation.adoc[Preparing for your installation].
-* For more information about booting the installation program, see xref:standard-install:assembly_booting-installer.adoc[Booting the installation].
-* For more information about installing {productname} using the graphical user interface, see xref:standard-install:assembly_graphical-installation.adoc[Installing using the Graphical User Interface]
-* For more information about completing post-installation tasks, see xref:standard-install:assembly_post-installation-tasks.adoc[Completing post-installation tasks].
+* 有关准备安装的详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc[准备安装]。
+* 有关启动安装程序的详细信息，请参阅xref:standard-install:assembly_booting-installer.adoc[启动安装]。
+* 有关使用图形用户界面安装 {productname} 的详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc[使用图形用户界面安装]。
+* 有关完成安装后任务的详细信息，请参阅xref:standard-install:assembly_post-installation-tasks.adoc[成安装后的任务]。

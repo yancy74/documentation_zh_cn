@@ -1,22 +1,22 @@
 [id="verifying-a-kickstart-file_{context}"]
-= Verifying a Kickstart file
+= 验证 Kickstart 文件
 
-Use the [command]`ksvalidator` command line utility to verify that your Kickstart file is valid. This is useful when you make extensive changes to a Kickstart file.
+使用 [command]`ksvalidator` 命令行程序验证 Kickstart 文件是否有效。当您对 KickStart 文件进行大量更改时，它很有用。
 
-.Procedure
+.步骤
 
-* Run [command]`ksvalidator` on your Kickstart file:
+* 对 Kickstart 文件运行 [command]`ksvalidator` ：
 +
 [subs="quotes"]
 ----
 $ ksvalidator __/path/to/kickstart.ks__
 ----
 +
-Replace __/path/to/kickstart.ks__ with the path to the Kickstart file you want to verify.
+将 __/path/to/kickstart.ks__ 替换为要验证的 Kickstart 文件的路径。
 
 [IMPORTANT]
-The validation tool cannot guarantee the installation will be successful. It ensures only that the syntax is correct and that the file does not include deprecated options. It does not attempt to validate the `%pre`, `%post` and `%packages` sections of the Kickstart file.
+验证工具不能保证安装成功。它确保语法正确和文件不包含不推荐使用的选项。它不会尝试验证Kickstart文件的 `%pre`、 `%post` 和 `%packages` 部分。
 
-.Additional resources
+.其他资源
 
-* The __ksvalidator(1)__ manual page.
+* __ksvalidator(1)__ 手册页。

@@ -1,24 +1,21 @@
 include::ROOT:partial$attributes.adoc[]
 include::partial$local-attributes.adoc[]
 [id="installation-methods_{context}"]
-= Installation methods
+= 安装方法
 
-You can install {productname} using one of the following methods:
+您可以使用以下方法之一安装 {productname} ：
 
-Quick install::
-Install {productname} on AMD64, Intel 64, and 64-bit ARM architectures using the graphical user interface. The quick installation assumes that you are familiar with {productname} and your environment, and that you can accept the default settings provided by the installation program.
+快速安装::
+在 AMD64、Intel 64 和 64 位 ARM 架构上使用图形用户界面安装 {productname}。快速安装假定您熟悉 {productname} 和您的环境，并且可以接受安装程序提供的默认设置。
 
-Graphical install::
-Install {productname} using the graphical user interface and customize the graphical settings for your specific requirements.
+图形化安装::
+使用图形用户界面安装 {productname}，并根据您的特定需求自定义图形设置。
 
-Automated install::
-Install {productname} using Kickstart. The automated installation allows you to perform unattended operating system installation tasks.
+自动安装::
+使用 Kickstart 安装 {productname}。自动安装允许您执行无人值守的操作系统安装任务。
 
 [discrete]
-== Additional resources
+== 其他资源
 
-* To perform a graphical installation on AMD64, Intel 64, and 64-bit ARM architectures using the graphical user interface, see xref:standard-install:con_installation-workflow.adoc[Installation workflow].
-* To perform an installation on IBM Power System LC servers, see xref:assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers.adoc[Installing on IBM Power System LC servers].
-* To perform an installation on IBM Power System AC servers, see xref:assembly_installing-on-ibm-power-system-accelerated-servers.adoc[Installing on IBM Power System accelerated servers].
-* To perform an installation on IBM Power System L servers, see xref:assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server.adoc[Installing on IBM Power System L server].
-* To perform an automated install using Kickstart, see the xref:advanced-install:index.adoc[_Performing an advanced installation_] document.
+* 要在 AMD64、Intel 64 和 64 位 ARM 架构上使用图形用户界面执行图形安装，请参阅xref:standard-install:con_installation-workflow.adoc[安装工作流程]。
+* 要使用 Kickstart 执行自动安装，请参阅xref:advanced-install:index.adoc[_高级安装_]文档。

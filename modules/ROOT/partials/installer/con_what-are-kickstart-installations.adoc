@@ -1,12 +1,13 @@
 [id="what-are-kickstart-installations_{context}"]
-= What are Kickstart installations
+= 什么是 Kickstart 安装？
 
-Kickstart provides a way to automate the {ProductName} installation process, either partially or fully.
+Kickstart 提供了一种部分或完全自动化 {ProductName} 安装过程的方法。
 
-Kickstart files contain some or all of the {rel8} installation options. For example, the time zone, how the drives should be partitioned, or which packages should be installed. Providing a prepared Kickstart file allows an installation without the need for any user intervention. This is especially useful when deploying {ProductName} on a large number of systems at once.
+kickstart 文件包含部分或全部 {rel8} 安装选项。例如，时区、驱动器应如何分区或应安装哪些软件包。提供准备好的 Kickstart文 件可以在不需要任何用户干预的情况下进行安装。同时在大量系统上部署 {ProductName} 时，Kickstart 特别有用。
 
-Kickstart files also provide more options regarding software selection. When installing {ProductName} manually using the graphical installation interface, the software selection is limited to pre-defined environments and add-ons. A Kickstart file allows you to install or remove individual packages as well.
 
-Kickstart files can be kept on a single server system and read by individual computers during the installation. This installation method supports the use of a single Kickstart file to install {ProductName} on multiple machines, making it ideal for network and system administrators.
+Kickstart 文件还提供了有关软件选择的更多选项。使用图形安装界面手动安装 {ProductName} 时，软件选择仅限于预定义的环境和额外软件。Kickstart 文件还允许您安装或删除单个软件包。
 
-All Kickstart scripts and log files of their execution are stored in the [filename]`/tmp` directory of the newly installed system to assist with debugging installation issues.
+Kickstart 文件可以保存在单个服务器系统上，并在安装过程中由各台计算机读取。此安装方法支持使用单个 Kickstart 文件在多台计算机上安装 {ProductName}，因此非常适合网络和系统管理员。
+
+所有 Kickstart 脚本及其执行的日志文件都存储在新安装系统的 [filename]`/tmp` 目录中，以帮助调试安装问题。

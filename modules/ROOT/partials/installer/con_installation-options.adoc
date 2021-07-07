@@ -1,10 +1,9 @@
 [id="installation-options_{context}"]
-= Supported architectures
+= 支持的架构
 
-{productname} supports the following architectures:
+{productname} 支持以下架构：
 
-* AMD and Intel 64-bit architectures
-* The 64-bit ARM architecture
-* IBM Power Systems, Little Endian
+* AMD 和 Intel 64 位架构
+* 64 位 ARM 架构
 
 // as taken straight out of release notes

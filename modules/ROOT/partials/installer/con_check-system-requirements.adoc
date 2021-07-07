@@ -1,11 +1,5 @@
 [id="check-system-requirements_{context}"]
-= Check system requirements
+= 检查系统要求
 
-If this is a first-time installation of {productname} it is recommended that you review the guidelines provided for system, hardware, security, memory, and RAID before installing.
-See xref:standard-install:assembly_system-requirements-reference.adoc[System requirements reference] for more information.
+您如果首次安装 {productname}，建议在安装之前查看系统、硬件、安全性、内存和 RAID 指南。有关详细信息，请参阅xref:standard-install:assembly_system-requirements-reference.adoc[系统要求参考]。
 
-
-[discrete]
-== Additional resources
-
-For more information about securing {productname}, see the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/index[_Security hardening in RHEL 8_] document.

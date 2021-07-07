@@ -1,38 +1,38 @@
 [id="creating-a-bootable-usb-windows_{context}"]
-= Creating a bootable USB device on Windows
+= 在 Windows 上创建可引导 USB 设备
 
-Follow the steps in this procedure to create a bootable USB device on a Windows system. The procedure varies depending on the tool. {OrgName} recommends using Fedora Media Writer, available for download at https://github.com/FedoraQt/MediaWriter/releases.
-
-[NOTE]
-====
-Fedora Media Writer is a Fedora community product and is not supported by {OrgName}. You can report any issues with the tool at https://github.com/FedoraQt/MediaWriter/issues.
-====
-
-[discrete]
-== Prerequisites
-
-* You have downloaded an installation ISO image as described in xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image].
-* The *DVD1* ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.
-
-
-[discrete]
-== Procedure
+按照以下步骤在 Windows 系统上创建可引导 USB 设备。根据工具的不同，过程会有所不同。{OrgName} 建议使用 Fedora Media Writer，该软件可从 https://github.com/FedoraQt/MediaWriter/releases 下载。
 
 [NOTE]
 ====
-This procedure is destructive and data on the USB flash drive is destroyed without a warning.
+Fedora Media Writer 是 Fedora 社区产品，{OrgName} 不支持它。您可以在以下位置报告该工具的任何问题：https://github.com/FedoraQt/MediaWriter/issues.
 ====
 
-. Download and install Fedora Media Writer from https://github.com/FedoraQt/MediaWriter/releases.
+[discrete]
+== 前提
+
+* 您已下载了安装 ISO 映像，如xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载安装 ISO 映像]中所述。
+* *DVD1* ISO 映像大于 4.7 GB，因此您必须有足够大的 USB 闪存驱动器来保存 ISO 映像。
+
+
+[discrete]
+== 步骤
+
+[NOTE]
+====
+此过程具有破坏性，USB 闪存驱动器上的数据会在没有警告的情况下被销毁。
+====
+
+. 从 https://github.com/FedoraQt/MediaWriter/releases 下载并安装 Fedora Media Writer。
 +
 [NOTE]
 ====
-To install Fedora Media Writer on {productname}, use the pre-built Flatpak package. You can obtain the package from the official Flatpak repository Flathub.org at https://flathub.org/apps/details/org.fedoraproject.MediaWriter.
+MediaWriter.要在 {productname} 上安装 Fedora Media Writer，请使用预构建的 Flatpak 软件包。您可以从官方 Flatpak 仓库 Flathub.org处获取该软件包，网址为 https://flathub.org/apps/details/org.fedoraproject.MediaWriter。
 ====
 
-. Connect the USB flash drive to the system.
-. Open Fedora Media Writer.
-. From the main window, click *Custom Image* and select the previously downloaded {productname} ISO image.
-. From *Write Custom Image* window, select the drive that you want to use.
-. Click *Write to disk*. The boot media creation process starts. Do not unplug the drive until the operation completes. The operation may take several minutes, depending on the size of the ISO image, and the write speed of the USB drive.
-. When the operation completes, unmount the USB drive. The USB drive is now ready to be used as a boot device.
+. 将 USB 闪存驱动器连接到系统。
+. 打开 Fedora Media Writer。
+. 在主窗口中，单击 *自定义映像*，然后选择之前下载的 {productname} ISO映像。
+. 在 *写入自定义映像* 窗口中，选择要使用的驱动器。
+. 单击 *写入磁盘* 。引导介质创建过程开始。在操作完成之前，不要拔下驱动器的插头。此操作可能需要几分钟，具体取决于 ISO 映像的大小和 USB 驱动器的写入速度。
+. 操作完成后，卸载USB驱动器。USB驱动器现在可以用作引导设备。

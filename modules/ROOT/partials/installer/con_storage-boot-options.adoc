@@ -23,23 +23,23 @@
 // Do not start the title with a verb. See also _Wording of headings_
 // in _The IBM Style Guide_.
 [id="storage-boot-options_{context}"]
-= Storage boot options
+= 存储引导选项
 
 inst.nodmraid=::
-Use the `inst.nodmraid=` option to disable `dmraid` support.
+使用 `inst.nodmraid=` 选项禁用 `dmraid` 支持。
 
 [WARNING]
 ====
-Use this option with caution. If you have a disk that is incorrectly identified as part of a firmware RAID array, it might have some stale RAID metadata on it that must be removed using the appropriate tool, for example, `dmraid` or `wipefs`.
+请谨慎使用此选项。如果您的磁盘被错误地标识为固件 RAID 阵列的一部分，则该磁盘上可能有一些陈旧的 RAID 元数据，必须使用适当的工具(例如 `dmraid` 或 `wipefs`)删除这些元数据。
 ====
 
 inst.nompath=::
-Use the `inst.nompath=` option to disable support for multipath devices. This option can be used for systems on which a false-positive is encountered which incorrectly identifies a normal block device as a multipath device. There is no other reason to use this option.
+使用 `inst.nompath=` 选项禁用对多路径设备的支持。此选项可用于遇到误报的系统，将正常块设备标识为多路径设备。没有其他理由使用此选项。
 
 [WARNING]
 ====
-Use this option with caution. You should not use this option with multipath hardware. Using this option to attempt to install to a single path of a multipath is not supported.
+请谨慎使用此选项。不应将此选项用于多路径硬件。不支持使用此选项尝试安装到多路径的单个路径。
 ====
 
 inst.gpt::
-The `inst.gpt` boot option forces the installation program to install partition information to a GUID Partition Table (GPT) instead of a Master Boot Record (MBR). This option is not valid on UEFI-based systems, unless they are in BIOS compatibility mode. Normally, BIOS-based systems and UEFI-based systems in BIOS compatibility mode attempt to use the MBR schema for storing partitioning information, unless the disk is 232 sectors in size or larger. Disk sectors are typically 512 bytes in size, meaning that this is usually equivalent to 2 TiB. Using the `inst.gpt` boot option changes this behavior, allowing a GPT to be written to smaller disks.
+`inst.gpt` 引导选项强制安装程序将分区信息安装到 GUID 分区表(GPT)，而不是主引导记录(MBR)。此选项在基于 UEFI 的系统上无效，除非它们处于 BIOS 兼容模式。通常，处于 BIOS 兼容模式的基于 BIOS 的系统和基于 UEFI 的系统会尝试使用 MBR 模式来存储分区信息，除非磁盘大小为 232 个扇区或更大。磁盘扇区的大小通常为 512 字节，这意味着通常相当于 2 TiB。使用 `inst.gpt` 引导选项可以更改此行为，允许将 GPT 写入较小的磁盘。

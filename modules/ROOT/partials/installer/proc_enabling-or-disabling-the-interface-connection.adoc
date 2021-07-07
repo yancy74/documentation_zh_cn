@@ -1,20 +1,20 @@
 [id="enabling-or-disabling-the-interface-connection_{context}"]
-= Enabling or Disabling the Interface Connection
+= 启用或禁用接口连接
 
-Follow the steps in this procedure to enable or disable an interface connection.
+按照以下步骤启用或禁用接口连接。
 
-.Procedure
+.步骤
 
-. Click the *General* tab.
+. 单击 *常规* 选项卡。
 
-. Select the *Automatically connect to this network when it is available* check box to enable connection by default.
+. 选中 *可用时自动连接到此网络* 复选框以默认启用连接。
 +
 [NOTE]
 ====
-* When enabled on a wired connection, the system typically connects during startup (unless you unplug the network cable). On a wireless connection, the interface attempts to connect to any known wireless networks in range.
-* You can enable or disable all users on the system from connecting to this network using the *All users may connect to this network* option. If you disable this option, only [systemitem]`root` will be able to connect to this network.
-* It is not possible to only allow a specific user other than [systemitem]`root` to use this interface, as no other users are created at this point during the installation. If you need a connection for a different user, you must configure it after the installation.
+* 在有线连接上启用时，系统通常在启动时连接（除非您拔下网络电缆）。在无线连接上，接口尝试连接到范围内的任何已知无线网络。
+* 您可以使用 *所有用户都可以连接到此网络* 选项启用或禁用系统上的所有用户连接到此网络。如果禁用此选项，则只有 [systemitem]`root` 用户才能连接到此网络。
+* 只允许 [systemitem]`root` 以外的特定用户使用此接口是不可能的，因为在安装过程中此时不会创建其他用户。如果需要为其他用户建立连接，则必须在安装后对其进行配置。
 ====
 
-. Click *Save* to apply the changes and return to the *Network and Host name* window.
+. 单击 *保存* 应用更改并返回 *网络和主机名* 窗口。
 

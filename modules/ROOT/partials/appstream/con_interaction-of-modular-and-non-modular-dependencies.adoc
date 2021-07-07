@@ -1,6 +1,6 @@
 [id="interaction-of-modular-and-non-modular-dependencies_{context}"]
-= Interaction of modular and non-modular dependencies
+= 模块依赖和非模块依赖
 
-xref:assembly_managing-versions-of-appstream-content.adoc#modular-dependencies-and-stream-changes_{context}[Modular dependencies] are an additional layer on top of regular RPM dependencies. Modular dependencies behave similarly to hypothetical dependencies between repositories. This means that installing different packages requires not only resolution of the RPM dependencies, but also the modular dependencies must be resolved beforehand.
+xref:assembly_managing-versions-of-appstream-content.adoc#modular-dependencies-and-stream-changes_{context}[模块依赖] 是在常规 RPM 依赖之上的附加层。模块依赖关系的行为类似于存储库之间假设的依赖关系。这意味着，安装不同的软件包不仅需要解析 RPM 依赖关系，而且必须预先解析模块依赖关系。
 
-The system will always retain the module and stream choices, unless explicitly instructed to change them. A modular package will receive updates contained in the currently enabled stream of the module that provides this package, but will not upgrade to a version contained in a different stream.
+系统将始终保留模块和流选择，除非明确指示更改它们。模块化软件包将接收当前启用的提供此软件包的模块流中包含的更新，但不会升级到其他流中包含的版本。

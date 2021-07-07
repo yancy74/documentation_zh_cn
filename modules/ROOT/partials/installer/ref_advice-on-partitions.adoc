@@ -1,19 +1,19 @@
 [id="advice-on-partitions_{context}"]
-= Advice on partitions
+= 分区建议
 
-There is no best way to partition every system; the optimal setup depends on how you plan to use the system being installed. However, the following tips may help you find the optimal layout for your needs:
+没有对每个系统进行分区的最佳方法。最佳设置取决于您打算如何使用所安装的系统。但是，以下提示可以帮助您找到满足您需求的最佳布局：
 
-* Create partitions that have specific requirements first, for example, if a particular partition must be on a specific disk.
+* 首先创建具有特定要求的分区，例如，如果特定分区必须位于特定磁盘上。
 
-* Consider encrypting any partitions and volumes which might contain sensitive data. Encryption prevents unauthorized people from accessing the data on the partitions, even if they have access to the physical storage device. In most cases, you should at least encrypt the [filename]`/home` partition, which contains user data.
+* 考虑加密任何可能包含敏感数据的分区和卷。加密可防止未经授权的人员访问分区上的数据，即使其他人有权访问物理存储设备。在大多数情况下，您至少应该加密包含用户数据的 [filename]`/home` 分区。
 
-* In some cases, creating separate mount points for directories other than [filename]`/`, [filename]`/boot` and [filename]`/home` may be useful; for example, on a server running a [application]*MySQL* database, having a separate mount point for [filename]`/var/lib/mysql` will allow you to preserve the database during a reinstallation without having to restore it from backup afterwards. However, having unnecessary separate mount points will make storage administration more difficult.
+* 在某些情况下，为 [filename]`/`、[filename]`/boot` 和 [filename]`/home` 以外的目录创建单独的挂载点可能很有用；例如，在运行 MySQL 数据库的服务器上，为 [filename]`/var/lib/mysql` 创建单独的挂载点将允许您在重新安装期间保留数据库，而不必在以后从备份中还原它。但是，拥有不必要的单独装载点将使存储管理更加困难。
 
-* Some special restrictions apply to certain directories with regards on which partitioning layouts can they be placed. Notably, the [filename]`/boot` directory must always be on a physical partition (not on an LVM volume).
+* 将某些目录放置分区布局时有一些特殊的限制。值得注意的是，[filename]`/boot` 目录必须始终位于物理分区上（而不是 LVM 卷上）。
 
-* If you are new to Linux, consider reviewing the [citetitle]_Linux Filesystem Hierarchy Standard_ at link:++http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html++[] for information about various system directories and their contents.
+* 如果您是 Linux 的新手，在 link:++http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html++[] 处查看 [citetitle]_Linux 文件系统层次结构标准_，以了解有关各种系统目录及其内容的信息。
 
-* Each kernel installed on your system requires approximately 56 MB on the [filename]`/boot` partition:
+* 系统上安装的每个内核在 [filename]`/boot` 分区上大约需要 56 MB：
 +
 ** 32 MB initramfs
 ** 14 MB kdump initramfs
@@ -22,27 +22,27 @@ There is no best way to partition every system; the optimal setup depends on how
 +
 [NOTE]
 ====
-For rescue mode, `initramfs` and `vmlinuz` require 80 MB.
+对于救援模式，`initramfs` 和 `vmlinuz` 需要 80 MB。
 ====
 +
-The default partition size of 1 GB for [filename]`/boot` should suffice for most common use cases. However, it is recommended that you increase the size of this partition if you are planning on retaining multiple kernel releases or errata kernels.
+[filename]`/boot` 的默认分区大小为 1 GB，足以满足大多数常见的用例。 但是，如果计划保留多个内核发行版或勘误内核，则建议增加此分区的大小。
 
-* The [filename]`/var` directory holds content for a number of applications, including the [application]*Apache* web server, and is used by the [application]*DNF* package manager to temporarily store downloaded package updates. Make sure that the partition or volume containing [filename]`/var` has at least 3 GB.
+* [filename]`/var` 目录保存许多应用程序的内容，包括 [application]*Apache* web 服务器，DNF 包管理器使用它临时存储下载的包更新。确保包含 [filename]`/var` 的分区或卷至少有 3 GB。
 
-* The contents of the [filename]`/var` directory usually change very often. This may cause problems with older solid state drives (SSDs), as they can handle a lower number of read/write cycles before becoming unusable. If your system root is on an SSD, consider creating a separate mount point for [filename]`/var` on a classic (platter) HDD.
+* [filename]`/var` 目录的内容通常会经常更改。这可能会导致较旧的固态硬盘（SSD）出现问题，因为它们在变得不可用之前可以处理较少的读/写周期。如果您的系统根目录位于 SSD 上，请考虑为传统(盘式)硬盘上的 [filename]`/var` 创建单独的挂载点。
 
-* The [filename]`/usr` directory holds the majority of software on a typical {ProductName} installation. The partition or volume containing this directory should therefore be at least 5 GB for minimal installations, and at least 10 GB for installations with a graphical environment.
+* [filename]`/usr` 目录保存典型 {ProductName} 安装上的大部分软件。因此，对于最小安装，包含此目录的分区或卷应至少为 5 GB，对于具有图形环境的安装，应至少为 10 GB。
 
-* If [filename]`/usr` or [filename]`/var` is partitioned separately from the rest of the root volume, the boot process becomes much more complex because these directories contain boot-critical components. In some situations, such as when these directories are placed on an iSCSI drive or an FCoE location, the system may either be unable to boot, or it may hang with a [literal]`Device is busy` error when powering off or rebooting.
+* 如果将 [filename]`/usr` 或 [filename]`/var` 与 root 卷的其余部分分开分区，则引导过程将变得非常复杂，因为这些目录包含引导关键组件。在某些情况下(例如，当这些目录放置在iSCSI驱动器或FCoE位置上时)，系统可能无法引导，或者在断电或重新启动时挂起，并显示设备正忙错误。
 +
-This limitation only applies to [filename]`/usr` or [filename]`/var`, not to directories below them. For example, a separate partition for [filename]`/var/www` will work without issues.
+此限制仅适用于 [filename]`/usr` 或 [filename]`/var`，而不适用于它们下面的目录。例如，[filename]`/var/www` 的单独分区可以正常工作。
 
-* Consider leaving a portion of the space in an LVM volume group unallocated. This unallocated space gives you flexibility if your space requirements change but you do not wish to remove data from other volumes. You can also select the [gui]`LVM Thin Provisioning` device type for the partition to have the unused space handled automatically by the volume.
+* 考虑将 LVM 卷组中的部分空间保留为未分配。如果您的空间要求发生变化，但您不希望从其他卷中删除数据，则此未分配空间为您提供了灵活性。您还可以选择分区的 LVM 精简资源调配设备类型，使卷自动处理未使用的空间。
 
-* The size of an XFS file system can not be reduced - if you need to make a partition or volume with this file system smaller, you must back up your data, destroy the file system, and create a new, smaller one in its place. Therefore, if you expect needing to manipulate your partitioning layout later, you should use the ext4 file system instead.
+* XFS 文件系统的大小不能减小-如果您需要使包含此文件系统的分区或卷更小，则必须备份数据，销毁文件系统，然后创建一个新的、更小的文件系统来代替它。因此，如果您希望稍后需要操作分区布局，则应该改用 ext4 文件系统。
 
-* Use Logical Volume Management (LVM) if you anticipate expanding your storage by adding more hard drives or expanding virtual machine hard drives after the installation. With LVM, you can create physical volumes on the new drives, and then assign them to any volume group and logical volume as you see fit - for example, you can easily expand your system's [filename]`/home` (or any other directory residing on a logical volume).
+* 如果您希望在安装后通过添加更多硬盘驱动器或扩展虚拟机硬盘驱动器来扩展存储，请使用逻辑卷管理（LVM）。使用 LVM，您可以在新驱动器上创建物理卷，然后根据需要将它们分配给任何卷组和逻辑卷—例如，您可以轻松地扩展系统的 [filename]`/home`（或驻留在逻辑卷上的任何其他目录）。
 
-* Creating a BIOS Boot partition or an EFI System Partition may be necessary, depending on your system's firmware, boot drive size, and boot drive disk label. See xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[Recommended partitioning scheme] for information about these partitions. Note that graphical installation will not let you create a BIOS Boot or EFI System Partition if your system does *not* require one - in that case, they will be hidden from the menu.
+* 根据系统固件、引导驱动器大小和引导驱动器磁盘标签，可能需要创建 BIOS Boot 分区或 EFI 系统分区。有关这些分区的信息，请参阅xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[建议的分区方案]。注意，如果您的系统不需要 BIOS Boot 或 EFI 系统分区，则图形安装不允许您创建 BIOS Boot 或 EFI 系统分区 —— 在这种情况下，它们将从菜单中隐藏。
 
-* If you need to make any changes to your storage configuration after the installation, {ProductName} repositories offer several different tools which can help you do this. If you prefer a command line tool, try [package]*system-storage-manager*.
+* 如果在安装后需要对存储配置进行任何更改，{ProductName} 仓库提供了几种不同的工具，可以帮助您完成此操作。如果您喜欢命令行工具，请尝试 [package]*system-storage-manager*。

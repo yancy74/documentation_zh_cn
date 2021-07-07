@@ -29,7 +29,7 @@ include::partial$local-attributes.adoc[]
 // form, such as Creating or Configuring.
 [id="custom-boot-options_{context}"]
 [appendix]
-= Boot options reference
+= 引导选项参考
 
 // The `context` attribute enables module reuse. Every module's ID
 // includes {context}, which ensures that the module has a unique ID even if
@@ -58,7 +58,7 @@ YES/NO
 |===
 endif::[]
 
-This section contains information about some of the boot options that you can use to modify the default behavior of the installation program. For Kickstart and advanced boot options, see _References_ section of the xref:advanced-install:index.adoc[_Performing an advanced installation_] document.
+本部分包含有关某些引导选项的信息，这些选项可用于修改安装程序的默认行为。有关 Kickstart 和高级引导选项，请参阅xref:advanced-install:index.adoc[_高级安装_]文档的参考部分。
 
 //include::ROOT:partial$installer/con_types-of-boot-options.adoc[leveloffset=+1]
 //include::ROOT:partial$installer/proc_editing-boot-options.adoc[leveloffset=+1]

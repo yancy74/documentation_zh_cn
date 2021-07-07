@@ -1,66 +1,66 @@
-* xref:index.adoc[Performing an advanced installation]
+* xref:index.adoc[高级安装]
 
-** Performing an automated installation using Kickstart
+** 使用 Kickstart 执行自动安装
 
-*** xref:assembly_installation-introduction-experienced.adoc[Introduction]
+*** xref:assembly_installation-introduction-experienced.adoc[简介]
 
-*** xref:assembly_kickstart-installation-basics.adoc[Kickstart installation basics]
-**** xref:assembly_kickstart-installation-basics.adoc#what-are-kickstart-installations_kickstart-installation-basics[What are Kickstart installations]
-**** xref:assembly_kickstart-installation-basics.adoc#automated-installation-workflow_kickstart-installation-basics[Automated installation workflow]
+*** xref:assembly_kickstart-installation-basics.adoc[Kickstart 安装基础知识]
+**** xref:assembly_kickstart-installation-basics.adoc#what-are-kickstart-installations_kickstart-installation-basics[什么是 Kickstart 安装？]
+**** xref:assembly_kickstart-installation-basics.adoc#automated-installation-workflow_kickstart-installation-basics[自动化安装工作流程]
 
-*** xref:assembly_creating-kickstart-files.adoc[Creating Kickstart files]
-**** xref:assembly_creating-kickstart-files.adoc#creating-a-kickstart-file-by-performing-a-manual-installation_creating-kickstart-files[Creating a Kickstart file by performing a manual installation]
-**** xref:assembly_creating-kickstart-files.adoc#creating-a-kickstart-file-with-the-kickstart-configuration-tool_creating-kickstart-files[Creating a Kickstart file with the Kickstart configuration tool]
+*** xref:assembly_creating-kickstart-files.adoc[创建 Kickstart 文件]
+// **** xref:assembly_creating-kickstart-files.adoc#creating-a-kickstart-file-by-performing-a-manual-installation_creating-kickstart-files[Creating a Kickstart file by performing a manual installation]
+// **** xref:assembly_creating-kickstart-files.adoc#creating-a-kickstart-file-with-the-kickstart-configuration-tool_creating-kickstart-files[Creating a Kickstart file with the Kickstart configuration tool]
 
-*** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc[Making Kickstart files available to the installation program]
-**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[Ports for network-based installation]
-**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-an-nfs-server_making-kickstart-files-available-to-the-installation-program[Making a Kickstart file available on an NFS server]
-**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-an-http-or-https-server_making-kickstart-files-available-to-the-installation-program[Making a Kickstart file available on an HTTP or HTTPS server]
-**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-an-ftp-server_making-kickstart-files-available-to-the-installation-program[Making a Kickstart file available on an FTP server]
-**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-a-local-volume_making-kickstart-files-available-to-the-installation-program[Making a Kickstart file available on a local volume]
-**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-a-local-volume-for-automatic-loading_making-kickstart-files-available-to-the-installation-program[Making a Kickstart file available on a local volume for automatic loading]
+*** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc[使 Kickstart 文件可供安装程序使用]
+**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[基于网络安装的端口]
+**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-an-nfs-server_making-kickstart-files-available-to-the-installation-program[使 Kickstart 文件在 NFS 服务器上可用]
+**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-an-http-or-https-server_making-kickstart-files-available-to-the-installation-program[使 Kickstart 文件在 HTTP 或 HTTPS 服务器上可用]
+**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-an-ftp-server_making-kickstart-files-available-to-the-installation-program[使 Kickstart 文件在 FTP 服务器上可用]
+**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-a-local-volume_making-kickstart-files-available-to-the-installation-program[使 Kickstart 文件在本地卷上可用]
+**** xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-a-local-volume-for-automatic-loading_making-kickstart-files-available-to-the-installation-program[使本地卷上的 Kickstart 文件可用于自动加载]
 
-*** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc[Creating installation sources for Kickstart installations]
-**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#types-of-installation-source_creating-installation-sources-for-kickstart-installations[Types of installation source]
-**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#ports-for-network-based-installation_creating-installation-sources-for-kickstart-installations[Ports for network-based installation]
-**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#creating-an-installation-source_creating-installation-sources-for-kickstart-installations[Creating an installation source on an NFS server]
-**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#creating-an-installation-source-on-http_creating-installation-sources-for-kickstart-installations[Creating an installation source using HTTP or HTTPS]
-**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#creating-an-installation-source-on-ftp_creating-installation-sources-for-kickstart-installations[Creating an installation source using FTP]
+*** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc[为 Kickstart 安装创建安装源]
+**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#types-of-installation-source_creating-installation-sources-for-kickstart-installations[安装源类型]
+**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#ports-for-network-based-installation_creating-installation-sources-for-kickstart-installations[基于网络安装的端口]
+**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#creating-an-installation-source_creating-installation-sources-for-kickstart-installations[在 NFS 服务器上创建安装源]
+**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#creating-an-installation-source-on-http_creating-installation-sources-for-kickstart-installations[使用 HTTP 或 HTTPS 创建安装源]
+**** xref:assembly_creating-installation-sources-for-kickstart-installations.adoc#creating-an-installation-source-on-ftp_creating-installation-sources-for-kickstart-installations[使用 FTP 创建安装源]
 
-*** xref:assembly_starting-kickstart-installations.adoc[Starting Kickstart installations]
-**** xref:assembly_starting-kickstart-installations.adoc#starting-a-kickstart-installation-manually_starting-kickstart-installations[Starting a Kickstart installation manually]
-**** xref:assembly_starting-kickstart-installations.adoc#starting-a-kickstart-installation-automatically-using-pxe_starting-kickstart-installations[Starting a Kickstart installation automatically using PXE]
-**** xref:assembly_starting-kickstart-installations.adoc#starting-a-kickstart-installation-automatically-using-a-local-volume_starting-kickstart-installations[Starting a Kickstart installation automatically using a local volume]
+*** xref:assembly_starting-kickstart-installations.adoc[启动 Kickstart 安装]
+**** xref:assembly_starting-kickstart-installations.adoc#starting-a-kickstart-installation-manually_starting-kickstart-installations[手动启动 Kickstart 安装]
+**** xref:assembly_starting-kickstart-installations.adoc#starting-a-kickstart-installation-automatically-using-pxe_starting-kickstart-installations[使用 PXE 自动启动 Kickstart 安装]
+**** xref:assembly_starting-kickstart-installations.adoc#starting-a-kickstart-installation-automatically-using-a-local-volume_starting-kickstart-installations[使用本地卷自动启动 Kickstart 安装]
 
-*** xref:con_consoles-logging-during-installation.adoc[Consoles and logging during installation]
+*** xref:con_consoles-logging-during-installation.adoc[安装期间的控制台和日志记录]
 
-*** xref:assembly_maintaining-kickstart-files.adoc[Maintaining Kickstart files]
-**** xref:assembly_maintaining-kickstart-files.adoc#installing-kickstart-maintenance-tools_maintaining-kickstart-files[Installing Kickstart maintenance tools]
-**** xref:assembly_maintaining-kickstart-files.adoc#verifying-a-kickstart-file_maintaining-kickstart-files[Verifying a Kickstart file]
+*** xref:assembly_maintaining-kickstart-files.adoc[维护 Kickstart 文件]
+**** xref:assembly_maintaining-kickstart-files.adoc#installing-kickstart-maintenance-tools_maintaining-kickstart-files[安装 Kickstart 维护工具]
+**** xref:assembly_maintaining-kickstart-files.adoc#verifying-a-kickstart-file_maintaining-kickstart-files[验证 Kickstart 文件]
 
-** xref:assembly_performing-a-remote-installation-using-vnc.adoc[Performing a remote installation using VNC]
-*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#vnc-overview_performing-a-remote-installation-using-vnc[Overview]
-*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#vnc-considerations_performing-a-remote-installation-using-vnc[Considerations]
-*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#performing-a-rhel-install-in-vnc-direct-mode_performing-a-remote-installation-using-vnc[Performing a remote installation in VNC Direct mode]
-*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#performing-a-rhel-installation-in-vnc-connect-mode_performing-a-remote-installation-using-vnc[Performing a remote installation in VNC Connect mode]
+** xref:assembly_performing-a-remote-installation-using-vnc.adoc[使用 VNC 执行远程安装]
+*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#vnc-overview_performing-a-remote-installation-using-vnc[概述]
+*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#vnc-considerations_performing-a-remote-installation-using-vnc[注意事项]
+*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#performing-a-rhel-install-in-vnc-direct-mode_performing-a-remote-installation-using-vnc[在 VNC 直接模式下执行远程安装]
+*** xref:assembly_performing-a-remote-installation-using-vnc.adoc#performing-a-rhel-installation-in-vnc-connect-mode_performing-a-remote-installation-using-vnc[在 VNC 连接模式下执行远程安装]
 
-** Advanced configuration options
+** 高级配置选项
 
-*** xref:assembly_updating-drivers-during-installation.adoc[Updating drivers during installation]
-**** xref:assembly_updating-drivers-during-installation.adoc#driver-overview_updating-drivers-during-installation[Overview]
-**** xref:assembly_updating-drivers-during-installation.adoc#types-of-driver-update_updating-drivers-during-installation[Types of driver update]
-**** xref:assembly_updating-drivers-during-installation.adoc#preparing-a-driver-update-disc_updating-drivers-during-installation[Preparing a driver update]
-**** xref:assembly_updating-drivers-during-installation.adoc#performing-an-automatic-driver-update_updating-drivers-during-installation[Performing an automatic driver update]
-**** xref:assembly_updating-drivers-during-installation.adoc#performing-an-assisted-driver-update_updating-drivers-during-installation[Performing an assisted driver update]
-**** xref:assembly_updating-drivers-during-installation.adoc#performing-a-manual-driver-update_updating-drivers-during-installation[Performing a manual driver update]
-**** xref:assembly_updating-drivers-during-installation.adoc#disabling-a-driver_updating-drivers-during-installation[Disabling a driver]
+*** xref:assembly_updating-drivers-during-installation.adoc[安装期间更新驱动程序]
+**** xref:assembly_updating-drivers-during-installation.adoc#driver-overview_updating-drivers-during-installation[概述]
+**** xref:assembly_updating-drivers-during-installation.adoc#types-of-driver-update_updating-drivers-during-installation[驱动程序更新类型]
+**** xref:assembly_updating-drivers-during-installation.adoc#preparing-a-driver-update-disc_updating-drivers-during-installation[准备驱动程序更新]
+**** xref:assembly_updating-drivers-during-installation.adoc#performing-an-automatic-driver-update_updating-drivers-during-installation[执行辅助驱动程序更新]
+**** xref:assembly_updating-drivers-during-installation.adoc#performing-an-assisted-driver-update_updating-drivers-during-installation[执行辅助驱动程序更新]
+**** xref:assembly_updating-drivers-during-installation.adoc#performing-a-manual-driver-update_updating-drivers-during-installation[执行手动驱动程序更新]
+**** xref:assembly_updating-drivers-during-installation.adoc#disabling-a-driver_updating-drivers-during-installation[禁用驱动程序]
 
-*** xref:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE]
-**** xref:assembly_preparing-for-a-network-install.adoc#network-install-overview_preparing-for-a-network-install[Network install overview]
-**** xref:assembly_preparing-for-a-network-install.adoc#configuring-a-tftp-server-for-bios-based-clients_preparing-for-a-network-install[Configuring a TFTP server for BIOS-based clients]
-**** xref:assembly_preparing-for-a-network-install.adoc#configuring-a-tftp-server-for-uefi-based-clients_preparing-for-a-network-install[Configuring a TFTP server for UEFI-based clients]
-**** xref:assembly_preparing-for-a-network-install.adoc#configuring-a-network-server-for-ibm-power_preparing-for-a-network-install[Configuring a network server for IBM Power systems]
+*** xref:assembly_preparing-for-a-network-install.adoc[使用 PXE 从网络准备安装]
+**** xref:assembly_preparing-for-a-network-install.adoc#network-install-overview_preparing-for-a-network-install[网络安装概述]
+**** xref:assembly_preparing-for-a-network-install.adoc#configuring-a-tftp-server-for-bios-based-clients_preparing-for-a-network-install[为基于 BIOS 的客户端配置 TFTP 服务器]
+**** xref:assembly_preparing-for-a-network-install.adoc#configuring-a-tftp-server-for-uefi-based-clients_preparing-for-a-network-install[为基于 UEFI 的客户端配置 TFTP 服务器]
 
+////
 ** References
 
 *** xref:assembly_kickstart-and-advanced-boot-options.adoc[Boot options]
@@ -188,3 +188,4 @@
 **** xref:assembly_partitioning-reference.adoc#supported-raid-types_partitioning-reference[Supported RAID types]
 **** xref:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[Recommended partitioning scheme]
 **** xref:assembly_partitioning-reference.adoc#advice-on-partitions_partitioning-reference[Advice on partitions]
+////

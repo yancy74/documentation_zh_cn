@@ -1,11 +1,11 @@
 [id="installing-kickstart-maintenance-tools_{context}"]
-= Installing Kickstart maintenance tools
+= 安装 Kickstart 维护工具
 
-To use the Kickstart maintenance tools, you must install the package that contains them.
+要使用 Kickstart 维护工具，您必须安装包含这些工具的软件包。
 
-.Procedure
+.步骤
 
-* Install the [package]*pykickstart* package:
+* 安装 [package]*pykickstart* 包：
 +
 ----
 # yum install pykickstart

@@ -1,36 +1,37 @@
 [id="creating-a-kickstart-file-by-performing-a-manual-installation_{context}"]
-= Creating a Kickstart file by performing a manual installation
+= 通过执行手动安装创建 Kickstart 文件
 
-The recommended approach to creating Kickstart files is to use the file created by a manual installation of {ProductName}. After an installation completes, all choices made during the installation are saved into a Kickstart file named [filename]`anaconda-ks.cfg`, located in the [filename]`/root/` directory on the installed system. You can use this file to reproduce the installation in the same way as before. Alternatively, copy this file, make any changes you need, and use the resulting configuration file for further installations.
+创建 Kickstart 文件的推荐方法是使用手动安装 {ProductName} 创建的文件。安装完成后，安装期间所做的所有选择都将保存到一个名为 [filename]`anaconda-ks.cfg` 的Kickstart文件中，该文件位于已安装系统的 [filename]`/root/` 目录中。
+您可以使用此文件以与以前相同的方式重现安装。或者，复制此文件，进行所需的任何更改，然后使用生成的配置文件进行进一步安装。
 
 
-.Procedure
+.步骤
 
-. Install {rel8}. For more details, see xref:standard-install:index.adoc[Performing a standard installation].
+. 安装 {rel8}。有关详细信息，请参见xref:standard-install:index.adoc[标准安装]。
 +
-During the installation, create a user with administrator privileges.
+在安装过程中，创建具有管理员权限的用户。
 
-. Finish the installation and reboot into the installed system.
+. 完成安装并重新启动已安装的系统。
 
-. Log into the system with the administrator account.
+. 使用管理员帐户登录系统。
 
-. Copy the file [filename]`/root/anaconda-ks.cfg` to a location of your choice.
+. 将文件 [filename]`/root/anaconda-ks.cfg` 复制到您选择的位置。
 +
 ====
-* To display the file contents in terminal:
+* 要在终端中显示文件内容，请执行以下操作：
 +
 ----
 # cat /root/anaconda-ks.cfg
 ----
 +
-You can copy the output and save to another file of your choice.
+您可以复制输出并保存到您选择的其他文件。
 
-* To copy the file to another location, use the file manager. Remember to change permissions on the copy, so that the file can be read by non-root users.
+* 要将文件复制到其他位置，请使用文件管理器。请记住更改副本上的权限，以便非 root 用户可以读取该文件。
 ====
 +
-CAUTION: The file contains information about users and passwords.
+CAUTION: 该文件包含有关用户和密码的信息。
 
 
-.Additional resources
+.其他资源
 
-* xref:standard-install:index.adoc[Performing a standard installation]
+* xref:standard-install:index.adoc[标准安装]

@@ -2,17 +2,17 @@ include::ROOT:partial$attributes.adoc[]
 include::partial$local-attributes.adoc[]
 :parent-context-of-using-appstream: {context}
 [id="using-appstream_{context}"]
-= Using AppStream
+= 使用 AppStream
 
 :context: using-appstream
 // ustory: as an user or admin, I need to understand what is appstream and how it fits into the world of rpm/yum as I know it
 
-The following sections provide an overview of the concepts related to the AppStream repository in {ProductName}{nbsp}8.
+以下各部分概述了 {ProductName} 中与 AppStream 仓库相关的概念。
 
-* xref:assembly_using-appstream.adoc#distribution-of-content-in-rhel8_{context}[Distribution of content in {ProductName}] describes how content in {ProductName}{nbsp}8 is split into BaseOS and AppStream.
-* xref:assembly_using-appstream.adoc#application-streams_{context}[Application Streams] describes the concept of Application Streams.
-* xref:assembly_using-appstream.adoc#packaging-methods-in-rhel-8_{context}[Packaging methods in {ProductName}] describes the types of content provided by AppStream.
-* xref:assembly_using-appstream.adoc#package-management-using-yum-in-rhel-8_{context}[Package management using YUM in {ProductName}] describes how the [application]*YUM* package manager provided in {rel8} combines the traditional and modular features.
+* xref:assembly_using-appstream.adoc#distribution-of-content-in-rhel8_{context}[{ProductName} 中的内容分发] 描述了 {ProductName} 中的内容如何被拆分为 BaseOS 和 AppStream。
+* xref:assembly_using-appstream.adoc#application-streams_{context}[应用程序流] 描述了应用程序流的概念。
+* xref:assembly_using-appstream.adoc#packaging-methods-in-rhel-8_{context}[{ProductName} 中的打包方法] 描述了 AppStream 提供的内容类型。
+* xref:assembly_using-appstream.adoc#package-management-using-yum-in-rhel-8_{context}[在 {ProductName} 中使用 YUM 包管理] 描述了 {rel8} 中提供的 [application]*YUM* 包管理器如何结合传统和模块化功能。
 
 
 include::ROOT:partial$appstream/con_distribution-of-content-in-rhel8.adoc[leveloffset=+1]

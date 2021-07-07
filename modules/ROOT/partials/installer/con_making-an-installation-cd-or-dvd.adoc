@@ -1,10 +1,10 @@
 [id="making-an-installation-cd-or-dvd_{context}"]
-= Creating a bootable DVD or CD
+= 创建可引导 DVD 或 CD
 //TODO: This really isn't a procedure. Need to change post-beta.
 
-You can create a bootable installation DVD or CD using burning software and a CD/DVD burner. The exact steps to produce a DVD or CD from an ISO image file vary greatly, depending on the operating system and disc burning software installed. Consult your system's burning software documentation for the exact steps to burn a CD or DVD from an ISO image file.
+您可以使用刻录软件和 CD/DVD 刻录机创建可引导安装 DVD 或 CD。根据安装的操作系统和光盘刻录软件的不同，从 ISO 映像文件制作 DVD 或 CD 的具体步骤有很大的不同。有关从 ISO 映像文件刻录 CD 或 DVD 的确切步骤，请参阅系统的刻录软件文档。
 
 [WARNING]
 ====
-You can create a bootable DVD or CD using either the DVD1 ISO image (contains installer and packages), or the Boot ISO image (only contains the installer, requires an additional package source). However, the DVD1 ISO image is larger than 4.7{nbsp}GB, and as a result, it might not fit on a single-layer DVD. A dual-layer DVD or USB key is recommended when using the DVD1 ISO image to create bootable installation media.
+您可以使用 DVD1 ISO 映像（包含安装程序和软件包）或 Boot ISO 映像（仅包含安装程序，需要额外的软件包源）创建可引导 DVD 或 CD。但是，DVD1 ISO 映像大于 4.7 GB，因此可能无法放入单层 DVD。使用 DVD1 ISO 映像创建可引导安装介质时，建议使用双层 DVD 或 USB 闪存盘。
 ====

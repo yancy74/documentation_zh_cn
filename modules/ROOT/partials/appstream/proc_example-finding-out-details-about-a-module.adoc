@@ -1,16 +1,16 @@
 [id="example-finding-out-details-about-a-module_{context}"]
-= Example: Finding out details about a module
+= 示例：查找有关模块的详细信息
 
 // User Story: As a sysadmin, I need to know what is available through the AppStream so I can determine what RPMs, SCLs, and modules to download and install.
 
-This example shows how to locate a module in the AppStream repository and how to find out more about its contents.
+以下示例显示如何在 AppStream 仓库中定位模块，以及如何查找有关其内容的更多信息。
 
-NOTE: The outputs in this example have been edited for brevity. Actual outputs may contain more information than shown here.
+NOTE: 为简洁起见，本示例中的输出经过了编辑。实际输出可能包含比此处显示的更多信息。
 
 
-.Procedure
+.步骤
 
-. List available modules:
+. 列出可用模块：
 +
 [subs="quotes",options="nowrap",role=white-space-pre]
 ----
@@ -26,7 +26,7 @@ postgresql  9.6     client,     PostgreSQL server and client module
 Hint: [d]efault, [e]nabled, [x]disabled, [i]nstalled
 ----
 
-. Examine details of the *postgresql* module:
+. 列出 *postgresql* 模块的详细信息：
 +
 [subs="quotes",options="nowrap",role=white-space-pre]
 ----
@@ -57,10 +57,10 @@ Description      : (...)
 Hint: [d]efault, [e]nabled, [x]disabled, [i]nstalled, [a]ctive]
 ----
 +
-Because no stream is specified, all streams are used for the listing.
+因为没有指定流，所以列出所有流。
 
 
-. Examine profiles available in stream *10* of the *postgresql* module:
+. 列出 *postgresql* 模块流 10 中可用的配置文件：
 +
 [subs="quotes"]
 ----
@@ -71,9 +71,9 @@ client : postgresql
 server : postgresql-server
 ----
 +
-Each of the profiles installs a different set of packages, including their dependencies.
+每个配置文件安装一组不同的包，包括它们的依赖项。
 
-. Install the *postgresql* module using the default stream *10* and profile *server*:
+. 使用默认流 *10* 和配置文件 *server* 安装 *postgresql* 模块：
 +
 [subs="quotes",options="nowrap",role=white-space-pre]
 ----
@@ -102,9 +102,9 @@ Is this ok [y/N]: **y**
 (...)
 ----
 +
-The stream *10* is enabled and packages in its profile *server* installed.
+流 *10* 已启用，其配置文件 *server* 中的包已安装。
 
-. Inspect the current status of the *postgresql* module:
+. 检测 *postgresql* 模块的当前状态：
 +
 [subs="quotes"]
 ----
@@ -116,4 +116,4 @@ postgresql 9.6       client, server [d]      (...)
 Hint: [d]efault, [e]nabled, [x]disabled, [i]nstalled
 ----
 +
-The output shows that the default stream *10* is enabled and its profile *server* is installed.
+输出显示默认流 *10* 已启用，并且其配置文件 *server* 已安装。

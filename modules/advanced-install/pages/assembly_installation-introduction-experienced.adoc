@@ -28,7 +28,7 @@ include::partial$local-attributes.adoc[]
 // If the assembly covers a task, start the title with a verb in the gerund
 // form, such as Creating or Configuring.
 [id="installation-introduction_{context}"]
-= Introduction
+= 简介
 
 // The `context` attribute enables module reuse. Every module's ID
 // includes {context}, which ensures that the module has a unique ID even if
@@ -57,8 +57,7 @@ YES/NO
 |===
 endif::[]
 
-{productname} {productnumber} delivers a stable, secure, consistent foundation across hybrid cloud deployments with the tools needed to deliver workloads faster with less effort.
-It can be deployed as a guest on supported hypervisors and Cloud provider environments as well as deployed on physical infrastructure, so your applications can take advantage of innovations in the leading hardware architecture platforms.
+{productname} {productnumber} 为跨混合云部署提供了稳定、安全、一致的基础，并提供了一些所需的交付工具，从而达到事半功倍。它可以作为客户机部署在受支持的虚拟机和云提供商环境中，也可以部署在物理基础设施上，因此您的应用程序可以利用领先硬件体系结构平台中的创新功能。
 
 include::ROOT:partial$installer/con_installation-options.adoc[leveloffset=+1]
 include::ROOT:partial$installer/ref_installation-terminology.adoc[leveloffset=+1]

@@ -1,32 +1,32 @@
 [id="commands-for-removing-content_{context}"]
-= Commands for removing content
+= 删除内容的命令
 
-This section lists commonly used commands for removing content.
+本部分列出了用于删除内容的常用命令。
 
-.Command list
+.命令列表
 
-Remove a package::
+删除软件包::
 +
 [subs="quotes"]
 ----
 # yum remove __package__
 ----
 
-Remove installed module stream profiles::
+删除已安装的模块流配置文件::
 +
 [subs="quotes"]
 ----
 # yum module remove __module-name__
 ----
 
-Reset all streams of a module to initial state::
+将模块的所有流重置为初始状态::
 +
 [subs="quotes"]
 ----
 # yum module reset __module-name__
 ----
 
-Disable a module and all its streams::
+禁用模块及其所有流::
 +
 [subs="quotes"]
 ----

@@ -1,10 +1,10 @@
 [id="specify-an-installation-source_{context}"]
-= Specify the installation source
+= 指定安装源
 
-You can specify the installation source using any of the following methods:
+您可以使用以下任一方法指定安装源：
 
-* *Graphical installation:* Select the installation source in the *Installation Source* window of the graphical installation. See xref:standard-install:assembly_graphical-installation.adoc#configuring-installation-source_configuring-software-settings[Configuring installation source] for more information.
-* *Boot option:* Configure a custom boot option to specify the installation source. See xref:standard-install:assembly_custom-boot-options.adoc[Boot options reference] for more information.
-* *Kickstart file:* Use the install command in a Kickstart file to specify the installation source. See the xref:advanced-install:index.adoc[Performing an advanced installation] document for more information.
+* *图形化安装：* 在图形化安装的 *安装源窗口* 中选择安装源。有关详细信息，请参阅See xref:standard-install:assembly_graphical-installation.adoc#configuring-installation-source_configuring-software-settings[配置安装源]。
+* *引导选项：* 配置自定义引导选项以指定安装源。有关详细信息，请参阅xref:standard-install:assembly_custom-boot-options.adoc[引导选项参考]。
+* *Kickstart 文件：* 使用 Kickstart 文件中的 Install 命令指定安装源。有关详细信息，请参阅xref:advanced-install:index.adoc[高级安装]文档。
 
 //Need to add links

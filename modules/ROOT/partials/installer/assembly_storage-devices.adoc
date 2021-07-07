@@ -1,7 +1,7 @@
 :parent-context-of-storage-devices: {context}
 
 [id='storage-devices_{context}']
-= Configuring storage devices
+= 配置存储设备
 
 :context: storage-devices
 
@@ -27,7 +27,7 @@ YES/NO
 |===
 endif::[]
 
-You can install {productname} on a large variety of storage devices. You can configure basic, locally accessible, storage devices in the *Installation Destination* window. Basic storage devices directly connected to the local system, such as hard disk drives and solid-state drives, are displayed in the *Local Standard Disks* section of the window.
+您可以在各种存储设备上安装 {productname}。您可以在 *安装目的地* 窗口中配置本地可访问的基本存储设备。直接连接到本地系统的基本存储设备（例如硬盘驱动器和固态驱动器）显示在窗口的 *本地标准磁盘* 部分中。
 
 include::ROOT:partial$installer/ref_storage-devices-selection.adoc[leveloffset=+1]
 include::ROOT:partial$installer/proc_configuring-storage-options.adoc[leveloffset=+1]

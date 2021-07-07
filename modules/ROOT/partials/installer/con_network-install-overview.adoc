@@ -1,34 +1,31 @@
 [id="network-install-overview_{context}"]
-= Network install overview
+= 网络安装概述
 
-A network installation allows you to install {productname} to a system that has access to an installation server. At a minimum, two systems are required for a network installation:
+网络安装允许您将 {productname} 安装到可以访问安装服务器的系统。网络安装至少需要两个系统：
 
-*PXE Server:* A system running a DHCP server, a TFTP server, and an HTTP, HTTPS, FTP, or NFS server. While each server can run on a different physical system, the procedures in this section assume a single system is running all servers.
 
-*Client:* The system to which you are installing {productname}. Once installation starts, the client queries the DHCP server, receives the boot files from the TFTP server, and downloads the installation image from the HTTP, HTTPS, FTP or NFS server. Unlike other installation methods, the client does not require any physical boot media for the installation to start.
+*PXE服务器：* 运行 DHCP 服务、TFTP 服务和 HTTP、HTTPS、FTP 或 NFS 服务的系统。虽然每个服务可以在不同的物理系统上运行，但本部分中的步骤假定单个系统正在运行所有服务。
+
+*客户端：* 您要安装 {productname} 的系统。安装开始后，客户端将查询 DHCP 服务器，从 TFTP 服务器接收引导文件，并从 HTTP、HTTPS、FTP 或 NFS 服务器下载安装映像。与其他安装方法不同，客户端不需要任何物理引导介质即可启动安装。
 
 [NOTE]
 ====
-To boot a client from the network, configure it in BIOS/UEFI or a quick boot menu. On some hardware, the option to boot from a network might be disabled, or not available.
+要从网络启动客户端，请在 BIOS/UEFI 或快速引导菜单中对其进行配置。在某些硬件上，从网络引导的选项可能被禁用或不可用。
 ====
 
-The workflow steps to prepare to install {productname} from a network using PXE are as follows:
+使用 PXE 从网络准备安装 {productname} 的工作流程步骤如下：
 
-.Steps
+.步骤
 
-. Export the installation ISO image (or the installation tree) to an NFS, HTTPS, HTTP, or FTP server.
-. Configure the TFTP server and DHCP server, and start the TFTP service on the PXE server.
-. Boot the client, and start the installation.
+. 将安装 ISO 映像(或安装树)导出到 NFS、HTTPS、HTTP 或 FTP 服务器。
+. 配置 TFTP 服务和 DHCP 服务，并在 PXE 服务器上启动 TFTP 服务。
+. 引导客户端，并启动安装。
 
 
 [IMPORTANT]
 ====
-The GRUB2 boot loader supports a network boot from HTTP in addition to a TFTP server. Sending the boot files (the kernel and initial RAM disk - vmlinuz and initrd) over this protocol might be slow and result in timeout failures. An HTTP server does not carry this risk, but it is recommended that you use a TFTP server when sending the boot files.
+GRUB2 引导加载程序除了支持 TFTP 服务器之外，还支持从 HTTP 进行网络引导。通过 TFTP 协议发送引导文件（内核和初始 RAM 磁盘 —— vmlinuz 和 initrd）可能会很慢，并且会导致超时失败。HTTP 服务器没有这种风险，但是建议您在发送启动文件时使用 TFTP 服务器。
 ====
 
 [discrete]
-== Additional resources
 
-* To export the installation ISO image to a network location, see xref:advanced-install:assembly_creating-installation-sources-for-kickstart-installations.adoc[Creating installation sources for Kickstart installations] for information.
-* To configure the TFTP server and DHCP server, and start the TFTP service, see xref:assembly_preparing-for-a-network-install.adoc#configuring-a-tftp-server-for-bios-based-clients_preparing-for-a-network-install[Configuring a TFTP server for BIOS-based clients], xref:assembly_preparing-for-a-network-install.adoc#configuring-a-tftp-server-for-uefi-based-clients_preparing-for-a-network-install[Configuring a TFTP server for UEFI-based clients], and xref:assembly_preparing-for-a-network-install.adoc#configuring-a-network-server-for-ibm-power_preparing-for-a-network-install[Configuring a network server for IBM Power systems]for information.
-* Spacewalk can automate the setup of a PXE server. For more information, see the link:https://spacewalkproject.github.io/[project website].

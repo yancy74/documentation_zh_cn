@@ -7,7 +7,7 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-partitioning-reference: {context}
 [id="partitioning-reference_{context}"]
 [appendix]
-= Partitioning reference
+= 分区参考
 :context: partitioning-reference
 
 include::ROOT:partial$installer/ref_supported-device-types.adoc[leveloffset=+1]

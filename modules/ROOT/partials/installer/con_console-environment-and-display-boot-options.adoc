@@ -1,67 +1,66 @@
 [id="console-environment-and-display-boot-options_{context}"]
-= Console boot options
+= 控制台引导选项
 
-This section contains information about configuring boot options for your console, monitor display, and keyboard.
+本部分包含有关配置控制台、显示器和键盘的引导选项的信息。
 
 console=::
-Use the `console=` option to specify a device that you want to use as the primary console. For example, to use a console on the first serial port, use `console=ttyS0`. Use this option in conjunction with the `inst.text` option. You can use the `console=` option multiple times. If you do, the boot message is displayed on all specified consoles, but only the last one is used by the installation program. For example, if you specify `console=ttyS0 console=ttyS1`, the installation program uses `ttyS1`.
+使用  `console=` 选项指定要用作主控制台的设备。例如，要在第一个串行端口上使用控制台，请使用 `console=ttyS0`。将此选项与 `inst.text` 选项一起使用。 您可以多次使用 `console=` 选项。如果这样做，则引导消息将显示在所有指定的控制台上，但安装程序仅使用最后一个。例如，如果指定 `console=ttyS0 console=ttyS1`，则安装程序将使用 `ttyS1`。
 
 inst.lang=::
-Use the `inst.lang=` option to set the language that you want to use during the installation. The `locale -a | grep _` or `localectl list-locales | grep _` options return a list of locales.
+使用 `inst.lang=` 选项设置安装期间要使用的语言。`locale -a | grep _` 或 `localectl list-locales | grep _` 选项返回区域设置列表。
 
 inst.singlelang::
-Use the `inst.singlelang` option to install in single language mode, which results in no available interactive options for the installation language and language support configuration. If a language is specified using the `inst.lang` boot option or the `lang` Kickstart command, then it is used. If no language is specified, the installation program defaults to `en_US.UTF-8`.
+使用 `inst.singlelang` 选项以单一语言模式安装，这将导致安装语言和语言支持配置没有可用的交互式选项。如果使用 `inst.lang` 引导选项或 `lang`  Kickstart 命令指定了一种语言，则将使用该语言。如果未指定语言，则安装程序默认为 `en_US.UTF-8`。
 
 inst.geoloc=::
-Use the `inst.geoloc=` option to configure geolocation usage in the installation program. Geolocation is used to preset the language and time zone, and uses the following syntax: `inst.geoloc=value`. The `value` can be any of the following parameters:
+使用 `inst.geoloc=` 选项在安装程序中配置地理位置使用。地理位置用于预设语言和时区，并使用以下语法： `inst.geoloc=value`。`value` 可以是以下任何参数：
 +
-.Values for the inst.geoloc boot option
+.inst.geoloc 引导选项的值
 [options="header"]
 |===
-| Value  | Boot option format
-| Disable geolocation  | `inst.geoloc=0`
-| Use the Fedora GeoIP API  | `inst.geoloc=provider_fedora_geoip`
-| Use the Hostip.info GeoIP API  | `inst.geoloc=provider_hostip`
+| 值  | 引导选项格式
+| 禁用地理位置  | `inst.geoloc=0`
+| 使用 Fedora GeoIP API  | `inst.geoloc=provider_fedora_geoip`
+| 使用 Hostip.info GeoIP API  | `inst.geoloc=provider_hostip`
 |===
 +
-If you do not specify the `inst.geoloc=` option, the installation program uses `provider_fedora_geoip`.
+如果未指定 `inst.geoloc=` 选项，则安装程序将使用 `provider_fedora_geoip`。
 
 inst.keymap=::
-Use the `inst.keymap=` option to specify the keyboard layout that you want to use for the installation.
+使用 `inst.keymap=` 选项可以指定要用于安装的键盘布局。
 
 inst.cmdline::
-Use the `inst.cmdline` option to force the installation program to run in command-line mode. This mode does not allow any interaction, and you must specify all options in a Kickstart file or on the command line.
+使用 `inst.cmdline` 选项强制安装程序在命令行模式下运行。此模式不允许任何交互，并且您必须在 Kickstart 文件或命令行中指定所有选项。
 
 inst.graphical::
-Use the `inst.graphical` option to force the installation program to run in graphical mode. This mode is the default.
+使用 `inst.graphical` 选项可以强制安装程序以图形方式运行。此模式是默认模式。
 
 inst.text::
-Use the `inst.text` option to force the installation program to run in text mode instead of graphical mode.
+使用 `inst.text` 选项强制安装程序以文本模式而不是图形模式运行。
 
 inst.noninteractive::
-Use the `inst.noninteractive` boot option to run the installation program in a non-interactive mode. User interaction is not permitted in the non-interactive mode, and `inst.noninteractive` can be used with a graphical or text installation. When the `inst.noninteractive` option is used in text mode it behaves the same as the `inst.cmdline` option.
+使用 `inst.noninteractive` 引导选项以非交互方式运行安装程序。在非交互模式下不允许用户交互，并且 `inst.noninteractive` 可以与图形或文本安装一起使用。在文本模式下使用 `inst.noninteractive` 选项时，其行为与 `inst.cmdline` 选项相同。
 
 inst.resolution=::
-Use the `inst.resolution=` option to specify the screen resolution in graphical mode. The format is `NxM`, where _N_ is the screen width and _M_ is the screen height (in pixels). The lowest supported resolution is 1024x768.
+使用 `inst.resolution=` 选项在图形模式下指定屏幕分辨率。格式为 `NxM`，其中 _N_ 是屏幕宽度， _M_ 是屏幕高度（以像素为单位）。支持的最低分辨率为 1024x768。
 
 inst.vnc=::
-Use the `inst.vnc=` option to run the graphical installation using VNC. You must use a VNC client application to interact with the installation program. When VNC sharing is enabled, multiple clients can connect. A system installed using VNC starts in text mode.
+使用 `inst.vnc=` 选项运行使用 VNC 的图形安装。您必须使用 VNC 客户端应用程序与安装程序交互。启用 VNC 共享后，多个客户端可以连接。使用 VNC 安装的系统以文本模式启动。
 
 inst.vncpassword=::
-Use the `inst.vncpassword=` option to set a password on the VNC server that is used by the installation program.
+使用 `inst.vncpassword=` 选项在安装程序使用的 VNC 服务器上设置密码。
 
 inst.vncconnect=::
-Use the `inst.vncconnect=` option to connect to a listening VNC client at the given host location. For example `inst.vncconnect=<host>[:<port>]`
-The default port is 5900. This option can be used with `vncviewer -listen`.
+使用 `inst.vncconnect=` 选项连接到给定主机位置上的监听 VNC 客户端。例如，`inst.vncconnect=<host>[:<port>]`，默认端口为 5900。此选项可与 `vncviewer -listen` 一起使用。
 
 inst.xdriver=::
-Use the `inst.xdriver=` option to specify the name of the X driver that you want to use both during installation and on the installed system.
+使用 `inst.xdriver=` 选项可以指定要在安装过程中以及在已安装的系统上使用的 X 驱动程序的名称。
 
 inst.usefbx=::
-Use the `inst.usefbx` option to prompt the installation program to use the frame buffer X driver instead of a hardware-specific driver. This option is equivalent to `inst.xdriver=fbdev`.
+使用 `inst.usefbx` 选项提示安装程序使用帧缓冲区 X 驱动程序，而不是特定于硬件的驱动程序。此选项相当于 `inst.xdriver=fbdev`。
 
 modprobe.blacklist=::
-Use the `modprobe.blacklist=` option to blacklist or completely disable one or more drivers. Drivers (mods) that you disable using this option cannot load when the installation starts, and after the installation finishes, the installed system retains these settings. You can find a list of the blacklisted drivers in the `/etc/modprobe.d/` directory. Use a comma-separated list to disable multiple drivers. For example:
+使用 `modprobe.blacklist=` 选项将一个或多个驱动程序列入黑名单或完全禁用。使用此选项禁用的驱动程序(mod)在安装开始时无法加载，安装完成后，安装的系统将保留这些设置。您可以在 `/etc/modprobe.d/` 目录中找到列入黑名单的驱动程序列表。使用逗号分隔的列表禁用多个驱动程序。例如：
 +
 [subs="macros"]
 ----
@@ -70,15 +69,15 @@ modprobe.blacklist=ahci,firewire_ohci
 
 inst.xtimeout=::
 
-Use the `inst.xtimeout=` option to specify the timeout in seconds for starting X server.
+使用 `inst.xtimeout=` 选项指定启动X服务器的超时时间(以秒为单位)。
 
 inst.sshd::
-Use the `inst.sshd` option to start the `sshd` service during installation, so that you can connect to the system during the installation using SSH, and monitor the installation progress. For more information about SSH, see the `ssh(1)` man page. By default, `sshd` is not started unless you use the `inst.sshd` option.
+在安装过程中使用 `inst.sshd` 选项启动 `sshd` 服务，以便您可以在安装过程中使用 SSH 连接到系统，并监控安装进度。有关 SSH 的更多信息，请参见 `ssh(1)` 手册页。默认情况下，除非您使用 `inst.sshd` 选项，否则不会启动`sshd`。
 +
 [NOTE]
 ====
-During installation, the root account has no password by default. You can set a root password during installation with the `sshpw` Kickstart command.
+在安装过程中，默认情况下 root 帐户没有密码。您可以在安装期间使用 `sshpw` kickstart 命令设置 root 密码。
 ====
 
 inst.kdump_addon=::
-Use the `inst.kdump_addon=` option to enable or disable the Kdump configuration screen (add-on) in the installation program. This screen is enabled by default; use `inst.kdump_addon=off` to disable it. Disabling the add-on disables the Kdump screens in both the graphical and text-based interface as well as the `%addon com_redhat_kdump` Kickstart command.
+使用 `inst.kdump_addon=` 选项在安装程序中启用或禁用 kdump 配置屏幕(附加组件)。默认情况下，屏幕处于启用状态；使用 `inst.kdump_addon=off` 将其禁用。禁用附加组件会禁用图形和基于文本的界面中的 kdump 屏幕以及 `%addon com_redhat_kdump` kickstart命令。

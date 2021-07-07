@@ -1,28 +1,28 @@
 [id="disabling-a-driver_{context}"]
-= Disabling a driver
+= 禁用驱动程序
 
-This procedure describes how to disable a malfunctioning driver.
-
-[discrete]
-== Prerequisites
-
-* You have booted the installation program boot menu.
-
+以下步骤介绍如何禁用故障驱动程序。
 
 [discrete]
-== Procedure
+== 前提
 
-. From the boot menu, press the *Tab* key on your keyboard to display the boot command line.
+* 您已启动安装程序引导菜单。
 
-. Append the `modprobe.blacklist=driver_name` boot option to the command line.
 
-. Replace _driver_name_ with the name of the driver or drivers you want to disable, for example:
+[discrete]
+== 步骤
+
+. 在引导菜单中，按键盘上的 *Tab* 键以显示引导命令行。
+
+. 将 `modprobe.blacklist=driver_name` 引导选项追加到命令行。
+
+. 将 _driver_name_ 替换为要禁用的一个或多个驱动程序的名称，例如：
 +
 [subs="quotes, macros, attributes"]
 ----
 modprobe.blacklist=ahci
 ----
 +
-Drivers disabled using the `modprobe.blacklist=` boot option remain disabled on the installed system and appear in the `/etc/modprobe.d/anaconda-blacklist.conf` file.
+使用 `modprobe.blacklist=` 引导选项禁用的驱动程序在已安装的系统上保持禁用状态，并显示在 `/etc/modprobe.d/anaconda-blacklist.conf` 文件中。
 
-. Press *Enter* to execute the boot process.
+. 按 *Enter* 键执行引导过程。

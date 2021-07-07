@@ -1,39 +1,39 @@
 [id="switching-to-a-later-stream_{context}"]
-= Switching to a later stream
+= 切换到更高版本流
 
-When you switch to a later module stream, all packages from the module are replaced with their later versions.
+当您切换到更高版本的模块流时，该模块中的所有软件包都将替换为它们的更高版本。
 
 [IMPORTANT]
 ====
-This procedure is feasible only under the conditions described below.
+此过程仅在下述条件下可行。
 ====
 
 
-.Prerequisites
+.前提
 
-* The system is fully updated.
+* 系统已完全更新。
 
-* No packages installed on the system are newer than the packages available in the repository.
+* 系统上安装的软件包均不比仓库中可用的软件包更新。
 
 
-.Procedure
+.步骤
 
 // . Ensure the prerequisites are met.
 
-. Run the following command to determine if your system is prepared for switching to a later stream:
+. 运行以下命令以确定您的系统是否准备好切换到更高版本的流：
 +
 ----
 # yum distro-sync
 ----
 +
-This command must finish with the message __Nothing to do. Complete!__ If it instead proposes changes and asks for confirmation, refuse these changes and modify your system to a state where the command completes with no further action required.
+此命令必须以消息 __Nothing to do. Complete!__ 结束。如果它提出更改并要求确认，则拒绝这些更改并将系统修改为命令完成而不需要进一步操作的状态。
 +
 [NOTE]
 ====
-By checking the [command]`yum distro-sync` result before switching the streams, you prevent making changes to the system that are unrelated to the stream switching because the same command is required as the last step of this procedure.
+通过在切换流之前检查 [command]`yum distro-sync` 结果，可以防止对系统进行与流切换无关的更改，因为此过程的最后一步需要相同的命令。
 ====
 
-. Change the active stream to the later one:
+. 将激活流更改为较新的流：
 +
 [subs="quotes"]
 ----
@@ -41,23 +41,20 @@ By checking the [command]`yum distro-sync` result before switching the streams, 
 # yum module enable __module-name__:__new-stream__
 ----
 
-. Synchronize installed packages to perform the change between streams:
+. 同步已安装的软件包以在流之间执行更改：
 +
 ----
 # yum distro-sync
 ----
 +
-If this action suggests changes to content outside the streams, review them carefully.
+如果此操作建议更改流以外的内容，请仔细检查它们。
 +
-If certain installed packages depend on the earlier stream and there is no compatible version in the later stream, *yum* will report a dependency conflict. In this case, use the `--allowerasing` option to remove such packages because they cannot be installed together with the later stream due to missing dependencies.
+如果某些已安装的软件包依赖于较低版本的流，而在较高版本的流中没有兼容的版本，则 *yum* 将报告依赖冲突。在这种情况下，请使用 `--allowerasing` 选项删除此类软件包，因为缺少依赖，它们无法与更高版本的流一起安装。
 +
 [NOTE]
 ====
-When switching *Perl* modules, the `--allowerasing` option is always required because certain packages in the base {rel8} installation depend on *Perl 5.26*.
+在切换 *Perl* 模块时，始终需要 `--allowerasing` 选项，因为在基础 {rel8} 安装中某些包依赖于 *Perl 5.26*。
 ====
 
-Alternatively, xref:assembly_removing-rhel-8-content.adoc#removing-installed-modules_removing-rhel-8-content[remove all the module's content] installed from the current stream, xref:assembly_removing-rhel-8-content.adoc#resetting-module-streams_removing-rhel-8-content[reset the module], and xref:assembly_installing-rhel-8-content.adoc#installing-a-module-stream_installing-rhel-8-content[install the new stream].
+或者，从当前流中删除所有安装的模块内容，重置模块，然后安装新的流。
 
-.Additional resources
-
-* xref:assembly_managing-versions-of-appstream-content.adoc#switching-to-a-later-stream_managing-versions-of-appstream-content[Switching to a later stream]

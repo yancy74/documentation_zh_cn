@@ -1,42 +1,42 @@
 [id="configuring-an-nvdimm-device-using-anaconda_{context}"]
-= Configuring an NVDIMM device using the graphical installation mode
+= 使用图形安装模式配置 NVDIMM 设备
 
-A Non-Volatile Dual In-line Memory Module (NVDIMM) device must be properly configured for use by {ProductName} {ProductNumber} using the graphical installation.
+非易失性双列直插式内存模块（NVDIMM）设备必须配置正确，以便 {ProductName} {ProductNumber} 使用图形安装。
 
-WARNING: Reconfiguration of a NVDIMM device process destroys any data stored on the device.
+WARNING: 重新配置NVDIMM设备进程会破坏设备上存储的所有数据。
 
-.Prerequisites
+.前提
 
-* A NVDIMM device is present on the system and satisfies all the other conditions for usage as an installation target.
-* The installation has booted and the *Installation Summary* window is open.
+* NVDIMM设备存在于系统上，并且满足用作安装目标的所有其他条件。
+* 安装已启动，*安装信息摘要* 窗口已打开。
 
 
-.Procedure
+.步骤
 
-. From the *Installation Summary* window, click *Installation Destination*. The *Installation Destination* window opens, listing all available drives.
+. 在 *安装信息摘要* 窗口中，单击 *安装目的地*。 将打开 *安装目的地* 窗口，其中列出了所有可用的驱动器。
 
-. Under the *Specialized & Network Disks* section, click *Add a disk...*. The storage devices selection window opens.
+. 在 *专用磁盘和网络磁盘* 部分下，单击 *添加磁盘...*。打开存储设备选择窗口。
 
-. Click the *NVDIMM Devices* tab.
+. 单击 *NVDIMM 设备* 选项卡。
 
-. To reconfigure a device, select it from the list.
+. 要重新配置设备，请从列表中选择它。
 +
-If a device is not listed, it is not in sector mode.
+如果未列出设备，则该设备不在扇区模式下。
 
-. Click *Reconfigure NVDIMM...*. A reconfiguration dialog opens.
+. 单击 *重新配置 NVDIMM...*。将打开一个重新配置对话框。
 
-. Enter the sector size that you require and click *Start Reconfiguration*.
+. 输入所需的扇区大小，然后单击 *开始重新配置*。
 +
-The supported sector sizes are 512 and 4096 bytes.
+支持的扇区大小为 512 和 4096 字节。
 
-. When reconfiguration completes click *OK*.
+. 重新配置完成后，单击 *确定*。
 
-. Select the device check box.
+. 选中设备复选框。
 
-. Click *Done* to return to the *Installation Destination* window.
+. 单击 *完成* 以返回到 *安装目的地* 窗口。
 +
-The NVDIMM device that you reconfigured is displayed in the *Specialized & Network Disks* section.
+您重新配置的 NVDIMM 设备显示在 *专用磁盘和网络磁盘* 部分中。
 
-. Click *Done* to return to the *Installation Summary* window.
+. 单击 *完成* 返回到 *安装信息摘要* 窗口。
 
-The NVDIMM device is now available for you to select as an installation target. Additionally, if the device meets the requirements for booting, you can set the device as a boot device.
+现在可以选择 NVDIMM 设备作为安装目标。此外，如果设备符合引导要求，则可以将设备设置为引导设备。

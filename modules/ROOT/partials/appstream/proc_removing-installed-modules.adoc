@@ -1,44 +1,44 @@
 [id="removing-installed-modules_{context}"]
-= Removing installed modules
+= 删除已安装的模块
 
-Removing a module removes all of the packages installed by profiles of the currently enabled module stream, and any further packages and modules that depend on these.
+删除模块将删除当前启用的模块流的配置文件安装的所有包，以及依赖这些配置文件的任何其他包和模块。
 
-Packages installed from this module stream not listed in any of its profiles remain installed on the system and can be removed manually.
+从此模块流安装的软件包（未在其任何配置文件中列出）仍保留在系统上，可以手动删除。
 
 
-.Prerequisites
+.前提
 
-* A module which you want removed must have already installed some profiles.
+* 要删除的模块必须已经安装了一些配置文件。
 
-* You must understand xref:assembly_managing-versions-of-appstream-content.adoc#modular-dependencies-and-stream-changes_managing-versions-of-appstream-content[modular dependency resolution].
+* 理解 xref:assembly_managing-versions-of-appstream-content.adoc#modular-dependencies-and-stream-changes_managing-versions-of-appstream-content[模块依赖解析]。
 
-.Procedure
+.步骤
 
-. List packages installed from the module:
+. 列出从模块安装的软件包：
 +
 [subs="quotes"]
 ----
 $ yum module info __module-name__ | grep module+el8 | sed 's/.*: //g;s/\n/ /g' | xargs yum list installed
 ----
 +
-Replace __module-name__ with the name of the module. This will list all packages installed from this module.
+用模块名称替换 __module-name__ 。这将列出从该模块安装的所有软件包。
 
-. Remove the packages listed in the previous step:
+. 删除上一步中列出的包：
 +
 [subs="quotes"]
 ----
 # yum remove __package__
 ----
 +
-Replace __package__ with the packages listed in previous step. You can supply multiple package names separated by spaces. The [command]`yum` tool will present a summary of the changes and ask for confirmation.
+用上一步中列出的软件包替换 __package__ 。您可以提供多个软件包名称，用空格分隔。[command]`yum` 工具将提供更改摘要并要求确认。
 
-. Mark the module profiles as uninstalled:
+. 将模块配置文件标记为已卸载：
 +
 [subs="quotes"]
 ----
 # yum module remove __module-name__
 ----
 +
-The currently enabled module stream remains enabled.
+当前启用的模块流保持启用状态。
 
-. Optionally, reset or disable the stream.
+. （可选）重置或禁用流。

@@ -1,26 +1,26 @@
 [id="setting-up-static-ipv4-or-ipv6-settings_{context}"]
-= Setting up Static IPv4 or IPv6 Settings
+= 设置静态 IPv4 或 IPv6 设置
 
-By default, both IPv4 and IPv6 are set to automatic configuration depending on current network settings. This means that addresses such as the local IP address, DNS address, and other settings will be detected automatically when the interface connects to a network. In many cases, this is sufficient, but you can also provide static configuration in the *IPv4 Settings* and *IPv6 Settings* tabs. Complete the following steps to configure IPv4 or IPv6 settings:
+默认情况下，IPv4 和I Pv6 都将设置为自动配置，具体取决于当前的网络设置。这意味着当接口连接到网络时，将自动检测到诸如本地 IP 地址，DNS 地址和其他设置之类的地址。在许多情况下，这已足够，但是您也可以在 *IPv4 设置* 和 *IPv6 设置* 选项卡中提供静态配置。完成以下步骤以配置 IPv4 或 IPv6 设置：
 
-.Procedure
-. To set static network configuration, navigate to one of the IPv Settings tabs and from the *Method* drop-down menu, select a method other than *Automatic*, for example, *Manual*.  The *Addresses* pane is enabled.
+.步骤
+. 要设置静态网络配置，请导航到 IPv 设置选项卡之一，然后从 *方法* 下拉菜单中选择 *自动* 以外的方法，例如 *手动*。将启用 *地址* 窗格。
 +
 [NOTE]
 ====
-In the *IPv6 Settings* tab, you can also set the method to *Ignore* to disable IPv6 on this interface.
+在 *IPv6 设置* 选项卡中，还可以将方法设置为 *忽略* 以禁用此接口上的 IPv6。
 ====
 
-. Click btn:[Add] and enter your address settings.
+. 单击 btn:[添加] 并输入您的地址设置。
 
-. Type the IP addresses in the *Additional DNS servers* field; it accepts one or more IP addresses of DNS servers, for example, [literal]`10.0.0.1,10.0.0.8`.
+. 在 *额外 DNS 服务器* 字段中输入 IP 地址；它接受一个或多个 DNS 服务器的 IP 地址，例如 [literal]`10.0.0.1,10.0.0.8`。
 
-. Select the *Require IPvpass:attributes[{blank}]_X_ addressing for this connection to complete* check box.
+. 选中 *需要 IPvpass:attributes[{blank}]_X_ 地址完成这个连接* 复选框。
 +
 [NOTE]
 ====
-Select this option in the *IPv4 Settings* or *IPv6 Settings* tabs to allow this connection only if IPv4 or IPv6 was successful. If this option remains disabled for both IPv4 and IPv6, the interface is able to connect if configuration succeeds on either IP protocol.
+在 *IPv4 设置* 或 *IPv6 设置* 选项卡中选择此选项，仅在 IPv4 或 IPv6 成功时才允许此连接。如果对 IPv4 和 IPv6 均禁用此选项，则在任何一个 IP 协议上配置成功时，接口都可以连接。
 ====
 
-. Click btn:[Save] to apply the changes and return to the *Network & Host name* window.
+. 单击 btn:[保存] 以应用更改并返回到 *网络和主机名* 窗口。
 

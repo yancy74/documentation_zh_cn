@@ -1,13 +1,13 @@
 [id="ports-for-network-based-installation_{context}"]
-= Ports for network-based installation
+= 基于网络安装的端口
 
-The following table lists the ports that must be open on the server providing the files for each type of network-based installation.
+下表列出了服务器上必须打开的端口，服务器为每种基于网络安装的类型提供文件。
 
-.Ports for network-based installation
+.基于网络安装的端口
 [options="header"]
 [cols="30%,70%"]
 |===
-| Protocol used  | Ports to open
+| 使用的协议  | 打开的端口
 | HTTP  | 80
 | HTTPS  | 443
 | FTP | 21
@@ -16,6 +16,4 @@ The following table lists the ports that must be open on the server providing th
 |===
 
 
-.Additional resources
-
-* See the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/index/[_Securing networks in RHEL 8_] document for more information.
+.其他资源

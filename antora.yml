@@ -1,6 +1,6 @@
 name: 8-docs
-title: CentOS 8 Documentation
-version: master
+title: Circle Linux 文档
+version: v1.0
 start_page: index
 nav:
   - modules/standard-install/nav.adoc

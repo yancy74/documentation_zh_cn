@@ -1,10 +1,10 @@
 :parent-context-of-final-installer-configuration: {context}
 
 [id='final-installer-configuration_{context}']
-= Starting the installation program
+= 启动安装程序
 :context: final-installer-configuration
 
-Before you start the installation program, you must configure your root password and user settings.
+在启动安装程序之前，必须配置 root 密码和用户设置。
 
 include::ROOT:partial$installer/proc_beginning-installation.adoc[leveloffset=+1]
 include::ROOT:partial$installer/proc_configuring-a-root-password.adoc[leveloffset=+1]

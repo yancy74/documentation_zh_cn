@@ -1,33 +1,33 @@
 [id="creating-software-raid_{context}"]
-= Creating software RAID
+= 创建软件 RAID
 
-Follow the steps in this procedure to create a Redundant Arrays of Independent Disks (RAID) device. RAID devices are constructed from multiple storage devices that are arranged to provide increased performance and, in some configurations, greater fault tolerance.
+请按照以下步骤创建独立磁盘冗余阵列（RAID）设备。RAID 设备由多个存储设备构成，这些存储设备被安排来提供更高的性能，并且在某些配置中具有更强的容错性。
 
-A RAID device is created in one step and disks are added or removed as necessary. You can configure one RAID partition for each physical disk in your system, so the number of disks available to the installation program determines the levels of RAID device available. For example, if your system has two hard drives, you cannot create a RAID10 device, as it requires 4 separate partitions.
+只需一步即可创建 RAID 设备，并根据需要添加或删除磁盘。您可以为系统中的每个物理磁盘配置一个 RAID 分区，因此可供安装程序使用的磁盘数量决定了可用的 RAID 设备级别。例如，如果您的系统有两个硬盘，则不能创建 RAID10 设备，因为它需要 4 个独立的分区。
 
-.Prerequisites
+.前提
 
-* You have selected two or more disks for installation before RAID configuration options are visible. At least two disks are required to create a RAID device.
-* You have created a mount point. By configuring a mount point, you configure the RAID device.
-* You have selected the [GUI]`Custom` radio button on the [GUI]`Installation Destination` window.
+* 在显示 RAID 配置选项之前，您已经选择了两个或多个磁盘进行安装。创建 RAID 设备至少需要两个磁盘。
+* 您已经创建了一个挂载点。通过配置挂载点，可以配置 RAID 设备。
+* 您已经在 [GUI]`安装目的地` 窗口中选择了 [GUI]`自定义` 单选按钮。
 
 
-.Procedure
+.步骤
 
-. From the left pane of the *Manual Partitioning* window, select the required partition.
+. 在 *手动分区* 窗口的左窗格中，选择所需的分区。
 
-. Under the *Device(s)* section, click *Modify*. The *Configure Mount Point* dialog box opens.
+. 在 *设备* 部分下，单击 *修改*。将打开 *配置挂载点* 对话框。
 
-. Select the disks that you want to include in the RAID device and click *Select*.
+. 选择要包括在 RAID 设备中的磁盘，然后单击 *选择*。
 
-. Click the *Device Type* drop-down menu and select *RAID*.
+. 单击 *设备类型* 下拉菜单并选择 *RAID*。
 
-. Click the *File System* drop-down menu and select your preferred file system type.
+. 单击 *文件系统* 下拉菜单，然后选择首选的文件系统类型。
 
-. Click the *RAID Level* drop-down menu and select your preferred level of RAID.
+. 单击 *RAID 级别* 下拉菜单并选择首选的 RAID 级别。
 
-. Click *Update Settings* to save your changes.
+. 单击 *更新设置* 保存更改。
 
-. Click *Done* to apply the settings and return to the *Installation Summary* window.
+. 单击 *完成* 应用设置并返回 *安装信息摘要* 窗口。
 
-A message is displayed at the bottom of the window if the specified RAID level requires more disks.
+如果指定的 RAID 级别需要更多磁盘，则窗口底部会显示一条消息。

@@ -1,33 +1,33 @@
 [id="record-system-specifications_{context}"]
-= System specifications
+= 记录系统信息
 
-The {productname} installation program automatically detects and installs your system's hardware, so you should not have to supply any specific system information. However, for certain {productname} installation scenarios, it is recommended that you record system specifications for future reference. These scenarios include:
+{productname} 安装程序会自动检测并安装系统的硬件，因此您不必提供任何特定的系统信息。但是，对于某些 {productname} 安装场景，建议您记录系统信息以供将来参考。这些场景包括：
 
-.Installing {productname} with a customized partition layout
-*Record:* The model numbers, sizes, types, and interfaces of the hard drives attached to the system. For example, Seagate ST3320613AS 320 GB on SATA0, Western Digital WD7500AAKS 750 GB on SATA1.
+.使用自定义分区布局安装 {productname}
+*记录：* 连接到系统的硬盘驱动器的型号、大小、类型和接口。例如，SATA0 上的 Seagate ST3320613AS 320 GB，SATA1 上的 Western Digital WD7500AAKS 750 GB。
 
-.Installing {productname} as an additional operating system on an existing system
-*Record:* Partitions used on the system. This information can include file system types, device node names, file system labels, and sizes, and allows you to identify specific partitions during the partitioning process. If one of the operating systems is a Unix operating system, {productname} may report the device names differently. Additional information can be found by executing the equivalent of the *mount* command and the *blkid* command, and in the */etc/fstab* file.
+.在现有系统上安装 {productname} 作为附加操作系统
+*记录：* 系统上使用的分区。此信息可以包括文件系统类型、设备节点名称、文件系统标签和大小，并允许您在分区过程中标识特定分区。如果其中一种操作系统是 Unix 操作系统，则 {productname} 可能会以不同的方式报告设备名称。通过执行与 *mount* 命令和 *blkid* 命令等效的操作，以及在 */etc/fstab* 文件中，可以找到其他信息。
 
-If multiple operating systems are installed, the {productname} installation program attempts to automatically detect them, and to configure boot loader to boot them. You can manually configure additional operating systems if they are not detected automatically. See _Configuring boot loader_ in xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[Configuring software options] for more information.
+如果安装了多个操作系统，则 {productname} 安装程序将尝试自动检测它们，并配置引导加载程序以引导它们。如果未自动检测到其他操作系统，则可以手动配置它们。有关更多信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[配置软件选项]中的 _配置引导加载程序_ 。
 
-.Installing {productname} from an image on a local hard drive
-*Record:* The hard drive and directory that holds the image.
+.从本地硬盘上的映像安装 {productname}
+*记录：* 保存映像的硬盘驱动器和目录。
 
-.Installing {productname} from a network location
-If the network has to be configured manually, that is, DHCP is not used.
+.从网络位置安装 {productname}
+如果必须手动配置网络，即不使用 DHCP。
 
-*Record:*
+*记录：*
 
-* IP address
-* Netmask
-* Gateway IP address
-* Server IP addresses, if required
+* IP 地址
+* 子网掩码
+* 网关 IP 地址
+* 服务器 IP 地址（如果需要）
 
-Contact your network administrator if you need assistance with networking requirements.
+如果您需要网络要求方面的帮助，请与您的网络管理员联系。
 
-.Installing {productname} on an iSCSI target
-*Record:* The location of the iSCSI target. Depending on your network, you may need a CHAP user name and password, and a reverse CHAP user name and password.
+.在 iSCSI 目标上安装 {productname}
+*记录：* iSCSI目标的位置。根据您的网络，可能需要 CHAP 用户名和密码，以及反向 CHAP 用户名和密码。
 
-.Installing {productname} if the system is part of a domain
-Verify that the domain name is supplied by the DHCP server. If it is not, enter the domain name during installation.
+.如果系统是域的一部分，安装 {productname}
+验证域名是否由 DHCP 服务器提供。如果不是，请在安装过程中输入域名。

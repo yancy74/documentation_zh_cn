@@ -1,22 +1,18 @@
 [id="preparing-for-your-installation-workflow_{context}"]
-= Recommended steps
+= 推荐步骤
 
-Preparing for your installation consists of several steps.
+准备安装包括以下步骤。
 
 [NOTE]
 ====
-* If you are new to {productname}, complete steps 1 to 5.
-* If you are familiar with {productname}, complete steps 3 to 5.
+* 如果您是 {productname} 新手，请完成步骤 1 到 5。
+* 如果您熟悉 {productname}，请完成步骤 3 到 5。
 ====
 
-.Procedure
+.步骤
 
-. Check system requirements.
-. Choose an installation boot method.
-. Select and download the installation image.
-. Create bootable installation media.
-. Prepare the installation source*
-
-
-
-*Only required for the Boot ISO (minimal install) image.
+. 检查系统要求。
+. 选择安装引导方法。
+. 选择并下载安装映像。
+. 创建可引导安装介质。
+. 仅在引导 ISO（最小安装）映像时需要准备安装源。

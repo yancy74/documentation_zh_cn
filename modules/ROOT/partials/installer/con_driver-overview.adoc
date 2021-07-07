@@ -1,9 +1,9 @@
 [id="driver-overview_{context}"]
-= Overview
+= 概述
 
-{productname} supports drivers for many hardware devices but some newly-released drivers may not be supported. A driver update should only be performed if an unsupported driver prevents the installation from completing. Updating drivers during installation is typically only required to support a particular configuration. For example, installing drivers for a storage adapter card that provides access to your system's storage devices.
+{productname} 支持许多硬件设备的驱动程序，但可能不支持某些新发布的驱动程序。仅当不受支持的驱动程序阻止安装完成时，才应执行驱动程序更新。安装期间更新驱动程序通常只需要支持特定配置。例如，为提供系统存储设备访问权限的存储适配器卡安装驱动程序。
 
 [WARNING]
 ====
-Driver update disks may disable conflicting kernel drivers. In rare cases, unloading a kernel module may cause installation errors.
+驱动程序更新磁盘可能会禁用冲突的内核驱动程序。在极少数情况下，卸载内核模块可能会导致安装错误。
 ====

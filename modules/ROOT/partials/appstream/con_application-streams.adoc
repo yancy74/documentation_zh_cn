@@ -1,8 +1,8 @@
 [id="application-streams_{context}"]
-= Application Streams
+= 应用程序流
 
-{rel8} introduces the concept of Application Streams - versions of user space components. Multiple versions of these components are now delivered and updated more frequently than the core operating system packages. This provides greater flexibility to customize {ProductName} without impacting the underlying stability of the platform or specific deployments.
+{rel8} 引入了应用程序流的概念 —— 用户空间组件的版本。这些组件的多个版本现在比操作系统核心软件包更频繁地交付和更新。这为定制 {ProductName} 提供了更大的灵活性，而不会影响平台的底层稳定性或特定部署。
 
-Components made available as Application Streams can be packaged as modules or RPM packages and are delivered through the AppStream repository in {rel8}. Each AppStream component has a given life cycle.
+作为应用程序流提供的组件可以打包为模块或 RPM 包，并通过 {rel8} 中的 AppStream 仓库交付。每个 AppStream 组件都有给定的生命周期。
 
-NOTE: Not all modules are Application Streams. Dependencies of other modules are not considered AppStream components.
+NOTE: 并非所有模块都是应用程序流。其他模块的依赖项不被视为 AppStream 组件。

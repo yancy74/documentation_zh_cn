@@ -3,21 +3,21 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-managing-versions-of-appstream-content: {context}
 
 [id="managing-versions-of-appstream-content_{context}"]
-= Managing versions of Application Stream content
+= 管理应用程序流内容的版本
 
 :context: managing-versions-of-appstream-content
 
 // ustory: As an user, I want to get a different version of my module than I already installed.
 
-Content in the AppStream repository can be available in multiple versions, corresponding to module streams. This chapter describes the operations you need to perform when changing the enabled module streams in other ways than only enabling new module streams.
+AppStream 仓库中的内容可以有多个版本，对应于模块流。本部分介绍了以其他方式（不是仅启用新模块流）更改启用的模块流时需要执行的操作。
 
 // IMPORTANT: {rh} designs versions and dependencies of packages, modules and streams in AppStream such that the complexity described below is minimized.
 
-* xref:assembly_managing-versions-of-appstream-content.adoc#modular-dependencies-and-stream-changes_{context}[Modular dependencies and stream changes] describes modular dependency rules.
-* xref:assembly_managing-versions-of-appstream-content.adoc#interaction-of-modular-and-non-modular-dependencies_{context}[Interaction of modular and non-modular dependencies] provides details for how the dependencies of module streams affect handling of package dependencies.
-* xref:assembly_managing-versions-of-appstream-content.adoc#resetting-module-streams_{context}[Resetting module streams] provides steps for resetting modules to their initial state.
-* xref:assembly_managing-versions-of-appstream-content.adoc#disabling-all-streams-of-a-module_{context}[Disabling all streams of a module] provides steps for disabling completely a module and all its streams.
-* xref:assembly_managing-versions-of-appstream-content.adoc#switching-to-a-later-stream_{context}[Switching to a later stream] provides steps for changing to a later stream of a module.
+* xref:assembly_managing-versions-of-appstream-content.adoc#modular-dependencies-and-stream-changes_{context}[模块依赖和流更改] 描述模块依赖规则。
+* xref:assembly_managing-versions-of-appstream-content.adoc#interaction-of-modular-and-non-modular-dependencies_{context}[模块依赖和非模块依赖] 提供了模块流依赖如何影响软件包依赖处理的详细信息。
+* xref:assembly_managing-versions-of-appstream-content.adoc#resetting-module-streams_{context}[重置模块流] 提供将模块重置为其初始状态的步骤。
+* xref:assembly_managing-versions-of-appstream-content.adoc#disabling-all-streams-of-a-module_{context}[禁用模块的所有流] 提供了完全禁用模块及其所有流的步骤。
+* xref:assembly_managing-versions-of-appstream-content.adoc#switching-to-a-later-stream_{context}[切换到更高版本流] 提供了用于更改到模块更高版本流的步骤。
 
 
 include::ROOT:partial$appstream/con_modular-dependencies-and-stream-changes.adoc[leveloffset=+1]

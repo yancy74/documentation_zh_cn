@@ -1,7 +1,7 @@
-:ProjectName: Installing, managing, and removing user space components
+:ProjectName: 安装、管理和删除用户空间组件
 // The subtitle of the title
-:Subtitle: An introduction to AppStream and BaseOS in {ProductName}{nbsp}{ProductNumber}
+:Subtitle: {ProductName}{nbsp}{ProductNumber} 中 AppStream 和 BaseOS 简介
 // The abstract of the title
-:Abstract: This document describes searching, discovering, installing, and using content in the AppStream and BaseOS repositories in {ProductName}{nbsp}{ProductNumber}. This includes a description of how to use modules, application streams, and profiles.
+:Abstract: 本文档介绍 {ProductName}{nbsp}{ProductNumber} AppStream 和 BaseOS 仓库中内容的搜索、发现、安装和使用。其中包括有关如何使用模块、应用程序流和配置文件的描述。
 // The name of the title for the purposes of {context}
 :ProjectNameID: using-appstream

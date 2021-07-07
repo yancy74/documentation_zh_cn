@@ -1,10 +1,10 @@
 [id="types-of-boot-options_{context}"]
-= Types of boot options
+= 引导选项的类型
 
-There are two types of boot options; those with an equals "=" sign, and those without an equals "=" sign. Boot options are appended to the boot command line and multiple options must be separated by a single space. Boot options that are specific to the installation program always start with `inst`.
+有两种类型的引导选项：有等号“=”和无等号“=”。引导选项会附加到引导命令行中，并且多个选项必须用单个空格分隔。特定于安装程序的引导选项始终以 `inst` 开头。
 
-Options with an equals "=" sign::
-You must specify a value for boot options that use the `=` symbol. For example, the `inst.vncpassword=` option must contain a value, in this case, a password. The correct syntax for this example is `inst.vncpassword=password`.
+有等号“=”的选项::
+必须为使用 `=` 符号的引导选项指定一个值。例如 `inst.vncpassword=` 选项必须包含一个值，在本例中为密码。这个例子的正确语法是 `inst.vncpassword=password`。
 
-Options without an equals "=" sign::
-This boot option does not accept any values or parameters. For example, the `rd.live.check` option forces the installation program to verify the installation media before starting the installation. If this boot option is present, the verification is performed; if the boot option is not present, the verification is skipped.
+无等号“=”的选项::
+此引导选项不接受任何值或参数。例如 `rd.live.check` 选项在开始安装之前强制安装程序验证安装介质。如果存在此引导选项，则执行验证；如果不存在此引导选项，则跳过验证。

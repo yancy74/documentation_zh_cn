@@ -21,37 +21,37 @@
 // In the title, include nouns that are used in the body text. This helps
 // readers and search engines find information quickly.
 [id="deprecated-boot-options_{context}"]
-= Deprecated boot options
+= 不推荐使用的引导选项
 
-This section contains information about deprecated boot options. These options are still accepted by the installation program but they are deprecated and are scheduled to be removed in a future release of {productname}.
+本部分包含有关不推荐使用的引导选项的信息。安装程序仍然接受这些选项，但不推荐使用，并计划在 {productname} 的未来版本中删除。
 
 method::
-The `method` option is an alias for `inst.repo`.
+`method` 选项是 `inst.repo` 的别名。
 
 repo=nfsiso::
-The `repo=nfsiso:` option is the same as `inst.repo=nfs:`.
+`repo=nfsiso:` 选项与 `inst.repo=nfs:` 相同。
 
 dns::
-Use `nameserver` instead of `dns`. Note that nameserver does not accept comma-separated lists; use multiple nameserver options instead.
+使用 `nameserver` 而不是 `dns`。请注意，nameserver 不接受逗号分隔的列表；请改用多个名称服务器选项。
 
 netmask, gateway, hostname::
 
-The `netmask`, `gateway`, and `hostname` options are provided as part of the `ip` option.
+`netmask`、 `gateway` 和 `hostname` 选项作为 `ip` 选项的一部分提供。
 
 ip=bootif::
-A PXE-supplied `BOOTIF` option is used automatically, so there is no requirement to use `ip=bootif`.
+自动使用 PXE 提供的 `BOOTIF` 选项，因此不需要使用 `ip=bootif`。
 
 ksdevice::
 +
-.Values for the ksdevice boot option
+.ksdevice 引导选项的值
 [options="header"]
 |===
-| Value  | Information
+| 值  | 信息
 | Not present  | N/A
-| `ksdevice=link` | Ignored as this option is the same as the default behavior
-| `ksdevice=bootif` | Ignored as this option is the default if `BOOTIF=` is present
-| `ksdevice=ibft` | Replaced with `ip=ibft`. See `ip` for details
-| `ksdevice=<MAC>` | Replaced with `BOOTIF=${MAC/:/-}`
-| `ksdevice=<DEV>` | Replaced with `bootdev`
+| `ksdevice=link` | 忽略，因为此选项与默认行为相同
+| `ksdevice=bootif` | 忽略，因为如果 `BOOTIF=` 存在，则此选项是默认选项
+| `ksdevice=ibft` | 替换为 `ip=ibft`。详见 `ip`
+| `ksdevice=<MAC>` | 替换为 `BOOTIF=${MAC/:/-}`
+| `ksdevice=<DEV>` | 替换为 `bootdev`
 |===
 +

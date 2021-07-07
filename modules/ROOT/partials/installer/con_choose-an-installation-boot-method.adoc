@@ -1,21 +1,21 @@
 [id='choose-an-installation-boot-method_{context}'']
-= Choose an installation boot method
+= 选择安装引导方法
 
-There are several methods to boot the {productname} installation program. The method you choose depends on your installation media.
+有三种方法可以引导 {productname} 安装程序。选择的方法取决于安装介质。
 
-Full installation DVD or USB flash drive::
-Create a full installation DVD or USB flash drive using the *DVD1 ISO* image. The DVD or USB flash drive can be used as a boot device and as an installation source for installing software packages. Due to the size of the DVD1 ISO image, a DVD or USB flash drive are the recommended media types.
+在 DVD 或 USB 闪存驱动器上创建完整安装::
+使用 *DVD1 ISO* 映像在 DVD 或 USB 闪存驱动器上创建完整安装。DVD 或 USB 闪存驱动器可用作引导设备和安装软件包的安装源。由于 DVD1 ISO 映像的大小，建议使用 DVD 或 USB 闪存驱动器。
 
-Minimal installation DVD, CD, or USB flash drive::
-Create a minimal installation CD, DVD, or USB flash drive using the *Boot ISO* image, which contains only the minimum files necessary to boot the system and start the installation program. The *Boot ISO* image requires an installation source that contains the required software packages.
+在 DVD、CD或 USB 闪存驱动器上创建最小安装::
+使用引导 ISO 映像在 DVD、CD或 USB 闪存驱动器上创建最小安装，该映像仅包含引导系统和启动安装程序所需的最少文件。*引导 ISO 映像* 需要包含所需软件包的安装源。
 
-PXE Server::
-A _preboot execution environment_ (PXE) server allows the installation program to boot over the network. After a system boot, you must complete the installation from a different installation source, such as a local hard drive or a network location.
+PXE 服务器::
+_预引导执行环境_（PXE）服务器允许安装程序通过网络引导。系统引导后，必须从其他安装源（如本地硬盘驱动器或网络位置）完成安装。
 
 
 [discrete]
-== Additional Resources
+== 其他资源
 
-* For instructions on how to create an installation DVD or USB flash drive, see xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media] for more information.
-* For instructions on how to create a bootable DVD, CD, and USB flash drive, see xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[Preparing an installation source] for more information.
-* For more information about PXE servers, see the xref:advanced-install:index.adoc[Performing an advanced installation] document.
+* 有关如何在 DVD 或 USB 闪存驱动器上创建安装的说明，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[创建安装介质]。
+* 有关如何创建可引导 DVD、CD 和 USB 闪存驱动器的说明，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[准备安装源]。
+* 有关 PXE 服务器的详细信息，请参阅xref:advanced-install:index.adoc[高级安装]文档。

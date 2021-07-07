@@ -1,40 +1,37 @@
 [id="making-a-kickstart-file-available-on-an-http-or-https-server_{context}"]
-= Making a Kickstart file available on an HTTP or HTTPS server
+= 使 Kickstart 文件在 HTTP 或 HTTPS 服务器上可用
 
-This procedure describes how to store the Kickstart script file on an HTTP or HTTPS server. This method enables you to install multiple systems from a single source without having to use physical media for the Kickstart file.
+以下步骤介绍如何在 HTTP 或 HTTPS 服务器上存储 Kickstart 脚本文件。您使用此方法可以从单个源安装多个系统，而不必为 Kickstart 文件使用物理介质。
 
 
-.Prerequisites
+.前提
 
-* You must have administrator level access to a server with {rel8} on the local network.
-* The system to be installed must be able to connect to the server.
-* Firewall on the server must allow connections from the system you are installing to. See xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[Ports for network-based installation] for more information.
+* 您必须拥有对本地网络上安装了 {rel8} 的服务器的管理员级别访问权限。
+* 要安装的系统必须能够连接到服务器。
+* 服务器上的防火墙必须允许来自您要安装的系统的连接。有关更多信息，请参阅xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[基于网络安装的端口]。
 
-.Procedure
+.步骤
 
-. Install the [package]`httpd` package by running the following command as root:
+. 通过以 root 用户身份运行以下命令来安装 [package]`httpd` 软件包：
 +
 ----
 # yum install httpd
 ----
 +
-WARNING: If your Apache web server configuration enables SSL security, verify that you only enable the TLSv1 protocol, and disable SSLv2 and SSLv3. This is due to the POODLE SSL vulnerability (CVE-2014-3566). See https://access.redhat.com/solutions/1232413 for details.
+WARNING: 如果您的 Apache Web 服务器配置启用了 SSL 安全性，请验证您仅启用 TLSv1 协议，并禁用 SSLv2 和 SSLv3。这是由于 POODLE SSL漏洞（CVE-2014-3566）。
 +
-IMPORTANT: If you use an HTTPS server with a self-signed certificate, you must boot the installation program with the [option]`inst.noverifyssl` option.
+IMPORTANT: 如果将 HTTPS 服务器与自签名证书一起使用，则必须使用 [option]`inst.noverifyssl` 选项引导安装程序。
 
-. Copy the Kickstart file to the HTTP(S) server into a subdirectory of the [filename]`/var/www/html/` directory.
+. 将 Kickstart 文件复制到 HTTP（S）服务器的 [filename]`/var/www/html/` 目录的子目录中。
 
-. Start the httpd service:
+. 启动 httpd 服务：
 +
 ----
 # systemctl start httpd.service
 ----
 +
-The Kickstart file is now accessible and ready to be used for installation.
+现在可以访问 Kickstart 文件，并可以将其用于安装了。
 +
-NOTE: When specifying the location of the Kickstart file, use `http://` or `https://` as the protocol, the server’s host name or IP address, and the path of the Kickstart file, relative to the HTTP server root. For example, if you are using HTTP, the server’s host name is `myserver.example.com`, and you have copied the Kickstart file as [filename]`/var/www/html/centos8-install/my-ks.cfg`, specify `http://myserver.example.com/centos8-install/my-ks.cfg` as the file location.
+NOTE: 指定 Kickstart 文件的位置时，请使用 `http://` 或 `https://` 作为协议、服务器的主机名或 IP 地址以及 Kickstart 文件相对于 HTTP服务器根目录的路径。例如，如果您使用的是 HTTP，服务器的主机名是 `myserver.example.com`，并且您已经将Kickstart文件复制为 [filename]`/var/www/html/circle8-install/my-ks.cfg`，请指定 `http://myserver.example.com/circle8-install/my-ks.cfg` 作为文件位置。
 
 
-.Additional resources
-
-* For more information about HTTP and FTP servers, see link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/[Deploying different types of servers in RHEL 8].

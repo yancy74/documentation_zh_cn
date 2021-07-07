@@ -1,69 +1,69 @@
 [id="commands-for-installing-rhel-8-content_{context}"]
-= Commands for installing {rel8} content
+= 安装 {rel8} 内容的命令
 
-This section lists commonly used commands for installing {rel8} content.
+本部分列出安装  {rel8}  内容的常用命令。
 
-.Command list
+.命令列表
 
 
-Install a package::
+安装软件包::
 +
 [subs="quotes"]
 ----
 # yum install _package_
 ----
 +
-If the package is provided by a module stream, [command]`yum` resolves the required module stream, and enables it automatically while installing this package. This happens recursively for all package dependencies, too. If more module streams satisfy the requirement, the default ones are used.
+如果包是由模块流提供的，则 [command]`yum` 解析所需的模块流，并在安装此包时自动启用它。对于所有包依赖项，这种情况也是递归发生的。如果有更多的模块流满足要求，则使用默认的模块流。
 
 
-Enable a module using its default stream::
+使用其默认流启用模块::
 +
 [subs="quotes"]
 ----
 # yum module enable __module-name__
 ----
 +
-Enable the module when you wish to make the packages available to the system but do not, at this time, wish to install any of them.
+当您希望使软件包对系统可用时启用模块，但此时不希望安装其中的任何一个。
 //In prior versions of {ProductName}, this would be equivalent to adding a new yum repository but not actually installing any packages from it.
 +
-Some modules may not define default streams. In such case, you must explicitly specify the stream.
+某些模块可能未定义默认流。在这种情况下，必须显式指定流。
 
 
-Enable a module using a specific stream::
+使用特定流启用模块::
 +
 [subs="quotes"]
 ----
 # yum module enable __module-name__:__stream__
 ----
 +
-If the module defines a default stream, you can omit the stream and colon.
+如果模块定义了默认流，则可以省略流和冒号。
 
 
-Install a module using the default stream and profiles::
+使用默认流和配置文件安装模块::
 +
 [subs="quotes"]
 ----
 # yum install @__module-name__
 ----
 +
-Alternatively:
+或者：
 +
 [subs="quotes"]
 ----
 # yum module install __module-name__
 ----
 +
-CAUTION: Some modules do not define default streams.
+CAUTION: 有些模块没有定义默认流。
 
 
-Install a module using a specific stream and default profiles::
+使用特定流和默认配置文件安装模块::
 +
 [subs="quotes"]
 ----
 # yum install @__module-name__:__stream__
 ----
 +
-Alternatively:
+或者：
 +
 [subs="quotes"]
 ----
@@ -73,14 +73,14 @@ Alternatively:
 // CAUTION: It is theoretically possible that different streams might specify differently named profiles as default. This is not in Alpha, however.
 
 
-Install a module using a specific stream and profile::
+使用特定流和配置文件安装模块::
 +
 [subs="quotes"]
 ----
 # yum install @__module-name__:__stream__/__profile__
 ----
 +
-Alternatively:
+或者：
 +
 [subs="quotes"]
 ----

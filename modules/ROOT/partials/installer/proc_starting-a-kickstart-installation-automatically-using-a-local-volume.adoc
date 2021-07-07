@@ -1,26 +1,26 @@
 [id="starting-a-kickstart-installation-automatically-using-a-local-volume_{context}"]
-= Starting a Kickstart installation automatically using a local volume
+= 使用本地卷自动启动 Kickstart 安装
 
-You can start a Kickstart installation by putting a Kickstart file with a specific name on a specifically labelled storage volume.
-
-
-.Prerequisites
-
-* You must have a volume prepared with xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#making-a-kickstart-file-available-on-a-local-volume-for-automatic-loading_making-kickstart-files-available-to-the-installation-program[label `OEMDRV` and the Kickstart file present in its root as `ks.cfg`].
-
-* A drive containing this volume must be available on the system as the installation program boots.
+您可以通过将具有特定名称的 Kickstart 文件放在特定标记的存储卷上来启动 Kickstart 安装。
 
 
-.Procedure
+.前提
 
-. Boot the system using a local media (a CD, DVD, or a USB flash drive).
+* 您必须准备一个带有标签 `OEMDRV` 的卷，并且 Kickstart 文件在其根目录中显示为 `ks.cfg`。
 
-. At the boot prompt, specify the required boot options.
+* 安装程序引导时，系统上必须有包含此卷的驱动器。
 
-..  If a required repository is in a network location, you may need to configure the network using the [option]`ip=` option. The installer tries to configure all network devices using the DHCP protocol by default without this option.
 
-..  In order to access a software source from which necessary packages will be installed, you may need to add the [option]`inst.repo=` option. If you do not specify this option, you must specify the installation source in the Kickstart file.
+.步骤
 
-.  Start the installation by confirming your added boot options.
+. 使用本地介质(CD、DVD 或 USB 闪存驱动器)引导系统。
+
+. 在 boot 提示符下，指定所需的引导选项。
+
+..  如果所需的仓库位于网络位置，则可能需要使用 [option]`ip=` 选项配置网络。默认情况下，安装程序在不使用此选项的情况下尝试使用 DHCP 协议配置所有网络设备。
+
+..  为了访问安装所需必要软件包的软件源，您可能需要添加 [option]`inst.repo=` 选项。如果不指定此选项，则必须在 Kickstart 文件中指定安装源。
+
+.  通过确认添加的引导选项启动安装。
 +
-The installation begins now, and the Kickstart file is automatically detected and used to start an automated Kickstart installation.
+安装现在开始，系统会自动检测 Kickstart 文件，并使用该文件启动自动 Kickstart 安装。

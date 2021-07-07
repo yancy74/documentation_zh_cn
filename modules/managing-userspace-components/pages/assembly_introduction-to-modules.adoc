@@ -3,16 +3,16 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-introduction-to-modules: {context}
 
 [id="introduction-to-modules_{context}"]
-= Introduction to modules
+= 模块简介
 
 :context: introduction-to-modules
 
-Besides individual RPM packages, the AppStream repository contains modules. A module is a set of RPM packages that represent a component and are usually installed together. A typical module contains packages with an application, packages with the application-specific dependency libraries, packages with documentation for the application, and packages with helper utilities.
+除了单个 RPM 包之外，AppStream 仓库还包含模块。模块是一组代表一个组件的 RPM 软件包，通常安装在一起。典型的模块包含应用程序包、特定于应用程序依赖库包、应用程序文档包和帮助器实用程序包。
 
-The subsequent sections describe further features for organization and handling of content within modules:
+后续各部分介绍模块内内容的组织和处理的更多功能：
 
-* Streams - organization of content by version. For more details see xref:assembly_introduction-to-modules.adoc#module-streams_{context}[Module streams].
-* Profiles - organization of content by purpose. For more details see xref:assembly_introduction-to-modules.adoc#module-profiles_{context}[Module profiles].
+* 流 —— 按版本组织内容。
+* 配置文件 —— 按用途组织内容。
 
 
 include::ROOT:partial$appstream/con_module-streams.adoc[leveloffset=+1]

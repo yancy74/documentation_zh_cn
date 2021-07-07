@@ -1,33 +1,33 @@
 [id="completing-initial-setup_{context}"]
-= Completing initial setup
+= 完成初始设置
 
-This section contains information about how to complete initial setup on a {productname} 8 system.
+本部分包含有关如何在 {productname} 8 系统上完成初始设置的信息。
 
 [IMPORTANT]
 ====
-If you selected the *Server with GUI* base environment during installation, the *Initial Setup* window opens the first time you reboot your system after the installation process is complete.
+如果在安装过程中选择了带有 GUI 基础环境的服务器，则在安装过程完成后首次重新启动系统时，会打开 *初始设置* 窗口。
 ====
 
-The information displayed in the *Initial Setup* window might vary depending on what was configured during installation. At a minimum, the *License information* option is displayed.
+*初始设置* 窗口中显示的信息可能因安装过程中配置的内容而异。至少会显示 *许可证信息* 选项。
 
 
 [discrete]
-== Prerequisite
+== 前提
 
-* You have completed the graphical installation according to the recommended workflow described on xref:standard-install:con_installation-workflow.adoc[Installation workflow].
+* 您已根据xref:standard-install:con_installation-workflow.adoc[安装工作流程]中介绍的推荐步骤完成了图形安装。
 
 [discrete]
-== Procedure
+== 步骤
 
-. From the *Initial Setup* window, select *License Information*.
+. 在 *初始设置* 窗口中，选择 *许可证信息*。
 +
-The *License Agreement* window opens and displays the licensing terms for {rel8}.
+*许可协议* 窗口打开，并显示 {rel8} 的许可条款。
 
-. Review the license agreement and select the *I accept the license agreement* checkbox.
+. 查看许可协议，然后选中 *我接受许可协议复选框*。
 +
 [NOTE]
 ====
-You must accept the license agreement. Exiting *Initial Setup* without completing this step causes a system restart. When the restart process is complete, you are prompted to accept the license agreement again.
+您必须接受许可协议。如果不完成此步骤而退出 *初始设置*，则会导致系统重新启动。重新启动过程完成后，系统将提示您再次接受许可协议。
 ====
 
-. Click *Done* to apply the settings and return to the *Initial Setup* window.
+. 单击 *完成* 以应用设置并返回 *初始设置* 窗口。

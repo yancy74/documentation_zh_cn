@@ -1,26 +1,26 @@
 [id="securing_{context}"]
-= Securing your system
+= 保护系统
 
-Complete the following security-related steps immediately after you install {productname}.
-
-[discrete]
-== Prerequisites
-
-* You have completed the graphical installation according to the recommended workflow described in xref:standard-install:con_installation-workflow.adoc[Installation workflow].
+安装 {productname} 之后，立即完成以下与安全相关的步骤。
 
 [discrete]
-== Procedure
+== 前提
 
-. To update your system, run the following command as root:
+* 您已根据xref:standard-install:con_installation-workflow.adoc[安装工作流程]中介绍的推荐步骤完成了图形安装。
+
+[discrete]
+== 步骤
+
+. 要更新系统，请以 root 用户身份运行以下命令：
 +
 [subs="quotes"]
 ----
 # yum update
 ----
 
-. Even though the firewall service, `firewalld`, is automatically enabled with the installation of {ProductName}, there are scenarios where it might be explicitly disabled, for example in a Kickstart configuration. In that scenario, it is recommended that you re-enable the firewall.
+. 尽管防火墙服务 `firewalld` 是在安装 {ProductName} 时自动启用的，但在某些情况下，它可能会被显式禁用，例如在 Kickstart 配置中。在这种情况下，建议您重新启用防火墙。
 +
-To start `firewalld`, run the following commands as root:
+要启动 `firewalld`，请以 root 用户身份运行以下命令：
 +
 [subs="quotes"]
 ----
@@ -28,14 +28,14 @@ To start `firewalld`, run the following commands as root:
 # systemctl enable firewalld
 ----
 
-. To enhance security, disable services that you do not need. For example, if your system has no printers installed, disable the cups service using the following command:
+. 要增强安全性，请禁用不需要的服务。例如，如果系统未安装打印机，请使用以下命令禁用 cups 服务：
 +
 [subs="quotes"]
 ----
 # systemctl mask cups
 ----
 +
-To review active services, run the following command:
+要查看活动服务，请运行以下命令：
 +
 [subs="quotes"]
 ----

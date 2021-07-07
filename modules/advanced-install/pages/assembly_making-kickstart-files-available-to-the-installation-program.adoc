@@ -3,11 +3,11 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-making-kickstart-files-available-to-the-installation-program: {context}
 
 [id="making-kickstart-files-available-to-the-installation-program_{context}"]
-= Making Kickstart files available to the installation program
+= 使 Kickstart 文件可供安装程序使用
 
 :context: making-kickstart-files-available-to-the-installation-program
 
-The following provides information about making the Kickstart file available to the installation program on the target system.
+下面提供了有关使 Kickstart 文件可供目标系统上的安装程序使用的信息。
 
 // TODO: should also mention that on s390x you do this in generic.prm IIRC
 

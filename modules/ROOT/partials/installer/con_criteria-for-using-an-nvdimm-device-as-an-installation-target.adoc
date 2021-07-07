@@ -1,25 +1,25 @@
 [id="criteria-for-using-an-nvdimm-device-as-an-installation-target_{context}"]
-= Criteria for using an NVDIMM device as an installation target
+= 将 NVDIMM 设备用作安装目标的条件
 
-You can install {rel8} to Non-Volatile Dual In-line Memory Module (NVDIMM) devices in sector mode on the Intel 64 and AMD64 architectures, supported by the *nd_pmem* driver.
-
-
-.Conditions for using an NVDIMM device as storage
-
-To use an NVDIMM device as storage, the following conditions must be satisfied:
-
-* The architecture of the system is Intel 64 or AMD64.
-* The NVDIMM device is configured to sector mode. The installation program can reconfigure NVDIMM devices to this mode.
-* The NVDIMM device must be supported by the *nd_pmem* driver.
+您可以在 *nd_pmem* 驱动程序支持的 Intel 64 和 AMD64 架构上以扇区模式将 {rel8} 安装到非易失性双列直插式内存模块（NVDIMM）设备上。
 
 
-.Conditions for booting from an NVDIMM Device
+.使用 NVDIMM 设备作为存储的条件
 
-Booting from an NVDIMM device is possible under the following conditions:
+要将 NVDIMM 设备用作存储，必须满足以下条件：
 
-* All conditions for using the NVDIMM device as storage are satisfied.
-* The system uses UEFI.
-* The NVDIMM device must be supported by firmware available on the system, or by an UEFI driver. The UEFI driver may be loaded from an option ROM of the device itself.
-* The NVDIMM device must be made available under a namespace.
+* 系统的架构是 Intel 64 或 AMD64。
+* NVDIMM 设备配置为扇区模式。安装程序可以将 NVDIMM 设备重新配置为此模式。
+* *nd_pmem* 驱动程序必须支持 NVDIMM 设备。
 
-Utilize the high performance of NVDIMM devices during booting, place the [filename]`/boot` and [filename]`/boot/efi` directories on the device. The Execute-in-place (XIP) feature of NVDIMM devices is not supported during booting and the kernel is loaded into conventional memory.
+
+.从NVDIMM设备引导的条件
+
+在以下条件下，可以从 NVDIMM 设备引导：
+
+* 满足使用 NVDIMM 设备作为存储的所有条件。
+* 系统使用 UEFI。
+* 系统上可用的固件或 UEFI 驱动程序必须支持 NVDIMM 设备。UEFI 驱动程序可以从设备本身的可选 ROM 加载。
+* NVDIMM 设备必须在命名空间下可用。
+
+在引导过程中利用 NVDIMM 设备的高性能，将 [filename]`/boot` 和 [filename]`/boot/efi` 目录放置在设备上。引导期间不支持 NVDIMM 设备的就地执行（XIP）功能，并且内核已加载到常规内存中。

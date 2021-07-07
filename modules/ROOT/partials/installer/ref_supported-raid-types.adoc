@@ -1,20 +1,20 @@
 [id="supported-raid-types_{context}"]
-= Supported RAID types
+= 支持的 RAID 类型
 
-RAID stands for Redundant Array of Independent Disks, a technology which allows you to combine multiple physical disks into logical units. Some setups are designed to enhance performance at the cost of reliability, while others will improve reliability at the cost of requiring more disks for the same amount of available space.
+RAID 表示独立磁盘冗余阵列，该技术将多个物理磁盘组合成逻辑单元。有些设置旨在以可靠性为代价来提高性能，而另一些设置则以相同可用空间需要更多磁盘为代价来提高可靠性。
 
-This section describes supported software RAID types which you can use with LVM and LVM Thin Provisioning to set up storage on the installed system.
+本部分介绍支持的软件 RAID 类型，您可以将这些类型与 LVM 和 LVM 精简资源调配一起使用，以便在已安装的系统上设置存储。
 
-None:: No RAID array will be set up.
+无:: 不设置 RAID 阵列。
 
-RAID0:: Performance: Distributes data across multiple disks. RAID 0 offers increased performance over standard partitions and can be used to pool the storage of multiple disks into one large virtual device. Note that RAID 0 offers no redundancy and that the failure of one device in the array destroys data in the entire array. RAID 0 requires at least two disks.
+RAID0:: 性能：跨多个磁盘分布数据。与标准分区相比，RAID 0 提供了更高的性能，并可用于将多个磁盘的存储集中到一个大型虚拟设备中。请注意，RAID 0 不提供冗余，阵列中的一个设备发生故障会破坏整个阵列中的数据。RAID 0 至少需要两个磁盘。
 
-RAID1:: Redundancy: Mirrors all data from one partition onto one or more other disks. Additional devices in the array provide increasing levels of redundancy. RAID 1 requires at least two disks.
+RAID1:: 冗余：将所有数据从一个分区镜像到一个或多个其他磁盘上。阵列中的其他设备提供了更高级别的冗余。 RAID 1 至少需要两个磁盘。
 
-RAID4:: Error checking: Distributes data across multiple disks and uses one disk in the array to store parity information which safeguards the array in case any disk in the array fails. As all parity information is stored on one disk, access to this disk creates a "bottleneck" in the array’s performance. RAID 4 requires at least three disks.
+RAID4:: 错误检查：跨多个磁盘分布数据，并使用阵列中的一个磁盘存储奇偶校验信息，以便在阵列中的任何磁盘出现故障时保护阵列。由于所有奇偶校验信息都存储在一个磁盘上，因此对该磁盘的访问会对阵列的性能造成“瓶颈”。RAID 4 至少需要三个磁盘。
 
-RAID5:: Distributed error checking: Distributes data and parity information across multiple disks. RAID 5 offers the performance advantages of distributing data across multiple disks, but does not share the performance bottleneck of RAID 4 as the parity information is also distributed through the array. RAID 5 requires at least three disks.
+RAID5:: 分布式错误检查：在多个磁盘之间分布数据和奇偶校验信息。RAID 5 具有跨多个磁盘分布数据的性能优势，但是由于奇偶校验信息也通过阵列分布，因此没有共享 RAID 4 的性能瓶颈。RAID 5 至少需要三个磁盘。
 
-RAID6:: Redundant error checking: RAID 6 is similar to RAID 5, but instead of storing only one set of parity data, it stores two sets. RAID 6 requires at least four disks.
+RAID6:: 冗余错误检查：RAID 6 类似于 RAID 5，但它不是只存储一组奇偶校验数据，而是存储两组奇偶校验数据。RAID 6 至少需要四个磁盘。
 
-RAID10:: Performance and redundancy: RAID 10 is nested or hybrid RAID. It is constructed by distributing data over mirrored sets of disks. For example, a RAID 10 array constructed from four RAID partitions consists of two mirrored pairs of striped partitions. RAID 10 requires at least four disks.
+RAID10:: 性能和冗余：RAID 10 是嵌套或混合 RAID。它是通过将数据分布在镜像磁盘集上来构建的。例如，由四个 RAID 分区构建的 RAID 10 阵列由两对带区分区的镜像对组成。RAID 10 至少需要四个磁盘。

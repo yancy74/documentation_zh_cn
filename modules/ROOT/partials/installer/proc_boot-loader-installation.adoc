@@ -1,36 +1,36 @@
 [id="boot-loader-installation_{context}"]
-= Configuring boot loader
+= 配置引导加载程序
 
 //TODO: This needs to be reworked to a concept and task modules
 
-{ProductName} uses GRand Unified Bootloader version 2 ([application]*GRUB2*) as the boot loader.
+{ProductName} 使用 GRand Unified Bootloader version 2（[application]*GRUB2*）作为引导加载程序。
 
-The boot loader is the first program that runs when the system starts and is responsible for loading and transferring control to an operating system. [application]*GRUB2* can boot any compatible operating system (including Microsoft Windows) and can also use chain loading to transfer control to other boot loaders for unsupported operating systems.
+引导加载程序是系统启动时运行的第一个程序，负责加载并将控制转移到操作系统。[application]*GRUB2* 可以引导任何兼容的操作系统(包括 Microsoft Windows)，还可以使用链式加载将控制权转移到不支持的操作系统的其他引导加载程序。
 
 [WARNING]
 ====
-Installing [application]*GRUB2* may overwrite your existing boot loader.
+安装 [application]*GRUB2* 可能会覆盖现有的引导加载程序。
 ====
 
-If an operating system is already installed, the {ProductName} installation program attempts to automatically detect and configure the boot loader to start the other operating system. If the boot loader is not detected, you can manually configure any additional operating systems after you finish the installation.
+如果已经安装了操作系统，{ProductName} 安装程序会尝试自动检测并配置引导加载程序以启动另一个操作系统。如果未检测到引导加载程序，则可以在完成安装后手动配置任何其他操作系统。
 //TODO: link to GRUB2 config docs for more details
 
-If you are installing a {ProductName} system with more than one disk, you might want to manually specify the disk where you want to install the boot loader.
+如果要将  {ProductName}  安装在多个磁盘上，可能需要手动指定要安装引导加载程序的磁盘。
 
-.Procedure
+.步骤
 
-. From the *Installation Destination* window, click the *Full disk summary and bootloader* link. The *Selected Disks* dialog box opens.
+. 在 *安装目的地* 窗口中，单击 *完整磁盘摘要以及引导程序* 链接。将打开 *所选磁盘* 对话框。
 +
-The boot loader is installed on the device of your choice, or on a UEFI system; the *EFI system partition* is created on the target device during guided partitioning.
+引导加载程序已安装在您选择的设备或 UEFI 系统上；在引导分区期间，将在目标设备上创建 *EFI 系统分区*。
 
-. To change the boot device, select a device from the list and click *Set as Boot Device*. You can set only one device as the boot device.
+. 更改引导设备，请从列表中选择一个设备，然后单击 *设置为引导设备*。您只能将一个设备设置为引导设备。
 
-. To disable a new boot loader installation, select the device currently marked for boot and click *Do not install boot loader*. This ensures [application]*GRUB2* is not installed on any device.
+. 要禁用新的引导加载程序安装，请选择当前标记为要引导的设备，然后单击 *不安装引导加载程序*。这可确保 [application]*GRUB2* 未安装在任何设备上。
 
 [WARNING]
 ====
-If you choose not to install a boot loader, you cannot boot the system directly and you must use another boot method, such as a standalone commercial boot loader application. Use this option only if you have another way to boot your system.
+如果选择不安装引导加载程序，则不能直接引导系统，必须使用其他引导方法，例如独立的商用引导加载应用程序。仅当您有其他方式引导系统时才使用此选项。
 ====
 
-The boot loader may also require a special partition to be created, depending on if your system uses BIOS or UEFI firmware, or if the boot drive has a _GUID Partition Table_ (GPT) or a *Master Boot Record* (MBR, also known as `msdos`) label. If you use automatic partitioning, the installation program creates the partition.
+引导加载程序可能还需要创建特殊分区，具体取决于您的系统使用的是 BIOS 还是 UEFI 固件，或者引导驱动器是否具有GUID分区表（GPT）或主引导记录（MBR，也称为 `msdos`）标签。如果使用自动分区，安装程序将创建分区。
 //TODO: Add link to recommended partitioning scheme.

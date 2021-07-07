@@ -28,7 +28,7 @@ include::partial$local-attributes.adoc[]
 // If the assembly covers a task, start the title with a verb in the gerund
 // form, such as Creating or Configuring.
 [id="post-installation-tasks_{context}"]
-= Completing post-installation tasks
+= 完成安装后任务
 
 // The `context` attribute enables module reuse. Every module's ID
 // includes {context}, which ensures that the module has a unique ID even if
@@ -57,11 +57,11 @@ YES/NO
 |===
 endif::[]
 
-This section describes how to complete the following post-installation tasks:
+本部分介绍如何完成以下安装后任务：
 
-* Completing initial setup
-* Registering your system
-* Securing your system
+* 完成初始设置
+* 注册系统
+* 保护系统
 
 include::ROOT:partial$installer/proc_completing-initial-setup.adoc[leveloffset=+1]
 include::ROOT:partial$installer/proc_securing_your_system.adoc[leveloffset=+1]

@@ -23,12 +23,12 @@
 // Do not start the title with a verb. See also _Wording of headings_
 // in _The IBM Style Guide_.
 [id="vnc-overview_{context}"]
-= Overview
+= 概述
 
-The graphical user interface is the recommended method of installing {rel8} when you boot the system from a CD, DVD, or USB flash drive, or from a network using PXE. However, many enterprise systems are located in remote data center environments that are run autonomously and are not connected to a display, keyboard, and mouse. These systems are often referred to as _headless systems_ and they are typically controlled over a network connection. The {rel8} installation program includes a Virtual Network Computing (VNC) installation that runs the graphical installation on the target machine, but control of the graphical installation is handled by another system on the network. The {rel8} installation program offers two VNC installation modes: *Direct* and *Connect*. Once a connection is established, the two modes do not differ. The mode you select depends on your environment.
+当您从 CD、DVD 或 USB 闪存驱动器或使用 PXE 从网络引导系统时，建议使用图形用户界面安装 {rel8} 。但是，许多企业系统位于自主运行且未连接到显示器、键盘和鼠标的远程数据中心环境中。这些系统通常被称为无头系统，它们通常通过网络连接进行控制。{rel8} 安装程序包括在目标计算机上运行图形安装的虚拟网络计算(VNC)安装，但图形安装的控制由网络上的另一个系统处理。{rel8} 安装程序提供两种 VNC 安装模式：直接安装模式和连接安装模式。一旦建立了连接，这两种模式就没有什么不同。您选择的模式取决于您的环境。
 
-Direct mode:::
-In Direct mode, the {rel8} installation program is configured to start on the target system and wait for a VNC viewer that is installed on another system before proceeding. As part of the Direct mode installation, the IP address and port are displayed on the target system. You can use the VNC viewer to connect to the target system remotely using the IP address and port, and complete the graphical installation.
+直接模式:::
+在直接模式下，{rel8} 安装程序配置为在目标系统上启动，并等待安装在另一个系统上的 VNC 查看器，然后再继续。作为直接模式安装的一部分，IP 地址和端口将显示在目标系统上。您可以使用 VNC 查看器通过 IP 地址和端口远程连接到目标系统，并完成图形安装。
 
-Connect mode:::
-In Connect mode, the VNC viewer is started on a remote system in _listening_ mode. The VNC viewer waits for an incoming connection from the target system on a specified port. When the {rel8} installation program starts on the target system, the system host name and port number are provided by using a boot option or a Kickstart command. The installation program then establishes a connection with the listening VNC viewer using the specified system host name and port number. To use Connect mode, the system with the listening VNC viewer must be able to accept incoming network connections.
+连接模式:::
+在连接模式下，VNC 查看器在远程系统上以监听模式启动。VNC 查看器在指定端口上等待来自目标系统的传入连接。当 {rel8} 安装程序在目标系统上启动时，系统主机名和端口号通过使用启动选项或 Kickstart 命令提供。然后，安装程序使用指定的系统主机名和端口号与监听 VNC 查看器建立连接。要使用连接模式，带有监听 VNC 查看器的系统必须能够接受传入的网络连接。

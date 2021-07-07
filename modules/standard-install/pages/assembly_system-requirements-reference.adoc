@@ -29,7 +29,7 @@ include::partial$local-attributes.adoc[]
 // form, such as Creating or Configuring.
 [id="system-requirements-reference_{context}"]
 [appendix]
-= System requirements reference
+= 系统要求参考
 
 // The `context` attribute enables module reuse. Every module's ID
 // includes {context}, which ensures that the module has a unique ID even if
@@ -58,7 +58,7 @@ YES/NO
 |===
 endif::[]
 
-This section provides information and guidelines for hardware, installation target, system, memory, and RAID when installing {productname}.
+本部分提供有关安装 {productname} 时硬件、安装目标、系统、内存和 RAID 的信息和指南。
 
 // The following include statements pull in the module files that comprise
 // the assembly. Include any combination of concept, procedure, or reference

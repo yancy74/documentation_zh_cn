@@ -1,23 +1,21 @@
-# CentOS 8 Documentation
+# Circle Linux 文档
 
-This repository contains sources that comprise the CentOS 8 documentation published on https://docs.centos.org/en-US/docs/.
-Please report Issues and submit Pull Requests for **Content Fixes** here. For other issues or fixes, use:
+本仓库包含构成 Circle Linux 文档的源码。
+请在此处报告问题并提交**内容修复**请求。
 
-* [CentOS_Docs](https://github.com/CentOS/docs) - the builder repository for the entire website, including for example structure configuration
-* [CentOS_Docs_Web_UI](https://github.com/CentOS/docs-web-ui) - the website's user interface (e.g. CSS styling) sources
 
-## Repository structure
+## 仓库结构
 
-The documentation is broken into four modules, placed in the `modules` directory.
-Three of them correspond to separate "titles":
+文档分为四个模块，位于 `modules` 目录中。
+其中三个对应单独的“标题”：
 
-* `standard-install` - Performing a standard CentOS 8 installation - covers mostly installation using Anaconda's GUI
-* `advanced-install` - Performing an advanced CentOS 8 installation - covers advanced install topics like Kickstart, remote access during installation, and PXE boot
-* `managing-userspace-components` - Installing, managing, and removing user space components - information about modules and streams
+* `standard-install` - 标准安装 - 主要包括使用 Anaconda 的 GUI 安装
+* `advanced-install` - 高级安装 - 包括高级安装主题，如 Kickstart、安装期间的远程访问和 PXE 引导
+* `managing-userspace-components` - 安装、管理和删除用户空间组件 - 有关模块和流的信息
 
-Each of these modules contains sources which are rendered as separate pages. However, those sources use `include::` statements to include so-called "partials" - smaller bits of content that are not rendered separately. These partials, as well as global attributes used throughout this set of docs and the splash page, are stored in the `ROOT` module.
+每一个模块中都包含作为单独页面呈现的源码。但是，这些源码使用 `include::` 语句来包含所谓的“partials” —— 不单独呈现的较小的内容。这些 partials 以及在文档和首页中使用的全局属性都存储在 `ROOT` 模块中。
 
-## Structure
+## 结构
 
 ```
 |-- README.md
@@ -40,32 +38,32 @@ Each of these modules contains sources which are rendered as separate pages. How
             `-- pizza-owen.adoc
 ```
 
-1. Metadata definition.
-2. A script that does a local build. Uses docker.
-3. A script that shows a preview of the site in a web browser by running a local web server. Uses docker.
-4. A definition file for the build script.
-5. A "root module of this documentation component". Please read below for an explanation.
-6. **Images** to be used on any page.
-7. **Menu definition.** Also defines the hierarchy of all the pages.
-8. **Pages with the actual content.** They can be also organised into subdirectories if desired.
+1. 元数据定义。
+2. 本地构建的脚本。使用 docker。
+3. 通过运行本地 web 服务器在 web 浏览器中显示站点预览的脚本。使用 docker。
+4. 构建脚本的定义文件。
+5. 文档组件的 root 模块。请阅读下面的解释。
+6. 在任何页面上使用的图像。
+7. 菜单定义。还定义所有页面的层次结构。
+8. 包含实际内容的页面。如果需要，也可以将它们组织成子目录。
 
-## Components and Modules
+## 组件和模块
 
-Antora introduces two new terms:
+Antora 引入了两个新术语：
 
-* **Component** — Simply put, a component is a part of the documentation website with its own menu. Components can also be versioned. In the Fedora Docs, we use separate components for user documentation, the Fedora Poject, Fedora council, Mindshare, FESCO, but also subprojects such as CommOps or Modulartity.
-* **Module** — A component can be broken down into multiple modules. Modules still share a single menu on the site, but their sources can be stored in different git repositories, even owned by different groups. The default module is called "ROOT" (that's what is in this example). If you don't want to use multiple modules, only use "ROOT". But to define more modules, simply duplicate the "ROOT" directory and name it anything you want. You can store modules in one or more git repositories.
+* **组件** — 简单地说，组件是文档网站的一部分，有自己的菜单。组件也可以进行版本控制。
+* **模块** — 一个组件可以分解为多个模块。模块仍然在站点上共享一个菜单，但它们的源可以存储在不同的 git 存储库中，甚至由不同的组拥有。默认模块称为“ROOT”（本例中就是如此）。如果您不想使用多个模块，请仅使用“ROOT”。但是要定义更多模块，只需复制“ROOT”目录并将其命名为您想要的任何名称。您可以将模块存储在一个或多个 git 存储库中。
 
-## Local preview
+## 本地预览
 
-This repo includes scripts to build and preview the contents of this repository.
+本仓库包含用于构建和预览此仓库内容的脚本。
 
-Both scripts work on Fedora (using Podman) and macOS (using Docker).
+这两个脚本都适用于 Circle Linux（使用 Podman）和 macOS（使用 Docker）。
 
-To build and preview the site, run:
+要构建和预览站点，请运行：
 
 ```
 $ ./build.sh && ./preview.sh
 ```
 
-The result will be available at http://localhost:8080
+结果将在 http://localhost:8080 处可见。

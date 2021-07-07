@@ -1,12 +1,12 @@
 [id="configuring-advanced-storage-options_{context}"]
-= Using advanced storage options
+= 使用高级存储选项
 //TODO: need to change this to a concept and change the ID
 
-To use an advanced storage device, you can configure an iSCSI (SCSI over TCP/IP) target or FCoE (Fibre Channel over Ethernet) SAN (Storage Area Network).
+要使用高级存储设备，可以配置 iSCSI（基于 TCP/IP 的 SCSI）目标或 FCoE（以太网光纤通道）SAN（存储区域网络）。
 
-To use iSCSI storage devices for the installation, the installation program must be able to discover them as iSCSI targets and be able to create an iSCSI session to access them. Each of these steps might require a user name and password for Challenge Handshake Authentication Protocol (CHAP) authentication. Additionally, you can configure an iSCSI target to authenticate the iSCSI initiator on the system to which the target is attached (reverse CHAP), both for discovery and for the session. Used together, CHAP and reverse CHAP are called mutual CHAP or two-way CHAP. Mutual CHAP provides the greatest level of security for iSCSI connections, particularly if the user name and password are different for CHAP authentication and reverse CHAP authentication.
+要使用 iSCSI 存储设备进行安装，安装程序必须能够将查找 iSCSI 目标并能够创建 iSCSI 会话以访问它们。这些步骤中的每个步骤都可能需要用户名和密码才能进行质询握手验证协议（CHAP）验证。此外，您可以配置 iSCSI 目标以对目标连接到的系统上的 iSCSI 发起程序进行验证（反向 CHAP），以用于查找和会话。CHAP 和反向 CHAP 一起使用，称为相互 CHAP或双向 CHAP。双向 CHAP 为 iSCSI 连接提供了最高级别的安全性，尤其是在 CHAP 验证和反向 CHAP 验证的用户名和密码不同的情况下。
 
 [NOTE]
 ====
-Repeat the iSCSI discovery and iSCSI login steps to add all required iSCSI storage. You cannot change the name of the iSCSI initiator after you attempt discovery for the first time. To change the iSCSI initiator name, you must restart the installation.
+重复 iSCSI 查找和 iSCSI 登录步骤以添加所有必需的 iSCSI 存储。首次尝试查找后，您将无法更改 iSCSI 发起程序的名称。要更改 iSCSI 发起程序名称，必须重新启动安装。
 ====

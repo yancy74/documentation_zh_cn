@@ -1,50 +1,50 @@
 [id="making-a-kickstart-file-available-on-an-ftp-server_{context}"]
-= Making a Kickstart file available on an FTP server
+= 使 Kickstart 文件在 FTP 服务器上可用
 
-This procedure describes how to store the Kickstart script file on an FTP server. This method enables you to install multiple systems from a single source without having to use physical media for the Kickstart file.
+以下步骤介绍如何在 FTP 服务器上存储 Kickstart 脚本文件。您使用此方法可以从单个源安装多个系统，而不必为 Kickstart 文件使用物理介质。
 
 
-.Prerequisites
+.前提
 
-* You must have administrator level access to a server with {rel8} on the local network.
-* The system to be installed must be able to connect to the server.
-* Firewall on the server must allow connections from the system you are installing to. See xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[Ports for network-based installation] for more information.
+* 您必须拥有对本地网络上安装了 {rel8} 的服务器的管理员级别访问权限。
+* 要安装的系统必须能够连接到服务器。
+* 服务器上的防火墙必须允许来自您要安装的系统的连接。有关更多信息，请参阅xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[基于网络安装的端口]。
 
-.Procedure
+.步骤
 
-. Install the [package]`vsftpd` package by running the following command as root:
+. 通过以 root 用户身份运行以下命令来安装 [package]`vsftpd` 软件包：
 +
 ----
 # yum install vsftpd
 ----
 
-. Open and edit the [filename]`/etc/vsftpd/vsftpd.conf` configuration file in a text editor.
+. 在文本编辑器中打开并编辑 [filename]`/etc/vsftpd/vsftpd.conf` 配置文件。
 
-.. Change the line `anonymous_enable=NO` to `anonymous_enable=YES`
+.. 将行 `anonymous_enable=NO` 更改为 `anonymous_enable=YES`
 
-.. Change the line `write_enable=YES` to `write_enable=NO`.
+.. 将行 `write_enable=YES` 更改为 `write_enable=NO`.
 
-.. Add lines `pasv_min_port=__min_port__` and `pasv_max_port=__max_port__`. Replace __min_port__ and __max_port__ with the port number range used by FTP server in passive mode, e. g. `10021` and `10031`.
+.. 添加行 `pasv_min_port=__min_port__` 和 `pasv_max_port=__max_port__`。将 __min_port__ 和 __max_port__ 替换为被动模式下 FTP 服务器使用的端口号范围，例如 `10021` 和 `10031`。
 +
-This step can be necessary in network environments featuring various firewall/NAT setups.
+在具有各种防火墙/NAT设置的网络环境中，此步骤可能是必要的。
 
-.. Optionally, add custom changes to your configuration. For available options, see the *vsftpd.conf(5)* man page. This procedure assumes that default options are used.
+.. （可选）将自定义更改添加到您的配置。有关可用选项，请参见 *vsftpd.conf(5)* 手册页。此步骤假定使用默认选项。
 +
 [WARNING]
 ====
-If you configured SSL/TLS security in your [filename]`vsftpd.conf` file, ensure that you enable only the TLSv1 protocol, and disable SSLv2 and SSLv3. This is due to the POODLE SSL vulnerability (CVE-2014-3566). See https://access.redhat.com/solutions/1234773 for details.
+如果在 [filename]`vsftpd.conf` 文件中配置了 SSL/TLS 安全性，请确保仅启用 TLSv1 协议，并禁用 SSLv2 和 SSLv3。这是由于 POODLE SSL 漏洞（CVE-2014-3566）。
 ====
 
-. Configure the server firewall.
+. 配置服务器防火墙。
 
-.. Enable the firewall:
+.. 启用防火墙：
 +
 ----
 # systemctl enable firewalld
 # systemctl start firewalld
 ----
 
-.. Enable in your firewall the FTP port and port range from previous step:
+.. 在防火墙中启用上一步中的 FTP 端口和端口范围：
 +
 [subs="quotes"]
 ----
@@ -53,11 +53,11 @@ If you configured SSL/TLS security in your [filename]`vsftpd.conf` file, ensure 
 # firewall-cmd --reload
 ----
 +
-Replace __min_port__-__max_port__ with the port numbers you entered into the [filename]`/etc/vsftpd/vsftpd.conf` configuration file.
+将 __min_port__-__max_port__ 替换为您在 [filename]`/etc/vsftpd/vsftpd.conf` 配置文件中输入的端口号。
 
-. Copy the Kickstart file to the FTP server into the [filename]`/var/ftp/` directory or its subdirectory.
+. 将 Kickstart 文件复制到 FTP 服务器的 [filename]`/var/ftp/` 目录或其子目录中。
 
-. Make sure that the correct SELinux context and access mode is set on the file:
+. 确保在文件上设置了正确的 SELinux 上下文和访问模式：
 +
 [subs="quotes"]
 ----
@@ -65,21 +65,21 @@ Replace __min_port__-__max_port__ with the port numbers you entered into the [fi
 # chmod 444 /var/ftp/__your-kickstart-file.ks__
 ----
 
-. Start the `vsftpd` service:
+. 启动 `vsftpd` 服务：
 +
 ----
 # systemctl start vsftpd.service
 ----
 +
-If the service was running before you changed the [filename]`/etc/vsftpd/vsftpd.conf` file, restart the service to load the edited file:
+如果在您更改 [filename]`/etc/vsftpd/vsftpd.conf` 文件之前该服务正在运行，请重新启动该服务以加载编辑后的文件：
 +
 ----
 # systemctl restart vsftpd.service
 ----
 +
-The Kickstart file is now accessible and ready to be used for installations by systems on the same network.
+Kickstart 文件现在可以访问，可供同一网络上的系统进行安装。
 +
 [NOTE]
 ====
-When configuring the installation source, use `ftp://` as the protocol, the server's host name or IP address, and the path of the Kickstart file, relative to the FTP server root. For example, if the server's host name is `myserver.example.com` and you have copied the file to `/var/ftp/my-ks.cfg`, specify `ftp://myserver.example.com/my-ks.cfg` as the installation source.
+配置安装源时，请使用 `ftp://` 作为协议、服务器的主机名或 IP 地址以及 Kickstart 文件的路径(相对于 FTP 服务器根目录)。例如，如果服务器的主机名是 `myserver.example.com` ，并且您已将文件复制到 `/var/ftp/my-ks.cfg`，则将 `ftp://myserver.example.com/my-ks.cfg` 指定为安装源。
 ====

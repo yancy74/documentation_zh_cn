@@ -4,7 +4,7 @@ include::partial$local-attributes.adoc[]
 = {ProjectName}
 {OrgName}
 
-image:title_logo.svg[CentOS Documentation Project]
+image:title_logo.svg[alt=Flower,width=30%,height=30%]
 
 _{Subtitle}_
 

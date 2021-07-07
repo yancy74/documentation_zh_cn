@@ -21,50 +21,50 @@
 // Start the title with a verb, such as Creating or Create. See also
 // _Wording of headings_ in _The IBM Style Guide_.
 [id="performing-a-rhel-install-in-vnc-direct-mode_{context}"]
-= Performing a remote installation in VNC Direct mode
+= 以 VNC 直接模式执行远程安装
 
-Use this procedure to perform a remote {productName} installation in VNC Direct mode. Direct mode expects the VNC viewer to initiate a connection to the target system that is being installed with {rel8}. In this procedure, the system with the VNC viewer is called the *remote* system. You are prompted by the {rel8} installation program to initiate the connection from the VNC viewer on the remote system to the target system.
+使用以下步骤在 VNC 直接模式下执行远程 {productName} 安装。直接模式要求 VNC 查看器启动与正在安装 {rel8} 的目标系统的连接。在此步骤中，具有 VNC 查看器的系统称为远程系统。{rel8} 安装程序会提示您启动从远程系统上的 VNC 查看器到目标系统的连接。
 
 [NOTE]
 ====
-This procedure uses *TigerVNC* as the VNC viewer. Specific instructions for other viewers might differ, but the general principles apply.
+以下步骤使用 *TigerVNC* 作为 VNC 查看器。针对其他查看器的具体命令可能有所不同，但一般原则适用。
 ====
 
 [discrete]
-== Prerequisites
+== 前提
 
-* As root, you have installed a VNC viewer on a remote system, for example:
+* 以 root 身份在远程系统上安装了 VNC 查看器，例如：
 +
 ----
 # yum install tigervnc
 ----
 +
-* You have set up a network boot server and booted the installation on the target system. For more information, see xref:advanced-install:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE].
+* 您已经设置了网络引导服务器，并在目标系统上引导安装。有关详细信息，请参阅xref:advanced-install:assembly_preparing-for-a-network-install.adoc[使用 PXE 从网络准备安装]。
 
 
 [discrete]
-== Procedure
+== 步骤
 
-. From the {rel8} boot menu on the target system, press the `Tab` key on your keyboard to edit the boot options.
-. Append the `inst.vnc` option to the end of the command line.
-.. If you want to restrict VNC access to the system that is being installed, add the `inst.vncpassword=PASSWORD` boot option to the end of the command line. Replace *PASSWORD* with the password you want to use for the installation. The VNC password must be between 6 and 8 characters long.
+. 在目标系统的 {rel8} 引导菜单中，按键盘上的 `Tab` 键编辑引导选项。
+. 将 `inst.vnc` 选项添加到命令行的末尾。
+.. 如果要限制 VNC 对正在安装系统的访问，请将 `inst.vncpassword=PASSWORD` 引导选项添加到命令行的末尾。将 *PASSWORD* 替换为要用于安装的密码。VNC 密码的长度必须在 6 到 8 个字符之间。
 +
 [IMPORTANT]
 ====
-Use a temporary password for the `inst.vncpassword=` option. It should not be an existing or root password.
+对 `inst.vncpassword=` 选项使用临时密码。它不应该是已存在密码或root密码。
 ====
 +
-. Press *Enter* to start the installation. The target system initializes the installation program and starts the necessary services. When the system is ready, a message is displayed providing the IP address and port number of the system.
+. 按 *Enter* 键开始安装。目标系统初始化安装程序并启动必要的服务。当系统准备就绪时，将显示一条信息，提供系统的 IP 地址和端口号。
 
-. Open the VNC viewer on the remote system.
+. 打开远程系统上的 VNC 查看器。
 
-. Enter the IP address and the port number into the *VNC server* field.
+. 在 *VNC 服务器* 字段中输入 IP 地址和端口号。
 
-. Click *Connect*.
+. 单击 *连接*。
 
-. Enter the VNC password and click *OK*. A new window opens with the VNC connection established, displaying the {rel8} installation menu. From this window, you can install {rel8} on the target system using the graphical user interface.
+. 输入 VNC 密码并单击 *确认*。此时将打开一个新窗口，其中已建立 VNC 连接，并显示 {rel8} 安装菜单。在此窗口中，您可以使用图形用户界面在目标系统上安装 {rel8}。
 
 [discrete]
-== Additional resources
+== 其他资源
 
-* For more information on how to perform a {rel8} installation using the graphical user interface, see the xref:standard-install:assembly_graphical-installation.adoc[Installing using the Graphical User Interface] section in the _Performing a standard installation_  document.
+* 有关如何使用图形用户界面执行 {rel8} 安装的更多信息，请参阅 _标准安装_ 文档中的xref:standard-install:assembly_graphical-installation.adoc[使用图形用户界面安装]部分。

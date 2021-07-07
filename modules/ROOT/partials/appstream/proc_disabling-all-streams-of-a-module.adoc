@@ -1,20 +1,20 @@
 [id="disabling-all-streams-of-a-module_{context}"]
-= Disabling all streams of a module
+= 禁用模块的所有流
 
-Modules which have a default stream will always have one stream active. In situations where the content from all the module streams should not be accessible, it is possible to disable the whole module.
+具有默认流的模块将始终有一个流处于激活状态。要使所有模块流的内容都不能被访问，可以禁用整个模块。
 
 
-.Prerequisites
+.前提
 
-* You must understand the xref:assembly_introduction-to-modules.adoc#module-streams_introduction-to-modules[concept of an _active module stream_].
+* 理解 xref:assembly_introduction-to-modules.adoc#module-streams_introduction-to-modules[激活模块流的概念]。
 
-.Procedure
+.步骤
 
-* Disable the module:
+* 禁用模块：
 +
 [subs="quotes"]
 ----
 # yum module disable _module-name_
 ----
 +
-[command]`yum` asks for confirmation and then disables the module with all its streams. All of the module streams become inactive. No installed content is removed.
+[command]`yum` 请求确认，然后禁用模块及其所有流。所有模块流都变为非激活状态。未删除安装的内容。

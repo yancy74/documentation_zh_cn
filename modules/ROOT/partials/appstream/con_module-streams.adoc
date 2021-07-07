@@ -1,25 +1,20 @@
 [id="module-streams_{context}"]
-= Module streams
+= 模块流
 
-Module streams are filters that can be imagined as virtual repositories in the AppStream physical repository. Module streams represent versions of the AppStream components. Each of the streams receives updates independently.
+模块流是可以想象为 AppStream 仓库中的虚拟仓库的筛选器。模块流表示 AppStream 组件的版本。每个流独立地接收更新。
 
-Module streams can be active or inactive. Active streams give the system access to the RPM packages within the particular module stream, allowing installation of the respective component version. Streams are active either if marked as default or if they are explicitly enabled by a user action.
+模块流可以是激活的，也可以是非激活的。激活流允许系统访问特定模块流中的 RPM 包，从而允许安装相应的组件版本。如果将流标记为默认流或通过用户操作显式启用流，则流处于激活状态。
 
-Only one stream of a particular module can be active at a given point in time. Thus only one version of a component can be installed on a system. Different versions can be used in separate containers.
+在给定的时间点，特定模块的流只有一个是激活的。因此，一个系统上只能安装一个组件的一个版本。可以在不同的容器中使用不同的版本。
 
-Each module may have a default stream which usually provides the latest or recommended version of the component. Default streams make it easy to consume {ProductName} packages the usual way without the need to learn about modules. The default stream is active, unless the whole module has been disabled or another stream of that module enabled.
+每个模块可以具有默认流，该默认流通常提供组件的最新或推荐版本。默认流使得以通常的方式安装 {ProductName} 包变得很容易，而不需要了解模块。除非已禁用整个模块或启用该模块的另一个流，否则默认流处于激活状态。
 
-Certain module streams depend on other module streams. For example, the *perl-App-cpanminus*, *perl-DBD-MySQL*, *perl-DBD-Pg*, *perl-DBD-SQLite*, *perl-DBI*, *perl-YAML*, and *freeradius* module streams depend on certain *perl* module streams.
+某些模块流依赖于其他模块流。例如， *perl-App-cpanminus*、 *perl-DBD-MySQL*、 *perl-DBD-Pg*、 *perl-DBD-SQLite*、 *perl-DBI*、 *perl-YAML* 和 *freeradius* 模块流依赖某些 *perl* 模块流。
 
-
-.*postgresql* module streams
+.*postgresql* 模块流
 ====
-The *postgresql* module provides the [application]*PostgreSQL* database versions 9.6 and 10 in the respective streams *9.6* and *10*. Stream *10* is currently the default one. This means that the system will attempt to install the [package]*postgresql-10.6* package if asked for [package]*postgresql*.
+*postgresql* 模块分别在流 9.6 和流 10 中提供 [application]*PostgreSQL* 数据库版本 9.6 和 10，目前流 10 是默认版本。这意味着如果要求安装 [package]*postgresql*，系统将尝试安装 [package]*postgresql-10.6* 软件包。
 
 // If the stream *postgresql:9.6* is enabled, it becomes the active one, and the package it will install would be [package]*postgresql-9.6.10*.
 ====
 
-
-.Additional resources
-
-* For more information about modular dependencies, see xref:assembly_managing-versions-of-appstream-content.adoc#modular-dependencies-and-stream-changes_managing-versions-of-appstream-content[Modular dependencies and stream changes].

@@ -1,43 +1,43 @@
 [id='creating-a-user-account_{context}']
-= Creating a user account
+= 创建用户帐户
 
-It is recommended that you create a user account to finish the installation. If you do not create a user account, you must log in to the system as `root` directly, which is *not* recommended.
+建议您创建一个用户帐户以完成安装。如果不创建用户帐户，则必须直接以 root 用户身份登录系统，不建议这样做。
 
-.Procedure
+.步骤
 
-. From the *Configuration* window, click *User Creation*. The *Create User* window opens.
+. 在 *配置* 窗口中，单击 *用户创建*。将打开 *创建用户* 窗口。
 
-. Type the user account name in to the *Full name* field, for example: John Smith.
+. 在 *全名* 字段中输入用户帐户名称，例如：John Smith。
 
-. Type the username in to the *User name* field, for example: jsmith.
+. 在 *用户名* 字段中输入用户名，例如：jsmith。
 +
 [NOTE]
 ====
-The *User name* is used to log in from a command line; if you install a graphical environment, then your graphical login manager uses the *Full name*.
+*用户名* 用于从命令行登录；如果安装图形环境，则图形登录管理器使用 *全名*。
 ====
 
-. Select the *Make this user administrator* check box if the user requires administrative rights (the installation program adds the user to the `wheel` group ).
+. 如果用户需要管理员权限，请选中 *使此用户成为管理员* 复选框（安装程序会将用户添加到 wheel 组）。
 +
 [IMPORTANT]
 ====
-An administrator user can use the `sudo` command to perform tasks that are only available to `root` using the user password, instead of the `root` password. This may be more convenient, but it can also cause a security risk.
+管理员用户可以通过 `sudo` 命令使用用户密码(而不是root密码)执行仅限 root 用户执行的任务。这可能更方便，但也可能造成安全风险。
 ====
 
-. Select the *Require a password to use this account* check box.
+. 选中 *需要密码才能使用此帐户* 复选框。
 +
 [WARNING]
 ====
-If you give administrator privileges to a user, verify that the account is password protected. Never give a user administrator privileges without assigning a password to the account.
+如果您为用户授予管理员权限，请验证该帐户是否受密码保护。在未为帐户分配密码的情况下，切勿授予用户管理员权限。
 //TODO: link to some security docs about password security
 ====
 
-. Type a password into the *Password* field.
+. 在 *密码* 字段中输入密码。
 
-. Type the same password into the *Confirm password* field.
+. 在 *确认密码* 字段中输入相同的密码。
 
-.  *Save Changes* to apply the changes and return to the *Configuration* window.
+.  *保存更改* 以应用更改并返回到 *配置* 窗口。
 
-.  When the installation process is complete, click *Reboot* to reboot and log in to your {ProductName} {ProductNumber} system.
+.  安装过程完成后，单击 *重启* 以重新启动并登录到 {ProductName} {ProductNumber} 系统。
 
 include::proc_editing-advanced-user-settings.adoc[leveloffset=+1]
 

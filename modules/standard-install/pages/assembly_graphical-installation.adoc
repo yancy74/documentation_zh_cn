@@ -3,20 +3,15 @@ include::partial$local-attributes.adoc[]
 :parent-context-graphical-installation: {context}
 :context: graphical-installation
 [id="graphical-installation_{context}"]
-= Installing {rel8} using the Graphical User Interface
+= 使用图形用户界面安装 {rel8}
 
-This section contains information about installing {ProductName} using the Graphical User Interface (GUI). The GUI is the preferred method of installing {ProductName} when you boot the system from a CD, DVD, or USB flash drive, or from a network using PXE.
-
-[NOTE]
-====
-There may be some variance between the online help and the content that is published on the Customer Portal. For the latest updates, see the installation content on the Customer Portal.
-====
+本部分包含有关使用图形用户界面（GUI）安装 {ProductName} 的信息。从 CD、DVD 或 USB 闪存驱动器或使用 PXE 的网络引导系统时，GUI 是安装 {ProductName} 的首选方法。
 
 
-If your system does not have the ability to use the graphical mode, you can:
+如果您的系统不能使用图形模式，可以：
 
-* Use Kickstart to automate the installation as described in xref:advanced-install:assembly_installation-introduction-experienced.adoc[Performing an automated installation using Kickstart]
-* Perform the graphical installation remotely by connecting to the installation system from another computer with a graphical display using the _VNC_ (Virtual Network Computing) protocol as described in xref:advanced-install:assembly_performing-a-remote-installation-using-vnc.adoc[Performing a remote installation using VNC]
+* 使用 Kickstart 自动化安装，如xref:advanced-install:assembly_installation-introduction-experienced.adoc[使用 Kickstart 执行自动安装]中所述。
+* 通过使用 _VNC_（虚拟网络计算）协议从另一台具有图形显示的计算机连接到安装系统，远程执行图形安装，如xref:advanced-install:assembly_performing-a-remote-installation-using-vnc.adoc[使用 VNC 执行远程安装]中所述。
 
 include::ROOT:partial$installer/con_graphical-installation-workflow.adoc[leveloffset=+1]
 include::ROOT:partial$installer/proc_configuring-language-and-location.adoc[leveloffset=+1]

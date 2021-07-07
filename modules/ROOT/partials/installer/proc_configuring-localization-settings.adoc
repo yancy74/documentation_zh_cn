@@ -1,81 +1,81 @@
 [id="configuring-localization-settings_{context}"]
-= Configuring localization options
+= 配置本地化选项
 
-This section contains information about configuring your keyboard, language support, and time and date settings.
+本部分包含有关配置键盘、语言支持以及时间和日期设置的信息。
 
 [IMPORTANT]
 ====
-If you use a layout that cannot accept Latin characters, such as *Russian*, add the *English (United States)* layout and configure a keyboard combination to switch between the two layouts. If you select only a layout that does not have Latin characters, you might be unable to enter a valid [systemitem]`root` password and user credentials later in the installation process. This can prevent you from completing the installation.
+如果您使用的布局不能接受拉丁字符（例如俄语），请添加 *English (United States)* 布局并配置键盘组合以在两种布局之间切换。如果仅选择不包含拉丁字符的布局，则可能在安装过程的稍后阶段无法输入有效的 root 密码和用户凭据。这可能会阻止您完成安装。
 ====
 
-== Configuring keyboard, language, and time and date settings
+== 配置键盘、语言以及时间和日期设置
 
 [NOTE]
 ====
-Keyboard, Language, and Time and Date Settings are configured by default as part of xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[Configuring language and location settings].
-To change any of the settings, complete the following steps, otherwise proceed to xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[Configuring software options].
+默认情况下，键盘、语言、时间和日期设置作为xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[配置语言和位置设置]的一部分进行配置。
+要更改任何设置，请完成以下步骤，否则继续xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[配置软件选项]。
 ====
 
-.Procedure: Configuring keyboard settings
+.步骤： 配置键盘设置
 
-. From the *Installation Summary* window, click *Keyboard*. The default layout depends on the option selected in xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[Configuring language and location settings].
+. 从 *安装信息摘要* 窗口中，单击 *键盘*。默认布局取决于在xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[配置语言和位置设置]中选择的选项。
 
-.. Click *+* to open the *Add a Keyboard Layout* window and change to a different layout.
+.. 单击 *+* 打开 *添加键盘布局* 窗口并更改为其他布局。
 
-.. Select a layout by browsing the list or use the *Search* field.
+.. 通过浏览列表或使用 *搜索* 字段选择布局。
 
-.. Select the required layout and click *Add*. The new layout appears under the default layout.
+.. 选择所需的布局，然后单击 *添加*。新布局将显示在默认布局下。
 
-.. Click *Options* to optionally configure a keyboard switch that you can use to cycle between available layouts.  The *Layout Switching Options* window opens.
+.. 单击 *选项* 可选择配置键盘切换，您可以使用它在可用布局之间循环。将打开 *布局切换选项* 窗口。
 
-.. To configure key combinations for switching, select one or more key combinations and click *OK* to confirm your selection.
+.. 要配置用于切换的组合键，请选择一个或多个组合键，然后单击 *确定* 确认您的选择。
 +
 [NOTE]
 ====
-When you select a layout, click the *Keyboard* button to open a new dialog box that displays a visual representation of the selected layout.
+选择布局时，单击 *键盘* 按钮以打开一个新对话框，该对话框显示所选布局的视觉表示。
 ====
 
-.. Click *Done* to apply the settings and return to xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[The Installation Summary window].
+.. 单击 *完成* 以应用设置并返回到 *安装信息摘要* 窗口。
 
-.Procedure: Configuring language settings
+.步骤：配置语言设置
 
-. From the *Installation Summary* window, click *Language Support*. The *Language Support* window opens. The left pane lists the available language groups. If at least one language from a group is configured, a check mark is displayed and the supported language is highlighted.
+. 从 *安装信息摘要* 窗口中，单击 *语言支持*。将打开 *语言支持* 窗口。左侧窗格列出可用语言组。如果至少配置了组中的一种语言，则会显示复选标记，并高亮显示支持的语言。
 
-.. From the left pane, click a group to select additional languages, and from the right pane, select regional options. Repeat this process for languages that you require.
+.. 在左窗格中，单击一个组以选择其他语言，然后在右窗格中，选择区域选项。 对所需的语言重复此过程。
 
-.. Click *Done* to apply the changes and return to xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[The Installation Summary window].
+.. 单击 *完成* 以应用更改并返回到xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[安装信息摘要]窗口。
 
-.Procedure: Configuring time and date settings
+.步骤：配置时间和日期设置
 
-. From the *Installation Summary* window, click *Time & Date*. The *Time & Date* window opens.
+. 在 *安装信息摘要* 窗口中，单击 *时间和日期*。将打开 *时间和日期* 窗口。
 +
 [NOTE]
 ====
-The *Time & Date* settings are configured by default based on the settings you selected in xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[Configuring language and location settings].
+默认情况下，*时间和日期* 是根据您在xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[配置语言和位置设置]中选择的设置进行配置的。
 
-The list of cities and regions come from the Time Zone Database ([package]`tzdata`) public domain that is maintained by the Internet Assigned Numbers Authority (IANA). {OrgName} can not add cities or regions to this database. You can find more information at the link:++http://www.iana.org/time-zones++[IANA official website].
+城市和地区列表来自由互联网号码分配机构（IANA）维护的时区数据库（[package]`tzdata`）公共领域。{OrgName} 无法将城市或地区添加到此数据库。您可以在 link:++http://www.iana.org/time-zones++[IANA 官方网站]上找到更多信息。
 ====
 
-.. From the *Region* drop-down menu, select a region.
+.. 从 *区域* 下拉菜单中，选择一个区域。
 +
 [NOTE]
 ====
-Select *Etc* as your region to configure a time zone relative to Greenwich Mean Time (GMT) without setting your location to a specific region.
+选择 *Etc* 作为您的区域，以配置相对于格林威治标准时间（GMT）的时区，而无需将您的位置设置为特定区域。
 ====
 
-.. From the *City* drop-down menu, select the city, or the city closest to your location in the same time zone.
+.. 从 *城市* 下拉菜单中，选择城市，或在同一时区中最接近您所在位置的城市。
 
-.. Toggle the *Network Time* switch to enable or disable network time synchronization using the Network Time Protocol (NTP).
+.. 切换 *网络时间* 开关以启用或禁用使用网络时间协议（NTP）的网络时间同步。
 +
 [NOTE]
 ====
-Enabling the Network Time switch keeps your system time correct as long as the system can access the internet. By default, one NTP pool is configured; you can add a new option, or disable or remove the default options by clicking the gear wheel button next to the btn:[Network Time] switch.
+只要系统可以访问互联网，启用网络时间开关就可以保持系统时间正确。默认情况下，会配置一个NTP池；您可以添加新选项，也可以通过单击 btn:[网络时间] 旁边的齿轮按钮禁用或删除默认选项。
 ====
 
-.. Click *Done* to apply the changes and return to xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[The Installation Summary window].
+.. 单击 *完成* 以应用更改并返回到xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[安装信息摘要]窗口。
 
 +
 [NOTE]
 ====
-If you disable network time synchronization, the controls at the bottom of the window become active, allowing you to set the time and date manually.
+如果禁用网络时间同步，窗口底部的控件将变为活动状态，允许您手动设置时间和日期。
 ====

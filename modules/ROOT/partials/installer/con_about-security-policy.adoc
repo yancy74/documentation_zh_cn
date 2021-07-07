@@ -1,5 +1,5 @@
-= About security policy
+= 关于安全策略
 
-The {productname} security policy adheres to restrictions and recommendations (compliance policies) defined by the Security Content Automation Protocol (SCAP) standard. The packages are automatically installed. However, by default, no policies are enforced and therefore no checks are performed during or after installation unless specifically configured.
+{productname} 安全策略遵守安全内容自动化协议（SCAP）标准定义的限制和建议（合规策略）。软件包将自动安装。但是，默认情况下，不强制执行任何策略，因此，除非特别配置，否则在安装过程中或安装之后均不执行检查。
 
-Applying a security policy is not a mandatory feature of the installation program. If you apply a security policy to the system, it is installed using restrictions and recommendations defined in the profile that you selected. The [package]*openscap-scanner* package is added to your package selection, providing a preinstalled tool for compliance and vulnerability scanning. After the installation finishes, the system is automatically scanned to verify compliance. The results of this scan are saved to the `/root/openscap_data` directory on the installed system. You can also load additional profiles from an HTTP, HTTPS, or FTP server.
+应用安全策略不是安装程序的强制功能。如果将安全策略应用于系统，则会使用所选配置文件中定义的限制和建议来安装。[package]*openscap-scanner* 软件包已添加到您的软件包选择中，提供了预安装的工具用于合规性和漏洞扫描。安装完成后，将自动扫描系统以验证是否符合要求。扫描结果保存到已安装系统的 `/root/openscap_data` 目录中。您还可以从 HTTP、HTTPS 或 FTP 服务器加载其他配置文件。

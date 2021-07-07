@@ -1,8 +1,8 @@
 [id="installation-complete_{context}"]
-= Graphical installation complete
+= 图形化安装完成
 
-Remove any installation media if it is not ejected automatically upon reboot.
+如果在重新启动时未自动弹出任何安装介质，请将其取出。
 
-{rel8} starts after your system's normal power-up sequence is complete. If your system was installed on a workstation with the X Window System, applications to configure your system are launched. These applications guide you through initial configuration and you can set your system time and date, and more. If the X Window System is not installed, a `login:` prompt is displayed.
+{rel8} 在系统正常通电完成后启动。如果系统安装在带有 X Window 系统的工作站上，则会启动配置系统的应用程序。这些应用程序指导您完成初始配置，您可以设置系统时间和日期等。如果未安装 X Window 系统，将显示 `login:` 提示符。
 
-To learn how to complete initial setup, register, and secure your system, see xref:standard-install:assembly_post-installation-tasks.adoc[Completing post-installation tasks].
+要了解如何完成初始设置，注册和保护系统安全，请参阅xref:standard-install:assembly_post-installation-tasks.adoc[完成安装后任务]。

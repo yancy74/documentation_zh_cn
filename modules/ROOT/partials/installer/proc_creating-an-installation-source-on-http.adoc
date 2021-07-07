@@ -1,20 +1,20 @@
 [id="creating-an-installation-source-on-http_{context}"]
-= Creating an installation source using HTTP or HTTPS
+= 使用 HTTP 或 HTTPS 创建安装源
 
-Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the DVD1 ISO image and a valid [filename]`.treeinfo` file. The installation source is accessed over HTTP or HTTPS.
-
-[discrete]
-== Prerequisites
-
-* You have administor level access to a server with {rel8}, and this server is on the same network as the system to be installed.
-* You have downloaded a DVD1 ISO image. See xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image] for more information.
-* You have created a bootable CD, DVD, or USB device from the image file. See xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media] for more information.
-* You have verified that your firewall allows the system you are installing to access the remote installation source. See xref:standard-install:assembly_preparing-for-your-installation.adoc#ports-for-network-based-installation_prepare-installation-source[Ports for network-based installation] for more information.
+请按照以下步骤操作，以使用安装树为基于网络的安装创建安装源，该安装树是一个目录，其中包含 DVD1 ISO 映像的提取内容和有效的 [filename]`.treeinfo` 文件。安装源可通过 HTTP 或 HTTPS 访问。
 
 [discrete]
-== Procedure
+== 前提
 
-. Install the [package]`httpd` package:
+* 您具有使用 {rel8} 的服务器的管理员级别访问权限，并且该服务器与要安装的系统位于同一网络上。
+* 您已下载了 DVD 1 ISO 映像。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载安装 ISO 映像]。
+* 您已经从映像文件创建了可引导 CD、DVD 或 USB 设备。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[创建安装介质]。
+* 您已验证防火墙是否允许正在安装的系统访问远程安装源。
+
+[discrete]
+== 步骤
+
+. 安装 [package]`httpd` 软件包：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -23,51 +23,45 @@ Follow the steps in this procedure to create an installation source for a networ
 +
 [WARNING]
 ====
-If your Apache web server configuration enables SSL security, verify that you enable only the TLSv1 protocol, and disable SSLv2 and SSLv3. This is due to the POODLE SSL vulnerability (CVE-2014-3566). See https://access.redhat.com/solutions/1232413 for details.
+如果您的 Apache Web 服务器配置启用了 SSL 安全性，请确认仅启用 TLSv1 协议，并禁用 SSLv2 和 SSLv3。这是由 POODLE SSL 漏洞（CVE-2014-3566）引起的。
 ====
 +
 [IMPORTANT]
 ====
-If you use an HTTPS server with a self-signed certificate, you must boot the installation program with the [option]`noverifyssl` option.
+如果使用具有自签名证书的 HTTPS 服务器，则必须使用 [option]`noverifyssl` 选项引导安装程序。
 ====
 
-. Copy the DVD1 ISO image to the HTTP(S) server.
+. 将 DVD1 ISO 映像复制到 HTTP(S) 服务器。
 
-. Mount the DVD1 ISO image, using the [command]`mount` command, to a suitable directory:
+. 用 [command]`mount`命令将 DVD1 ISO 映像挂载到合适的目录：
 +
 [subs="quotes, macros, attributes"]
 ----
-# mkdir /mnt/centos8-install/
-# mount -o loop,ro -t iso9660 _/image_directory/image.iso_ /mnt/centos8-install/
+# mkdir /mnt/circleos8-install/
+# mount -o loop,ro -t iso9660 _/image_directory/image.iso_ /mnt/circleos8-install/
 ----
 +
-Replace _/image_directory/image.iso_ with the path to the DVD1 ISO image.
+将 _/image_directory/image.iso_ 替换为 DVD1 ISO 映像的路径。
 
-. Copy the files from the mounted image to the HTTP(S) server root. This command creates the `/var/www/html/centos8-install/` directory with the contents of the image.
+. 将文件从挂载的映像复制到 HTTP(S) 服务器根目录。该命令使用映像的内容创建 `/var/www/html/circleos8-install/` 目录。
 +
 [subs="quotes, macros, attributes"]
 ----
-# cp -r /mnt/centos8-install/ /var/www/html/
+# cp -r /mnt/circleos8-install/ /var/www/html/
 ----
 +
-This command creates the [literal]`/var/www/html/centos8-install/` directory with the content of the image. Note that some copying methods can skip the `.treeinfo` file which is required for a valid installation source. Running the `cp` command for whole directories as shown in this procedure will copy `.treeinfo` correctly.
+此命令使用映像内容创建 [literal]`/var/www/html/circleos8-install/` 目录。注意，某些复制方法可以跳过有效安装源所需的 `.treeinfo` 文件。如此过程所示，对整个目录运行 `cp` 命令将正确复制 `.treeinfo`。
 
-. Start the `httpd` service:
+. 启动 `httpd` 服务：
 +
 [subs="quotes, macros, attributes"]
 ----
 # systemctl start httpd.service
 ----
 +
-The installation tree is now accessible and ready to be used as the installation source.
+现在可以访问安装树，并且可以将其用作安装源。
 +
 [NOTE]
 ====
-When configuring the installation source, use `http://` or `https://` as the protocol, the server host name or IP address, and the directory that contains the files from the ISO image, relative to the HTTP server root. For example, if you are using HTTP, the server host name is `myserver.example.com`, and you have copied the files from the image to `/var/www/html/centos8-install/`, specify `http://myserver.example.com/centos8-install/` as the installation source.
+配置安装源时，请使用 `http://` 或 `https://` 作为协议、服务器主机名或 IP 地址以及包含 ISO 映像文件的目录（相对于 HTTP 服务器根目录）。例如，如果您使用的是 HTTP，服务器主机名是 `myserver.example.com`，并且您已经将文件从映像复制到 `/var/www/html/circleos8-install/` ，请指定 `http://myserver.example.com/circleos8-install/` 作为安装源。
 ====
-
-
-[discrete]
-== Additional resources
-
-* For more information about HTTP servers, see the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/index/[_Deploying different types of servers in RHEL 8_] document.

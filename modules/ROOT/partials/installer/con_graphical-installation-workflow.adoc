@@ -1,18 +1,18 @@
 [id='graphical-installation-workflow_{context}']
-= Graphical installation workflow
+= 图形化安装工作流程
 
-Complete the following steps to install {productname} using the graphical user interface:
+完成以下步骤以使用图形用户界面安装 {productname}：
 
-.Steps
-. Configure language and location settings. See xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[Configuring language and location settings] for more information.
-. Configure localization settings. See xref:standard-install:assembly_graphical-installation.adoc#configuring-localization-settings_graphical-installation[Configuring localization options] for more information.
-. Select the installation source and software packages that you require. See xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[Configuring software options] for more information.
-. Configure installation destination, KDUMP, network, security policy, and system purpose. See xref:standard-install:assembly_graphical-installation.adoc#configuring-system-settings_graphical-installation[Configuring system options] for more information.
-. Configure storage. See xref:standard-install:assembly_graphical-installation.adoc#storage-devices_graphical-installation[Configuring storage devices] for more information.
-. Start the installation and create a user account and password. See xref:standard-install:assembly_graphical-installation.adoc#configuring-a-root-password_final-installer-configuration[Configuring a root password] and xref:standard-install:assembly_graphical-installation.adoc#creating-a-user-account_final-installer-configuration[Creating a user account] for more information.
-. Complete the graphical installation. See xref:standard-install:assembly_graphical-installation.adoc#installation-complete_final-installer-configuration[Graphical installation complete] for more information.
+.步骤
+. 配置语言和位置设置。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#installing-rhel-using-anaconda_graphical-installation[配置语言和位置设置]。
+. 配置本地化设置。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-localization-settings_graphical-installation[配置本地化选项]。
+. 选择所需的安装源和软件包。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[配置软件选项]。
+. 配置安装目标、KDUMP、网络、安全策略和系统用途。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-system-settings_graphical-installation[配置系统选项]。
+. 配置存储。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#storage-devices_graphical-installation[配置存储设备]。
+. 开始安装并创建用户帐户和密码。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-a-root-password_final-installer-configuration[配置 root 密码]和xref:standard-install:assembly_graphical-installation.adoc#creating-a-user-account_final-installer-configuration[创建用户帐户]。
+. 完成图形化安装。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#installation-complete_final-installer-configuration[图形化安装完成]。
 
 [NOTE]
 ====
-When installing from a network location, you must configure the network before you can select the software packages that you want to install.
+从网络位置安装时，必须先配置网络，然后才能选择要安装的软件包。
 ====

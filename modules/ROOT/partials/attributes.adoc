@@ -1,14 +1,14 @@
 :Year: 2019
 
 // Project
-:RH: CentOS Project
+:RH: Circle Linux Project
 :OrgName: {RH}
 
-// The product (CentOS)
-:ProductName: CentOS
+// The product (Circle Linux)
+:ProductName: Circle Linux
 :ProductShortName: {ProductName}
-// This is the version displayed under "CentOS"
-:ProductNumber: 8.0.1905
+// This is the version displayed under "Circle Linux"
+:ProductNumber: 8.4
 :rel8: {ProductName}{nbsp}8
 :rel7: {ProductName}{nbsp}7
 //:ProductRelease: Beta
@@ -27,3 +27,29 @@
 
 // ++ for using in things like g++ that are NOT capitalized C++ = {cpp}
 :plus2: &#x002b;&#x002b;
+
+
+// Simplified Chinese translation
+:lang: zh_cn
+:appendix-caption: 附录
+:appendix-refsig: {appendix-caption}
+:caution-caption: 小心
+//:chapter-signifier: ???
+//:chapter-refsig: {chapter-signifier}
+:example-caption: 示例
+:figure-caption: 图
+:important-caption: 重要
+:last-update-label: 最后更新
+ifdef::listing-caption[:listing-caption: 列表]
+ifdef::manname-title[:manname-title: 名称]
+:note-caption: 注意
+//:part-signifier: ???
+//:part-refsig: {part-signifier}
+ifdef::preface-title[:preface-title: 序言]
+//:section-refsig: ???
+:table-caption: 表
+:tip-caption: 提示
+:toc-title: 目录
+:untitled-label: 暂无标题
+:version-label: 版本
+:warning-caption: 警告

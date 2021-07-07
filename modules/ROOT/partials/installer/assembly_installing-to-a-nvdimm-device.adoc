@@ -1,7 +1,7 @@
 :parent-context-of-installing-to-a-nvdimm-device: {context}
 
 [id='installing-to-a-nvdimm-device_{context}']
-= Installing to an NVDIMM device
+= 安装到 NVDIMM 设备
 
 :context: installing-to-a-nvdimm-device
 
@@ -25,7 +25,7 @@ NO
 |===
 endif::[]
 
-Non-Volatile Dual In-line Memory Module (NVDIMM) devices combine the performance of RAM with disk-like data persistence when no power is supplied. Under specific circumstances, {ProductName} {ProductNumber} can boot and run from NVDIMM devices.
+非易失性双列直插式内存模块（NVDIMM）设备在不供电的情况下将 RAM 的性能与类似磁盘的数据持久性结合在一起。在特定情况下，{ProductName} {ProductNumber} 可以从 NVDIMM 设备引导并运行。
 
 ////
 [id='prerequisites-{context}']

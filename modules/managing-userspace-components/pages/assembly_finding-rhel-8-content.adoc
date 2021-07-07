@@ -2,17 +2,17 @@ include::ROOT:partial$attributes.adoc[]
 include::partial$local-attributes.adoc[]
 :parent-context-of-finding-rhel-8-content: {context}
 [id="finding-rhel-8-content_{context}"]
-= Finding {ProductShortName} {ProductNumber} content
+= 查找 {ProductShortName} {ProductNumber} 内容
 
 :context: finding-rhel-8-content
 // User Story: As a sysadmin, I need to know what is available through the AppStream so I can determine what RPMs, SCLs, and modules to download and install.
 
-The following sections describe how to locate and examine content in the AppStream and BaseOS repositories in {ProductName}.
+以下部分介绍如何在 {ProductName} 中定位和检查 AppStream 和 BaseOS 仓库中的内容。
 
-* xref:assembly_finding-rhel-8-content.adoc#searching-for-package_{context}[Searching for a package] describes how to search for packages providing desired content.
-* xref:assembly_finding-rhel-8-content.adoc#listing-available-modules_{context}[Listing available modules] describes how to list available modules and find out details about them.
-* xref:assembly_finding-rhel-8-content.adoc#example-finding-out-details-about-a-module_{context}[Example: Finding out details about a module] contains an example of steps needed to examine a module in more detail.
-* xref:assembly_finding-rhel-8-content.adoc#commands-for-listing-content_{context}[Commands for listing content] provides a reference of the commands useful for inspecting content.
+* xref:assembly_finding-rhel-8-content.adoc#searching-for-package_{context}[搜索包] 介绍了如何搜索提供所需内容的包。
+* xref:assembly_finding-rhel-8-content.adoc#listing-available-modules_{context}[列出可用模块] 介绍了如何列出可用模块并查找有关它们的详细信息。
+* xref:assembly_finding-rhel-8-content.adoc#example-finding-out-details-about-a-module_{context}[示例：查找有关模块的详细信息] 包含更详细地查找模块所需步骤的示例。
+* xref:assembly_finding-rhel-8-content.adoc#commands-for-listing-content_{context}[用于列出内容的命令] 提供了对检测内容有用的命令的参考。
 
 
 include::ROOT:partial$appstream/proc_searching-for-package.adoc[leveloffset=+1]

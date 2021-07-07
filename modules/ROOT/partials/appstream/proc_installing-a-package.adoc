@@ -1,14 +1,14 @@
 [id="installing-a-package_{context}"]
-= Installing a package
+= 安装软件包
 
 // User Story: As a sysadmin, I need to know how to find and install RPMs, SCLs, and modules using AppStream so I can ensure that I have the modules I need.
 
-This section describes how to install packages.
+本部分介绍如何安装软件包。
 
 
-.Procedure
+.步骤
 
-* Install the package:
+* 安装软件包：
 +
 [subs="quotes"]
 ----
@@ -17,17 +17,17 @@ This section describes how to install packages.
 +
 ====
 
-* If the package is not provided by any module stream, this procedure is identical to the procedure used on previous versions of {ProductName}.
+* 如果该包不是由任何模块流提供的，则此过程与以前版本的 {ProductName} 上使用的过程相同。
 
-* If the package is provided by an module stream that is enabled, the package is installed without any further manipulation.
+* 如果该包是由启用的模块流提供的，则安装包时无需进一步操作。
 
-* If the package is provided by a module stream marked as default, the [command]`yum` tool automatically transparently enables that module stream before installing this package.
+* 如果该包由标记为默认的模块流提供，则 [command]`yum` 工具将在安装此包之前自动透明地启用该模块流。
 
-* If the package is provided by a module stream that is not active (neither of the above cases), it is not recognized until you manually enable the respective module stream.
+* 如果该包是由非激活的模块流提供的（不是以上两种情况），则在手动启用相应的模块流之前，无法识别该包。
 
 ====
 
-.Additional resources
+.其他资源
 
-* xref:assembly_installing-rhel-8-content.adoc#installing-a-module-stream_installing-rhel-8-content[Installing a module stream]
-* xref:assembly_using-appstream.adoc#package-management-using-yum-in-rhel-8_using-appstream[Package management using YUM in {ProductName}]
+* xref:assembly_installing-rhel-8-content.adoc#installing-a-module-stream_installing-rhel-8-content[安装模块流]
+* xref:assembly_using-appstream.adoc#package-management-using-yum-in-rhel-8_using-appstream[在 {ProductName} 中使用 YUM 进行包管理]

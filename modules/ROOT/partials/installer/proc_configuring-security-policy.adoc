@@ -1,37 +1,37 @@
 [id="configuring-security-policy_{context}"]
-= Configuring a security policy
+= 配置安全策略
 
-Complete the following steps to configure a security policy.
+完成以下步骤以配置安全策略。
 
-.Prerequisite
+.前提
 
-The *Installation Summary* window is open.
+*安装信息摘要* 窗口已打开。 
 
-.Procedure
+.步骤
 
-. From the *Installation Summary* window, click *Security Policy*. The *Security Policy* window opens.
+. 在 *安装信息摘要* 窗口中，单击 *安全策略*。*安全策略* 窗口打开。
 
-. To enable security policies on the system, toggle the *Apply security policy* switch to *ON*.
+. 要在系统上启用安全策略，请将 *应用安全策略* 开关切换到 *打开*。
 
-. Select one of the profiles listed in the top pane.
+. 选择顶部窗格中列出的配置文件之一。
 
-. Click *Select profile*.
+. 单击 *选择配置文件*。
 +
-Profile changes that you must apply before installation appear in the bottom pane.
-+
-[NOTE]
-====
-The default profiles do not require changes before installation. However, loading a custom profile can require pre-installation tasks.
-====
-
-. Click *Change content* to use a custom profile.
-A separate window opens allowing you to enter a URL for valid security content.
-.. Click *Fetch* to retrieve the URL.
-.. Click *Use SCAP Security Guide* to return to the *Security Policy* window.
+安装前必须应用的配置文件更改将显示在底部窗格中。
 +
 [NOTE]
 ====
-You can load custom profiles from an *HTTP*, *HTTPS*, or *FTP* server. Use the full address of the content including the protocol, such as *http://*. A network connection must be active before you can load a custom profile. The installation program detects the content type automatically.
+默认配置文件在安装前不需要更改。但是，加载自定义配置文件可能需要预安装。
 ====
 
-. Click *Done* to apply the settings and return to the *Installation Summary* window.
+. 单击 *更改内容* 以使用自定义配置文件。
+将打开一个单独的窗口，允许您输入有效安全内容的 URL。
+.. 单击 *获取* 以检索 URL。
+.. 单击 *使用 SCAP 安全指南* 以返回到 *安全策略* 窗口。
++
+[NOTE]
+====
+您可以从 *HTTP*、*HTTPS* 或 *FTP* 服务器加载自定义配置文件。使用包含协议的内容的完整地址，例如 *http://*。在加载自定义配置文件之前，网络连接必须处于活动状态。安装程序自动检测内容类型。
+====
+
+. 单击 *完成* 应用设置并返回 *安装信息摘要* 窗口。

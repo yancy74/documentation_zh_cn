@@ -1,23 +1,24 @@
 [id="types-of-driver-update_{context}"]
-= Types of driver update
+= 驱动程序更新类型
 
-Your hardware vendor or a trusted third party provides the driver update as an ISO image file. Once you receive the ISO image file, choose the type of driver update.
+硬件供应商或受信任的第三方将驱动程序更新作为 ISO 映像文件提供。收到 ISO 映像文件后，请选择驱动程序更新的类型。
 
-.Types of driver update
+.驱动程序更新类型
 
-Automatic:: The recommended driver update method; a storage device (including a CD, DVD, or USB flash drive) labeled `OEMDRV` is physically connected to the system. If the `OEMDRV` storage device is present when the installation starts, it is treated as a driver update disk, and the installation program automatically loads its drivers.
+自动:: 推荐的驱动程序更新方法；标记为 `OEMDRV` 的存储设备（包括 CD、DVD 或 USB 闪存驱动器）已物理连接到系统。如果在安装开始时存在 `OEMDRV` 存储设备，则将其视为驱动程序更新磁盘，安装程序将自动加载其驱动程序。
 
-Assisted:: The installation program prompts you to locate a driver update. You can use any local storage device with a label other than `OEMDRV`. The `inst.dd` boot option is specified when starting the installation. If you use this option without any parameters, the installation program displays all of the storage devices connected to the system, and prompts you to select a device that contains a driver update.
+辅助:: 安装程序提示您查找驱动程序更新。您可以使用任何带有 `OEMDRV` 以外标签的本地存储设备。在启动安装时指定 `inst.dd` 引导选项。如果不带任何参数使用此选项，安装程序将显示连接到系统的所有存储设备，并提示您选择包含驱动程序更新的设备。
 
-Manual:: Manually specify a path to a driver update image or an RPM package. You can use any local storage device with a label other than `OEMDRV`, or a network location accessible from the installation system. The `inst.dd=location` boot option is specified when starting the installation, where _location_ is the path to a driver update disk or ISO image. When you specify this option, the installation program attempts to load any driver updates found at the specified location. With manual driver updates, you can specify local storage devices, or a network location (HTTP, HTTPS or FTP server).
+手动:: 手动指定驱动程序更新映像或 RPM 包的路径。您可以使用任何带有 `OEMDRV` 以外的标签的本地存储设备，或可以从安装系统访问的网络位置。在启动安装时指定 `inst.dd=location` 引导选项，其中 _location_ 是驱动程序更新磁盘或 ISO 映像的路径。指定此选项时，安装程序将尝试加载指定位置处的任何驱动程序更新。使用手动更新驱动程序，既可以指定本地存储设备，又可以指定网络位置（HTTP、HTTPS 或 FTP服务器）。
 
 [NOTE]
 ====
-* You can use both `inst.dd=location` and `inst.dd` simultaneously, where _location_ is the path to a driver update disk or ISO image. In this scenario, the installation program attempts to load any available driver updates from the location and also prompts you to select a device that contains the driver update.
+* 您可以同时使用 `inst.dd=location` 和 `inst.dd` ，其中 _location_ 是驱动程序更新盘或 ISO 映像的路径。在这种情况下，安装程序会尝试从该位置加载任何可用的驱动程序更新，并提示您选择包含驱动程序更新的设备。
 
-* Initialize the network using the `ip= option` when loading a driver update from a network location.
+* 从网络位置加载驱动程序更新时，使用 `ip= option` 选项初始化网络。
 ====
 
-.Limitations
+.局限性
 
-On UEFI systems with the Secure Boot technology enabled, all drivers must be signed with a valid certificate. {ProductName} drivers are signed by one of {OrgName}'s private keys and authenticated by its corresponding public key in the kernel. If you load additional, separate drivers, verify that they are signed.
+在启用了安全引导技术的 UEFI 系统上，所有驱动程序都必须使用有效证书签名。{ProductName} 驱动程序由 {OrgName} 项目的私钥之一签名，并由内核中其对应的公钥进行身份验证。如果加载其他单独的驱动程序，请验证它们是否已签名。
+

@@ -1,17 +1,17 @@
 [id="commands-for-listing-content_{context}"]
-= Commands for listing content
+= 列出内容的命令
 
-This section lists commonly used commands for finding content and its details.
+本部分列出了用于查找内容及其详细信息的常用命令。
 
-.Command list
+.命令列表
 
-List available packages::
+列出可用包::
 +
 ----
 $ yum list available
 ----
 
-Search for a package using arbitrary text string::
+使用任意文本字符串搜索包::
 +
 [subs="quotes"]
 ----
@@ -19,52 +19,52 @@ $ yum search __"text string"__
 ----
 
 
-Display details for a package::
+显示包的详细信息::
 +
 [subs="quotes"]
 ----
 $ yum info __package__
 ----
 
-Find out which modules provide a package::
+查找提供包的模块::
 +
 [subs="quotes"]
 ----
 $ yum module provides __package__
 ----
 +
-If the package is available outside any modules, the output of this command is empty.
+如果包在任何模块外部可用，则此命令的输出为空。
 +
 //This command resolves only package names, and does not understand further package details such as version, distribution, and architecture.
 
-List available modules::
+列出可用模块::
 +
 ----
 $ yum module list
 ----
 
-Display details of a module::
+显示模块的详细信息::
 +
 [subs="quotes"]
 ----
 $ yum module info __module-name__
 ----
 
-List packages installed by profiles of a module using the default stream::
+使用默认流列出由模块的配置文件安装的包::
 +
 [subs="quotes"]
 ----
 $ yum module info --profile __module-name__
 ----
 
-Display packages installed by profiles of a module using a specified stream::
+显示由使用指定流的模块配置文件安装的包::
 +
 [subs="quotes"]
 ----
 $ yum module info --profile __module-name__:__stream__
 ----
 
-Display the current status of a module::
+显示模块的当前状态::
 +
 [subs="quotes"]
 ----

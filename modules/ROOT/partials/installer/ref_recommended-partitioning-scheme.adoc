@@ -1,7 +1,7 @@
 [id="recommended-partitioning-scheme_{context}"]
-= Recommended partitioning scheme
+= 推荐的分区方案
 
-{OrgName} recommends that you create separate file systems at the following mount points:
+{OrgName} 建议您在以下挂载点创建单独的文件系统：
 
 * `/boot`
 
@@ -13,68 +13,64 @@
 
 * `/boot/efi`
 
-* `PReP`
 
 
-`/boot` partition - recommended size at least 1 GiB::
+`/boot` 分区 —— 建议大小至少为 1 GiB::
 +
-The partition mounted on `/boot` contains the operating system kernel, which allows your system to boot {ProductName} {productnumber}, along with files used during the bootstrap process. Due to the limitations of most firmwares, creating a small partition to hold these is recommended. In most scenarios, a 1 GiB boot partition is adequate. Unlike other mount points, using an LVM volume for `/boot` is not possible - `/boot` must be located on a separate disk partition.
+挂载在 `/boot` 上的分区包含操作系统内核，它允许您的系统引导 {ProductName} {productnumber}，以及引导过程中使用的文件。由于大多数固件的限制，建议创建一个小分区来存放这些文件。在大多数情况下，1 GiB 引导分区就足够了。与其他挂载点不同，使用 LVM 卷作为`/boot` 是不可能的 —— `/boot` 必须位于单独的磁盘分区上。
 +
-WARNING: Normally, the `/boot` partition is created automatically by the installation program. However, if the `/` (root) partition is larger than 2{nbsp}TiB and (U)EFI is used for booting, you need to create a separate `/boot` partition that is smaller than 2{nbsp}TiB to boot the machine successfully.
+WARNING: 通常，`/boot` 分区由安装程序自动创建。但是，如果`/` (root) 分区大于 2 TIB 并且使用 (U)EFI 引导，则需要创建一个小于 2 TiB 的单独/引导分区才能成功引导计算机。
 +
-NOTE: If you have a RAID card, be aware that some BIOS types do not support booting from the RAID card. In such a case, the `/boot` partition must be created on a partition outside of the RAID array, such as on a separate hard drive.
+NOTE: 如果您有 RAID 卡，请注意某些 BIOS 类型不支持从 RAID 卡引导。在这种情况下，必须在 RAID 阵列外部的分区上创建`/boot` 分区，例如在单独的硬盘上。
 
-`root` - recommended size of 10 GiB::
+`root` - 建议大小为 10 GiB::
 +
-This is where "pass:attributes[{blank}]`/`pass:attributes[{blank}]", or the root directory, is located. The root directory is the top-level of the directory structure. By default, all files are written to this file system unless a different file system is mounted in the path being written to, for example, `/boot` or `/home`.
+这是 "pass:attributes[{blank}]`/`pass:attributes[{blank}]" 或 root 目录所在的位置。root 目录是目录结构的顶层。默认情况下，所有文件都将写入此文件系统，除非要写入的路径中挂载了其他文件系统，例如 `/boot` 或 `/home`。
 +
-While a 5{nbsp}GiB root file system allows you to install a minimal installation, it is recommended to allocate at least 10{nbsp}GiB so that you can install as many package groups as you want.
+虽然 5 GiB 的根文件系统允许您安装最小安装，但建议您至少分配 10 GiB，以便您可以安装其他包组。
 +
-IMPORTANT: Do not confuse the `/` directory with the `/root` directory. The `/root` directory is the home directory of the root user. The `/root` directory is sometimes referred to as _slash root_ to distinguish it from the root directory.
+IMPORTANT: 不要将 `/` 目录与 `/root` 目录混淆。`/root` 目录是 root 用户的主目录。有时将 `/root` 目录称为 _斜杠 root_，以区别于 root 目录。
 
-`/home` - recommended size at least 1 GiB::
+`/home` - 建议大小至少为 1 GiB::
 +
-To store user data separately from system data, create a dedicated file system for the `/home` directory. Base the file system size on the amount of data that is stored locally, number of users, and so on. You can upgrade or reinstall {ProductName} {productnumber} without erasing user data files. If you select automatic partitioning, it is recommended to have at least 55 GiB of disk space available for the installation, to ensure that the `/home` file system is created.
+要将用户数据与系统数据分开存储，请为 `/home` 目录创建专用文件系统。文件系统大小基于本地存储的数据量、用户数等。您可以升级或重新安装 {ProductName} {productnumber}，而不会擦除用户数据文件。如果选择自动分区，建议至少有 55 GiB 的磁盘空间可用于安装，以确保创建 `/home` 文件系统。
 
-`swap` partition - recommended size at least 1 GB::
+`swap` 分区 —— 建议大小至少为1 GiB::
 +
-Swap file systems support virtual memory; data is written to a swap file system when there is not enough RAM to store the data your system is processing. Swap size is a function of system memory workload, not total system memory and therefore is not equal to the total system memory size. It is important to analyze what applications a system will be running and the load those applications will serve in order to determine the system memory workload. Application providers and developers can provide guidance.
+交换文件系统支持虚拟内存；当没有足够的 RAM 来存储系统正在处理的数据时，数据将写入交换文件系统。交换大小是系统内存工作负载的函数，而不是系统总内存的函数，因此不等于系统总内存大小。重点分析系统将运行哪些应用程序以及这些应用程序将要承担的负载，以确定系统内存工作负载。应用程序提供商和开发人员可以提供指导。
 +
-When the system runs out of swap space, the kernel terminates processes as the system RAM memory is exhausted. Configuring too much swap space results in storage devices being allocated but idle and is a poor use of resources. Too much swap space can also hide memory leaks. The maximum size for a swap partition and other additional information can be found in the `mkswap(8)` manual page.
+当系统耗尽交换空间时，内核会在系统 RAM 内存耗尽时终止进程。配置过多的交换空间会导致存储设备被分配但处于空闲状态，并且不能很好地利用资源。过多的交换空间还可能隐藏内存泄漏。交换分区的最大大小和其他附加信息可以在 `mkswap(8)` 手册页中找到。
 +
-The following table provides the recommended size of a swap partition depending on the amount of RAM in your system and if you want sufficient memory for your system to hibernate. If you let the installation program partition your system automatically, the swap partition size is established using these guidelines. Automatic partitioning setup assumes hibernation is not in use. The maximum size of the swap partition is limited to 10 percent of the total size of the hard drive, and the installation program cannot create swap partitions more than 128 GB in size. To set up enough swap space to allow for hibernation, or if you want to set the swap partition size to more than 10 percent of the system's storage space, or more than 128 GB, you must edit the partitioning layout manually.
+下表提供了交换分区的建议大小，具体取决于系统中的RAM容量以及是否要有足够的内存供系统休眠。如果您让安装程序自动对您的系统进行分区，则交换分区大小是根据以下准则确定的。自动分区设置假定未使用休眠。交换分区的最大大小限制为硬盘总大小的 10%，并且安装程序创建的交换分区大小不能超过 128 GB。要设置足够的交换空间以允许休眠，或者如果要将交换分区大小设置为系统存储空间的 10% 以上或 128 GB 以上，则必须手动编辑分区布局。
 
-`/boot/efi` partition - recommended size of 200 MiB::
+`/boot/efi` 分区 —— 建议大小为 200 MiB::
 
-UEFI-based AMD64, Intel 64, and 64-bit ARM require a 200 MiB EFI system partition. The recommended minimum size is 200 MiB, the default size is 600 MiB, and the maximum size is 600 MiB.
-BIOS systems do not require an EFI system partition.
+基于 UEFI 的 AMD64、Intel 64 和 64 位 ARM 需要 200 MiB EFI 系统分区。建议的最小大小为 200 MiB，默认大小为 600 MiB，最大大小为 600 MiB。
+BIOS 系统不需要 EFI 系统分区。
 
-.Recommended System Swap Space
+.推荐的系统交换空间
 
 [options="header"]
 |===
-|Amount of RAM in the system|Recommended swap space|Recommended swap space if allowing for hibernation
-|Less than{nbsp}2 GB|2 times the amount of RAM|3 times the amount of RAM
-|2 GB - 8 GB|Equal to the amount of RAM|2 times the amount of RAM
-|8 GB - 64 GB|4 GB to 0.5 times the amount of RAM|1.5 times the amount of RAM
-|More than 64 GB|Workload dependent (at least 4GB)|Hibernation not recommended
+|系统 RAM 容量|建议的交换空间|如果允许休眠，建议的交换空间
+|小于 2 GB|RAM 容量的 2 倍|RAM 容量的 3 倍
+|2 GB - 8 GB|等于 RAM 容量|RAM 容量的 2 倍
+|8 GB - 64 GB|4 GB 到 RAM 容量的  倍|RAM 容量的 1.5
+|大于 64 GB|取决于工作负载(至少  GB)|不建议休眠
 |===
 
-At the border between each range, for example, a system with 2{nbsp}GB, 8{nbsp}GB, or 64{nbsp}GB of system RAM, discretion can be exercised with regard to chosen swap space and hibernation support. If your system resources allow for it, increasing the swap space can lead to better performance.
+在每个范围之间的边界（例如，系统的 RAM 为8 GB 或64 GB），可以对选择的交换空间和休眠支持进行自由选择。如果您的系统资源允许的话，增加交换空间可以提高性能。
 
-Distributing swap space over multiple storage devices - particularly on systems with fast drives, controllers and interfaces - also improves swap space performance.
+在多个存储设备上分配交换空间 —— 特别是在具有快速驱动器、控制器和接口的系统上 —— 也可以提高交换空间性能。
 
-Many systems have more partitions and volumes than the minimum required. Choose partitions based on your particular system needs.
-See xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[Recommended partitioning scheme] for more information.
+许多系统的分区和卷都超过了最低要求。根据您的特定系统需求选择分区。有关详细信息，请参阅 xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[建议的分区方案]。
 
 [NOTE]
 ====
-* Only assign storage capacity to those partitions you require immediately. You can allocate free space at any time, to meet needs as they occur.
-* If you are unsure about how to configure partitions, accept the automatic default partition layout provided by the installation program.
+* 仅将存储容量分配给您立即需要的那些分区。您可以随时分配可用空间，以满足以后出现的需求。
+* 如果不确定如何配置分区，请接受安装程序提供的自动默认分区布局。
 ====
 
-`PReP` boot partition - recommended size of 4 to 8 MiB::
-When installing {productname} on IBM Power System servers, the first partition of the hard drive should include a `PReP` boot partition. This contains the GRUB2 boot loader, which allows other IBM Power Systems servers to boot {productname}.
 
 // ...as described in installation-destination_graphical-installation.
 // To learn about a more flexible method for storage management, see appe-lvm-overview.

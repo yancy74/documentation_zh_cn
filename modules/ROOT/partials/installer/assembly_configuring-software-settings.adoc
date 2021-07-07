@@ -1,7 +1,7 @@
 :parent-context-of-configuring-software-settings: {context}
 
 [id='configuring-software-settings_{context}']
-= Configuring software options
+= 配置软件选项
 
 :context: configuring-software-settings
 
@@ -25,7 +25,7 @@ YES/NO
 |===
 endif::[]
 
-This section contains information about configuring your installation source and software selection settings, and activating a repository.
+本部分包含有关配置安装源和软件选择设置以及激活存储库的信息。
 
 include::ROOT:partial$installer/proc_configuring-installation-source.adoc[leveloffset=+1]
 

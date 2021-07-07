@@ -1,18 +1,18 @@
 [id="storage-devices-selection_{context}"]
-= Storage device selection
+= 存储设备选择
 
-The storage device selection window lists all storage devices that the installation program can access. Depending on your system and available hardware, some tabs might not be displayed.
-The devices are grouped under the following tabs:
+存储设备选择窗口列出了安装程序可以访问的所有存储设备。根据您的系统和可用硬件，某些选项卡可能不会显示。
+设备分组在以下选项卡下：
 
-Multipath Devices:: Storage devices accessible through more than one path, such as through multiple SCSI controllers or Fiber Channel ports on the same system.
+多路径设备:: 可通过一条以上路径访问存储设备，例如通过同一系统上的多个 SCSI 控制器或光纤通道端口。
 +
 [IMPORTANT]
 ====
-The installation program only detects multipath storage devices with serial numbers that are 16 or 32 characters long.
+安装程序仅检测序列号为 16 或 32 个字符长的多路径存储设备。
 ====
 
-Other SAN Devices::  Devices available on a Storage Area Network (SAN).
+其他 SAN 设备::  存储区域网络（SAN）中的可用设备。
 
-Firmware RAID::  Storage devices attached to a firmware RAID controller.
+固件 RAID::  连接到固件 RAID 控制器的存储设备。
 
-NVDIMM Devices:: Under specific circumstances, {productname} {productnumber} can boot and run from (NVDIMM) devices in sector mode on the Intel 64 and AMD64 architectures.
+NVDIMM 设备:: 在特定情况下，{productname} {productnumber} 可以在 Intel 64 和 AMD64 架构上以扇区模式从（NVDIMM）设备引导和运行。

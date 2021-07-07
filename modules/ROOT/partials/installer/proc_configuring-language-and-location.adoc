@@ -1,32 +1,32 @@
 [id="installing-rhel-using-anaconda_{context}"]
-= Configuring language and location settings
+= 配置语言和位置设置
 
-The installation program uses the language that you select during installation, and on the installed system.
+安装程序使用您在安装期间和已安装系统上选择的语言。
 
-.Prerequisites
-. You created installation media. See xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media] for more information.
-. You specified an installation source if you are using the Boot ISO image file. See xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[Preparing an installation source] for more information.
-. You booted the installation. See xref:standard-install:assembly_booting-installer.adoc[Booting the installation] for more information.
+.前提
+. 您创建了安装介质。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[创建安装介质]。
+. 您如果使用的是 Boot ISO 映像文件，则需要指定安装源。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#prepare-installation-source_preparing-for-your-installation[准备安装源]。
+. 您已启动了安装。有关详细信息，请参阅xref:standard-install:assembly_booting-installer.adoc[引导安装]。
 
-.Procedure
+.步骤
 
-. From the left-hand pane of the *Welcome to {ProductName}* window, select a language. Alternatively, type your preferred language into the *Search* field.
+. 在 *欢迎使用 {ProductName}* 窗口的左侧窗格中，选择一种语言。或者，在 *搜索* 字段中键入您的首选语言。
 +
 [NOTE]
 ====
-A language is pre-selected by default. If network access is configured, that is, if you booted from a network server instead of local media, the pre-selected language is determined by the automatic location detection feature of the *GeoIP* module. If you used the [option]`inst.lang=` option on the boot command line or in your PXE server configuration, then the language that you define with the boot option is selected.
+默认情况下会预先选择一种语言。如果配置了网络访问，即从网络服务器而不是从本地介质启动，则预选的语言由 *GeoIP* 模块的自动位置检测功能确定。如果在引导命令行或 PXE 服务器配置中使用了 [option]`inst.lang=` 选项，则将选择使用引导选项定义的语言。
 ====
 
-. From the right-hand pane of the *Welcome to {ProductName}* window, select a location specific to your region.
+. 从 *欢迎使用 {ProductName}* 窗口的右侧窗格中，选择特定于您所在地区的位置。
 
-. Click btn:[Continue] to proceed to the xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[The Installation Summary window] window.
+. 单击 btn:[继续] 进入xref:standard-install:assembly_graphical-installation.adoc#installation-summary_graphical-installation[安装信息摘要]窗口。
 +
 [IMPORTANT]
 ====
-If you are installing a pre-release version of {ProductName}, a warning message is displayed about the pre-release status of the installation media. Click *I want to proceed* to continue with the installation, or *I want to exit* to quit the installation and reboot the system.
+如果要安装 {ProductName} 的预发行版本，则会显示一条关于安装介质预发行状态的警告消息。单击 *我要继续* 继续安装，或单击 *我要退出* 退出安装并重新启动系统。
 ====
 
 
-.Additional resources
+.其他资源
 
-For information about how to change language and location settings during the installation program, see xref:standard-install:assembly_graphical-installation.adoc#configuring-localization-settings_graphical-installation[Configuring localization options]
+有关如何在安装程序期间更改语言和位置设置的信息，请参xref:standard-install:assembly_graphical-installation.adoc#configuring-localization-settings_graphical-installation[阅配置本地化选项]。

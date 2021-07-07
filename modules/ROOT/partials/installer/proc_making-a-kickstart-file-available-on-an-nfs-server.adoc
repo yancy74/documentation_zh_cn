@@ -1,60 +1,60 @@
 [id="making-a-kickstart-file-available-on-an-nfs-server_{context}"]
-= Making a Kickstart file available on an NFS server
+= 使 Kickstart 文件在 NFS 服务器上可用
 
-This procedure describes how to store the Kickstart script file on an NFS server. This method enables you to install multiple systems from a single source without having to use physical media for the Kickstart file.
+以下步骤描述了如何在 NFS 服务器上存储 Kickstart 脚本文件。使用此方法，您可以从单个源安装多个系统，而不必为 Kickstart 文件使用物理介质。
 
 // A network-based installation is convenient when combined with a TFTP server for PXE boot. This approach eliminates the need to create physical media and enables simultaneous deployment of {ProductName} on multiple systems.
 
 
-.Prerequisites
+.前提
 
-* You must have administrator level access to a server with {rel8} on the local network.
-* The system to be installed must be able to connect to the server.
-* Firewall on the server must allow connections from the system you are installing to. See xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[Ports for network-based installation] for more information.
+* 您必须拥有对本地网络上安装了 {rel8} 的服务器的管理员级别访问权限。
+* 要安装的系统必须能够连接到服务器。
+* 服务器上的防火墙必须允许来自您要安装的系统的连接。有关更多信息，请参阅xref:assembly_making-kickstart-files-available-to-the-installation-program.adoc#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program[基于网络安装的端口]。
 
-.Procedure
+.步骤
 
-. Install the [package]`nfs-utils` package by running the following command as root:
+. 通过以 root 用户身份运行以下命令来安装 [package]`nfs-utils` 软件包：
 +
 ----
 # yum install nfs-utils
 ----
 
-. Copy the Kickstart file to a directory on the NFS server.
+. 将 Kickstart 文件复制到 NFS 服务器上的目录中。
 
-. Open the [filename]`/etc/exports` file using a text editor and add a line with the following syntax:
+. 使用文本编辑器打开 [filename]`/etc/exports` 文件，并使用以下语法添加一行：
 +
 [subs="quotes"]
 ----
 /__exported_directory__/ __clients__
 ----
 
-. Replace __/exported_directory/__ with the full path to the directory holding the Kickstart file. Instead of __clients__, use the host name or IP address of the computer that is to be installed from this NFS server, the subnetwork from which all computers are to have access the ISO image, or the asterisk sign (`*`) if you want to allow any computer with network access to the NFS server to use the ISO image. See the __exports(5)__ man page for detailed information about the format of this field.
+. 将 __/exported_directory/__ 替换为包含 Kickstart 文件完整路径。将 __clients__ 替换为要从此 NFS 服务器安装的计算机的主机名或 IP 地址、所有计算机都可以从中访问 ISO 映像的子网络，或者使用星号（*），如果您希望允许任何可以通过网络访问 NFS 服务器的计算机使用 ISO 映像。有关此字段格式的详细信息，请参阅 __exports(5)__ 手册页。
 +
-A basic configuration that makes the [filename]`/centos8-install/` directory available as read-only to all clients is:
+使 [filename]`/circle8-install/` 目录对所有客户端都是只读的基本配置是：
 +
 ----
-/centos-install *
+/circle-install *
 ----
 
-. Save the [filename]`/etc/exports` file and exit the text editor.
+. 保存 [filename]`/etc/exports` 文件并退出文本编辑器。
 
-. Start the nfs service:
+. 启动 nfs 服务：
 +
 ----
 # systemctl start nfs-server.service
 ----
 +
-If the service was running before you changed the [filename]`/etc/exports` file, enter the following command, in order for the running NFS server to reload its configuration:
+如果在更改 [filename]`/etc/exports` 文件之前该服务正在运行，请输入以下命令，以使正在运行的 NFS 服务器重新加载其配置：
 +
 ----
 # systemctl reload nfs-server.service
 ----
 +
-The Kickstart file is now accessible over NFS and ready to be used for installation.
+现在可以通过 NFS 访问 Kickstart 文件，并可以将其用于安装。
 
-NOTE: When specifying the Kickstart source, use `nfs:` as the protocol, the server’s host name or IP address, the colon sign (`:`), and the path inside directory holding the file. For example, if the server’s host name is `myserver.example.com` and you have saved the file in [filename]`/centos8-install/my-ks.cfg`, specify `inst.ks=nfs:myserver.example.com:/centos8-install/my-ks.cfg` as the installation source boot option.
+NOTE: 在指定 Kickstart 源时，请使用 `nfs:` 作为协议、服务器的主机名或 IP 地址、冒号(：)和保存文件的目录中的路径。例如，如果服务器的主机名是 `myserver.example.com` ，并且您已将文件保存在 [filename]`/circle8-install/my-ks.cfg` 中，则将 `inst.ks=nfs:myserver.example.com:/circle8-install/my-ks.cfg` 指定为安装源引导选项。
 
-.Additional resources
+.其他资源
 
-* For details on setting up TFTP server for PXE boot from network, see xref:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE].
+* For details on setting up TFTP server for PXE boot from network, see xref:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE].有关设置 TFTP 服务器以从网络引导 PXE 的详细信息，请参阅xref:assembly_preparing-for-a-network-install.adoc[使用 PXE 从网络准备安装]。

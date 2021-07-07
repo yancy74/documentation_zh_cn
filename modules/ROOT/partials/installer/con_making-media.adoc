@@ -1,14 +1,13 @@
 [id="making-media_{context}"]
-= Creating installation media
+= 创建安装介质
 
-This section contains information about using the ISO image file that you downloaded in xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image]
-to create bootable physical installation media, such as a USB, DVD, or CD.
+本部分包含使用下载的 ISO 映像文件创建可引导的物理安装介质（如 USB、DVD 或 CD）的相关信息。
 
-For instructions on how to set up a _Preboot Execution Environment_ (PXE) server to perform a PXE-based installation over a network, see xref:advanced-install:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE].
+有关如何设置预引导执行环境（PXE）服务器以通过网络执行基于PXE的安装的说明，请参阅xref:advanced-install:assembly_preparing-for-a-network-install.adoc[使用 PXE 从网络准备安装]。
 
 [NOTE]
 ====
-By default, the [option]`inst.stage2=` boot option is used on the installation media and is set to a specific label, for example, [option]`inst.stage2=hd:LABEL={ProductName}8\x86_64`. If you modify the default label of the file system containing the runtime image, or if you use a customized procedure to boot the installation system, you must verify that the label is set to the correct value.
+默认情况下，[option]`inst.stage2=` 引导选项用于指定安装介质，并设置为特定标签，例如 [option]`inst.stage2=hd:LABEL={ProductName}8\x86_64`。如果修改包含运行时映像的文件系统的默认标签，或者使用自定义过程引导安装系统，则必须验证标签是否设置为正确的值。
 ====
 
-See xref:advanced-install:assembly_kickstart-and-advanced-boot-options.adoc#installation-source-boot-options_kickstart-and-advanced-boot-options[Installation source boot options] for details.
+有关详细信息，请参阅xref:advanced-install:assembly_kickstart-and-advanced-boot-options.adoc#installation-source-boot-options_kickstart-and-advanced-boot-options[安装源引导选项]。

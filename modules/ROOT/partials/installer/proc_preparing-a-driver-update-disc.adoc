@@ -1,24 +1,24 @@
 [id="preparing-a-driver-update-disc_{context}"]
-= Preparing a driver update
+= 准备驱动程序更新
 
-This procedure describes how to prepare a driver update on a CD and DVD.
+以下步骤介绍如何在 CD 和 DVD 上准备驱动程序更新。
 
 [discrete]
-== Prerequisites
+== 前提
 
-* You received the driver update ISO image from your hardware vendor, or a trusted third-party vendor.
-* You burned the driver update ISO image to a CD or DVD.
+* 您从硬件供应商或可信的第三方供应商收到了驱动程序更新 ISO 映像。
+* 您已将驱动程序更新 ISO 映像刻录到 CD 或 DVD。
 
 [WARNING]
 ====
-If only a single ISO image file ending in `.iso` is available on the CD or DVD, the burn process has not been successful.
-See your system's burning software documentation for instructions on how to burn ISO images to a CD or DVD.
+如果 CD 或 DVD 上只有一个以 `.iso` 结尾的 ISO 映像文件，则刻录过程未成功。
+有关如何将 ISO 映像刻录到 CD 或 DVD 的说明，请参阅系统的刻录软件文档。
 ====
 
 
 [discrete]
-== Procedure
+== 步骤
 
-. Insert the driver update CD or DVD into your system's CD/DVD drive, and browse it using the system's file manager tool.
+. 将驱动程序更新 CD 或 DVD 插入系统的 CD/DVD 驱动器，然后使用系统的文件管理器工具浏览。
 
-. Verify that a single file `rhdd3` is available. `rhdd3` is a signature file that contains the driver description and a directory named `rpms`, which contains the RPM packages with the actual drivers for various architectures.
+. 验证单个文件 `rhdd3` 是否可用。`rhdd3` 是一个签名文件，其中包含驱动程序描述和名为`rpms`的目录，该目录包含具有各种体系结构的实际驱动程序的 RPM 包。

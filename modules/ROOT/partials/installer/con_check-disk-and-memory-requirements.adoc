@@ -1,28 +1,27 @@
 [id="check-disk-and-memory-requirements_{context}"]
-= Disk and memory requirements
+= 磁盘和内存要求
 
-If several operating systems are installed, it is important that you verify that the allocated disk space is separate from the disk space required by {productname}.
+如果安装了多个操作系统，请务必验证分配的磁盘空间是否与 {productname} 所需的磁盘空间分开。
 
 
 [NOTE]
 ====
-* For AMD64, Intel 64, and 64-bit ARM, at least two partitions (`/` and `swap`) must be dedicated to {productname}.
-* For IBM Power Systems servers, at least three partitions (`/`, `swap`, and a `PReP` boot partition) must be dedicated to {productname}.
+对于 AMD64、Intel 64 和 64 位 ARM，必须至少有两个分区（`/` 和 `swap`）专用于 {productname}。
 ====
-You must have a minimum of 10 GiB of available disk space. See xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[Recommended partitioning scheme] for more information.
+您必须至少有 10 GiB 的可用磁盘空间。有关详细信息，请参阅xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[推荐的分区方案]。
 
-To install {productname}, you must have a minimum of 10 GiB of space in either unpartitioned disk space or in partitions that can be deleted. See xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[Recommended partitioning scheme] for more information.
+要安装 {productname}，必须在未分区的磁盘空间或可删除的分区中至少有 10 GiB 的空间。有关详细信息，请参阅xref:standard-install:assembly_partitioning-reference.adoc#recommended-partitioning-scheme_partitioning-reference[推荐的分区方案]。
 
-.Minimum RAM requirements
+.最小 RAM 要求
 [options="header"]
 |===
-| Installation type  | Recommended minimum RAM
-| Local media installation (USB, DVD) | 768 MiB
-| NFS network installation  | 768 MiB
-| HTTP, HTTPS or FTP network installation  | 1.5 GiB
+| 安装类型  | 建议的最小 RAM
+| 本地介质安装（USB、DVD） | 768 MiB
+| NFS 网络安装 | 768 MiB
+| HTTP、HTTPS 或 FTP 网络安装  | 1.5 GiB
 |===
 
 [NOTE]
 ====
-It is possible to complete the installation with less memory than the recommended minimum requirements. The exact requirements depend on your environment and installation path. It is recommended that you test various configurations to determine the minimum required RAM for your environment. Installing {productname} using a Kickstart file has the same recommended minimum RAM requirements as a standard installation. However, additional RAM may be required if your Kickstart file includes commands that require additional memory, or write data to the RAM disk. See the xref:advanced-install:index.adoc[Performing an advanced installation] document for more information.
+您可以使用比建议的最低要求更少的内存完成安装。具体要求取决于您的环境和安装路径。建议您测试各种配置，以确定环境所需的最小 RAM。使用 Kickstart 文件安装 {productname} 的建议最低 RAM 要求与标准安装相同。但是，如果 Kickstart 文件包含需要额外内存的命令或将数据写入 RAM 磁盘，则可能需要额外的 RAM。有关详细信息，请参阅xref:advanced-install:index.adoc[高级安装]文档。
 ====

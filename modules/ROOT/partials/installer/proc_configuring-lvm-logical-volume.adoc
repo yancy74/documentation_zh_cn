@@ -1,48 +1,50 @@
 [id="configuring-lvm-logical-volume_{context}"]
-= Configuring an LVM logical volume
+= 配置 LVM 逻辑卷
 
-Follow the steps in this procedure to configure a newly-created LVM logical volume.
+请按照以下步骤配置新创建的 LVM 逻辑卷。
 
 [WARNING]
 ====
-Placing the `/boot` partition on an LVM volume is not supported.
+不支持将 `/boot` 分区放在 LVM 卷上。
 ====
 
-.Procedure
+.步骤
 
-. From the left-hand pane of the *Manual Partitioning* window, select the mount point.
+. 在 *手动分区* 窗口的左侧窗格中，选择挂载点。
 
-. Click the *Device Type* drop-down menu and select `LVM`. The `Volume Group` drop-down menu is displayed with the newly-created volume group name.
+. 单击 *设备类型* 下拉菜单，然后选择 `LVM`。将显示 `卷组` 下拉菜单，其中包含新创建的卷组名称。
 
-. Click *Modify* to configure the newly-created volume group.
+. 单击 *修改* 以配置新创建的卷组。
+
+
 +
-The *Configure Volume Group* dialog box opens.
+将打开 *配置卷组* 对话框。
 +
 [NOTE]
 ====
-You cannot specify the size of the volume group's physical extents in the configuration dialog. The size is always set to the default value of 4 MiB. If you want to create a volume group with different physical extents, you must create it manually by switching to an interactive shell and using the [command]`vgcreate` command, or use a Kickstart file with the [command]`volgroup --pesize=pass:attributes[{blank}]_size_pass:attributes[{blank}]` command. See the xref:advanced-install:index.adoc[Performing an advanced installation] document for more information about Kickstart.
+您不能在配置对话框中指定卷组的物理范围的大小。大小始终设置为默认值 4 MiB。如果要创建具有不同物理范围的卷组，则必须通过切换到交互式 shell 并使用 [command]`vgcreate` 命令手动创建，或者使用带有 [command]`volgroup --pesize=_size_` 命令的 Kickstart 文件。有关 KickStart 的详细信息，请参阅xref:advanced-install:index.adoc[_高级安装_]文档。
 ====
 
-. From the *RAID Level* drop-down menu, select the RAID level that you require.
+. 从 *RAID 级别* 下拉菜单中，选择所需的 RAID 级别。
 +
-The available RAID levels are the same as with actual RAID devices.
+可用的 RAID 级别与实际 RAID 设备相同。
 
-. Select the *Encrypt* check box to mark the volume group for encryption.
+. 选中 *加密* 复选框以将卷组标记为要加密。
 
-. From the *Size policy* drop-down menu, select the size policy for the volume group.
+. 从 *大小策略* 下拉菜单中，选择卷组的大小策略。
 +
-The available policy options are:
+可用的策略选项包括：
 +
 ====
-* *Automatic*: The size of the volume group is set automatically so that it is large enough to contain the configured logical volumes. This is optimal if you do not need free space within the volume group.
+* *自动*：自动设置卷组的大小，使其足以包含已配置的逻辑卷。如果您不需要卷组中的可用空间，这是最佳选择。
 
-* *As large as possible*: The volume group is created with maximum size, regardless of the size of the configured logical volumes it contains. This is optimal if you plan to keep most of your data on LVM and later need to increase the size of some existing logical volumes, or if you need to create additional logical volumes within this group.
+* *尽可能大*：创建的卷组具有最大大小，而不考虑其包含的已配置逻辑卷的大小。如果您计划将大部分数据保留在LVM上，并且稍后需要增加一些现有逻辑卷的大小，或者需要在此组中创建其他逻辑卷，则这是最佳选择。
 
-* *Fixed*: You can set an exact size of the volume group. Any configured logical volumes must then fit within this fixed size. This is useful if you know exactly how large you need the volume group to be.
+* *固定*：您可以设置卷组的确切大小。然后，任何已配置的逻辑卷都必须符合此固定大小。如果您确切地知道需要多大的卷组，这将非常适用。
 ====
 
-. Click *Save* to apply the settings and return to the *Manual Partitioning* window.
+. 单击 *保存* 以应用设置并返回到 *手动分区* 窗口。
 
-. Click *Update Settings* to save your changes
+. 单击 *更新设置* 以保存您的更改。
 
-. Click *Done* to return to the *Installation Summary* window.
+. 单击 *完成* 以返回到 *安装信息摘要* 窗口。

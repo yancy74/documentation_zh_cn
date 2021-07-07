@@ -1,24 +1,24 @@
 [id='adding-a-mount-point_{context}']
-= Adding a mount point file system
-Complete the following steps to add multiple mount point file systems.
+= 添加挂载点
+根据以下步骤以添加多个挂载点。
 
-.Prerequisites
+.前提
 
-* Plan for your partitions:
-** To avoid problems with space allocation, first create small partitions with known fixed sizes, such as `/boot`, and then create the remaining partitions, letting the installation program allocate the remaining capacity to them.
-** If you want to install the system on multiple disks, or if your disks differ in size and a particular partition must be created on the first disk detected by BIOS, then create these partitions first.
+* 规划分区：
+** 为避免空间分配问题，请首先创建具有已知固定大小的小分区，例如 `/boot`，然后创建其余分区，让安装程序为它们分配剩余容量。
+** 如果要在多个磁盘上安装系统，或者如果磁盘大小不同，并且必须在 BIOS 检测到的第一个磁盘上创建特定分区，则首先创建这些特定分区。
 
-.Procedure
+.步骤
 
-. Click *+* to create a new mount point file system. The *Add a New Mount Point* dialog opens.
+. 单击 *+* 创建新挂载点。将打开 *添加新挂载点* 对话框。
 
-. Select one of the preset paths from the `Mount Point` drop-down menu or type your own; for example, select `/` for the root partition or `/boot` for the boot partition.
+. 从 `挂载点` 下拉菜单中选择一个预设路径或输入您自己的路径；例如，为根分区选择 `/` 或为引导分区选择 `/boot`。
 
-. Enter the size of the file system in to the *Desired Capacity* field; for example, `2GiB`.
+. 在 *期望容量* 字段中输入文件系统的大小；例如，`2GiB`。
 +
 [WARNING]
 ====
-If you do not specify a value in the Desired Capacity field, or if you specify a size bigger than available space, then all remaining free space is used.
+如果未在期望容量字段中指定值，或者如果指定的大小大于可用空间，则将使用所有剩余可用空间。
 ====
 
-. Click *Add mount point* to create the partition and return to the *Manual Partitioning* window.
+. 单击 *添加挂载点* 以创建分区并返回到 *手动分区* 窗口。

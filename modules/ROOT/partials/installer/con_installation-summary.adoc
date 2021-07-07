@@ -1,38 +1,38 @@
 [id='installation-summary_{context}']
-= The Installation Summary window
+= 安装信息摘要窗口
 
-The *Installation Summary* window is the central location for the {ProductName} {productnumber} installation program.
+安装信息摘要窗口是 {ProductName} {productnumber} 安装程序的中心位置。
 
-.Installation summary
+.安装信息摘要
 
-image::anaconda-summary-hub-centos8.png["The Installation Summary window, showing most of the options configured. The Installation Destination icon has a warning sign, which means it requires  user attention before the installation can proceed."]
+image::anaconda-summary-hub-centos8.png["安装信息摘要窗口，显示配置的大多数选项。安装目标图标有警告标志，表示在安装开始之前需要用户留心。"]
 
 
-The *Installation Summary* window contains three categories:
+*安装信息摘要* 窗口包含三个类别：
 
-* *LOCALIZATION*: You can configure Keyboard, Language Support, and Time and Date.
+* *本地化：* 配置键盘、支持的语言以及时间和日期。
 
-* *SOFTWARE*: You can configure Installation Source and Software Selection.
+* *软件：* 配置安装源和软件选择。
 
-* *SYSTEM*: You can configure Installation Destination, KDUMP, Network and Host Name, Security Policy, and System Purpose.
+* *系统：* 配置安装目标、KDUMP、网络和主机名、安全策略和系统用途。
 
-A category can have a different status depending on where it is in the installation program.
+类别可以具有不同的状态，具体取决于其在安装程序中的位置。
 
-.Category status
+.类别状态
 [options="header"]
 |===
-| Category status | Status | Description
-| *Warning symbol type 1* | Yellow triangle with an exclamation mark and red text | Requires attention before installation. For example, *Installation Destination* requires attention as you must confirm the default automatic partitioning variant.
-| *Warning symbol type 2* | Grayed out and with a warning symbol (yellow triangle with an exclamation mark) | The installation program is configuring a category and you must wait for it to finish before accessing the window.
+| 类别状态 | 状态 | 描述
+| *警告符号类型 1* | 带感叹号和红色文本的黄色三角形 | 安装前需要注意。例如，*安装目的地* 需要注意，因为您必须确认默认的自动分区。
+| *警告符号类型 2* | 呈灰色且带有警告符号（带感叹号的黄色三角形） | 安装程序正在配置该类，您必须等待其完成才能访问该窗口。
 |===
 
 [NOTE]
 ====
-A warning message is displayed at the bottom of the *Installation Summary* window and the *Begin Installation* button is disabled  until you configure all of the required categories.
+在您配置所有必需的类别之前，*安装信息摘要* 窗口的底部会显示一条警告消息，并且 *开始安装* 按钮将被禁用。
 ====
 
-.Additional resources
+.其他资源
 
-* For information about how to configure Localization settings, see xref:standard-install:assembly_graphical-installation.adoc#configuring-localization-settings_graphical-installation[Configuring localization options]
-* For information about how to configure Software settings, see xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[Configuring software options]
-* For information about how to configure System settings, see xref:standard-install:assembly_graphical-installation.adoc#configuring-system-settings_graphical-installation[Configuring system options]
+* 有关如何配置本地化设置的信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-localization-settings_graphical-installation[配置本地化选项]。
+* 有关如何配置软件设置的信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-software-settings_graphical-installation[配置软件选项]。
+* 有关如何配置系统设置的信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#configuring-system-settings_graphical-installation[配置系统选项]。

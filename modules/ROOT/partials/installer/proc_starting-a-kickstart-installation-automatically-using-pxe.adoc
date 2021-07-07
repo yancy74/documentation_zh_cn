@@ -1,41 +1,41 @@
 [id="starting-a-kickstart-installation-automatically-using-pxe_{context}"]
-= Starting a Kickstart installation automatically using PXE
+= 使用 PXE 自动启动 Kickstart 安装
 
 
-AMD64, Intel 64, and 64-bit ARM systems and IBM Power Systems servers have the ability to boot using a PXE server. When you configure the PXE server, you can add the boot option into the boot loader configuration file, which in turn lets you start the installation automatically. Using this approach, it is possible to automate the installation completely, including the boot process.
+AMD64、Intel 64 和 64 位 ARM 系统能够使用 PXE 服务器引导。当您配置 PXE 服务器时，您可以将引导选项添加到引导加载程序配置文件中，从而允许您自动开始安装。使用此方法，可以完全自动化安装，包括引导过程。
 
-This procedure is intended as a general reference; detailed steps differ based on your system's architecture, and not all options are available on all architectures.
+此步骤仅作为一般参考；详细步骤因您的系统架构而异，并不是所有的选项在所有架构上都可用。
 
 
-.Prerequisites
+.前提
 
-* You must have a Kickstart file ready in a location accessible from the system to be installed.
-* You must have a PXE server which can be used to boot the system and begin the installation.
+* 您必须在要安装的系统可访问的位置准备好 Kickstart 文件。
+* 您必须具有可用于引导系统并开始安装的 PXE 服务器。
 
-.Procedure
+.步骤
 
-. Open the boot loader configuration file on your PXE server, and add the [option]`inst.ks=` boot option to the appropriate line. The name of the file and its syntax depends on your system's architecture and hardware:
+. 打开 PXE 服务器上的引导加载程序配置文件，并将 [option]`inst.ks=` 引导选项添加到适当的行。文件的名称及其语法取决于系统的架构和硬件：
 +
 ====
-* On AMD64 and Intel 64 systems with BIOS, the file name can be either default or based on your system's IP address. In this case, add the [option]`inst.ks=` option to the append line in the installation entry. A sample append line in the configuration file looks similar to the following:
+* 在带有 BIOS 的 AMD64 和 Intel 64 系统上，文件名可以是默认的，也可以基于系统的 IP 地址。在本例中，将 [option]`inst.ks=` 选项添加到安装条目中的 append 行。配置文件中的示例 append 行类似于以下内容：
 +
 ----
 append initrd=initrd.img inst.ks=http://10.32.5.1/mnt/archive/{ProductName}-8/8.x/x86_64/kickstarts/ks.cfg
 ----
 
-* On systems using the GRUB2 boot loader (AMD64, Intel 64, and 64-bit ARM systems with UEFI firmware and IBM Power Systems servers), the file name will be [filename]`grub.cfg`. In this file, append the [option]`inst.ks=` option to the kernel line in the installation entry. A sample kernel line in the configuration file will look similar to the following:
+* 在使用 GRUB2 引导加载程序的系统(带有 UEFI 固件的 AMD64、Intel 64 和 64 位 ARM 系统)上，文件名为 [filename]`grub.cfg`。在此文件中，将  [option]`inst.ks=` 选项追加到安装条目中的 kernel 行。配置文件中的示例 kernel 行如下所示：
 +
 ----
 kernel vmlinuz inst.ks=http://10.32.5.1/mnt/archive/{ProductName}-8/8.x/x86_64/kickstarts/ks.cfg
 ----
 ====
 
-. Boot the installation from the network server.
+. 从网络服务器引导安装。
 +
 // For architecture-specific instructions, see: TODO XREFS !!!!
 +
-The installation begins now, using the installation options specified in the Kickstart file. If the Kickstart file is valid and contains all required commands, the installation is completely automated.
+安装现在开始，使用 Kickstart 文件中指定的安装选项。如果 Kickstart 文件有效并且包含所有必需的命令，则安装完全自动化。
 
-.Additional resources
+.其他资源
 
-* For information about setting up a PXE server, see xref:assembly_preparing-for-a-network-install.adoc[Preparing to install from the network using PXE].
+* 有关设置 PXE 服务器的信息，请参阅xref:assembly_preparing-for-a-network-install.adoc[使用 PXE 从网络准备安装]。

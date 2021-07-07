@@ -1,8 +1,8 @@
 // The name of the title
-:ProjectName: Performing an advanced {ProductName}{nbsp}{ProductNumber} installation
+:ProjectName: {ProductName}{nbsp}{ProductNumber} 高级安装
 // The subtitle of the title
-:Subtitle: Installing {ProductName}{nbsp}{ProductNumber} using Kickstart
+:Subtitle: 使用 Kickstart 安装 {ProductName}{nbsp}{ProductNumber}
 // The abstract of the title
-:Abstract: This document is aimed at users who want to perform an advanced {ProductName}{nbsp}{ProductNumber} installation using Kickstart and configure advanced installation options.
+:Abstract: 本文档面向希望使用 Kickstart 执行高级 {ProductName}{nbsp}{ProductNumber} 安装并配置高级安装选项的用户。
 // The name of the title for the purposes of {context}
-:ProjectNameID: installing-rhel-as-an-experienced-user
+:ProjectNameID: installing-circle-as-an-experienced-user

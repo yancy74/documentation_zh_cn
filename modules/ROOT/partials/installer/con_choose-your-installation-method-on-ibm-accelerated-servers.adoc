@@ -1,4 +1,0 @@
-[id="choose-your-installation-method-on-ibm-accelerated-servers_{context}"]
-= Choose your installation method on IBM accelerated servers
-
-You can either install {rel8} from a USB device or through the network.

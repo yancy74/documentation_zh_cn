@@ -1,18 +1,18 @@
 [id="removing-installed-packages_{context}"]
-= Removing installed packages
+= 删除已安装的软件包
 
-This section describes how to remove packages.
+本部分介绍如何删除软件包。
 
 
-.Procedure
+.步骤
 
-* Remove the package:
+* 删除软件包：
 +
 [subs="quotes"]
 ----
 # yum remove _package_
 ----
 +
-The package is removed together with any other dependent packages.
+该包与任何其他依赖包一起被删除。
 
 

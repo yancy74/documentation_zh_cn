@@ -1,53 +1,52 @@
 [id="creating-an-installation-source-on-ftp_{context}"]
-= Creating an installation source using FTP
+= 使用 FTP 创建安装源
 
-Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the DVD1 ISO image and a valid [filename]`.treeinfo` file. The installation source is accessed over FTP.
-
-[discrete]
-== Prerequisites
-
-* You have administor level access to a server with {rel8}, and this server is on the same network as the system to be installed.
-
-* You have downloaded a DVD1 ISO image. See xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image] for more information.
-* You have created a bootable CD, DVD, or USB device from the image file. See xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media] for more information.
-* You have verified that your firewall allows the system you are installing to access the remote installation source. See xref:standard-install:assembly_preparing-for-your-installation.adoc#ports-for-network-based-installation_prepare-installation-source[Ports for network-based installation] for more information.
+请按照以下步骤操作，以使用安装树为基于网络的安装创建安装源，该安装树是一个目录，其中包含 DVD1 ISO 映像的提取内容和有效的 [filename]`.treeinfo` 文件。安装源可通过 FTP 访问。
 
 [discrete]
-== Procedure
+== 前提
 
-. Install the [package]`vsftpd` package by running the following command as root:
+* 您具有使用 {rel8} 的服务器的管理员级别访问权限，并且该服务器与要安装的系统位于同一网络上。
+* 您已下载了 DVD 1 ISO 映像。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载安装 ISO 映像]。
+* 您已经从映像文件创建了可引导 CD、DVD 或 USB 设备。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[创建安装介质]。
+* 您已验证防火墙是否允许正在安装的系统访问远程安装源。
+
+[discrete]
+== 步骤
+
+. 以 root 身份运行以下命令以安装 [package]`vsftpd` 软件包：
 +
 ----
 # yum install vsftpd
 ----
 
-. Open and edit the [filename]`/etc/vsftpd/vsftpd.conf` configuration file in a text editor.
+. 在文本编辑器中打开并编辑 [filename]`/etc/vsftpd/vsftpd.conf` 配置文件。
 
-.. Change the line `anonymous_enable=NO` to `anonymous_enable=YES`
+.. 将行 `anonymous_enable=NO` 更改为 `anonymous_enable=YES` 。
 
-.. Change the line `write_enable=YES` to `write_enable=NO`.
+.. 将行 `write_enable=YES` 更改为 `write_enable=NO` 。
 
-.. Add lines `pasv_min_port=__min_port__` and `pasv_max_port=__max_port__`. Replace __min_port__ and __max_port__ with the port number range used by FTP server in passive mode, e. g. `10021` and `10031`.
+.. 添加行 `pasv_min_port=__min_port__` 和 `pasv_max_port=__max_port__`。将 __min_port__ 和 __max_port__ 替换为被动模式下 FTP 服务器使用的端口号范围，例如 `10021` 和 `10031`。
 +
-This step can be necessary in network environments featuring various firewall/NAT setups.
+在具有各种 firewall/NAT 设置的网络环境中，可能需要执行此步骤。
 
-.. Optionally, add custom changes to your configuration. For available options, see the *vsftpd.conf(5)* man page. This procedure assumes that default options are used.
+.. 或者，向您的配置添加自定义更改。有关可用选项，请参见 *vsftpd.conf(5)* 手册页。此过程假定使用默认选项。
 +
 [WARNING]
 ====
-If you configured SSL/TLS security in your [filename]`vsftpd.conf` file, ensure that you enable only the TLSv1 protocol, and disable SSLv2 and SSLv3. This is due to the POODLE SSL vulnerability (CVE-2014-3566). See https://access.redhat.com/solutions/1234773 for details.
+如果您的 [filename]`vsftpd.conf` 文件配置启用了 SSL/TLS 安全性，请确认仅启用 TLSv1 协议，并禁用 SSLv2 和 SSLv3。这是由 POODLE SSL 漏洞（CVE-2014-3566）引起的。
 ====
 
-. Configure the server firewall.
+. 配置服务器防火墙。
 
-.. Enable the firewall:
+.. 启用防火墙：
 +
 ----
 # systemctl enable firewalld
 # systemctl start firewalld
 ----
 
-.. Enable in your firewall the FTP port and port range from previous step:
+.. 在防火墙中启用之前步骤中的 FTP 端口和端口范围：
 +
 [subs="quotes"]
 ----
@@ -56,53 +55,53 @@ If you configured SSL/TLS security in your [filename]`vsftpd.conf` file, ensure 
 # firewall-cmd --reload
 ----
 +
-Replace __min_port__-__max_port__ with the port numbers you entered into the [filename]`/etc/vsftpd/vsftpd.conf` configuration file.
+将 __min_port__-__max_port__ 替换为您在 [filename]`/etc/vsftpd/vsftpd.conf` 配置文件中输入的端口号。
 
-. Copy the DVD1 ISO image to the FTP server.
+. 将 DVD1 ISO 映像复制到 FTP 服务器。
 
-. Mount the DVD1 ISO image, using the mount command, to a suitable directory:
+. 使用 mount 命令将 DVD1 ISO 映像挂载到合适的目录：
 +
 [subs="quotes"]
 ----
-# mkdir /mnt/centos8-install
-# mount -o loop,ro -t iso9660 __/image-directory/image.iso__ /mnt/centos8-install
+# mkdir /mnt/circleos8-install
+# mount -o loop,ro -t iso9660 __/image-directory/image.iso__ /mnt/circleos8-install
 ----
 +
-Replace __/image-directory/image.iso__ with the path to the DVD1 ISO image.
+将 __/image-directory/image.iso__ 替换为 DVD1 ISO 映像的路径。
 
-. Copy the files from the mounted image to the FTP server root:
+. 将文件从挂载的映像复制到 FTP 服务器根目录：
 +
 [subs="quotes"]
 ----
-# mkdir /var/ftp/centos8-install
-# cp -r /mnt/centos8-install/ /var/ftp/
+# mkdir /var/ftp/circleos8-install
+# cp -r /mnt/circleos8-install/ /var/ftp/
 ----
 +
-This command creates the [literal]`/var/ftp/centos8-install/` directory with the content of the image. Note that some copying methods can skip the `.treeinfo` file which is required for a valid installation source. Running the `cp` command for whole directories as shown in this procedure will copy `.treeinfo` correctly.
+此命令使用映像内容创建 [literal]`/var/ftp/circleos8-install/` 目录。注意，某些复制方法可以跳过有效安装源所需的 `.treeinfo` 文件。如此过程所示，对整个目录运行 `cp` 命令将正确复制 `.treeinfo`。
 
-. Make sure that the correct SELinux context and access mode is set on the copied content:
+. 确保在复制的内容上设置了正确的 SELinux 上下文和访问模式：
 +
 ----
-# restorecon -r /var/ftp/centos8-install
-# find /var/ftp/centos8-install -type f -exec chmod 444 {} \;
-# find /var/ftp/centos8-install -type d -exec chmod 755 {} \;
+# restorecon -r /var/ftp/circleos8-install
+# find /var/ftp/circleos8-install -type f -exec chmod 444 {} \;
+# find /var/ftp/circleos8-install -type d -exec chmod 755 {} \;
 ----
 
-. Start the `vsftpd` service:
+. 启动 `vsftpd` 服务：
 +
 ----
 # systemctl start vsftpd.service
 ----
 +
-If the service was running before you changed the [filename]`/etc/vsftpd/vsftpd.conf` file, restart the service to load the edited file:
+如果在更改 [filename]`/etc/vsftpd/vsftpd.conf` 文件之前服务正在运行，请重启服务以加载修改的配置文件：
 +
 ----
 # systemctl restart vsftpd.service
 ----
 +
-The installation tree is now accessible and ready to be used as the installation source.
+现在可以访问安装树，并且可以将其用作安装源。
 +
 [NOTE]
 ====
-When configuring the installation source, use `ftp://` as the protocol, the server host name or IP address, and the directory in which you have stored the files from the ISO image, relative to the FTP server root. For example, if the server host name is `myserver.example.com` and you have copied the files from the image to `/var/ftp/centos8-install/`, specify `ftp://myserver.example.com/centos8-install/` as the installation source.
+配置安装源时，请使用 `ftp://` 作为协议、服务器主机名或 IP 地址以及包含 ISO 映像文件的目录（相对于 FTP 服务器根目录）。例如，如果服务器主机名是 `myserver.example.com`，并且您已经将文件从映像复制到 `/var/ftp/circleos8-install/` ，请指定 `ftp://myserver.example.com/circleos8-install/` 作为安装源。
 ====

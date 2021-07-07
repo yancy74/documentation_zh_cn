@@ -1,19 +1,19 @@
 [id='editing-network-interface-configuration_{context}']
-= Editing network interface configuration
+= 编辑网络接口配置
 
-This section contains information about the most important settings for a typical wired connection used during installation. Configuration of other types of networks is broadly similar, although the specific configuration parameters might be different.
+本部分包含有关安装期间使用的典型有线连接的最重要设置的信息。尽管特定的配置参数可能不同，但其他类型的网络的配置大致相似。
 
-.Procedure
+.步骤
 
-. To configure a network connection manually, select the interface from the *Network and Host name* window and click btn:[Configure].
+. 要手动配置网络连接，请从 *网络和主机名* 窗口中选择接口，然后单击 btn:[配置]。
 +
-An editing dialog specific to the selected interface opens.
+将打开特定于所选接口的编辑对话框。
 
 [NOTE]
 ====
-The  options present depend on the connection type - the available options are slightly different depending on whether the connection type is a physical interface (wired or wireless network interface controller) or a virtual interface (Bond, Bridge, Team, or Vlan) that was previously configured in xref:standard-install:assembly_graphical-installation.adoc#adding-a-virtual-network-interface_network-hostname[Adding a virtual network interface].
+存在的选项取决于连接类型—可用选项略有不同，具体取决于连接类型是物理接口（有线或无线网络接口控制器）还是先前在xref:standard-install:assembly_graphical-installation.adoc#adding-a-virtual-network-interface_network-hostname[添加虚拟网络接口]时配置的虚拟接口（绑定、桥接、组合或 Vlan）。
 ====
 
 //TODO: link to networking docs for more detail about various interfaces
 
-The following sections contain information about the three most common and useful options in the editing dialog:
+以下部分包含有关编辑对话框中三个常见和有用选项的信息：

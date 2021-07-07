@@ -1,24 +1,23 @@
 [id="configuring-routes_{context}"]
-= Configuring Routes
+= 配置路由
 
-Complete the following steps to configure routes.
+完成以下步骤以配置路由。
 
-.Procedure
+.步骤
 
-. In the *IPv4 Settings* and *IPv6 Settings* tabs, click btn:[Routes] to configure routing settings for a specific IP protocol on an interface. An editing routes dialog specific to the interface opens.
+. 在 *IPv4 设置*和 *IPv6 设置* 选项卡中，单击 btn:[路由] 为接口上的特定 IP 协议配置路由设置。将打开特定于该接口的编辑路由对话框。
 
-. Click btn:[Add] to add a route.
+. 单击 btn:[添加] 添加路由。
 
-. Select the *Ignore automatically obtained routes* check box to configure at least one static route and to disable all routes not specifically configured.
+. 选中 *忽略自动获取的路由* 复选框以配置至少一个静态路由并禁用所有未专门配置的路由。
 
-. Select the *Use this connection only for resources on its network* check box to prevent the connection from becoming the default route.
+. 选中 *仅将此连接用于相对应的网络上的资源* 复选框，以防止连接成为默认路由。
 +
 [NOTE]
 ====
-This option can be selected even if you did not configure any static routes. This route is used only to access certain resources, such as intranet pages that require a local or VPN connection. Another (default) route is used for publicly available resources. Unlike the additional routes configured, this setting is transferred to the installed system. This option is useful only when you configure more than one interface.
+即使您没有配置任何静态路由，也可以选择此选项。此路由仅用于访问某些资源，例如需要本地或 VPN 连接的内部网页面。另一个（默认）路由用于可公开获得的资源。与配置的其他路由不同，此设置将传输到已安装的系统。仅当您配置多个接口时，此选项才有用。
 ====
 
-. Click *OK* to save your settings and return to the editing routes dialog that is specific to the interface.
+. 单击 *确定* 保存设置并返回特定于该接口的编辑路由对话框。
 
-. Click *Save* to apply the settings and return to the *Network and Host Name* window.
-
+. 单击 btn:[保存] 以应用更改并返回到 *网络和主机名* 窗口。

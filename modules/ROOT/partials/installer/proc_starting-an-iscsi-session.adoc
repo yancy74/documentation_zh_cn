@@ -1,62 +1,61 @@
 [id="starting-an-iscsi-session_{context}"]
-= Discovering and starting an iSCSI session
+= 查找并启动 iSCSI 会话
+完成以下步骤以查找并启动 iSCSI 会话。
 
-Complete the following steps to discover and start an iSCSI session.
+.前提
 
-.Prerequisites
+* *安装信息摘要* 窗口已打开。
 
-* The *Installation Summary* window is open.
+.步骤
 
-.Procedure
+. 在 *安装信息摘要* 窗口中，单击 *安装目的地*。 将打开 *安装目的地* 窗口，其中列出了所有可用的驱动器。
 
-. From the *Installation Summary* window, click *Installation Destination*. The *Installation Destination* window opens, listing all available drives.
+. 在 *专用磁盘和网络磁盘* 部分下，单击 *添加磁盘...*。打开存储设备选择窗口。
 
-. Under the *Specialized & Network Disks* section, click *Add a disk...* The storage devices selection window opens.
+. 单击 *添加 iSCSI 对象...*，将打开 *添加 iSCSI 存储对象* 窗口。
 
-. Click *Add iSCSI target...* The *Add iSCSI Storage Target* window opens.
+. 在 *对象的 IP 地址* 字段中输入 iSCSI 目标的 IP 地址。
 
-. Enter the IP address of the iSCSI target in the *Target IP Address* field.
-
-. Type a name in the *iSCSI Initiator Name* field for the iSCSI initiator in iSCSI qualified name (IQN) format. A valid IQN entry contains the following information:
+. 在 *iSCSI 发起程序名称* 字段中以 iSCSI 限定名称（IQN）格式输入 iSCSI 发起程序的名称。有效的 IQN 条目包含以下信息：
 +
-** The string `iqn.` (note the period).
+** 字符串 `iqn.`（注意点号）。
 +
-** A date code that specifies the year and month in which your organization's Internet domain or subdomain name was registered, represented as four digits for the year, a dash, and two digits for the month, followed by a period. For example, represent September 2010 as `2010-09.`
+** 日期码，用于指定组织的互联网域名或子域名注册的年份和月份，表示为年份的四位数字、破折号、月份的两位数字、点号。例如，2010 年 9 月表示为 2010-09.`。
 +
-** Your organization's Internet domain or subdomain name, presented in reverse order with the top-level domain first. For example, represent the subdomain `storage.example.com` as `com.example.storage`.
+** 您组织的互联网域名或子域名，以相反的顺序显示，顶级域名在前。例如，将子域 `storage.example.com` 表示为 `com.example.storage`。
 +
-** A colon followed by a string that uniquely identifies this particular iSCSI initiator within your domain or subdomain. For example, `:diskarrays-sn-a8675309`.
+** 冒号后跟一个字符串，用于唯一标识域或子域中特定 iSCSI 发起程序。例如 `:diskarrays-sn-a8675309`。
 +
-A complete IQN is as follows: `iqn.2010-09.storage.example.com:diskarrays-sn-a8675309`. The installation program prepopulates the `iSCSI Initiator Name` field with a name in this format to help you with the structure. For more information about IQNs, see [citetitle]_3.2.6. iSCSI Names_ in [citetitle]_RFC 3720 - Internet Small Computer Systems Interface (iSCSI)_ available from tools.ietf.org and [citetitle]_1. iSCSI Names and Addresses_ in [citetitle]_RFC 3721 - Internet Small Computer Systems Interface (iSCSI) Naming and Discovery_ available from tools.ietf.org.
+完整的 IQN 如下： `iqn.2010-09.storage.example.com:diskarrays-sn-a8675309`。安装程序使用此格式的名称预填充 `iSCSI 发起程序名称` 字段，以帮助您使用该结构。有关 IQN 的更多信息，请参阅 [citetitle]_RFC 3720 —— 互联网小型计算机系统接口（iSCSI）_ 中[citetitle]_3.2.6. iSCSI 名称_ ，可从 tools.ietf.org 获得；[citetitle]__RFC 3721 —— 互联网小型计算机系统接口（iSCSI）命名和查找_中[citetitle]_1. iSCSI 名称和地址_，可从 tools.ietf.org 获得。
 
-. Select the `Discovery Authentication Type` drop-down menu to specify the type of authentication to use for iSCSI discovery. The following options are available:
+. 选择 `查找认证型` 下拉菜单，以指定要用于 iSCSI 查找的验证类型。以下选项可用：
 +
-** No credentials
+** 无证书
 +
-** CHAP pair
+** CHAP 对
 +
-** CHAP pair and a reverse pair
+** CHAP 对和反向对
 
 . {blank}
 +
-.. If you selected `CHAP pair` as the authentication type, enter the user name and password for the iSCSI target in the `CHAP Username` and `CHAP Password` fields.
+.. 如果选择 `CHAP 对` 作为验证类型，请在 `CHAP 用户名` 和 `CHAP 密码` 字段中输入 iSCSI 对象的用户名和密码。
 +
-.. If you selected `CHAP pair and a reverse pair` as the authentication type, enter the user name and password for the iSCSI target in the `CHAP Username` and `CHAP Password` field, and the user name and password for the iSCSI initiator in the `Reverse CHAP Username` and `Reverse CHAP Password` fields.
+.. 如果选择 `CHAP 对和反向对` 作为验证类型，请在 `CHAP 用户名`和 `CHAP 密码` 字段中输入 iSCSI 对象的用户名和密码，以及 `反向 CHAP 用户名` 和 `反向 CHAP 密码` 字段中 iSCSI 发起程序的用户名和密码。
 
-. Optionally, select the `Bind targets to network interfaces` check box.
+. （可选）选中 `将目标绑定到网络接口` 复选框。
 
-. Click *Start Discovery*.
+. 单击 *开始查找*。
 +
-The installation program attempts to discover an iSCSI target based on the information provided.
-If discovery succeeds, the `Add iSCSI Storage Target` window displays a list of all iSCSI nodes discovered on the target.
+安装程序尝试根据提供的信息查找 iSCSI 对象。
+如果查找成功，`添加 iSCSI 存储对象` 窗口将显示在目标上发现的所有 iSCSI 节点的列表。
 
-. Select the check boxes for the node that you want to use for installation.
+. 选中要用于安装的节点的复选框。
 +
 [NOTE]
 ====
-The `Node login authentication type` menu contains the same options as the `Discovery Authentication Type` menu. However, if you need credentials for discovery authentication, use the same credentials to log in to a discovered node.
+`节点登录验证类型` 菜单包含与 `查找验证类型` 菜单相同的选项。但是，如果您需要查找验证的凭据，请使用相同的凭据登录到查找的节点。
 ====
 
-. Click the additional `Use the credentials from discovery` drop-down menu. When you provide the proper credentials, the *Log In* button becomes available.
+. 单击 *使用来自查找的凭据* 下拉菜单中的其他选项。提供正确的凭据后，*登录* 按钮将变为可用。
 
-. Click *Log In* to initiate an iSCSI session.
+. Click *Log In* to initiate an iSCSI session.单击 *登录* 以启动 iSCSI 会话。

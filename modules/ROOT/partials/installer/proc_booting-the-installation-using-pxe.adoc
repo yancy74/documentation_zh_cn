@@ -1,51 +1,50 @@
 [id="booting-the-installation-using-pxe_{context}"]
-= Booting the installation from a network using PXE
+= 使用 PXE 从网络引导安装
 
-Follow the steps in this procedure to boot the {productname} installation from a network using PXE.
-
-[discrete]
-== Prerequisites
-
-* You have configured a TFTP server, and there is a network interface in your system that supports PXE. See *Additional resources* for more information.
-* You have configured your system to boot from the network interface. This option is in the BIOS, and can be labeled *Network Boot* or *Boot Services*.
-* You have verified that the BIOS is configured to boot from the specified network interface. Some BIOS systems specify the network interface as a possible boot device, but do not support the PXE standard. See your hardware's documentation for more information. When you have properly enabled PXE booting, the system can boot the {rel8} installation program without any other media.
+按照以下步骤使用 PXE 从网络引导 {productname} 安装。
 
 [discrete]
-== Procedure
+== 前提
+
+* 您已经配置了一个 TFTP 服务器，并且系统中有一个支持 PXE 的网络接口。有关更多信息，请参阅 *其他资源*。
+* 您已将系统配置为从网络接口引导。该选项在 BIOS 中，并且可以标记为 *Network Boot* 或 *Boot Services*。
+* 您已验证 BIOS 已配置为从指定的网络接口引导。一些 BIOS 系统将网络接口指定为可能的引导设备，但不支持 PXE 标准。有关更多信息，请参阅硬件文档。正确启用 PXE 引导后，系统可以在不使用任何其他介质的情况下引导 {rel8} 安装程序。
+
+[discrete]
+== 步骤
 
 [NOTE]
 ====
-To boot the installation process from a network using PXE, you must use a physical network connection, for example, Ethernet. You cannot boot the installation process with a wireless connection.
+要使用 PXE 从网络引导安装过程，必须使用物理网络连接，例如以太网。不能使用无线连接引导安装过程。
 ====
 
-. Verify that the network cable is attached. The link indicator light on the network socket should be lit, even if the computer is not switched on.
+. 确认已连接网络电缆。即使计算机未打开，网络插座上的链接指示灯也应亮起。
 
-. Switch on the system.
+. 打开系统。
 +
-Depending on your hardware, some network setup and diagnostic information can be displayed before your system connects to a PXE server. When connected, a menu is displayed according to the PXE server configuration.
+根据硬件的不同，在系统连接到PXE服务器之前，可能会显示一些网络设置和诊断信息。连接后，将根据 PXE 服务器配置显示一个菜单。
 +
-. Press the number key that corresponds to the option that you require.
+. 按所需选项对应的数字键。
 +
 [NOTE]
 ====
-In some instances, boot options are not displayed. If this occurs, press the *Enter* key on your keyboard or wait until the boot window opens.
+在某些情况下，不显示启动选项。如果发生这种情况，请按键盘上的 *Enter* 键，或者等待直到引导窗口打开。
 ====
-The *{rel8} boot* window opens and displays information about a variety of available boot options.
+*{rel8} 引导* 窗口打开并显示有关各种可用引导选项的信息。
 +
-. Use the arrow keys on your keyboard to select the boot option that you require, and press *Enter* to select the boot option.
-The *Welcome to {rel8}* window opens and you can install {productname} using the graphical user interface.
+. 使用键盘上的方向键选择所需的引导选项，然后按 *Enter* 键选择引导选项。将打开 *欢迎使用 {rel8}* 窗口，您可以使用图形用户界面安装 {productname}。
 +
 [NOTE]
 ====
-The installation program automatically begins if no action is performed in the boot window within 60 seconds.
+如果在引导窗口中 60 秒内没有执行任何操作，安装程序将自动开始。
 ====
 +
-. Optional: For UEFI-based systems, press *E* to edit the available boot options. For BIOS-based systems, press the *Tab* key on your keyboard to edit the available boot options. The boot window enters edit mode and you can change the predefined command line to add or remove boot options.
+. 可选：对于基于 UEFI 的系统，按 *E* 编辑可用的引导选项。对于基于 BIOS 的系统，请按键盘上的 *Tab* 键编辑可用的引导选项。引导窗口进入编辑模式，您可以更改预定义的命令行以添加或删除引导选项。
 
-.. Press *Enter* to confirm your choice.
+.. 按 *Enter* 键确认您的选择。
 
-.Additional Resources
+.其他资源
 
-* For information about installing {productname} using the Graphical User Interface, see xref:standard-install:assembly_graphical-installation.adoc[Installing using the Graphical User Interface].
-* For information about how to prepare to install {productname} from the network using PXE, see the xref:advanced-install:index.adoc[_Performing an advanced installation_] document.
-* For more information about the list of available boot options you can use on the boot command line, see xref:standard-install:assembly_custom-boot-options.adoc[Boot options reference].
+* 有关使用图形用户界面安装 {productname} 的详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc[使用图形用户界面安装]。
+* 有关如何准备使用 PXE 从网络安装 {productname} 的信息，请参阅xref:advanced-install:index.adoc[_高级安装_]文档。
+* 有关可在引导命令行上使用的可用引导选项列表的更多信息，请参阅xref:standard-install:assembly_custom-boot-options.adoc[引导选项参考]。

@@ -28,7 +28,7 @@ include::partial$local-attributes.adoc[]
 // If the assembly covers a task, start the title with a verb in the gerund
 // form, such as Creating or Configuring.
 [id="updating-drivers-during-installation_{context}"]
-= Updating drivers during installation
+= 安装期间更新驱动程序
 
 // The `context` attribute enables module reuse. Every module's ID
 // includes {context}, which ensures that the module has a unique ID even if
@@ -57,11 +57,11 @@ YES/NO
 |===
 endif::[]
 
-This section describes how to complete a driver update during the {productname} installation process.
+本部分介绍如何在 {productname} 安装过程中完成驱动程序更新。
 
 [NOTE]
 ====
-This is an optional step of the installation process. {OrgName} recommends that you do not perform a driver update unless it is necessary.
+它是安装过程中的可选步骤。{OrgName} 项目建议除非有必要，否则不要执行驱动程序更新。
 ====
 
 include::ROOT:partial$installer/con_driver-overview.adoc[leveloffset=+1]

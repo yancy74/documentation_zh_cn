@@ -1,28 +1,28 @@
 [id='adding-a-virtual-network-interface_{context}']
-= Adding a virtual network interface
-Follow the steps in this procedure to add a virtual network interface.
+= 添加虚拟网络接口
+按照以下步骤添加虚拟网络接口。
 
-.Procedure
+.步骤
 
-. From the *Network & Host name* window, click the btn:[+] button to add a virtual network interface. The *Add a device* dialog opens.
+. 在 *网络和主机名* 窗口中，单击 btn:[+] 按钮添加虚拟网络接口。*添加设备* 对话框打开。
 
-. Select one of the four available types of virtual interfaces:
+. 从四种可用的虚拟接口类型中选择一种：
 +
 ====
-* *Bond*: NIC (_Network Interface Controller_) Bonding, a method to bind multiple physical network interfaces together into a single bonded channel.
+* *绑定*：NIC（_网络接口控制器_）绑定，一种将多个物理网络接口绑定到单个绑定通道的方法。
 
-* *Bridge*: Represents NIC Bridging, a method to connect multiple separate networks into one aggregate network.
+* *桥接*：表示 NIC 桥接，它是一种将多个独立网络连接到一个聚合网络的方法。
 
-* *Team*: NIC Teaming, a new implementation to aggregate links, designed to provide a small kernel driver to implement the fast handling of packet flows, and various applications to do everything else in user space.
+* *组合*：NIC 组合是一种聚合链接的新实现，旨在提供一个小型内核驱动程序来实现对数据包流的快速处理，并提供各种应用程序来完成用户空间中的所有其他操作。
 
-* *Vlan* (_Virtual LAN_): A method to create multiple distinct broadcast domains which are mutually isolated.
+* *Vlan* （_虚拟 LAN_）：一种创建相互独立的多个不同广播域的方法。
 ====
 
-. Select the interface type and click *Add*. An editing interface dialog box opens, allowing you to edit any available settings for your chosen interface type. For more information see xref:standard-install:assembly_graphical-installation.adoc#network-hostname_configuring-system-settings[Configuring network and host name options].
+. 选择接口类型，然后单击 *添加*。将打开一个编辑接口对话框，允许您编辑所选接口类型的任何可用设置。有关详细信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#network-hostname_configuring-system-settings[配置网络和主机名选项]。
 
-. Click btn:[Save] to confirm the virtual interface settings and return to the *Network & Host name* window.
+. 单击 btn:[保存] 以确认虚拟接口设置，并返回到 *网络和主机名* 窗口。
 
 [NOTE]
 ====
-If you need to change the settings of a virtual interface, select the interface and click *Configure*.
+如果需要更改虚拟接口的设置，请选择该接口，然后单击 *配置*。
 ====

@@ -1,26 +1,26 @@
 [id="creating-a-bootable-usb-mac_{context}"]
-= Creating a bootable USB device on Mac OS X
+= 在 Mac OS X 上创建可引导 USB 设备
 
-Follow the steps in this procedure to create a bootable USB device on a Mac OS X system.
-
-[discrete]
-== Prerequisites
-
-* You have downloaded an installation ISO image as described in xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image].
-* The *DVD1* ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.
-
+按照以下步骤在 Mac OS X 系统上创建可引导 USB 设备。
 
 [discrete]
-== Procedure
+== 前提
+
+* 您已下载了安装 ISO 映像，如xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载安装 ISO 映像]中所述。
+* *DVD1* ISO 映像大于 4.7 GB，因此您必须有足够大的 USB 闪存驱动器来保存 ISO 映像。
+
+
+[discrete]
+== 步骤
 
 [NOTE]
 ====
-This procedure is destructive and data on the USB flash drive is destroyed without a warning.
+此过程具有破坏性，USB 闪存驱动器上的数据会在没有警告的情况下被销毁。
 ====
 
-. Connect the USB flash drive to the system.
+. 将 USB 闪存驱动器连接到系统。
 
-. Identify the device path with the [command]`diskutil list` command. The device path has the format of _/dev/disknumber_, where number is the number of the disk. The disks are numbered starting at zero (0). Typically, Disk 0 is the OS X recovery disk, and Disk 1 is the main OS X installation. In the following example, the USB device is `disk2`:
+. 使用 [command]`diskutil list` 命令确认设备路径。设备路径的格式为 _/dev/disknumber_ ，其中 number 是磁盘的编号。磁盘从零（0）开始编号。通常，磁盘0是 OS X 恢复磁盘，磁盘 1 是主要的 OS X 安装。在以下示例中，USB 设备是 `disk2`：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -46,9 +46,9 @@ Unlocked Encrypted
 ----
 
 
-. To identify your USB flash drive, compare the NAME, TYPE and SIZE columns to your flash drive. For example, the NAME should be the title of the flash drive icon in the *Finder* tool. You can also compare these values to those in the information panel of the flash drive.
+. 要识别您的 USB 闪存驱动器，请将 NAME、TYPE 和 SIZE 列与您的闪存驱动器进行比较。例如，NAME 应该是 *Finder* 工具中闪存驱动器图标的标题。您还可以将这些值与闪存驱动器信息面板中的值进行比较。
 
-. Use the [command]`diskutil unmountDisk` command to unmount the flash drive's filesystem volumes:
+. 使用 [command]`diskutil unmountDisk` 命令卸载闪存驱动器的文件系统卷：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -56,18 +56,18 @@ $ diskutil unmountDisk /dev/disknumber
 Unmount of all volumes on disknumber was successful
 ----
 +
-When the command completes, the icon for the flash drive disappears from your desktop. If the icon does not disappear, you may have selected the wrong disk. Attempting to unmount the system disk accidentally returns a *failed to unmount* error.
+命令完成后，闪存驱动器的图标将从桌面上消失。如果图标没有消失，则可能选择了错误的磁盘。尝试卸载系统磁盘时意外返回 *无法卸载* 错误。
 
-. Log in as root:
+. 以 root 用户登录：
 +
 [subs="quotes, macros, attributes"]
 ----
 $ su -
 ----
 
-. Enter your root password when prompted.
+. 出现提示时输入 root 密码。
 
-. Use the [command]`dd` command as a parameter of the sudo command to write the ISO image to the flash drive:
+. 使用 [command]`dd` 命令作为 sudo 命令的参数，将 ISO 映像写入闪存驱动器：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -76,14 +76,14 @@ $ su -
 +
 [NOTE]
 ====
-Mac OS X provides both a block (/dev/disk*) and character device (/dev/rdisk*) file for each storage device. Writing an image to the /dev/rdisknumber character device is faster than writing to the /dev/disknumber block device.
+Mac OS X 为每个存储设备都提供了块（/dev/disk*）和字符设备（/dev/rdisk*）文件。将映像写入 /dev/rdisknumber 字符设备比写入 /dev/disknumber 块设备快。
 ====
 
-. To write the _/Users/user_name/Downloads/{ProductName}-8-x86_64-boot.iso_ file to the _/dev/rdisk2_ device, run the following command:
+. 要将 _/Users/user_name/Downloads/{ProductName}-8-x86_64-boot.iso_ 文件写入 _/dev/rdisk2_ 设备，请运行以下命令：
 +
 [subs="quotes, macros, attributes"]
 ----
 # sudo dd if=/Users/user_name/Downloads/{ProductName}-8-x86_64-boot.iso of=/dev/rdisk2
 ----
 
-. Wait for the [command]`dd` command to finish writing the image to the device. The data transfer is complete when the *#* prompt appears. When the prompt is displayed, log out of the root account and unplug the USB drive. The USB drive is now ready to be used as a boot device.
+. 等待 `dd` 命令完成将映像写入设备的操作。出现 *#* 提示时，数据传输完成。显示提示时，请注销 root 帐户并拔下 USB 驱动器。现在可以将 USB 驱动器用作引导设备了。

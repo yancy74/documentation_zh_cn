@@ -1,43 +1,43 @@
 [id='create-bootable-usb-linux_{context}']
-= Creating a bootable USB device on Linux
+= 在 Linux 上创建可引导 USB 设备
 
-Follow this procedure to create a bootable USB device on a Linux system.
-
-[discrete]
-== Prerequisites
-
-* You have downloaded an installation ISO image as described in xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image].
-* The *DVD1* ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.
+按照以下步骤在 Linux 系统上创建可引导 USB 设备。
 
 [discrete]
-== Procedure
+== 前提
+
+* 您已下载了安装 ISO 映像，如xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载安装 ISO 映像]中所述。
+* *DVD1* ISO 映像大于 4.7 GB，因此您必须有足够大的 USB 闪存驱动器来保存 ISO 映像。
+
+[discrete]
+== 步骤
 
 [NOTE]
 ====
-This procedure is destructive and data on the USB flash drive is destroyed without a warning.
+此过程具有破坏性，USB 闪存驱动器上的数据会在没有警告的情况下被销毁。
 ====
 
-. Connect the USB flash drive to the system.
+. 将 USB 闪存驱动器连接到系统。
 
-. Open a terminal window and run the `dmesg` command:
+. 打开终端窗口并运行 `dmesg` 命令：
 +
 [subs="quotes, macros, attributes"]
 ----
 $ dmesg|tail
 ----
 +
-The `dmesg` command returns a log that details all recent events. Messages resulting from the attached USB flash drive are displayed at the bottom of the log. Record the name of the connected device.
+`dmesg` 命令返回一个详细记录所有最近事件的日志。日志底部显示连接的 USB 闪存驱动器产生的消息。记录所连接设备的名称。
 
-. Switch to user root:
+. 切换到 root 用户：
 +
 [subs="quotes, macros, attributes"]
 ----
 $ su -
 ----
 
-. Enter your root password when prompted.
+. 出现提示时输入 root 密码。
 
-. Find the device node assigned to the drive. In this example, the drive name is `sdd`.
+. 查找分配给驱动器的设备节点。在本例中，驱动器名称为 `sdd`。
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -54,14 +54,14 @@ $ su -
 [288961.876382] sd 6:0:0:0: *sdd* Attached SCSI removable disk
 ----
 
-. Run the `dd` command to write the ISO image directly to the USB device.
+. 运行 `dd` 命令将 ISO 映像直接写入 USB 设备。
 +
 [subs="macros"]
 ----
 # dd if=/image_directory/image.iso of=/dev/device
 ----
 +
-Replace _/image_directory/image.iso_ with the full path to the ISO image file that you downloaded, and replace _device_ with the device name that you retrieved with the `dmesg` command. In this example, the full path to the ISO image is `/home/testuser/Downloads/{ProductName}-{ProductNumber}-x86_64-boot.iso`, and the device name is `sdd`:
+将 _/image_directory/image.iso_ 替换为您下载的 ISO 映像文件的完整路径，然后将 _device_ 替换为使用dmesg命令检索到的设备名称。在本例中，ISO 映像的完整路径为 `/home/testuser/Downloads/{ProductName}-{ProductNumber}-x86_64-boot.iso` ，设备名称为`sdd` ：
 +
 [subs="quotes, macros, attributes"]
 ----
@@ -70,7 +70,7 @@ Replace _/image_directory/image.iso_ with the full path to the ISO image file th
 +
 [NOTE]
 ====
-Ensure that you use the correct device name, and not the name of a partition on the device. Partition names are usually device names with a numerical suffix. For example, `sdd` is a device name, and `sdd1` is the name of a partition on the device `sdd`.
+请确保使用正确的设备名称，而不是设备上分区的名称。分区名称通常是设备名后附加数字后缀。例如，`sdd` 是设备名称，`sdd1` 是设备 `sdd` 上的分区名称。
 ====
 
-. Wait for the `dd` command to finish writing the image to the device. The data transfer is complete when the *#* prompt appears. When the prompt is displayed, log out of the root account and unplug the USB drive. The USB drive is now ready to be used as a boot device.
+. 等待 `dd` 命令完成将映像写入设备的操作。出现 *#* 提示时，数据传输完成。显示提示时，请注销 root 帐户并拔下 USB 驱动器。现在可以将 USB 驱动器用作引导设备了。

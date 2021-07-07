@@ -1,43 +1,42 @@
 [id="raid-and-other-disk-devices-x86_{context}"]
-= RAID requirements
+= RAID 要求
 
-It is important to understand how storage technologies are configured and how support for them may have changed between major versions of {productname}.
+重点了解如何配置存储以及 {productname} 的主要版本之间对存储技术的支持是如何变化的。
 
-.Hardware RAID
-Any RAID functions provided by the mainboard of your computer, or attached controller cards, need to be configured before you begin the installation process. Each active RAID array appears as one drive within {productname}.
+.硬件 RAID
+在开始安装过程之前，需要配置计算机主板或随附的控制器卡提供的所有 RAID 功能。 每个活动 RAID 阵列在 {productname} 中显示为一个驱动器。
 
-.Software RAID
-On systems with more than one hard drive, you can use the {productname} installation program to operate several of the drives as a Linux software RAID array. With a software RAID array, RAID functions are controlled by the operating system rather than the dedicated hardware.
-
-[NOTE]
-====
-When a pre-existing RAID array's member devices are all unpartitioned disks/drives, the installation program treats the array as a disk and there is no method to remove the array.
-====
-
-.USB Disks
-You can connect and configure external USB storage after installation. Most devices are recognized by the kernel, but some devices may not be recognized.
-If it is not a requirement to configure these disks during installation, disconnect them to avoid potential problems.
-
-.NVDIMM devices
-To use a Non-Volatile Dual In-line Memory Module (NVDIMM) device as storage, the following conditions must be satisfied:
-
-* Version of {ProductName} is 7.6 or later.
-* The architecture of the system is Intel 64 or AMD64.
-* The device is configured to sector mode. Anaconda can reconfigure NVDIMM devices to this mode.
-* The device must be supported by the nd_pmem driver.
-
-Booting from an NVDIMM device is possible under the following additional conditions:
-
-* The system uses UEFI.
-* The device must be supported by firmware available on the system, or by a UEFI driver. The UEFI driver may be loaded from an option ROM of the device itself.
-* The device must be made available under a namespace.
-
-To take advantage of the high performance of NVDIMM devices during booting, place the `/boot` and `/boot/efi` directories on the device.
+.软件 RAID
+在具有多个硬盘驱动器的系统上，可以使用 {productname} 安装程序将多个驱动器作为 Linux 软件 RAID 阵列进行操作。使用软件 RAID 阵列，RAID 功能由操作系统控制，而不是由专用硬件控制。
 
 [NOTE]
 ====
-The Execute-in-place (XIP) feature of NVDIMM devices is not supported during booting and the kernel is loaded into conventional memory.
+当预先存在的RAID阵列的成员设备都是未分区的磁盘/驱动器时，安装程序会将阵列视为磁盘，并且无法删除该阵列。
 ====
 
-.Considerations for Intel BIOS RAID Sets
-{productname} uses `mdraid` for installing on Intel BIOS RAID sets. These sets are automatically detected during the boot process and their device node paths can change across several booting processes. For this reason, local modifications to the `/etc/fstab`, `/etc/crypttab` or other configuration files that refer to the devices by their device node paths may not work in {productname}. It is recommended that you replace device node paths (such as `/dev/sda`) with file system labels or device UUIDs. You can find the file system labels and device UUIDs using the `blkid` command.
+.USB 磁盘
+安装后可以连接和配置外部 USB 存储。大多数设备都能被内核识别，但有些设备可能无法识别。如果安装期间不需要配置这些磁盘，请断开它们的连接以避免潜在问题。
+
+.NVDIMM 设备
+要将非易失性双列直插式内存模块（NVDIMM）设备用作存储器，必须满足以下条件：
+
+* {ProductName} 最新版。
+* Intel 64 或 AMD64 架构。
+* 设备配置为扇区模式。Anaconda 可以将 NVDIMM 设备重新配置为此模式。
+* 该设备必须受 nd_pmem 驱动程序支持。
+
+在以下附加条件下，可以从 NVDIMM 设备启动：
+
+* 系统使用 UEFI。
+* 该设备必须受系统上可用的固件或 UEFI 驱动程序的支持。UEFI 驱动程序可以从设备本身的可选 ROM 加载。
+* 设备必须在命名空间下可用。
+
+要在引导过程中充分利用 NVDIMM 设备的高性能，请在该设备上放置 `/boot` 和 `/boot/efi` 目录。
+
+[NOTE]
+====
+引导期间不支持 NVDIMM 设备的就地执行（XIP）功能，并且内核将加载到常规内存中。
+====
+
+.Intel BIOS RAID 集的注意事项
+{productname} 使用 `mdraid` 在 Intel BIOS RAID 集上安装。这些集合在引导过程中被自动检测到，并且它们的设备节点路径可以在多个引导过程中更改。因此，对 `/etc/fstab`、`/etc/crypttab` 或其他通过设备节点路径引用设备的配置文件的本地修改在 {productname} 中可能不起作用。建议将设备节点路径（如 `/dev/sda`）替换为文件系统标签或设备 UUID。您可以使用 `blkid` 命令找到文件系统标签和设备 UUID。

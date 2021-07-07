@@ -1,25 +1,21 @@
 [id="performing-a-manual-driver-update_{context}"]
-= Performing a manual driver update
+= 执行手动驱动程序更新
 
-This procedure describes how to perform a manual driver update during installation.
-
-[discrete]
-== Prerequisite
-
-Place the driver update ISO image file on a USB flash drive or a web server, and connect it to your computer.
-
+以下步骤介绍如何在安装期间执行手动驱动程序更新。
 
 [discrete]
-== Procedure
+== 前提
 
-. From the boot menu window, press the *Tab* key on your keyboard to display the boot command line.
-. Append the `inst.dd=location` boot option to the command line, where location is a path to the driver update.
-Typically, the image file is located on a web server, for example, http://server.example.com/dd.iso, or on a USB flash drive, for example, `/dev/sdb1`. It is also possible to specify an RPM package containing the driver update, for example http://server.example.com/dd.rpm.
+将驱动程序更新 ISO 映像文件放在 USB 闪存驱动器或 Web 服务器上，并将其连接到您的计算机。
 
-. Press *Enter* to execute the boot process. The drivers available at the specified location are automatically loaded and the  installation process starts.
 
 [discrete]
-== Additional resources
+== 步骤
 
-* For more information about the `inst.dd` boot option, see the upstream link:https://github.com/rhinstaller/anaconda/blob/rhel-8.0/docs/boot-options.rst/#instdd[inst.dd boot option] content.
-* For more information about all boot options, see the upstream link:https://github.com/rhinstaller/anaconda/blob/rhel-8.0/docs/boot-options.rst/[Boot Options] content.
+. 在引导菜单窗口中，按键盘上的 *Tab* 键以显示引导命令行。
+. 将 `inst.dd=location` 引导选项追加到命令行，其中 location 是驱动程序更新的路径。通常，映像文件位于 Web 服务器(例如 http://server.example.com/dd.iso，)或 U 盘(例如 `/dev/sdb1`)上。还可以指定包含驱动程序更新的 RPM 包，例如 http://server.example.com/dd.rpm。
+
+
+. 按 *Enter* 键执行引导过程。指定位置的可用驱动程序将自动加载，安装过程将开始。
+
+[discrete]

@@ -3,18 +3,18 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-starting-kickstart-installations: {context}
 
 [id="starting-kickstart-installations_{context}"]
-= Starting Kickstart installations
+= 启动 Kickstart 安装
 
 :context: starting-kickstart-installations
 
 
-You can start Kickstart installations in multiple ways:
+您可以通过多种方式启动 Kickstart 安装：
 
-* Manually by entering the installation program boot menu and specifying the options including Kickstart file there.
-* Automatically by editing the boot options in PXE boot.
-* Automatically by providing the file on a volume with specific name.
+* 通过进入安装程序引导菜单并指定包括 Kickstart 文件在内的选项来手动执行。
+* 通过编辑 PXE 引导中的引导选项自动启动。
+* 通过在卷上提供具有特定名称的文件以自动执行。
 
-Learn how to perform each of these methods in the following sections.
+在下面部分中将学习如何执行这些方法。
 
 
 include::ROOT:partial$installer/proc_starting-a-kickstart-installation-manually.adoc[leveloffset=+1]

@@ -1,21 +1,21 @@
 [id="modular-dependencies-and-stream-changes_{context}"]
-= Modular dependencies and stream changes
+= 模块依赖和流更改
 
-Traditionally, packages providing content depend on further packages, and usually specify the desired dependency versions. For packages contained in modules, this mechanism applies as well, but the grouping of packages and their particular versions into modules and streams provides further constraints. Additionally, module streams can declare dependencies on streams of other modules, independent of the packages contained and provided by them.
+传统上，提供内容的软件包依赖于其他软件包，并且通常指定所需的依赖项版本。对于模块中包含的软件包，也适用此机制，但是将软件包及其特定版本分组到模块和流中会提供进一步的约束。此外，模块流可以声明对其他模块流的依赖关系，独立于它们包含和提供的包。
 
-After any operations with packages or modules, the whole dependency tree of all underlying installed packages must satisfy all the conditions the packages declare. Additionally, all module stream dependencies must be satisfied.
+在对包或模块进行任何操作之后，所有底层安装包的整个依赖关系树必须满足包声明的所有条件。此外，必须满足所有模块流依赖关系。
 
-As a result:
+因此：
 
-* Enabling a module stream can require enabling streams of further modules.
+* 启用一个模块流可能需要启用其他模块流。
 
-* Installing a module stream profile or installing packages from a stream can require enabling streams of further modules and installing further packages.
+* 安装一个模块流配置文件或从一个流安装软件包可能需要启用更多模块流和安装更多软件包。
 
-* Disabling a stream of a module can require disabling other module streams. No packages will be removed automatically.
+* 禁用一个模块流可能需要禁用其他模块流。不会自动删除任何包。
 
-* Removing a package can require removing further packages. If these packages were provided by modules, the module streams remain enabled in preparation for further installation, even if no packages from these streams are installed any more. This mirrors the behavior of an unused yum repository.
+* 删除一个软件包可能需要删除其他软件包。如果这些软件包是由模块提供的，则即使不再安装这些流中的软件包，模块流也将保持启用状态，以准备进一步安装。这反映了未使用的 yum 仓库的行为。
 
-It is not possible to enable a stream of a module when another stream of the same module is already enabled. To switch streams, you must first reset the module, and then enable the new stream. Removing all packages installed from a stream before switching to a different stream is highly recommended, because it prevents the system from reaching states where packages could be installed with no repository or stream providing them.
+如果已启用同一模块的另一个流，则无法启用该模块的其他流。要切换流，必须首先重置模块，然后启用新的流。强烈建议在切换到其他流之前从流中删除所有已安装的软件包，因为这样可以防止系统进入在没有仓库或流提供的情况下安装包的状态。
 
-Technically, resetting module does not automatically change any installed packages. Removing the packages provided by the previous stream and any packages that depend on them is an explicit manual operation.
+从技术上讲，重置模块不会自动更改任何已安装的软件包。删除前一个流提供的包以及依赖它们的任何包都是需要明确的手动操作。
 

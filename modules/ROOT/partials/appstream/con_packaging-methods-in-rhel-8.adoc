@@ -1,16 +1,16 @@
 [id="packaging-methods-in-rhel-8_{context}"]
-= Packaging methods in {ProductShortName} {ProductNumber}
+= {ProductShortName} {ProductNumber} 中的打包方法
 
 // User Story: As a sysadmin, I need to know what is available through the AppStream so I can determine what RPMs, SCLs, and modules to download and install.
 
-The AppStream repository contains content packaged in two ways:
+AppStream 仓库用两种方式打包：
 
-Individual RPM packages::
-Traditional RPM packages available for immediate installation.
+单个 RPM 包::
+传统的RPM包可供立即安装。
 
 
-Modules::
-Modules are collections of packages representing a logical unit: an application, a language stack, a database, or a set of tools. These packages are built, tested, and released together.
+模块::
+模块是表示逻辑单元的包的集合：应用程序、语言栈、数据库或一组工具。这些包是一起构建、测试和发布的。
 
 
 // Software Collections::

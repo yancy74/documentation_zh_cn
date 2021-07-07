@@ -1,62 +1,62 @@
 [id="creating-an-installation-source_{context}"]
-= Creating an installation source on an NFS server
+= 在 NFS 服务器上创建安装源
 
-Follow the steps in this procedure to place the installation source on an NFS server. Use this installation method to install multiple systems from a single source, without having to connect to physical media.
-
-[discrete]
-== Prerequisites
-
-* You have administor level access to a server with {rel8}, and this server is on the same network as the system to be installed.
-* You have downloaded a DVD1 ISO image. See xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image] for more information.
-* You have created a bootable CD, DVD, or USB device from the image file. See xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media] for more information.
-* You have verified that your firewall allows the system you are installing to access the remote installation source. See xref:standard-install:assembly_preparing-for-your-installation.adoc#ports-for-network-based-installation_prepare-installation-source[Ports for network-based installation] for more information.
+按照以下步骤将安装源放在 NFS 服务器上。使用此安装方法可以从单个源安装多个系统，而无需连接到物理介质。
 
 [discrete]
-== Procedure
+== 前提
 
-. Install the [package]`nfs-utils` package:
+* 您具有使用 {rel8} 的服务器的管理员级别访问权限，并且该服务器与要安装的系统位于同一网络上。
+* 您已下载了 DVD 1 ISO 映像。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载安装 ISO 映像]。
+* 您已经从映像文件创建了可引导 CD、DVD 或 USB 设备。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[创建安装介质]。
+* 您已验证防火墙是否允许正在安装的系统访问远程安装源。
+
+[discrete]
+== 步骤
+
+. 安装 [package]`nfs-utils` 软件包：
 +
 [subs="quotes, macros, attributes"]
 ----
 # yum install nfs-utils
 ----
 
-. Copy the DVD1 ISO image to a directory on the NFS server.
+. 将 DVD1 ISO 映像复制到 NFS 服务器上的目录。
 
-. Open the [filename]`/etc/exports` file using a text editor and add a line with the following syntax:
+. 使用文本编辑器打开 [filename]`/etc/exports` 文件，并使用以下语法添加一行：
 +
 [subs="quotes, macros, attributes"]
 ----
 /__exported_directory__/ __clients__
 ----
 
-.  Replace _/exported_directory/_ with the full path to the directory with the ISO image. Replace __clients__ with the host name or IP address of the target system, the subnetwork that all target systems can use to access the ISO image, or the asterisk sign (`*`) if you want to allow any system with network access to the NFS server to use the ISO image. See the `exports(5)` man page for detailed information about the format of this field.
+. 将 _/exported_directory/_ 替换为包含 ISO 映像目录的完整路径。将 __clients__ 替换为目标系统的主机名或 IP 地址、所有目标系统可用于访问 ISO 映像的子网，或者，如果要允许对 NFS 服务器具有网络访问权限的任何系统使用ISO映像，请使用星号(*)。有关此字段格式的详细信息，请参见 `exports(5)` 手册页。
 +
-A basic configuration that makes the `/centos8-install/` directory available as read-only to all clients is:
+使 `/circleos8-install/` 目录对所有客户端都是只读的基本配置是：
 +
 [subs="quotes, macros, attributes"]
 ----
-/centos8-install *
+/circleos8-install *
 ----
 
-. Save the [filename]`/etc/exports` file and exit the text editor.
-. Start the nfs service:
+. 保存 [filename]`/etc/exports` 文件并退出文本编辑器。
+. 启动 nfs 服务：
 +
 [subs="quotes, macros, attributes"]
 ----
 # systemctl start nfs-server.service
 ----
 +
-If the service was running before you changed the [filename]`/etc/exports` file, run the following command for the running NFS server to reload its configuration:
+如果在更改 [filename]`/etc/exports` 文件之前服务正在运行，请对正在运行的 NFS 服务器运行以下命令以重新加载其配置：
 +
 [subs="quotes, macros, attributes"]
 ----
 # systemctl reload nfs-server.service
 ----
 +
-The ISO image is now accessible over NFS and ready to be used as an installation source.
+现在可以通过 NFS 访问 ISO 映像，并且可以将其用作安装源。
 
 [NOTE]
 ====
-When configuring the installation source, use `nfs:` as the protocol, the server host name or IP address, the colon sign `(:)`, and the directory holding the ISO image. For example, if the server host name is `myserver.example.com` and you have saved the ISO image in `/centos8-install/`, specify `nfs:myserver.example.com:/centos8-install/` as the installation source.
+在配置安装源时，请使用 `nfs:` 作为协议、服务器主机名或 IP 地址、冒号 `(:)` 和保存 ISO 映像的目录。例如，如果服务器主机名为 `myserver.example.com`，并且您已将 ISO 映像保存在 `/circleos8-install/` 中，请指定 `nfs:myserver.example.com:/circleos8-install/` 作为安装源。
 ====

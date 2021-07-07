@@ -1,38 +1,38 @@
 [id="performing-an-assisted-driver-update_{context}"]
-= Performing an assisted driver update
+= 执行辅助驱动程序更新
 
-This procedure describes how to perform an assisted driver update during installation.
+以下步骤介绍如何在安装期间执行辅助驱动程序更新。
 
 [discrete]
-== Prerequisite
+== 前提
 
-You have connected a block device without an `OEMDRV` volume label to your system and copied the driver disk image to this device, or you have prepared a driver update CD or DVD and inserted it into your system's CD/DVD drive before starting the installation process.
+您已将没有 `OEMDRV` 卷标的块设备连接到系统，并将驱动程序磁盘映像复制到此设备，或者在开始安装过程之前准备了驱动程序更新 CD 或 DVD 并将其插入系统的 CD/DVD 驱动器。
 
 [NOTE]
 ====
-If you burned an ISO image file to a CD or DVD but it does not have the `OEMDRV` volume label, you can use the `inst.dd` option with no arguments. The installation program provides an option to scan and select drivers from the CD or DVD. In this scenario, the installation program does not prompt you to select a driver update ISO image.
-Another scenario is to use the CD or DVD with the `inst.dd=location` boot option; this allows the installation program to automatically scan the CD or DVD for driver updates. For more information, see <xref:advanced-install:assembly_updating-drivers-during-installation.adoc#performing-a-manual-driver-update_updating-drivers-during-installation[Performing a manual driver update].
+如果将 ISO 映像文件刻录到 CD或 DVD，但它没有 `OEMDRV` 卷标，则可以使用不带参数的 `inst.dd` 选项。安装程序提供了从 CD 或 DVD 扫描和选择驱动程序的选项。在这种情况下，安装程序不会提示您选择驱动程序更新 ISO 映像。
+另一种情况是将 CD 或 DVD 与 `inst.dd=location` 引导选项一起使用；这允许安装程序自动扫描 CD 或 DVD 以获取驱动程序更新。有关详细信息，请参阅 xref:advanced-install:assembly_updating-drivers-during-installation.adoc#performing-a-manual-driver-update_updating-drivers-during-installation[执行手动驱动程序更新]。
 ====
 
 
 [discrete]
-== Procedure
+== 步骤
 
-. From the boot menu window, press the *Tab* key on your keyboard to display the boot command line.
+. 在引导菜单窗口中，按键盘上的 *Tab* 键以显示引导命令行。
 
-. Append the `inst.dd` boot option to the command line and press *Enter* to execute the boot process.
+. 将 `inst.dd` 引导选项追加到命令行，然后按 *Enter* 键执行引导过程。
 
-. From the menu, select a local disk partition or a CD or DVD device. The installation program scans for ISO files, or driver update RPM packages.
+. 从菜单中选择本地磁盘分区或 CD 或 DVD 设备。安装程序扫描 ISO 文件或驱动程序更新RPM包。
 
-. Optional: Select the driver update ISO file.
+. 可选：选择驱动程序更新 ISO 文件。
 +
 [NOTE]
 ====
-This step is not required if the selected device or partition contains driver update RPM packages rather than an ISO image file, for example, an optical drive containing a driver update CD or DVD.
+如果所选设备或分区包含驱动程序更新 RPM 软件包而不是 ISO 映像文件(例如，包含驱动程序更新 CD 或 DVD 的光驱)，则不需要执行此步骤。
 ====
 +
-. Select the required drivers.
+. 选择所需的驱动程序。
 
-.. Use the number keys on your keyboard to toggle the driver selection.
+.. 使用键盘上的数字键切换驱动程序选择。
 
-.. Press *c* to install the selected driver. The selected driver is loaded and the installation process starts.
+.. 按 *c* 安装选定的驱动程序。将加载选定的驱动程序，安装过程将开始。

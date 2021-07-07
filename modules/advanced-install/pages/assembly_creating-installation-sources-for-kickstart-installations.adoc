@@ -3,11 +3,11 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-creating-installation-sources-for-kickstart-installations: {context}
 
 [id="creating-installation-sources-for-kickstart-installations_{context}"]
-= Creating installation sources for Kickstart installations
+= 为 Kickstart 安装创建安装源
 
 :context: creating-installation-sources-for-kickstart-installations
 
-This section describes how to create an installation source for the Boot ISO image using the DVD1 ISO image that contains the required repositories and software packages.
+本部分介绍如何使用包含所需仓库和软件包的 DVD1 ISO 映像创建 Boot ISO 映像的安装源。
 
 include::ROOT:partial$installer/con_types-of-installation-source.adoc[leveloffset=+1]
 

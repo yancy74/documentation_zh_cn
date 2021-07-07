@@ -1,37 +1,37 @@
 [id="installing-a-module-stream_{context}"]
-= Installing a module stream
+= 安装模块流
 
 // User Story: As a sysadmin, I need to know how to find and install RPMs, SCLs, and modules using AppStream so I can ensure that I have the modules I need.
 
-This section describes using a module stream to install the recommended set of packages from that module.
+本部分介绍如何使用模块流安装该模块中推荐的一组软件包。
 
 
-.Prerequisites
+.前提
 
 
-* You must understand the xref:assembly_introduction-to-modules.adoc#module-streams_introduction-to-modules[concept of an _active module stream_].
-* You do not have any packages installed from another stream of the same module.
+* 理解 xref:assembly_introduction-to-modules.adoc#module-streams_introduction-to-modules[激活模块流的概念]。
+* 您没有从同一模块的另一个流中安装任何软件包。
 
 
-.Procedure
+.步骤
 
 
-* Install a profile of the module stream:
+* 安装模块流的配置文件：
 +
 [subs="quotes"]
 ----
 # yum install @__module-name__:__stream__/__profile__
 ----
 +
-This enables the stream and installs the recommended set of packages for a given stream (version) and profile (purpose) of the module.
+这将启用流并为模块的给定流（版本）和配置文件（用途）安装推荐的包集。
 +
-Omit /__profile__ to use the default profile. If no profile is set as default, this step fails without a specified profile and you must specify it.
+省略 /__profile__ 以使用默认配置文件。如果未将任何配置文件设置为默认配置文件，则在没有指定配置文件的情况下，此步骤将失败，您必须指定它。
 +
-Additionally, omit :__stream__ to use the active stream. If there is no active stream for the module, you must specify a stream.
+此外，省略 :__stream__ 使用激活流。如果模块没有激活流，则必须指定流。
 
 
 
-.Additional resources
+.其他资源
 
-* xref:assembly_introduction-to-modules.adoc[Introduction to modules]
-* xref:assembly_installing-rhel-8-content.adoc#commands-for-installing-rhel-8-content_installing-rhel-8-content[Commands for installing {ProductName} content]
+* xref:assembly_introduction-to-modules.adoc[模块概述]
+* xref:assembly_installing-rhel-8-content.adoc#commands-for-installing-rhel-8-content_installing-rhel-8-content[安装 {ProductName} 内容的命令]

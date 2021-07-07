@@ -7,12 +7,12 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-booting-the-installer: {context}
 
 [id="booting-the-installer_{context}"]
-= Booting the installation
+= 引导安装
 :context: booting-the-installer
 
-Installing {productname} from the DVD1 ISO is the easiest and the recommended method of performing a standard RHEL installation. Other installation methods require additional setup and configuration. For example, when installing {productname} on a large number of systems simultaneously, the best approach is to boot from a PXE server and install from a source in a shared network location.
+从 DVD1 ISO 安装 {productname} 是最简单且推荐的方法。其他安装方法需要其他设置和配置。例如，在大量系统上同时安装 {productname} 时，最好的方法是从 PXE 服务器启动并从共享网络位置中的源进行安装。
 
-After you have created a bootable USB, DVD, or CD you are ready to boot the {productname} installation.
+创建可引导 USB、DVD 或 CD 后，就可以引导 {productname} 安装了。
 
 include::ROOT:partial$installer/con_types-of-boot-options.adoc[leveloffset=+1]
 include::ROOT:partial$installer/proc_editing-boot-options.adoc[leveloffset=+1]

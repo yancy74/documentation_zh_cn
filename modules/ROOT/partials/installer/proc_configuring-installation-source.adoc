@@ -1,59 +1,59 @@
 [id="configuring-installation-source_{context}"]
-= Configuring installation source
+= 配置安装源
 
-Follow the steps in this procedure to configure the DVD1 ISO image as the installation source, which is the *recommended* method of installing {productname}.
+按照以下步骤将 DVD1 ISO 映像配置为安装源，这是安装 {productname} 的推荐方法。
 
-.Prerequisites
+.前提
 
 
 // this is for within the title
-* You have downloaded the DVD1 ISO image as detailed in xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image].
-* You have created bootable installation media as detailed in xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media].
-* The *Installation Summary* window is open.
+* 您已经下载了 DVD1 ISO 映像，详见xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载 ISO 安装映像]。
+* 您已创建了可引导安装介质，具体内容请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[创建安装介质]。
+* 打开 *安装摘要窗口*。
 
 [NOTE]
 ====
-When the *Installation Summary* window first opens, the installation program attempts to configure an installation source based on the type of media that was used to boot the system. The full {ProductName} Server DVD configures the source as local media.
+首次打开 *安装信息摘要* 窗口时，安装程序将尝试根据用于引导系统的介质类型来配置安装源。完整的 {ProductName} Server DVD 将源配置为本地介质。
 ====
 //TODO: based on comment from Martin in google doc review of graphical install.
 
-.Procedure
+.步骤
 
-. From the *Installation Summary* window, click *Installation Source*. The *Installation Source* window opens.
+. 在 *安装信息摘要* 窗口中，单击 *安装源*。 将打开 *安装源* 窗口。
 
-.. Review the *Auto-detected installation* section to verify the details. This option is selected by default if you started the installation program from media containing an installation source, for example, a DVD.
+.. 查看 *自动检测到的安装介质* 部分以验证详细信息。如果从包含安装源（例如 DVD）的介质启动安装程序，则默认情况下会选择此选项。
 
-.. Click *Verify* to check the media integrity.
+.. 单击 *验证* 检查介质完整性。
 
-.. Review the *Additional repositories* section and note that the *Appstream* checkbox is selected by default.
+.. 查看 *额外软件仓库* 部分，注意，默认选中 *Appstream* 复选框。
 +
 [IMPORTANT]
 ====
-* *No additional configuration is necessary as the BaseOS and Appstream repositories are installed as part of the full installation image.*
-* *Do not disable the Appstream repository check box if you want a full {rel8} installation.*
+* *由于 BaseOS 和 Appstream 仓库是作为完整安装映像的一部分安装的，因此无需进行其他配置。*
+* *如果希望完整安装 {rel8}，请不要禁用 Appstream 仓库复选框。*
 ====
 
-. Select the *On the network* option to download and install packages from a network location instead of local media.
+. 选择 *在网络上* 选项以从网络位置而不是本地介质下载并安装软件包。
 +
 [NOTE]
 ====
-* If you do not want to download and install additional repositories from a network location, proceed to xref:standard-install:assembly_graphical-installation.adoc#configuring-software-selection_configuring-software-settings[Configuring software selection].
-* This option is available only when a network connection is active. See xref:standard-install:assembly_graphical-installation.adoc#network-hostname_configuring-system-settings[Configuring network and host name options] for information about how to configure network connections in the GUI.
+* 如果您不想从网络位置下载并安装其他存储库，请继续进行xref:standard-install:assembly_graphical-installation.adoc#configuring-software-selection_configuring-software-settings[配置软件选择]。
+* 仅当网络连接处于活动状态时，此选项才可用。有关如何在 GUI 中配置网络连接的信息，请参阅xref:standard-install:assembly_graphical-installation.adoc#network-hostname_configuring-system-settings[配置网络和主机名选项]。
 ====
 
-.. Select the *On the network* drop-down menu to specify the protocol for downloading packages. This setting depends on the server that you want to use.
+.. 选择 *在网络上* 下拉菜单以指定用于下载软件包的协议。此设置取决于您所使用的服务器。
 +
 [WARNING]
 ====
-The Appstream repository check box is disabled if you select *On the network* and then decide to revert to *Auto-detected installation*. You must select the Appstream check box to enable the Appstream repository.
+如果选择 *在网络上* 选项，然后决定恢复到 *自动检测到的安装介质*，则 Appstream 存储库复选框将被禁用。必须选中 Appstream 复选框才能启用 Appstream 仓库。
 ====
 
 
-.. Type the server address (without the protocol) into the address field. If you choose NFS, a second input field opens where you can specify custom *NFS mount options*. This field accepts options listed in the `nfs(5)` man page.
+.. 将服务器地址（不含协议）输入地址字段。如果选择 NFS，则会打开第二个输入字段，您可以在其中指定自定义 NFS 挂载选项。此字段接受 `nfs(5)` 手册页中列出的选项。
 +
 [IMPORTANT]
 ====
-When selecting an NFS installation source, you must specify the address with a colon (`:`) character separating the host name from the path. For example:
+选择 NFS 安装源时，必须使用冒号（`:`）字符指定地址，将主机名与路径分隔开来。例如：
 
 [subs="quotes, macros"]
 ----
@@ -63,36 +63,36 @@ When selecting an NFS installation source, you must specify the address with a c
 +
 [NOTE]
 ====
-The following steps are optional and are only required if you use a proxy for network access.
+以下步骤是可选的，仅当您使用代理进行网络访问时才需要。
 ====
 
-.. Click *Proxy setup...* to configure a proxy for an HTTP or HTTPS source.
+.. 单击 *代理设置...* 为 HTTP 或 HTTPS 源配置代理。
 
-.. Select the *Enable HTTP proxy* check box and type the URL into the *Proxy Host* field.
+.. 选中 *启用HTTP代理* 复选框，并在 *代理主机* 字段中键入 URL。
 
-.. Select the *Use Authentication* check box if the proxy server requires authentication.
+.. 如果代理服务器需要身份验证，请选中 *使用身份验证* 复选框。
 
-.. Type in your user name and password.
+.. 输入用户名和密码。
 
-.. Click *OK* to finish the configuration and exit the *Proxy Setup...* dialog box.
+.. 单击 *确定* 完成配置并退出 *代理设置...* 对话框。
 +
 [NOTE]
 ====
-If your HTTP or HTTPS URL refers to a repository mirror menu, select the required option from the *URL type* drop-down list. All environments and add-ons are available for selection when you finish configuring the sources.
+如果 HTTP 或 HTTPS URL 引用仓库镜像菜单，请从 *URL 类型* 下拉列表中选择所需选项。配置完源后，可以选择所有环境和额外软件。
 ====
 
 
-. Click *+* to add a repository.
+. 单击 *+* 添加仓库。
 
-. Click *-* to delete a repository.
+. 单击 *-* 删除仓库。
 
-. Click the arrow icon to revert the current entries to the setting when you opened the *Installation Source* window.
+. 单击箭头图标可将当前条目还原为打开 *安装源* 窗口时的设置。
 
-. To activate or deactivate a repository, click the check box in the *Enabled* column for each entry in the list.
+. 要激活或停用存储库，请单击列表中每个条目的 *已启用* 列中的复选框。
 +
 [NOTE]
 ====
-You can name and configure your additional repository in the same way as the primary repository on the network.
+您可以使用与网络上的主仓库相同的方式命名和配置额外软件仓库。
 ====
 
-. Click *Done* to apply the settings and return to the *Installation Summary* window.
+. 单击 *完成* 应用设置并返回 *安装信息摘要* 窗口。

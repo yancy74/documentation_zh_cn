@@ -1,13 +1,13 @@
 [id="supported-device-types_{context}"]
-= Supported device types
+= 支持的设备类型
 
-Standard partition:: A standard partition can contain a file system or swap space. Standard partitions are most commonly used for `/boot` and the `BIOS Boot` and `EFI System partitions`. LVM logical volumes are recommended for most other uses.
+标准分区:: 标准分区可以包含文件系统或交换空间。标准分区最常用于 `/boot`、`BIOS Boot` 和 `EFI 系统`。建议将 LVM 逻辑卷用于大多数其他用途。
 
-LVM:: Choosing `LVM` (or Logical Volume Management) as the device type creates an LVM logical volume. If no LVM volume group currently exists, one is automatically created to contain the new volume; if an LVM volume group already exists, the volume is assigned. LVM can improve performance when using physical disks, and it allows for advanced setups such as using multiple physical disks for one mount point, and setting up software RAID for increased performance, reliability, or both.
+LVM:: 选择 LVM（或逻辑卷管理）作为设备类型将创建一个 LVM 逻辑卷。如果当前不存在 LVM 卷组，则会自动创建一个以包含新卷；如果 LVM 卷组已经存在，则会分配卷。在使用物理磁盘时，LVM 可以提高性能，并且它允许进行高级设置，比如将多个物理磁盘用于一个挂载点，以及设置软件 RAID 以提高性能、可靠性或两者兼而有之。
 
-LVM thin provisioning:: Using thin provisioning, you can manage a storage pool of free space, known as a thin pool, which can be allocated to an arbitrary number of devices when needed by applications. You can dynamically expand the pool when needed for cost-effective allocation of storage space.
+LVM 精简资源调配:: 使用精简资源调配，您可以管理可用空间的存储池（称为精简池），该池可以在应用程序需要时分配给任意数量的设备。您可以根据需要动态扩展池，以经济高效地分配存储空间。
 
 [WARNING]
 ====
-The installation program does not support overprovisioned LVM thin pools.
+安装程序不支持过度资源调配的 LVM 精简池。
 ====

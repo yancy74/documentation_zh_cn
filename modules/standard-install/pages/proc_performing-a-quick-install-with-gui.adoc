@@ -1,63 +1,62 @@
 include::ROOT:partial$attributes.adoc[]
 include::partial$local-attributes.adoc[]
 [id="performing-a-quick-install-with-gui_{context}"]
-= Performing a quick install on AMD64, Intel 64, and 64-bit ARM
+= 在 AMD64、Intel 64 和 64 位 ARM 上执行快速安装
 
-Follow this procedure to perform a quick installation on AMD64, Intel 64, and 64-bit ARM architectures using the graphical user interface.
-To complete this procedure you must be familiar with {productname} and your environment, and you must be able to accept the default settings provided by the installation program.
-
-[discrete]
-== Prerequisites
-
-* You have downloaded the required ISO image file. See xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[Downloading the installation ISO image] for more information.
-* You have created bootable installation media. See xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[Creating installation media] for more information.
-* You have booted the installation program and the boot menu is displayed. See xref:standard-install:assembly_booting-installer.adoc[Booting the installation] for more information.
+按照以下步骤使用图形用户界面在 AMD64、Intel 64 和 64 位 ARM 架构上执行快速安装。要完成此过程，您必须熟悉 {productname} 和您的环境，并且必须能够接受安装程序提供的默认设置。
 
 [discrete]
-== Procedure
+== 前提
 
-. From the boot menu, select *Install {ProductName} {ProductNumber}*.
+* 您已经下载了所需的 ISO 映像文件。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#downloading-beta-installation-images_preparing-for-your-installation[下载安装 ISO 映像]。
+* 您已经创建了可引导安装介质。有关详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc#making-media_preparing-for-your-installation[创建安装介质]。
+* 您已启动安装程序，并显示引导菜单。有关详细信息，请参阅xref:standard-install:assembly_booting-installer.adoc[启动安装程序]。
 
-. Press the *Enter* key on your keyboard.
+[discrete]
+== 步骤
 
-. From the *Welcome to {ProductName} {ProductNumber}* window, select your language and location.
+. 从引导菜单中，选择 *安装 {ProductName} {ProductNumber}* 。
 
-. Click *Continue* to proceed to the *Installation Summary* window.
+. 按键盘上的 *Enter* 键。
+
+. 在 *欢迎使用 {ProductName} {ProductNumber}* 窗口中，选择您的语言和位置。
+
+. 单击 *继续* 进入 *安装摘要* 窗口。
 +
 [NOTE]
 ====
-The *Installation Summary* window is the central hub that you can use to configure the {productname} graphical user interface. The default settings assigned by the installation program are displayed under each category.
+*安装摘要* 窗口是可用于配置 {productname} 图形用户界面的控制中心。安装程序分配的默认设置显示在每个类别下。
 ====
 +
-. From the *Installation Summary* window, accept the default *Localization* and *Software* options.
-. Select *System > Installation Destination*.
-.. From the *Local Standard Disks* pane, select the target disk.
-.. Click *Done* to accept the selection and the default setting of automatic partitioning, and return to the *Installation Summary* window.
+. 在 *安装摘要* 窗口中，接受默认的 *本地化* 和 *软件* 选项。
+. 选择 *系统 > 安装位置* 。
+.. 在 *本地标准磁盘* 窗格中，选择目标磁盘。
+.. 单击 *完成* 以接受默认选择设置的自动分区选项，然后返回到 *安装摘要* 窗口。
 
-. Select *Network & Host Name*.
-.. Toggle the *Ethernet* switch to *ON* to enable network configuration.
-... Optional: Select a network device and click *Configure* to update the network interface configuration.
-.. Click *Done* to accept the changes and return to the *Installation Summary* window.
+. 选择 *网络和主机名*。
+.. 将以太网开关切换到 *开* 以启用网络配置。
+... 可选：选择一个网络设备，然后单击 *配置* 以更新网络接口配置。
+.. 单击 *完成* 接受更改并返回 *安装摘要* 窗口。
 
-. Optional: Select *Security Policy*.
-.. Select the profile that you require, and click *Select profile*.
-.. Click *Done* to accept the changes and return to the *Installation Summary* window.
+. 可选：选择 *安全策略* 。
+.. 选择所需的配置文件，然后单击 *选择配置文件* 。
+.. 单击 *完成* 接受更改并返回 *安装摘要* 窗口。
 
-. Optional: Select *System Purpose*.
-.. Select the role, service level agreement, and usage.
-.. Click *Done* to accept the changes and return to the *Installation Summary* window.
+. 可选：选择 *系统用途* 。
+.. 选择角色、服务级别协议和使用情况。。
+.. 单击 *完成* 以接受更改并返回到 *安装摘要* 窗口。
 
-. Click *Begin Installation* to start the installation.
+. 单击 *开始安装* 以开始安装。
 
-. From the *Configuration* window, configure a root password and create a user account.
+. 在 *配置* 窗口中，配置 root 密码并创建一个用户帐户。
 
-. When the installation process is complete, click *Reboot* to restart the system.
+. 安装过程完成后，单击 *重启* 以重新启动系统。
 
-. From the *Initial Setup* window, accept the licensing agreement and register your system.
+. 在 *初始设置* 窗口中，接受许可协议并注册系统。
 
 [discrete]
-== Additional resources
+== 其他资源
 
-* To learn more about how to prepare for your installation, see xref:standard-install:assembly_preparing-for-your-installation.adoc[Preparing for your installation].
-* To learn more about installing {productname} using the graphical user interface, and customizing the interface settings, see xref:standard-install:con_installation-workflow.adoc[Installation workflow].
-* To learn more about how to register your system, see xref:standard-install:assembly_post-installation-tasks.adoc[Completing post-installation tasks].
+* 要了解有关如何准备安装的详细信息，请参阅xref:standard-install:assembly_preparing-for-your-installation.adoc[准备安装]。
+* 要了解有关使用图形用户界面安装 {productname} 以及自定义界面设置的详细信息，请参阅xref:standard-install:con_installation-workflow.adoc[安装工作流程]。
+* 要了解有关如何注册系统的详细信息，请参阅xref:standard-install:assembly_post-installation-tasks.adoc[完成安装后的任务]。

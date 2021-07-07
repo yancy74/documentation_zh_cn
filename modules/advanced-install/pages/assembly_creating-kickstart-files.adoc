@@ -3,26 +3,25 @@ include::partial$local-attributes.adoc[]
 :parent-context-of-creating-kickstart-files: {context}
 
 [id="creating-kickstart-files_{context}"]
-= Creating Kickstart files
+= 创建 Kickstart 文件
 
 :context: creating-kickstart-files
 
-You can create a Kickstart file using the following methods:
+您可以使用以下方法创建 Kickstart 文件：
 
-* Use the online Kickstart configuration tool.
 
-* Copy the Kickstart file created as a result of a manual installation.
+* 复制手动安装后创建的 Kickstart 文件。
 
-* Write the entire Kickstart file manually. Note that editing an already existing file from the other methods is faster, so this method is not recommended.
+* 手动编写整个 Kickstart 文件。请注意，编辑来自其他方法已存在的文件更快，因此不建议使用此方法。
 
 // If needed, you can manually edit the Kickstart file and change the installation options.
 
-Note that some highly specific installation options can be configured only by manual editing of the Kickstart file.
+注意，某些高级特定的安装选项只能通过手动编辑 Kickstart 文件来配置。
 
 
 include::ROOT:partial$installer/proc_creating-a-kickstart-file-by-performing-a-manual-installation.adoc[leveloffset=+1]
 
-include::ROOT:partial$installer/proc_creating-a-kickstart-file-with-the-kickstart-configuration-tool.adoc[leveloffset=+1]
+// include::ROOT:partial$installer/proc_creating-a-kickstart-file-with-the-kickstart-configuration-tool.adoc[leveloffset=+1]
 
 
 :context: {parent-context-of-creating-kickstart-files}

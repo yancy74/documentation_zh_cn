@@ -23,30 +23,31 @@
 // Do not start the title with a verb. See also _Wording of headings_
 // in _The IBM Style Guide_.
 [id="vnc-considerations_{context}"]
-= Considerations
+= 注意事项
 
-Consider the following items when performing a remote {ProductName} installation using VNC:
+使用 VNC 执行远程 {ProductName} 安装时，请考虑以下各项：
 
-* *VNC client application:* A VNC client application is required to perform both a VNC Direct and Connect installation. VNC client applications are available in the repositories of most Linux distributions, and free VNC client applications are also available for other operating systems such as Windows. The following VNC client applications are available in {rel8}:
+* *VNC 客户端应用程序：* 执行VNC 直接和连接模式安装都需要 VNC 客户端应用程序。大多数 Linux 发行版的仓库中都提供了 VNC 客户端应用程序，其他操作系统(如W indows)也提供了免费的 VNC 客户端应用程序。{rel8} 中提供以下 VNC 客户端应用程序：
 
-** `tigervnc` is independent of your desktop environment and is installed as part of the `tigervnc` package.
-** `vinagre` is part of the GNOME desktop environment and is installed as part of the `vinagre` package.
+
+** `tigervnc` 独立于您的桌面环境，并作为 `tigervnc` 软件包的一部分进行安装。
+** `vinagre` 是 GNOME 桌面环境的一部分，并作为 `vinagre` 软件包的一部分进行安装。
 
 [NOTE]
 ====
-A VNC server is included in the installation program and doesn't need to be installed.
+安装程序中包含 VNC 服务，不需要单独安装。
 ====
 
-* *Network and firewall:*
-** If the target system is not allowed inbound connections by a firewall, then you must use Connect mode or disable the firewall. Disabling a firewall can have security implications.
-** If the system that is running the VNC viewer is not allowed incoming connections by a firewall, then you must use Direct mode, or disable the firewall. Disabling a firewall can have security implications. See the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/index[Security hardening in RHEL 8] document for more information on configuring the firewall.
+* *网络和防火墙：*
+** 如果防火墙不允许目标系统进行入站连接，则必须使用连接模式或禁用防火墙。禁用防火墙可能会带来安全隐患。
+** 如果防火墙不允许运行VNC查看器的系统传入连接，则必须使用直接模式，或禁用防火墙。禁用防火墙可能会带来安全隐患。
 
-* *Custom Boot Options:* You must specify custom boot options to start a VNC installation and the installation instructions might differ depending on your system architecture.
+* *自定义引导选项：* 您必须指定自定义引导选项才能启动 VNC 安装，安装指令可能会因您的系统架构而异。
 ////
 See *<add link to updated boot options when it is ready>*
 ////
 
-* *VNC in Kickstart installations:* You can use VNC-specific commands in Kickstart installations. Using only the `vnc` command runs a {rel8} installation in Direct mode. Additional options are available to set up an installation using Connect mode. For more information about Kickstart installations, see xref:advanced-install:assembly_kickstart-installation-basics.adoc#what-are-kickstart-installations_kickstart-installation-basics[What are Kickstart installations].
+* *Kickstart 安装中的 VNC：* 您可以在 Kickstart 安装中使用特定的 VNC 命令。直接模式仅使用 VNC 命令即可运行 {rel8} 安装。其他选项可用于设置使用连接模式的安装。有关 Kickstart 安装的详细信息，请参阅xref:advanced-install:assembly_kickstart-installation-basics.adoc#what-are-kickstart-installations_kickstart-installation-basics[什么是 Kickstart 安装]。
 
 ////
 For more information about the vnc command and options used in Kickstart files, see *<add link to Kickstart boot options>*
