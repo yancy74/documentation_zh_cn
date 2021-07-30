@@ -8,7 +8,7 @@
 :ProductName: Circle Linux
 :ProductShortName: {ProductName}
 // This is the version displayed under "Circle Linux"
-:ProductNumber: 8.4
+:ProductNumber: 8
 :rel8: {ProductName}{nbsp}8
 :rel7: {ProductName}{nbsp}7
 //:ProductRelease: Beta
